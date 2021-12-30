@@ -1,0 +1,572 @@
+.terms {
+  .accordion {
+    width: 100%;
+  }
+  .accordion-toggle {
+    // background: #ffffff;
+    // border-radius: 30px;
+    padding: 50px 60px;
+    font-size: 28px;
+    @include to(1440px) {
+      padding: 38px 50px;
+      font-size: 20px;
+    }
+    @include to(992px) {
+      padding: 31px 40px;
+      font-size: 18px;
+    }
+    @include to(575px) {
+      padding: 24px 20px;
+    }
+    &:hover {
+      .accordion-arrow {
+        background: #2d2d2d;
+      }
+    }
+    .accordion-arrow {
+      width: 65px;
+      height: 65px;
+      background: $green;
+      border-radius: 50%;
+      position: relative;
+      top: 0;
+      @include to(1440px) {
+        width: 50px;
+        height: 50px;
+      }
+      @include to(992px) {
+        width: 45px;
+        height: 45px;
+      }
+      .icon--terms-arrow {
+        width: 25px;
+        height: 8px;
+        fill: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(180deg);
+        @include to(1440px) {
+          width: 21px;
+          height: 6px;
+        }
+      }
+    }
+  }
+  .accordion-item {
+    border-bottom: none;
+    padding-bottom: 0;
+    background: #ffffff;
+    border-radius: 30px;
+    &.is-open {
+      .accordion-toggle {
+        border-bottom: none;
+        padding-bottom: 50px;
+        @include to(1440px) {
+          padding-bottom: 38px;
+        }
+      }
+      .accordion-arrow {
+        background: $black;
+        .icon--terms-arrow {
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+  .accordion-panel {
+    padding: 0 60px 80px;
+    @include to(1440px) {
+      padding: 0 50px 60px;
+    }
+    @include to(992px) {
+      padding: 0 40px 50px;
+    }
+    @include to(575px) {
+      padding: 0 20px 60px;
+    }
+    .connection__person--img {
+      @include to(992px) {
+        width: 80px;
+        height: 80px;
+      }
+      @include to(575px) {
+        width: 110px;
+        height: 110px;
+      }
+    }
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 80px;
+      @include to(1440px) {
+        margin-bottom: 60px;
+      }
+      @include to(992px) {
+        margin-bottom: 50px;
+      }
+      @include to(575px) {
+        flex-direction: column-reverse;
+        margin-bottom: 60px;
+      }
+    }
+    &__info + .calculator {
+      margin-top: -30px;
+      @include to(1440px) {
+        margin-top: -20px;
+      }
+      @include to(992px) {
+        margin-top: -10px;
+      }
+      @include to(575px) {
+        margin-top: -20px;
+      }
+    }
+    &__text {
+      width: 47.5%;
+      @include to(575px) {
+        width: 100%;
+      }
+      &--title {
+        font-size: 24px;
+        line-height: 150%;
+        letter-spacing: 0.01em;
+        color: #2d2d2d;
+        margin-bottom: 20px;
+        @include to(1440px) {
+          font-size: 19px;
+          margin-bottom: 5px;
+        }
+        @include to(992px) {
+          font-size: 16px;
+        }
+        @include to(575px) {
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+      }
+      &--description {
+        font-size: 20px;
+        line-height: 150%;
+        color: #435055;
+        @include to(1440px) {
+          font-size: 14px;
+        }
+        @include to(992px) {
+          font-size: 12px;
+        }
+        @include to(575px) {
+          font-size: 14px;
+        }
+        & + .accordion-panel__text--title {
+          margin-top: 40px;
+          @include to(1440px) {
+            margin-top: 30px;
+          }
+          @include to(992px) {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    &__img {
+      width: 47.5%;
+      @include to(575px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.horizontal-line {
+  border: 1px solid #cbd2c5;
+  border-radius: 5px;
+  height: 1px;
+  margin-top: -30px;
+  margin-bottom: 50px;
+  @include to(1440px) {
+    margin-top: -20px;
+    margin-bottom: 40px;
+  }
+  @include to(992px) {
+    display: none;
+  }
+}
+
+.accordion-panel__consultation {
+  display: flex;
+  justify-content: space-between;
+  @include to(575px) {
+    flex-direction: column;
+  }
+  &-text {
+    width: 47.5%;
+    @include to(575px) {
+      width: 100%;
+    }
+    .title {
+      font-size: 28px;
+      line-height: 150%;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #2d2d2d;
+      margin-bottom: 20px;
+      @include to(1440px) {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      @include to(992px) {
+        font-size: 18px;
+      }
+      @include to(575px) {
+        margin-bottom: 20px;
+      }
+    }
+    .connection__person {
+      justify-content: flex-start;
+      @include to(575px) {
+        padding-left: 145px;
+        height: 110px;
+        padding-top: 0;
+      }
+      &--img {
+        margin-right: 20px;
+        @include to(1440px) {
+          margin-right: 10px;
+        }
+        @include to(575px) {
+          width: 110px;
+          height: 110px;
+        }
+      }
+    }
+  }
+  &-link {
+    width: 47.5%;
+    @include to(575px) {
+      width: 100%;
+    }
+    .post-service__link {
+      margin-bottom: 0;
+      padding-top: 0;
+    }
+    .accordion-panel__question {
+      font-size: 20px;
+      line-height: 150%;
+      color: #435055;
+      margin-bottom: 25px;
+      @include to(1440px) {
+        font-size: 14px;
+        margin-bottom: 17px;
+      }
+      @include to(992px) {
+        font-size: 12px;
+      }
+      a {
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 150%;
+        color: #435055;
+        margin: 0 0.5ch;
+        @include to(1440px) {
+          font-size: 14px;
+        }
+        @include to(992px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.calculator {
+  border: 1px solid #cbd2c5;
+  border-radius: 30px;
+  overflow: hidden;
+  // padding: 50px 45px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+  @include to(1440px) {
+    margin-bottom: 60px;
+  }
+  @include to(992px) {
+    margin-bottom: 40px;
+  }
+  @include to(575px) {
+    flex-direction: column;
+  }
+  &__calculations {
+    width: 47.5%;
+    padding: 50px 0 50px 45px;
+    @include to(1440px) {
+      padding: 40px 0 40px 35px;
+    }
+    @include to(992px) {
+      padding: 30px 0 30px 30px;
+    }
+    @include to(575px) {
+      width: 100%;
+      padding: 30px 20px;
+    }
+    &--title {
+      @include to(1440px) {
+        font-size: 19px;
+      }
+      @include to(992px) {
+        font-size: 16px;
+      }
+    }
+  }
+  &__result {
+    width: 47.5%;
+    padding: 50px 45px 50px 97px;
+    @include to(1440px) {
+      padding: 40px 35px 40px 56px;
+    }
+    @include to(992px) {
+      padding: 30px;
+    }
+    @include to(575px) {
+      width: 100%;
+    }
+  }
+  .irs--flat .irs-single,
+  .irs--flat .irs-max,
+  .irs--flat .irs-min {
+    background: none;
+    font-size: 13px;
+    color: #6b6b6b;
+    top: 40px;
+    font-family: $default-font;
+  }
+  .irs--flat .irs-line {
+    height: 1px;
+    background: #cbd2c5;
+  }
+  .irs--flat .irs-bar {
+    height: 1px;
+    background-color: #79b43e;
+  }
+  .irs--flat .irs-handle > i:first-child {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #79b43e;
+    top: -4px;
+    left: 0;
+  }
+  .irs--flat .irs-single:before {
+    display: none;
+  }
+}
+.calculator__result {
+  background: #2d2d2d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  span {
+    margin-right: 0.5ch;
+  }
+  &--text {
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    color: #cbd2c5;
+    margin-bottom: 15px;
+    @include to(1440px) {
+      font-size: 14px;
+    }
+    @include to(992px) {
+      font-size: 11px;
+    }
+    @include to(575px) {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  }
+  &--sum-month {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 50px;
+    @include to(1440px) {
+      font-size: 44px;
+      margin-bottom: 30px;
+    }
+    @include to(992px) {
+      font-size: 40px;
+      margin-bottom: 40px;
+    }
+    @include to(575px) {
+      font-size: 34px;
+      margin-bottom: 30px;
+    }
+  }
+  &--sum {
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #ffffff;
+    @include to(1440px) {
+      font-size: 28px;
+    }
+    @include to(992px) {
+      font-size: 22px;
+    }
+    @include to(575px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.accordion-panel__text--title-big {
+  font-size: 28px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #2d2d2d;
+  margin-bottom: 20px;
+  position: relative;
+  @include to(1440px) {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  @include to(992px) {
+    font-size: 18px !important;
+    margin-bottom: 20px;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $green;
+    margin: 4px 15px 4px 0;
+    @include to(1440px) {
+      width: 4px;
+      height: 4px;
+      margin: 2px 10px 2px 0;
+    }
+  }
+}
+
+.calculator__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  @include to(1440px) {
+    padding-top: 20px;
+  }
+  &-input {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    @include to(1440px) {
+      margin-top: 30px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &--range {
+      flex-direction: column;
+    }
+    label {
+      width: 56%;
+      font-size: 18px;
+      line-height: 140%;
+      color: #2d2d2d;
+      text-transform: none;
+      letter-spacing: 0;
+      @include to(1440px) {
+        font-size: 14px;
+      }
+      @include to(992px) {
+        font-size: 12px;
+        width: 60%;
+      }
+      @include to(575px) {
+        width: 65%;
+      }
+    }
+    input {
+      width: 28%;
+      border: none;
+      background: #f0f0f0;
+      border-radius: 5px;
+      font-size: 18px;
+      line-height: 140%;
+      text-align: center;
+      color: #2d2d2d;
+      @include to(1440px) {
+        font-size: 14px;
+      }
+      @include to(992px) {
+        font-size: 12px;
+      }
+    }
+  }
+  &-range {
+    width: 100%;
+    .slider-range {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      line-height: 130%;
+      color: #6b6b6b;
+      padding-top: 5px;
+      @include to(1440px) {
+        font-size: 10px;
+      }
+    }
+    .input-range {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 1px;
+      background: #cbd2c5;
+      // background: $green;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 1;
+      }
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $green;
+        cursor: pointer;
+      }
+      &::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $green;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.calculator__form-input + .calculator__form-range {
+  margin-top: 14px;
+  @include to(1440px) {
+    margin-top: 10px;
+  }
+}
+
+.terms-mobile {
+  @include to(575px) {
+    background: #f0f0f0;
+  }
+}

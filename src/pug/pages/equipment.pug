@@ -1,0 +1,142 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Комплектація квартир'
+    var id_page = 'equipment'
+    var class_page = 'equipment'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ];
+    //- var tabs = [
+    //-   ['Rectangle3860.jpg','опалення','Наша Будівельна компанія монтує теплу підлогу в кожній кімнаті, встановлює котел для обігріву фірми Bosch,  бойлер на підігрів води та гребінку для регулювання температури теплої підлоги'],
+    //-   ['Rectangle3860-1.jpg','Покращена шумоізоляція','Перегородки між квартирами ми робимо наступним чином: цегла ECOBLOCK 250 мм, далі ми ставимо мінеральну вату 50 мм і додатково керамоблок Porotherm 80 мм. З такими стінами Ви можете не турбуватися, що Вас розбудять звуки порохотяга чи музики, а пізні застілля у сусідів не дадуть можливості відпочити після важкого робочого дня', 'http://www.youtube.com/watch?v=_ixz3GfLKYs)', 'переглянути відео'],
+    //-   ['Rectangle3860-2.jpg','Панорамні вікна','В комплектацію кожної квартири в ЖК Park Land входять панорамні вікна Salamander. Профільна система Salamander bluEvolution 82, країна походження – Німеччина. Кількість камер: 6, монтажна ширина: 82 мм, три контури ущільнення, захист від попадання пилу. Для безпеки в нижній частині вікон встановлено додатково скло триплекс. Воно здатне при ударі утримувати скалки. Також використано німецьку фурнітуру Wink House.'],
+    //-   ['Rectangle3860-3.jpg','Комунікації','Ми робимо монтаж електропроводки до точок (необмежена кількість), підвід води та вивід каналізації відповідно до побажання власника. Покращена стяжка та штукатурка, яка виконується машинним способом – порадує очі перфекціоністів та зекономить Ваші кошти'],
+    //-   ['Rectangle3860-4.jpg','інтернет та домофон','Підключення швидкісного гігабітного інтернету та кольоровий IP відеодомофон в кожну квартиру'],
+    //-   ['Rectangle3860-5.jpg','Online камери','Цілодобовий доступ до online камер, які встанволені  по периметру внутрішнього парку та паркінгу житлового комплексу, на вході у кожен під’їзд та кожному ліфті'],
+    //-   ['Rectangle3860-6.jpg','Під’їзди','Оздоблені під супроводом дизайнера. У дизайнерських холах Житлових комплексів компанії GAZDA так чисто, що інколи забуваєш про те, що ти в під’їзді'],
+    //- ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/equipment.js')
+  //- script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/footer.js')
+block arrow 
+  +svg('scroll-down').js-scroll-down 
+block content
+  include ../includes/breadcrumbs.pug
+  section.documents-content
+    .documents-sticker
+      h5 Complete set
+    h1.documents-title(data-span-entry2) Комплектація квартир 
+    .post-service
+      .post-service__content
+        .post-service__img.equipment-img(data-span-entry5)
+          img(class="js-menu-img" data-paralax data-default-src="./assets/images/equipment1.jpg" src="./assets/images/equipment1.jpg" alt="") 
+        .accordion.js-accordion
+          //- each val in tabs 
+          //-   .accordion-item.js-services(data-image='./assets/images/equipment/'+val[0] data-src='./assets/images/equipment/'+val[0])
+          //-     .accordion-toggle 
+          //-       span #{val[1]}
+          //-       .accordion-plus 
+          //-         .plus
+          //-     .accordion-panel
+          //-       .panel-container
+          //-         p #{val[2]}
+              
+          .accordion-item.js-services(data-image='./assets/images/equipment/Rectangle3860.jpg' data-src='./assets/images/equipment/Rectangle3860.jpg')
+            .accordion-toggle 
+              span опалення
+              .accordion-plus 
+                .plus
+            .accordion-panel
+              .panel-container
+                p Наша Будівельна компанія монтує теплу підлогу в кожній кімнаті, встановлює котел для обігріву фірми Bosch,  бойлер на підігрів води та гребінку для регулювання температури теплої підлоги
+                img(src="./assets/images/equipment/Rectangle3860.jpg", alt="").img-mobile
+          .accordion-item.js-services(data-image='./assets/images/equipment/Rectangle3860-1.jpg' data-src='./assets/images/equipment/Rectangle3860-1.jpg')
+            .accordion-toggle 
+              span Покращена шумоізоляція
+              .accordion-plus 
+                .plus
+            .accordion-panel
+              .panel-container
+                p Перегородки між квартирами ми робимо наступним чином: цегла ECOBLOCK 250 мм, далі ми ставимо мінеральну вату 50 мм і додатково керамоблок Porotherm 80 мм. З такими стінами Ви можете не турбуватися, що Вас розбудять звуки порохотяга чи музики, а пізні застілля у сусідів не дадуть можливості відпочити після важкого робочого дня
+                .accordion-link.service__link
+                  a(href='http://www.youtube.com/watch?v=_ixz3GfLKYs)' target="_blank").realty__link
+                    span.realty__text переглянути відео
+                img(src="./assets/images/equipment/Rectangle3860-1.jpg", alt="").img-mobile
+          .accordion-item.js-services(data-image='./assets/images/equipment/Rectangle3860-2.jpg' data-src='./assets/images/equipment/Rectangle3860-2.jpg')
+            .accordion-toggle 
+              span Панорамні вікна
+              .accordion-plus 
+                .plus
+            .accordion-panel
+              .panel-container
+                p В комплектацію кожної квартири в ЖК Park Land входять панорамні вікна Salamander. Профільна система Salamander bluEvolution 82, країна походження – Німеччина. Кількість камер: 6, монтажна ширина: 82 мм, три контури ущільнення, захист від попадання пилу. Для безпеки в нижній частині вікон встановлено додатково скло триплекс. Воно здатне при ударі утримувати скалки. Також використано німецьку фурнітуру Wink House.
+                .accordion-link.service__link
+                  a(href='https://www.youtube.com/watch?v=2PwDD53vqlA)' target="_blank").realty__link
+                    span.realty__text переглянути відео
+                img(src="./assets/images/equipment/Rectangle3860-2.jpg", alt="").img-mobile
+          .accordion-item.js-services(data-image='./assets/images/equipment/Rectangle3860-3.jpg' data-src='./assets/images/equipment/Rectangle3860-3.jpg')
+            .accordion-toggle 
+              span Комунікації
+              .accordion-plus 
+                .plus
+            .accordion-panel
+              .panel-container
+                p Ми робимо монтаж електропроводки до точок (необмежена кількість), підвід води та вивід каналізації відповідно до побажання власника. Покращена стяжка та штукатурка, яка виконується машинним способом – порадує очі перфекціоністів та зекономить Ваші кошти
+                img(src="./assets/images/equipment/Rectangle3860-3.jpg", alt="").img-mobile
+          .accordion-item.js-services(data-image='./assets/images/equipment/Rectangle3860-4.jpg' data-src='./assets/images/equipment/Rectangle3860-4.jpg')
+            .accordion-toggle 
+              span інтернет та домофон
+              .accordion-plus 
+                .plus
+            .accordion-panel
+              .panel-container
+                p Підключення швидкісного гігабітного інтернету та кольоровий IP відеодомофон в кожну квартиру
+                img(src="./assets/images/equipment/Rectangle3860-4.jpg", alt="").img-mobile
+          .accordion-item.js-services(data-image='./assets/images/equipment/Rectangle3860-5.jpg' data-src='./assets/images/equipment/Rectangle3860-5.jpg')
+            .accordion-toggle 
+              span Online камери
+              .accordion-plus 
+                .plus
+            .accordion-panel
+              .panel-container
+                p Цілодобовий доступ до online камер, які встанволені  по периметру внутрішнього парку та паркінгу житлового комплексу, на вході у кожен під’їзд та кожному ліфті
+                img(src="./assets/images/equipment/Rectangle3860-5.jpg", alt="").img-mobile
+          .accordion-item.js-services(data-image='./assets/images/equipment/Rectangle3860-6.jpg' data-src='./assets/images/equipment/Rectangle3860-6.jpg')
+            .accordion-toggle 
+              span Під’їзди
+              .accordion-plus 
+                .plus
+            .accordion-panel
+              .panel-container
+                p Оздоблені під супроводом дизайнера. У дизайнерських холах Житлових комплексів компанії GAZDA так чисто, що інколи забуваєш про те, що ти в під’їзді
+                img(src="./assets/images/equipment/Rectangle3860-6.jpg", alt="").img-mobile
+  
+      .commercial-link.contacts__link
+        .commercial-link__text Ми cтворюємо всі необхідні умови для вашого комфорту 
+        a(href='#').realty__link
+          span.realty__text обрати квартиру
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+

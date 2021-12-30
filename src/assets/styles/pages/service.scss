@@ -1,0 +1,89 @@
+.service__title {
+  font-size: 38px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #343434;
+  margin-bottom: 30px;
+  @include to(1440px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  @include to(992px) {
+    font-size: 23px;
+    margin-bottom: 30px;
+  }
+  @include to(575px) {
+    font-size: 18px;
+  }
+}
+
+.service__notes {
+  width: 45%;
+  border-left: 6px solid #79b43e;
+  padding-left: 30px;
+  font-size: 20px;
+  line-height: 150%;
+  color: #435055;
+  margin-bottom: 50px;
+  @include to(1440px) {
+    padding-left: 20px;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  @include to(575px) {
+    padding-left: 15px;
+    font-size: 14px;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+}
+.service__img {
+  margin-bottom: 150px;
+  @include to(1440px) {
+    margin-bottom: 100px;
+  }
+  @include to(575px) {
+    margin-bottom: 60px;
+  }
+}
+
+.service__link {
+  padding-top: 10px;
+  margin-bottom: 50px;
+  @include to(1440px) {
+    margin-bottom: 50px;
+  }
+  @include to(575px) {
+    margin-bottom: 30px;
+  }
+}
+
+.service__link {
+  .realty__link {
+    @include to(992px) {
+      width: 200px;
+      height: 45px;
+    }
+    @include to(575px) {
+      width: 208px;
+      height: 50px;
+    }
+  }
+}
+.service__link {
+  .realty__link::before {
+    @include to(992px) {
+      display: inline-block;
+    }
+  }
+}
+.service__link {
+  .realty__link {
+    .realty__text {
+      @include to(992px) {
+        display: inline-block;
+      }
+    }
+  }
+}

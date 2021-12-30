@@ -1,0 +1,90 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Документи'
+    var id_page = 'page-documents'
+    var class_page = 'page-documents'
+    // var breadcrumbsBtn = 'filter'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'Документи',
+    //-     link: pagesLink[0].documents
+    //-   }
+    //- ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
+block arrow 
+  +svg('scroll-down').js-scroll-down
+
+block content
+  include ../includes/breadcrumbs.pug
+  section.documents-content 
+    .documents-sticker
+      h5 documents
+    h1.documents-title(data-span-entry2) Документи
+    ul.documents-content-list
+      li
+        a(href="#").documents-link
+          .date 
+            +svg('clock')
+            p 30.11.2021
+          .description 
+            p Декларація про початок будівельних робіт у жк від 20.12.2018
+          .image 
+            +svg('download')
+      li
+        a(href="#").documents-link
+          .date 
+            +svg('clock')
+            p 20.12.2021
+          .description 
+            p Проект договору часткової участі в будуванні паркомісця
+          .image 
+            +svg('download')
+      li
+        a(href="#").documents-link
+          .date 
+            +svg('clock')
+            p 11.01.2022
+          .description 
+            p Генаральний договір страхування
+          .image 
+            +svg('download')
+      li
+        a(href="#").documents-link
+          .date 
+            +svg('clock')
+            p 30.11.2021
+          .description 
+            p Проект договору часткової участі в будуванні паркомісця
+          .image 
+            +svg('download')
+      li
+        a(href="#").documents-link
+          .date 
+            +svg('clock')
+            p 30.11.2021
+          .description 
+            p Генаральний договір страхування
+          .image 
+            +svg('download')
+
+
+block header
+  include ../includes/header.pug
+block footer
+  include ../includes/footer.pug
+
+
+

@@ -1,0 +1,68 @@
+footer 
+  ul.footer-navigation
+    li
+      a(href="#")
+        span обрати нерухомість
+    li
+      a(href="#")
+        span інфраструктура
+    li
+      a(href="documents.html")
+        span документи
+    li
+      a(href="#")
+        span для інвестора
+    li
+      a(href="#")
+        span забудовник
+    
+  .footer-content
+    .footer-form
+      h3 заповніть поля нижче і ми зв’яжемося з вами:
+
+      form(action="#" class="contact-form" data-footer-form)
+        .form-field
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            label(for="callback-form-input-name") ваше im’я
+            input(class="input-footer form-name form-field__input contact-form-input" type="text" name="name" id="callback-form-name"  placeholder="Iм’я" autocomplete="on" value="")
+            .input-message(data-input-message)
+          .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+            label(for="callback-form-phone") ваш номер
+            input(class="input-sideform input-footer form-tel form-field__input contact-form-input js-input-footer" type="text" id="callback-form-phone" class=""  autocomplete="on" name="phone" inputmode="tel")
+            span.placeholder-footer.js-placeholder-footer Номер
+            .input-message(data-input-message)
+          button(class="form-button form-button-js" type="submit" data-btn-submit="data-btn-submit") 
+            +svg('arrow-next').btn-submite
+            span(data-btn-submit-text="")
+    .footer-container-contact
+      ul.footer-info
+        li.footer-info-item.footer-info-item--social
+          p.title відділ продажу 
+          .footer-info-map
+            a(href="https://goo.gl/maps/SZkUJRYed9gccQWG7" target="_blank").description
+              span м. Ужгород, вул. Легоцького, 80
+          p пн-вс: 09:00-18:00
+        li.footer-info-item.footer-info-item--phone
+          p.title телефон
+          a(href="tel:+380505008584").description + 38 (050) 500-85-84
+        li.footer-info-item.footer-info-item--social
+          p.title Соціальні мережі
+          ul.footer-social
+            li.footer-social-item
+              a(href="#").footer-social-link instagram
+            li.footer-social-item
+              a(href="#").footer-social-link Facebook
+            
+      .arrow-up.js-btn-up
+        .green-hover
+          +svg('arrow-next').arrow-up-btn
+
+  .footer-rights-reserved
+    .footer-rights © Усі права захищено. PARKLAND 2021
+    .footer-rights-info Не є публічною офертою. 
+      span Візуалізації та планування об’єкту є орієнтовними. 
+      |Забудовник має право вносити зміни згідно з діючим законодавством.
+    .footer-dev
+      a(href="https://smarto.agency/" rel="nofollow" target="_blank") 
+        +svg('smarto')
+        

@@ -1,0 +1,95 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'хід будівництва'
+    //- var id_page = 'contacts'
+    //- var class_page = 'contacts'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/building.js')
+  script(defer src='./assets/scripts/filter.js')
+  script(defer src='./assets/scripts/news.js')
+  script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
+block arrow 
+  +svg('scroll-down').js-scroll-down
+block content
+  include ../includes/breadcrumbs.pug
+  section.documents-content
+    .documents-sticker
+      h5 construction 
+    h1.documents-title(data-span-entry2) хід будівництва
+    .filter
+      .select
+        .select__year(data-select data-type="year")
+          input(type="hidden" data-type="year")
+          .select__year--selected(data-value="null") роки
+          ul.select__year--list.filter-form
+            li.select__year--item(data-value="null") роки
+            li.select__year--item(data-value="2021") 2021
+            li.select__year--item(data-value="2020") 2020
+            li.select__year--item(data-value="2019") 2019
+            li.select__year--item(data-value="2018") 2018
+        .select__month(data-select data-type="month")
+          input(type="hidden" data-type="month")
+          .select__month--selected(data-value="null") всі місяці
+          ul.select__month--list.js-filter
+            li.select__month--item(data-value="null") всі місяці
+            li.select__month--item(data-value="9") вересень
+            li.select__month--item(data-value="8") серпень
+            li.select__month--item(data-value="7") липень
+            li.select__month--item(data-value="6") червень
+            li.select__month--item(data-value="5") травень
+            li.select__month--item(data-value="4") квітень
+            li.select__month--item(data-value="3") березень
+            li.select__month--item(data-value="2") лютий
+            li.select__month--item(data-value="1") січень
+            li.select__month--item(data-value="12") ГРУДЕНЬ
+            li.select__month--item(data-value="11") ЛИСТОПАД
+            li.select__month--item(data-value="10") ЖОВТЕНЬ
+      .contacts__link
+        a(href='news.html').realty__link
+          span.realty__text Новини та акції
+    ul.news-content__list(data-build-container)
+      //- li.news-content__item.building-content__item
+      //-   +svg('plus').building-plus
+      //-   .news-content__link
+      //-     .news-content__img.building-content__img
+      //-       img(src="./assets/images/building1.jpg", alt="")
+      //-     .building-content__description 
+      //-       .building-content__date 
+      //-         +svg('clock')
+      //-         p
+      //-           span(data-build-date) 18 
+      //-           span(data-build-month) червня 
+      //-           span(data-build-year) 2021
+      //-       .building-content__info 
+      //-         +svg('slides')
+      //-         p 9
+       
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+
+
+

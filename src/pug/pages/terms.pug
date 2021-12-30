@@ -1,0 +1,263 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'умови придбання'
+    var id_page = 'terms'
+    var class_page = 'terms'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ];
+
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/terms.js')
+  script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
+  script(defer src='./assets/scripts/calculator.js')
+block arrow
+  +svg('scroll-down').js-scroll-down
+block content
+  section.single-news.terms-mobile
+    include ../includes/breadcrumbs.pug
+    .documents-content
+      .documents-sticker
+        h5 terms
+      h1.documents-title(data-span-entry2) умови придбання
+      .terms
+        .accordion.js-accordion
+          .accordion-item.js-services
+            .accordion-toggle
+              span повна оплата
+              .accordion-arrow
+                +svg('terms-arrow')
+            .accordion-panel
+              .accordion-panel__info
+                .accordion-panel__text
+                  .accordion-panel__text--title Умови:
+                  .accordion-panel__text--description 100% оплата USD або гривнями
+                  .accordion-panel__text--title Детальніше:
+                  .accordion-panel__text--description Обираючи 100% оплату Ви отримуєте індивідуальну знижку
+                .accordion-panel__img
+                  img(src="./assets/images/terms1.jpg", alt="")
+              .accordion-panel__consultation
+                .accordion-panel__consultation-text
+                  .title Потрібна консультація?
+                  .connection__person
+                    .connection__person--img
+                      img(src="./assets/images/manager.jpg", alt="")
+                    .connection__person--info
+                      .connection__person--name Маріанна
+                      .connection__person--position менеджер з продажу
+                .accordion-panel__consultation-link
+                  .accordion-panel__question Щоб дізнатись більше про вашу знижку телефонуйте
+                    a(href="tel:+380505008584") + 38 (050) 500-85-84
+                    | або залишайте заявку на дзвінок
+                  .post-service__link.service__link
+                    a(href='#').realty__link.js-call
+                      span.realty__text замовити дзвінок
+
+          .accordion-item.js-services
+            .accordion-toggle
+              span розтермінування
+              .accordion-arrow
+                +svg('terms-arrow')
+            .accordion-panel
+              .accordion-panel__info
+                .accordion-panel__text
+                  .accordion-panel__text--title Умови:
+                  .accordion-panel__text--description Ви вносите 50% від вартості нерухомості, решту на протязі 2 років Ви сплачуєте без відсотків
+                  .accordion-panel__text--title Детальніше:
+                  .accordion-panel__text--description Якщо у Вас не вистачає повної суми до сплати або Вам потрібні кошти, щоб зробити ремонт,  ми можемо розбити залишок без відсотків на 2 роки.
+
+                .accordion-panel__img
+                  img(src="./assets/images/terms2.jpg", alt="")
+
+              .calculator(id="calculator-form")
+                .calculator__calculations
+                  .calculator__calculations--title Калькулятор розтермінування:
+                  form.calculator__form(action="")
+                    .calculator__form-input
+                      label(for="") Вартість обранної нерухомості, $
+                      input(class="js-current-total" type="text" name="name" placeholder="" autocomplete="off")
+                    .calculator__form-input.calculator__form-input--range
+                      .calculator__form-input
+                        label(for="") Мінімальний перший внесок, $ (50% від вартості)
+                        input(class="js-min-payment" type="text" name="name" placeholder="" autocomplete="off")
+                      .calculator__form-range
+                        input(type="range" min="1" max="100" value="0" class="input-range js-min-payment-control" )
+                        .slider-range
+                          .slider-range__start.js-start-sum 
+                          .slider-range__end.js-end-sum 
+                    .calculator__form-input.calculator__form-input--range
+                      .calculator__form-input
+                        label(for="") Термін розтермінування (від 1 до 5 місяців)
+                        input( type="text" class="js-term" name="name" placeholder="" autocomplete="off")
+                      .calculator__form-range
+                        input(type="range" min="1" max="100" value="0" class="input-range js-term-control" )
+                        .slider-range
+                          .slider-range__start
+                          .slider-range__end
+                .calculator__result
+                  .calculator__result--text Обов’язковий щомісячний платіж
+                  .calculator__result--sum-month
+                    span.js-month-payment
+                    | $
+                  .calculator__result--text Повна вартість нерухомості після розрахунку не змінюється
+                  .calculator__result--sum
+                    span.js-total
+                    | $
+
+              .accordion-panel__consultation
+                .accordion-panel__consultation-text
+                  .title Потрібна консультація?
+                  .connection__person
+                    .connection__person--img
+                      img(src="./assets/images/manager.jpg", alt="")
+                    .connection__person--info
+                      .connection__person--name Маріанна
+                      .connection__person--position менеджер з продажу
+                .accordion-panel__consultation-link
+                  .accordion-panel__question Щоб дізнатись більше про вашу знижку телефонуйте
+                    a(href="tel:+380505008584") + 38 (050) 500-85-84
+                    | або залишайте заявку на дзвінок
+                  .post-service__link.service__link
+                    a(href='#').realty__link.js-call
+                      span.realty__text замовити дзвінок
+
+          .accordion-item.js-services
+            .accordion-toggle
+              span Кредитування
+              .accordion-arrow
+                +svg('terms-arrow')
+            .accordion-panel
+              .accordion-panel__info
+                .accordion-panel__text
+                  .accordion-panel__text--title.accordion-panel__text--title-big до 5 років
+                  .accordion-panel__text--title Умови:
+                  .accordion-panel__text--description 50% перший внесок, решту під 7% до 5 років (ануїтетний платіж)
+                  .accordion-panel__text--title Детальніше:
+                  .accordion-panel__text--description Кредитування відбувається без посередників, напряму від забудовника. Ціна нерухомості фіксується з моменту внесення першого внеску. Також, на відміну від різних фінансових установ, на Вас не накладаються штрафи та пеня при затримці оплати на декілька днів і Ви не сплачуєте ніякі додаткові страхові платежі. Можливе дострокове погашення на будь-якому етапі без переплат
+
+                .accordion-panel__img
+                  img(src="./assets/images/terms3.jpg", alt="")
+
+              .calculator(id="calculator-form5")
+                .calculator__calculations
+                  .calculator__calculations--title Калькулятор кредитування на 5 років:
+                  form.calculator__form(action="")
+                    .calculator__form-input
+                      label(for="") Вартість обранної нерухомості, $
+                      input(class="js-current-total" type="text" name="name" placeholder="" autocomplete="off")
+                    .calculator__form-input.calculator__form-input--range
+                      .calculator__form-input
+                        label(for="") Мінімальний перший внесок, $ (50% від вартості)
+                        input(class="js-min-payment" type="text" name="name" placeholder="" autocomplete="off")
+                      .calculator__form-range
+                        input(type="range" min="1" max="100" value="0" class="input-range js-min-payment-control" )
+                        .slider-range
+                          .slider-range__start.js-start-sum 
+                          .slider-range__end.js-end-sum 
+                    .calculator__form-input.calculator__form-input--range
+                      .calculator__form-input
+                        label(for="") Термін розтермінування (від 1 до 5 місяців)
+                        input( type="text" class="js-term" name="name" placeholder="" autocomplete="off")
+                      .calculator__form-range
+                        input(type="range" min="1" max="100" value="0" class="input-range js-term-control" )
+                        .slider-range
+                          .slider-range__start
+                          .slider-range__end
+                .calculator__result
+                  .calculator__result--text Обов’язковий щомісячний платіж
+                  .calculator__result--sum-month
+                    span.js-month-payment
+                    | $
+                  .calculator__result--text Повна вартість нерухомості після розрахунку не змінюється
+                  .calculator__result--sum
+                    span.js-total
+                    | $
+              .horizontal-line
+              .accordion-panel__info
+                .accordion-panel__text
+                  .accordion-panel__text--title.accordion-panel__text--title-big до 20 років
+                  .accordion-panel__text--title Умови:
+                  .accordion-panel__text--description 30% перший внесок, решту під 12% до 20 років
+
+                  .accordion-panel__text--title Детальніше:
+                  .accordion-panel__text--description Кредитування відбувається без посередників, напряму від забудовника. Варто зазначити, що довгострокове кредитування це показник надійного забудовника з довгостроковими перспективами на ринку. Ціна нерухомості фіксується з моменту внесення першого внеску. Також, на відміну від різних фінансових установ, на Вас не накладаються штрафи та пеня при затримці оплати на декілька днів і Ви не сплачуєте ніякі додаткові страхові платежі. Можливе дострокове погашення на будь-якому етапі без переплат
+
+                .accordion-panel__img
+                  img(src="./assets/images/terms4.jpg", alt="")
+
+              .calculator(id="calculator-form20")
+                .calculator__calculations
+                  .calculator__calculations--title Калькулятор кредитування на 20 років:
+                  form.calculator__form(action="")
+                    .calculator__form-input
+                      label(for="") Вартість обранної нерухомості, $
+                      input(class="js-current-total" type="text" name="name" placeholder="" autocomplete="off")
+                    .calculator__form-input.calculator__form-input--range
+                      .calculator__form-input
+                        label(for="") Мінімальний перший внесок, $ (50% від вартості)
+                        input(class="js-min-payment" type="text" name="name" placeholder="" autocomplete="off")
+                      .calculator__form-range
+                        input(type="range" min="1" max="100" value="0" class="input-range js-min-payment-control" )
+                        .slider-range
+                          .slider-range__start.js-start-sum 
+                          .slider-range__end.js-end-sum 
+                    .calculator__form-input.calculator__form-input--range
+                      .calculator__form-input
+                        label(for="") Термін розтермінування (від 1 до 5 місяців)
+                        input( type="text" class="js-term" name="name" placeholder="" autocomplete="off")
+                      .calculator__form-range
+                        input(type="range" min="1" max="100" value="0" class="input-range js-term-control" )
+                        .slider-range
+                          .slider-range__start
+                          .slider-range__end
+                .calculator__result
+                  .calculator__result--text Обов’язковий щомісячний платіж
+                  .calculator__result--sum-month
+                    span.js-month-payment
+                    | $
+                  .calculator__result--text Повна вартість нерухомості після розрахунку не змінюється
+                  .calculator__result--sum
+                    span.js-total
+                    | $
+              .accordion-panel__consultation
+                .accordion-panel__consultation-text
+                  .title Потрібна консультація?
+                  .connection__person
+                    .connection__person--img
+                      img(src="./assets/images/manager.jpg", alt="")
+                    .connection__person--info
+                      .connection__person--name Маріанна
+                      .connection__person--position менеджер з продажу
+                .accordion-panel__consultation-link
+                  .accordion-panel__question Щоб дізнатись більше про вашу знижку телефонуйте
+                    a(href="tel:+380505008584") + 38 (050) 500-85-84
+                    | або залишайте заявку на дзвінок
+                  .post-service__link.service__link
+                    a(href='#').realty__link.js-call
+                      span.realty__text замовити дзвінок
+
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+
+

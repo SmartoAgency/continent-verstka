@@ -1,0 +1,64 @@
+.sideform(style="display: none;").js-sideform-call
+  .form
+    .building-sticker
+      h5 callback
+    .form-container__btn 
+      .form-close.js-close
+        +svg('close')
+    .form-content 
+      .form-content__title 
+        h1 заповніть поля нижче і ми зв’яжемося з вами:
+      form( action="#" class="feedback-form" data-popup-form)
+        .form-field
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            label(for="callback-form-name") ваше im’я
+            input(class="input-sideform form-name form-field__input contact-form-input" type="text" name="name" id="callback-form-name" placeholder="Iм’я" autocomplete="on" value="")
+            .input-message(data-input-message)
+          .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+            label(for="callback-form-phone") ваш номер
+            input(class="input-sideform form-tel form-field__input contact-form-input js-input-form" type="text" id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+            span.placeholder-form.js-placeholder-form Номер
+            .input-message(data-input-message)
+         
+          .form-field-confirm
+            button(class="btn-submite callback__btn" type="submit" data-btn-submit="data-btn-submit") 
+              //- <svg viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              //-   <path fill-rule="evenodd" clip-rule="evenodd" d="M22.0167 13.3496L0.5 13.3496L0.499999 10.6502L22.0167 10.6502L13.569 1.95469L15.2915 -6.16817e-05L26 11.0226L26 12.9773L15.2915 23.9999L13.569 22.0452L22.0167 13.3496Z" fill="#F0F0F0"/>
+              //- </svg>
+              +svg('arrow-next')
+              span(data-btn-submit-text="")
+
+            
+  
+
+
+.form-gratitude.js-form-gratitude(style="display: none;")
+  .form
+    .form-container__btn 
+      .form-close.js-close
+        +svg('close')
+    .form-content 
+      .form-content__title 
+        h1 Заявка прийнята. Дякуємо за звернення!
+      p.form-gratitude__text Очікуйте на дзвінок з відділу продажів PARKLAND. Бажаємо гарного дня =)
+      .container-404__btn
+        .btn-404
+          a(href='#').btn-404__link
+            span.btn-404__text Повернутись назад
+        .btn-404
+          a(href='index.html').btn-404__link
+            span.btn-404__text на головну
+          
+    
+
+
+
+
+
+.form-header-call.js-call-mobile(style="display: none;")
+  ul
+    li
+      a(href='tel:+380443563777') Виклик +380 (44) 356 37 77
+    li 
+      button.js-mobile-form Зворотній дзвінок
+    li.cancel.js-mobile-close Відмінити

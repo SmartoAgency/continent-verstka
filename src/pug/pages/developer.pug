@@ -1,0 +1,360 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Забудовник'
+    //- var id_page = 'location'
+    //- var class_page = 'location'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/developer.js')
+  script(defer src='./assets/scripts/no-scroll.js')
+block arrow 
+  +svg('scroll-down').js-scroll-down
+block content
+  include ../includes/breadcrumbs.pug
+  section.documents-content
+    .documents-sticker
+      h5 Developer
+    h1.documents-title(data-span-entry2) Забудовник
+    .developer
+      .developer__logo
+        +svg('developer')
+        p Будівельна компанія "GAZDA"-Будівництво та продаж нерухомості
+      .contacts__link
+        a(href='https://zk.com.ua/').realty__link
+          span.realty__text Сайт забудовника
+    .residential.js-residential
+      .residential-container__title
+        h4.residential__title житлові комплекси
+        .swiper-container-arrow
+          .swiper-button-prev
+            +svg('arrow-prev').swiper-button-arrow
+          .swiper-button-next
+            +svg('arrow-next').swiper-button-arrow
+      .swiper-residential.residentialSwiper.js-init-swiper
+        .swiper-wrapper
+          .swiper-slide
+            a(href='#')
+              .residential-slide__img
+                img(src="./assets/images/residential-complex1.jpg", alt="")
+              h6.residential-slide__title жк “dream city”
+              .rating
+                .rating__value 3.8
+                .rating__body 
+                  .rating__active
+                  .rating__items 
+                .rating__value-interviewed (2)
+
+          .swiper-slide
+            a(href='#')
+              .residential-slide__img
+                img(src="./assets/images/residential-complex2.jpg", alt="")
+              h6.residential-slide__title жк “сакура” 
+              .rating
+                .rating__value 1.8
+                .rating__body 
+                  .rating__active
+                  .rating__items 
+                .rating__value-interviewed (2)
+          .swiper-slide
+            a(href='#')
+              .residential-slide__img
+                img(src="./assets/images/residential-complex3.jpg", alt="")
+              h6.residential-slide__title жк “RIVER LAND” 
+              .rating
+                .rating__value 5
+                .rating__body 
+                  .rating__active
+                  .rating__items 
+                .rating__value-interviewed (2)
+          .swiper-slide
+            a(href='#')
+              .residential-slide__img
+                img(src="./assets/images/residential-complex4.jpg", alt="")
+              h6.residential-slide__title жк “GREEN LAND”
+              .rating
+                .rating__value 4.8
+                .rating__body 
+                  .rating__active
+                  .rating__items 
+                .rating__value-interviewed (2) 
+          .swiper-slide
+            a(href='#')
+              .residential-slide__img
+                img(src="./assets/images/residential-complex2.jpg", alt="")
+              h6.residential-slide__title жк “сакура” 
+              .rating
+                .rating__value 4.5
+                .rating__body 
+                  .rating__active
+                  .rating__items 
+                .rating__value-interviewed (2)
+    .residential.js-residential
+        .residential-container__title
+          h4.residential__title котеджі
+          .swiper-container-arrow
+            .swiper-button-prev
+              +svg('arrow-prev').swiper-button-arrow
+            .swiper-button-next
+              +svg('arrow-next').swiper-button-arrow
+        .swiper-residential.residentialSwiper.js-init-swiper
+          .swiper-wrapper
+            .swiper-slide
+              a(href='#')
+                .residential-slide__img
+                  img(src="./assets/images/cottage1.jpg", alt="")
+                h6.residential-slide__title ТАУНХАУС “ДУЛОВА” 
+                .rating
+                  .rating__value 4.5
+                  .rating__body 
+                    .rating__active
+                    .rating__items 
+                  .rating__value-interviewed (2)
+            .swiper-slide
+              a(href='#')
+                .residential-slide__img
+                  img(src="./assets/images/cottage2.jpg", alt="")
+                h6.residential-slide__title ТАУНХАУС “ДЖЕРЕЛЬНа” 
+                .rating
+                  .rating__value 1.5
+                  .rating__body 
+                    .rating__active
+                    .rating__items 
+                  .rating__value-interviewed (2)
+            .swiper-slide
+              a(href='#')
+                .residential-slide__img
+                  img(src="./assets/images/cottage3.jpg", alt="")
+                h6.residential-slide__title ТАУНХАУС “ВИШНЕВИЙ”
+                .rating
+                  .rating__value 4.5
+                  .rating__body 
+                    .rating__active
+                    .rating__items 
+                  .rating__value-interviewed (2)  
+            .swiper-slide
+              a(href='#')
+                .residential-slide__img
+                  img(src="./assets/images/cottage4.jpg", alt="")
+                h6.residential-slide__title ТАУНХАУС “SHERWOOD”
+                .rating
+                  .rating__value 4.5
+                  .rating__body 
+                    .rating__active
+                    .rating__items 
+                  .rating__value-interviewed (2) 
+            .swiper-slide
+              a(href='#')
+                .residential-slide__img
+                  img(src="./assets/images/cottage2.jpg", alt="")
+                h6.residential-slide__title ТАУНХАУС “ДЖЕРЕЛЬНа”
+                .rating
+                  .rating__value 4.5
+                  .rating__body 
+                    .rating__active
+                    .rating__items 
+                  .rating__value-interviewed (2)  
+    .residential.js-residential
+      .residential-container__title
+        h4.residential__title бізнес центри
+        .swiper-container-arrow
+          .swiper-button-prev
+            +svg('arrow-prev').swiper-button-arrow
+          .swiper-button-next
+            +svg('arrow-next').swiper-button-arrow
+      .swiper-residential.residentialSwiper.js-init-swiper
+        .swiper-wrapper
+          .swiper-slide
+            a(href='#')
+              .residential-slide__img
+                img(src="./assets/images/business-centers.jpg", alt="")
+              h6.residential-slide__title ТЦ “БІЗНЕС ЦЕНТР”
+              .rating
+                  .rating__value 5.9
+                  .rating__body 
+                    .rating__active
+                    .rating__items 
+                  .rating__value-interviewed (2) 
+          .swiper-slide
+            a(href='#')
+              .residential-slide__img
+                img(src="./assets/images/business-centers.jpg", alt="")
+              h6.residential-slide__title ТЦ “БІЗНЕС ЦЕНТР”
+              .rating
+                  .rating__value 4.5
+                  .rating__body 
+                    .rating__active
+                    .rating__items 
+                  .rating__value-interviewed (2)
+          .swiper-slide
+            a(href='#')
+              .residential-slide__img
+                img(src="./assets/images/business-centers.jpg", alt="")
+              h6.residential-slide__title ТЦ “БІЗНЕС ЦЕНТР”
+              .rating
+                  .rating__value 4.5
+                  .rating__body 
+                    .rating__active
+                    .rating__items 
+                  .rating__value-interviewed (2)
+          .swiper-slide
+            a(href='#')
+              .residential-slide__img
+                img(src="./assets/images/business-centers.jpg", alt="")
+              h6.residential-slide__title ТЦ “БІЗНЕС ЦЕНТР”
+              .rating
+                  .rating__value 4.5
+                  .rating__body 
+                    .rating__active
+                    .rating__items 
+                  .rating__value-interviewed (2)
+          .swiper-slide
+            a(href='#')
+              .residential-slide__img
+                img(src="./assets/images/business-centers.jpg", alt="")
+              h6.residential-slide__title ТЦ “БІЗНЕС ЦЕНТР” 
+              .rating
+                  .rating__value 4.5
+                  .rating__body 
+                    .rating__active
+                    .rating__items 
+                  .rating__value-interviewed (2) 
+  
+    .our-projects
+      .our-projects__title 
+        h4 наші проєкти на карті
+      .map(width="500" height="500px")
+        #map(width="500" height="500px")
+        .our-projects__container
+          .our-projects__list--mobile.js-open-list
+            span Проєкти
+            img(src="./assets/images/arrow-developer.svg", alt="").our-projects__arrow
+          ul.our-projects__list
+            li.our-projects__item
+              a(href="#").our-projects__link
+                .our-projects__link--img
+                  img(src="./assets/images/residential-complex1.jpg", alt="")
+                .our-projects__link--text 
+                  p.name жк “dream city” 
+                  p.readiness Готовність: Побудовано
+                  p.price м² від: 1,150$
+            li.our-projects__item
+              a(href="#").our-projects__link
+                .our-projects__link--img
+                  img(src="./assets/images/residential-complex2.jpg", alt="")
+                .our-projects__link--text 
+                  p.name жк “сакура”  
+                  p.readiness Готовність: Побудовано
+                  p.price м² від: 1,150$
+            li.our-projects__item
+              a(href="#").our-projects__link
+                .our-projects__link--img
+                  img(src="./assets/images/residential-complex3.jpg", alt="")
+                .our-projects__link--text 
+                  p.name жк “RIVER LAND”
+                  p.readiness Готовність: Побудовано
+                  p.price м² від: 1,150$
+            li.our-projects__item
+              a(href="#").our-projects__link
+                .our-projects__link--img
+                  img(src="./assets/images/cottage1.jpg", alt="")
+                .our-projects__link--text 
+                  p.name ТАУНХАУС “ДУЛОВА” 
+                  p.readiness Готовність: Побудовано
+                  p.price м² від: 1,150$
+            li.our-projects__item
+              a(href="#").our-projects__link
+                .our-projects__link--img
+                  img(src="./assets/images/cottage2.jpg", alt="")
+                .our-projects__link--text 
+                  p.name ТАУНХАУС “ДЖЕРЕЛЬНа”
+                  p.readiness Готовність: Побудовано
+                  p.price м² від: 1,150$
+            li.our-projects__item
+              a(href="#").our-projects__link
+                .our-projects__link--img
+                  img(src="./assets/images/cottage3.jpg", alt="")
+                .our-projects__link--text 
+                  p.name ТАУНХАУС “ВИШНЕВИЙ” 
+                  p.readiness Готовність: Побудовано
+                  p.price м² від: 1,150$
+          
+
+
+      .our-projects__reviews 
+        p відгуки про забудовника “gazda” ви можете пергелянути &nbsp;
+        a(href="https://www.google.com/search?rlz=1C1CHBD_ruUA936UA936&tbs=lf:1,lf_ui:2&tbm=lcl&sxsrf=AOaemvIcRPVAu2Bs3RTWFT_VLpAXnEtHEQ:1635318438509&q=%D0%B7%D0%B0%D0%B1%D1%83%D0%B4%D0%BE%D0%B2%D0%BD%D0%B8%D0%BA+%D0%B3%D0%B0%D0%B7%D0%B4%D0%B0+%D1%83%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4&rflfq=1&num=10&ved=2ahUKEwjor_z0g-rzAhXQAxAIHYjMBR4QtgN6BAgQEAQ#rlfi=hd:;si:6354389004188635056,l,Ci7Qt9Cw0LHRg9C00L7QstC90LjQuiDQs9Cw0LfQtNCwINGD0LbQs9C-0YDQvtC0WjAiLtC30LDQsdGD0LTQvtCy0L3QuNC6INCz0LDQt9C00LAg0YPQttCz0L7RgNC-0LSSARRjb25zdHJ1Y3Rpb25fY29tcGFueaoBJxABKiMiH9C30LDQsdGD0LTQvtCy0L3QuNC6INCz0LDQt9C00LAoIg;mv:[[48.6510763,22.311935],[48.5910716,22.2668911]]" target="_blank") тут 
+  
+    .developer-awards 
+      .developer-awards__title(data-span-entry1)
+        h2 Якщо Ви десь почуєте фразу "Найкраще житло в Ужгороді", "Надійний забудовник в Ужгороді" - це 100% про нас
+      ul.developer-awards__list
+        li.developer-awards__item 
+          img(src="./assets/images/award.jpg", alt="")
+        li.developer-awards__item 
+          img(src="./assets/images/award.jpg", alt="")
+        li.developer-awards__item 
+          img(src="./assets/images/award.jpg", alt="")
+        li.developer-awards__item 
+          img(src="./assets/images/award.jpg", alt="")
+        li.developer-awards__item 
+          img(src="./assets/images/award.jpg", alt="")
+        li.developer-awards__item 
+          img(src="./assets/images/award.jpg", alt="")
+  
+    .service.developer-object
+      .service__title(data-span-entry1)
+        h2 Кожен об'єкт будівельної компанії "GAZDA" - відображення сучасності та якості
+      .service__notes(data-span-entry1)
+        p Більше 12 років плідної праці на ринку нерухомості та більш ніж 2000 щасливих власників своєї нерухомості
+      .service__img
+        img(data-paralax src="./assets/images/developer.jpg", alt="")
+    .developer-advertising__container 
+      .developer-advertising__text 
+        p Ми будуємо унікальне інноваційне житло, розважальні та торгові центри, які відповідають вимогам сучасної людини
+      .developer-advertising__text--little 
+        p Наші будівлі доводять, що ми знаємо як забезпечити якість, зручність, гармонію і комфорт вашого життя та роботи
+    .developer-advertising__title(data-span-entry1) 
+      p Просторе й тепле помешкання з великими кімнатами, гарними краєвидами, зручним розташуванням в місті або власне житло з басейном  - це, мабуть, мрія кожного з нас. І ми втілюємо ці мрії в реальність
+
+    .post-service.developer-bonuses
+      .post-service__content
+        .post-service__img
+          img(src="./assets/images/developer2.jpg", alt="")
+        .post-service__list
+          .post-service__title
+            h3 Декілька бонусів для тих, хто ще вагається стати нашим клієнтом:
+          ul
+            li.post-service__item 
+              .post-service__item--number 1
+              .post-service__item--text Можливість оплати частинами (мінімальний перший внесок – 30-50%)
+            li.post-service__item 
+              .post-service__item--number 2
+              .post-service__item--text Розтермінування виплати до 20 років
+            li.post-service__item 
+              .post-service__item--number 3
+              .post-service__item--text Ми повернемо кошти у повному обсязі, якщо придбаний об’єкт нерухомості Вам не сподобається
+  
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+

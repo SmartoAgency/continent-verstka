@@ -1,0 +1,28 @@
+.commercial-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  @include to(575px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__text {
+    width: 49%;
+    font-size: 38px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #343434;
+    @include to(1440px) {
+      font-size: 28px;
+    }
+    @include to(992px) {
+      font-size: 24px;
+    }
+    @include to(575px) {
+      font-size: 20px;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Галерея'
+    var id_page = 'gallery'
+    var class_page = 'gallery'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/gallery.js')
+  script(defer src='./assets/scripts/footer.js')
+block content
+  section.panorama-content
+    include ../includes/breadcrumbs.pug
+    .documents-content
+      .documents-sticker
+        h5 gallery
+    
+    .swiper.mySwiper.js-swiper
+      .swiper-wrapper
+        .swiper-slide
+          img(src="./assets/images/gallery1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/benefits1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/gallery1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/benefits1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/gallery1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/benefits1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/gallery1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/benefits1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/gallery1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/benefits1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/gallery1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/benefits1.jpg", alt="")
+        
+        
+      .swiper-button-prev
+        <svg  viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle r="30" transform="matrix(-1 0 0 1 30 30)" fill="#79B43E"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M25.1243 30.7362L37.0908 30.7362L37.0908 29.2638L25.1243 29.2638L29.8225 24.5208L28.8645 23.4546L22.909 29.4669L22.909 30.5331L28.8645 36.5455L29.8225 35.4792L25.1243 30.7362Z" fill="#F0F0F0"/>
+        </svg>
+
+      .swiper-button-next
+        <svg  viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="30" r="30" fill="#79B43E"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M34.8757 30.7362L22.9092 30.7362L22.9092 29.2638L34.8757 29.2638L30.1775 24.5208L31.1355 23.4546L37.091 29.4669L37.091 30.5331L31.1355 36.5455L30.1775 35.4792L34.8757 30.7362Z" fill="#F0F0F0"/>
+        </svg>
+
+
+      //- .swiper-pagination
+      .gallery-nav
+        .gallery-nav__current
+          span(data-first-digit) 
+          span(data-second-digit) 
+        .gallery-nav__all
+
+
+
+
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+

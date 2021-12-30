@@ -1,0 +1,138 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'новини та акції'
+    var id_page = 'page-news'
+    var class_page = 'page-news'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/filter.js')
+  script(defer src='./assets/scripts/news.js')
+  script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
+block arrow 
+  +svg('scroll-down').js-scroll-down
+
+block content
+  include ../includes/breadcrumbs.pug
+ 
+  section.documents-content
+    .documents-sticker
+      h5 News & offers
+    h1.documents-title(data-span-entry2) новини та акції
+    .filter
+      .select
+        .select__year(data-select data-type="year")
+          input(type="hidden" data-type="year")
+          .select__year--selected(data-value="null") роки
+          ul.select__year--list.filter-form
+            li.select__year--item(data-value="null") роки
+            li.select__year--item(data-value="2021") 2021
+            li.select__year--item(data-value="2020") 2020
+            li.select__year--item(data-value="2019") 2019
+            li.select__year--item(data-value="2018") 2018
+        .select__month(data-select data-type="month")
+          input(type="hidden" data-type="month")
+          .select__month--selected(data-value="null") всі місяці
+          ul.select__month--list.js-filter
+            li.select__month--item(data-value="null") всі місяці
+            li.select__month--item(data-value="9") вересень
+            li.select__month--item(data-value="8") серпень
+            li.select__month--item(data-value="7") липень
+            li.select__month--item(data-value="6") червень
+            li.select__month--item(data-value="5") травень
+            li.select__month--item(data-value="4") квітень
+            li.select__month--item(data-value="3") березень
+            li.select__month--item(data-value="2") лютий
+            li.select__month--item(data-value="1") січень
+            li.select__month--item(data-value="12") ГРУДЕНЬ
+            li.select__month--item(data-value="11") ЛИСТОПАД
+            li.select__month--item(data-value="10") ЖОВТЕНЬ
+      .contacts__link
+        a(href="building.html").realty__link
+          span.realty__text хід будівництва
+    ul.news-content__list
+      li.news-content__item(data-filter-item data-month="10" data-year="2021" data-type="11")
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/news1.jpg", alt="")
+          .news-content__date 30.11.2021
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+      li.news-content__item.news-content__item--offer(data-filter-item data-month="10" data-year="2021")
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/main-news2.jpg", alt="")
+          .news-content__date 30.10.2021
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+      li.news-content__item(data-filter-item data-month="9" data-year="2021" data-type="9")
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/main-news3.jpg", alt="")
+          .news-content__date 30.09.2021
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+      li.news-content__item(data-filter-item data-month="8" data-year="2020" data-type="8")
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/main-news1.jpg", alt="")
+          .news-content__date 30.08.2020
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+      li.news-content__item(data-filter-item data-month="7" data-year="2020" data-type="7")
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/news1.jpg", alt="")
+          .news-content__date 30.07.2020
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+      li.news-content__item(data-filter-item data-month="6" data-year="2019" data-type="6")
+        a(href="single-news.html").news-content__link
+          .news-content__img 
+            img(src="./assets/images/main-news2.jpg", alt="")
+          .news-content__date 30.06.2019
+          .news-content__description 
+            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
+            .button--skoll-arrow
+              +svg('arrow-next').swiper-slide-arrow
+
+    .plagination
+      .plagination__list
+        .plagination__item.plagination__item--current 1
+        .plagination__item 2
+        .plagination__item 3
+        .plagination__item 4
+block header
+  include ../includes/header.pug
+block footer
+  include ../includes/footer.pug
+
+
+

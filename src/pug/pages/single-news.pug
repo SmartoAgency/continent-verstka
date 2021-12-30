@@ -1,0 +1,53 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Будівництво ЖК Парк Ленд розпочато у 2 кварталі 2018 року'
+    var id_page = 'page-single-news'
+    var class_page = 'page-single-news'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      {
+        label: 'новини та акції',
+        link: pagesLink[0].news
+      }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
+block arrow 
+  +svg('scroll-down').js-scroll-down 
+block content
+  //- include ../includes/breadcrumbs.pug
+  section.single-news
+    include ../includes/breadcrumbs.pug
+    .documents-content
+      .documents-sticker
+        h5 30.11.2021
+      .single-container 
+        h1.single-container__title Акція! Прибай квартиру до 02.12.10 та отримай паркомісце зі знижкою 60%
+        .single-container__img.single-container__img--offer 
+          img(data-paralax src="./assets/images/main-news2.jpg", alt="")
+        p.single-container__text Park Land розташований по вул. Легоцького, у спальному районі, який має розвинену інфраструктуру і продовжує активно розростатися. Комплекс створений для тих, хто хоче комфорту і спокою. До центру міста – лише 3 км. Для власників приватного транспорту на території комплексу передбачений наземний багаторівневий паркінг.
+        p.single-container__text В комплексі запроектовано великий внутрішній двір. Його площа становить близько 2 га. Більшість забудовників на такій ділянці побудували б ще понад 300 квартир, але Будівельна компанія Gazda ставить собі за мету продавати не квадратні метри, а комфортне середовище і завоювати серця клієнтів не кількістю, а якістю.
+        p.single-container__text Тому у внутрішньому дворі облаштовують локації для ігор та відпочинку  для різних вікових категорій мешканців.
+        p.single-container__text Давно хотіли в спортзал, але не вистачає часу? Не проблема – у вас буде свій спортивний майданчик з тренажерами. Адже що може бути краще, ніж спорт на свіжому повітрі? Ми хочемо, щоб відпочити могли не тільки дітки, а і батьки, тому продумали і зони відпочинку для дорослих. Ви зможете провести час із рідними, близькими, і насолодитися атмосферою міні-пікніків не шукаючи вільного простору десь за містом.
+        a(href="#").single-container__link-next 
+          span наступна новина
+
+block header
+  include ../includes/header.pug
+block footer
+  include ../includes/footer.pug
+
+
+

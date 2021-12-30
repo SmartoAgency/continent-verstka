@@ -1,0 +1,57 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'пост сервис'
+    var id_page = 'service'
+    var class_page = 'service'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/map.js')
+  script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
+block arrow 
+  +svg('scroll-down').js-scroll-down 
+block content
+  include ../includes/breadcrumbs.pug
+  section.documents-content
+    .documents-sticker
+      h5 post service
+    h1.documents-title(data-span-entry2) пост сервіс
+    .service
+      .service__title
+        h2(data-span-entry2) Будівельна компанія GAZDA відповідально відноситься до будівництва кожного об'єкта:
+      div(data-span-entry2)
+        .service__notes
+          p Ми використовуємо якісні матеріали, новітні технології та працюємо з найкращими спеціалістами
+      .service__img(data-span-entry5)
+        img(src="./assets/images/service.jpg", alt="" data-paralax)
+      .service__title
+        h2(data-span-entry1) Саме тому, сміливо можемо заявляти, що забудовник бере на себе 2 роки повної гарантії по кожному комплексу, який побудував
+      .service__link
+        a(href='#').realty__link
+          span.realty__text обрати нерухомість
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+

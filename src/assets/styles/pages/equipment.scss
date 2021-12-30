@@ -1,0 +1,184 @@
+.accordion {
+  width: 47.5%;
+  @include to(575px) {
+    width: 100%;
+  }
+  &-item {
+    border-bottom: 1px solid #cbd2c5;
+    position: relative;
+    transition: $transition-fuction;
+    overflow: hidden;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    @include to(1440px) {
+      margin-bottom: 30px;
+    }
+    @include to(575px) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &.is-open {
+      border-bottom: none;
+      // margin-bottom: 0;
+      .accordion-toggle {
+        border-bottom: 1px solid $green;
+        padding-bottom: 10px;
+      }
+      &:hover {
+        border-bottom: none;
+      }
+    }
+    &:hover {
+      border-bottom: 1px solid $green;
+    }
+    // &.is-open:hover {
+    //   @include from(992px) {
+    //     border-bottom: 1px solid #000000;
+    //     .accordion-toggle {
+    //       color: $black;
+    //     }
+    //     .accordion-arrow {
+    //       svg {
+    //         fill: $white;
+    //         .accordion-arrow-stroke {
+    //           stroke: $white;
+    //           fill: $black;
+    //         }
+    //         circle {
+    //           stroke: $black;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+  }
+  &-toggle {
+    // display: block;
+    cursor: pointer;
+    margin: 0;
+    border: 0;
+    text-align: left;
+    transition: $transition-fuction;
+    font-size: 28px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #2d2d2d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include to(1440px) {
+      font-size: 19px;
+    }
+    @include to(575px) {
+      font-size: 18px;
+    }
+    .is-open > & {
+      .plus::before {
+        height: 0;
+      }
+    }
+  }
+
+  // padding: 21px;
+  .panel-container {
+    p {
+      font-size: 20px;
+      line-height: 150%;
+      color: #435055;
+      padding-top: 20px;
+      @include to(1440px) {
+        font-size: 16px;
+        padding-top: 10px;
+      }
+      @include to(575px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 20px;
+    transition: $transition-fuction;
+    pointer-events: none;
+
+    .is-open > & {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.accordion-link {
+  margin: 30px 0 40px 0;
+  @include to(1440px) {
+    margin: 20px 0 0 0;
+  }
+}
+
+.accordion-plus {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  @include to(1440px) {
+    width: 11px;
+    height: 11px;
+  }
+}
+.plus {
+  position: absolute;
+  right: -7px;
+  top: 0px;
+  width: 15px;
+  height: 15px;
+  @include to(1440px) {
+    width: 11px;
+    height: 11px;
+    right: -5.5px;
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    left: 0;
+    content: ' ';
+    height: 15px;
+    width: 1px;
+    background-color: #333;
+    transition: $transition-fuction;
+    @include to(1440px) {
+      height: 11px;
+    }
+  }
+  &:before {
+    transform: rotate(0deg);
+  }
+  &:after {
+    transform: rotate(-90deg);
+  }
+}
+
+.equipment-img {
+  height: 650px;
+  background: $black;
+  @include to(1440px) {
+    height: 470px;
+  }
+  @include to(575px) {
+    display: none;
+  }
+}
+.img-mobile {
+  display: none;
+  @include to(575px) {
+    display: flex;
+    width: 100%;
+    height: 390px;
+    margin-top: 30px;
+  }
+}
+#equipment.service__link {
+  margin-top: 20px;
+}

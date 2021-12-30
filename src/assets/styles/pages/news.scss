@@ -1,0 +1,539 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+  @include to(575px) {
+    flex-direction: column;
+  }
+  .realty__link {
+    margin-right: 0;
+  }
+}
+.select {
+  display: flex;
+  @include to(320px) {
+    flex-direction: column;
+  }
+}
+.select__year {
+  position: relative;
+  margin-right: 60px;
+  cursor: pointer;
+  z-index: 20;
+  @include to(1440px) {
+    margin-right: 40px;
+  }
+  @include to(575px) {
+    margin-right: 10px;
+  }
+  @include to(320px) {
+    width: 208px;
+    margin-bottom: 20px;
+  }
+  &--list {
+    width: 236px;
+    height: auto;
+    padding-top: 20px;
+    background: #f0f0f0;
+    border-radius: 0 0 40px 40px;
+    visibility: hidden;
+    opacity: 0;
+    // transition: $transition-fuction;
+    position: absolute;
+    top: 40px;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+    @include to(1440px) {
+      width: 171px;
+      top: 30px;
+      padding-top: 10px;
+    }
+    @include to(992px) {
+      width: 150px;
+    }
+    @include to(575px) {
+      width: 155px;
+    }
+    @include to(320px) {
+      width: 208px;
+    }
+  }
+  &--item {
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #2d2d2d;
+    transition: $transition-fuction;
+    @include to(1440px) {
+      padding: 10px 40px;
+      font-size: 12px;
+      &:last-child {
+        padding-bottom: 20px;
+      }
+    }
+    @include to(992px) {
+      padding: 10px 30px;
+    }
+
+    &:hover {
+      @include from(992px) {
+        color: $green;
+      }
+    }
+  }
+  &--selected {
+    width: 236px;
+    height: 65px;
+    background: #f0f0f0;
+    border-radius: 40px;
+    display: flex;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #2d2d2d;
+    // padding: 21px 50px;
+    padding-left: 50px;
+    align-items: center;
+    transition: $transition-fuction;
+    @include to(1440px) {
+      width: 171px;
+      height: 50px;
+      font-size: 12px;
+      padding-left: 40px;
+    }
+    @include to(992px) {
+      width: 150px;
+      height: 45px;
+      padding-left: 30px;
+    }
+    @include to(575px) {
+      width: 155px;
+    }
+    @include to(320px) {
+      width: 208px;
+      height: 50px;
+    }
+    &::after {
+      content: '';
+      width: 12px;
+      height: 13px;
+      background: url('../images/filter-arrow.svg') no-repeat center / cover;
+      margin-left: 90px;
+      // transition: all 0.1s ease;
+      position: absolute;
+      top: 50%;
+      right: 50px;
+      transform: translate(0, -50%);
+      @include to(1440px) {
+        width: 9px;
+        height: 10px;
+        right: 40px;
+      }
+      @include to(992px) {
+        width: 8px;
+        height: 9px;
+        right: 30px;
+      }
+    }
+  }
+  &:hover {
+    .select__year--selected::after {
+      transform: rotate(180deg);
+      transform: translate(0, -50%) rotate(180deg);
+    }
+    // .select__year--selected {
+    //   // border-radius: 30px 30px 0 0;
+    // }
+    .select__year--list {
+      visibility: visible;
+      opacity: 1;
+      // height: auto;
+    }
+  }
+}
+
+.select__month {
+  position: relative;
+  cursor: pointer;
+  @include to(320px) {
+    width: 208px;
+  }
+  &--list {
+    position: absolute;
+    top: 40px;
+    z-index: 20;
+    width: 236px;
+    padding-top: 20px;
+    // height: 0px;
+    height: auto;
+    // overflow: hidden;
+    background: #f0f0f0;
+    border-radius: 0 0 40px 40px;
+    visibility: hidden;
+    opacity: 0;
+    // transition: $transition-fuction;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+    @include to(1440px) {
+      width: 171px;
+      top: 30px;
+      padding-top: 10px;
+    }
+    @include to(992px) {
+      width: 150px;
+      top: 30px;
+      padding-top: 10px;
+    }
+    @include to(320px) {
+      width: 208px;
+      // position: initial;
+    }
+  }
+  &--item {
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #2d2d2d;
+    padding: 0px 50px 21px 50px;
+    transition: $transition-fuction;
+    @include to(1440px) {
+      padding: 10px 40px;
+      font-size: 12px;
+      &:last-child {
+        padding-bottom: 20px;
+      }
+    }
+    @include to(992px) {
+      padding: 10px 30px;
+    }
+    &:hover {
+      @include from(992px) {
+        color: $green;
+      }
+    }
+  }
+  &--selected {
+    width: 236px;
+    height: 65px;
+    background: #f0f0f0;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #2d2d2d;
+    padding-left: 50px;
+    // padding: 21px 50px;
+    transition: $transition-fuction;
+    @include to(1440px) {
+      width: 171px;
+      height: 50px;
+      font-size: 12px;
+      padding-left: 40px;
+    }
+    @include to(992px) {
+      width: 150px;
+      height: 45px;
+      padding-left: 30px;
+    }
+    @include to(320px) {
+      width: 208px;
+      height: 55px;
+    }
+    &::after {
+      content: '';
+      width: 12px;
+      height: 13px;
+      background: url('../images/filter-arrow.svg') no-repeat center / cover;
+      margin-left: 45px;
+      // transition: $transition-fuction;
+      position: absolute;
+      top: 50%;
+      right: 50px;
+      transform: translate(0, -50%);
+      @include to(1440px) {
+        width: 9px;
+        height: 10px;
+        right: 40px;
+      }
+      @include to(992px) {
+        width: 8px;
+        height: 9px;
+        right: 30px;
+      }
+    }
+  }
+  &:hover {
+    .select__month--selected::after {
+      transform: translate(0, -50%) rotate(180deg);
+    }
+    // .select__month--selected {
+    //   // border-radius: 40px 40px 0 0;
+    // }
+    .select__month--list {
+      visibility: visible;
+      opacity: 1;
+      // height: auto;
+    }
+  }
+}
+
+.news-content__list {
+  width: calc(100% + 60px);
+  display: flex;
+  flex-wrap: wrap;
+  // margin-left: -30px;
+  margin: 60px 0 0 -30px;
+  @include to(1440px) {
+    width: calc(100% + 40px);
+    margin: 45px 0 0 -20px;
+  }
+  @include to(992px) {
+    width: calc(100% + 20px);
+    margin: 40px 0 0 -20px;
+  }
+  @include to(575px) {
+    width: 100%;
+    margin: 40px 0 0 0;
+  }
+}
+.news-content__item {
+  --offset: 60px;
+  width: calc(50% - var(--offset));
+  margin-left: calc(var(--offset) / 2);
+  margin-right: calc(var(--offset) / 2);
+  margin-bottom: 80px;
+  @include to(1440px) {
+    --offset: 40px;
+    margin-bottom: 60px;
+  }
+  @include to(992px) {
+    --offset: 20px;
+  }
+  @include to(575px) {
+    --offset: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+}
+.news-content__item--offer {
+  position: relative;
+  &::before {
+    content: '';
+    display: inline-block;
+    background: url('../images/star-offer.svg') no-repeat center / cover;
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    right: -32px;
+    top: -32px;
+    z-index: 2;
+    @include to(1440px) {
+      width: 47px;
+      height: 47px;
+      right: -23.5px;
+      top: -23.5px;
+    }
+    @include to(992px) {
+      width: 40px;
+      height: 40px;
+      right: -20px;
+      top: -20px;
+    }
+  }
+}
+.news-content__link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+.news-content__img {
+  overflow: hidden;
+  height: 400px;
+  margin-bottom: 50px;
+  @include to(1920px) {
+    height: 300px;
+  }
+  @include to(1440px) {
+    height: 216px;
+    margin-bottom: 40px;
+  }
+  @include to(992px) {
+    height: 190px;
+    margin-bottom: 30px;
+  }
+  @include to(575px) {
+    height: 190px;
+    margin-bottom: 20px;
+  }
+  &:hover {
+    @include from(992px) {
+      & img {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+.news-content__img img {
+  transition: $transition-fuction;
+}
+.news-content__date {
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #435055;
+  margin-bottom: 15px;
+  @include to(1440px) {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  @include to(992px) {
+    font-size: 12px;
+  }
+}
+.news-content__description {
+  display: flex;
+  justify-content: space-between;
+  &:hover {
+    @include from(992px) {
+      .button--skoll-arrow::before {
+        transform: translate3d(0, 100%, 0);
+      }
+    }
+  }
+}
+
+.news-content__text {
+  width: 77%;
+  font-size: 24px;
+  line-height: 130%;
+  color: #2d2d2d;
+  @include to(1440px) {
+    font-size: 17px;
+  }
+  @include to(992px) {
+    font-size: 15px;
+  }
+  @include to(575px) {
+    font-size: 16px;
+  }
+}
+.button--skoll-arrow {
+  overflow: hidden;
+  background: #679836;
+  position: relative;
+  display: inline-block;
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  border-radius: 50%;
+  @include to(1440px) {
+    width: 50px;
+    height: 50px;
+  }
+  @include to(992px) {
+    width: 45px;
+    height: 45px;
+  }
+  &::before {
+    content: '';
+    background: $green;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  // &:hover::before {
+  //   transform: translate3d(0, 100%, 0);
+  // }
+}
+.swiper-slide-arrow {
+  width: 15px;
+  height: 16px;
+  stroke: #f0f0f0;
+  stroke-width: 11px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include to(1440px) {
+    width: 12px;
+    height: 11px;
+  }
+}
+
+.plagination {
+  margin-bottom: 50px;
+  @include to(575px) {
+    margin-bottom: 30px;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    width: 65px;
+    height: 65px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #2d2d2d;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: $transition-fuction;
+    @include to(1440px) {
+      width: 50px;
+      height: 50px;
+      font-size: 14px;
+      margin-right: 15px;
+    }
+    @include to(992px) {
+      width: 45px;
+      height: 45px;
+      font-size: 12px;
+    }
+    @include to(575px) {
+      margin-right: 10px;
+    }
+    &:hover {
+      @include from(992px) {
+        border: 1px solid #79b43e;
+        background: #ffffff;
+      }
+    }
+    &--current {
+      background: $green;
+      color: #ffffff;
+      &:hover {
+        @include from(992px) {
+          color: #2d2d2d;
+        }
+      }
+    }
+  }
+}

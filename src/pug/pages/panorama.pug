@@ -1,0 +1,49 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'панорама 180°'
+    var id_page = 'panorama '
+    var class_page = 'panorama '
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/panorama-new.js')
+  script(defer src='./assets/scripts/footer.js')
+  //- script(defer src='./assets/scripts/panorama.js')
+block content
+  //- include ../includes/breadcrumbs.pug
+  section.panorama-content
+    include ../includes/breadcrumbs.pug
+    .documents-content
+      .documents-sticker
+        h5 panorama 180°
+
+    //- <iframe class="panorama-frame" data-panorama allowfullscreen="" style="border-style:none;" src="./static/panorama/pannellum.htm#panorama=../../assets/images/panorama/panorama-day.jpg&amp;autoLoad=true&amp;preview=https://boston-house.kiev.ua/wp-content/themes/boston/assets/images/panorama/preiew.jpg"></iframe>
+    .panorama-wrapper.panorama-frame
+      .panorama
+        .panorama__image
+          img(src="./assets/images/panorama/panorama.jpg", alt="")
+        .panorama__nav
+          .panorama__nav-img
+            img(src="./assets/images/panorama/view-south-thumb.jpg", alt="")
+          .panorama__nav-scope
+
+block header
+  include ../includes/header.pug
+
+

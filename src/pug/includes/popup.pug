@@ -1,0 +1,37 @@
+.building-popup(style="display: none;" data-build-popup-container)
+      .building-popup__container
+        .building-popup__close(data-close-build-popup)
+          .green-hover
+            +svg('close')
+        .building-sticker
+          h5 
+            span(data-build-date) 18 &nbsp;
+            span(data-build-month) червня &nbsp;
+            span(data-build-year) 2021
+        .building-video.js-show-video-btn
+          .building-video__btn 
+            <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 15V0L12 7.5L0 15Z" fill="#79B43E"/>
+            </svg>
+          p Переглянути відеозвіт
+
+
+        .swiper.buildingSwiper
+          .swiper-wrapper
+          //-   .swiper-slide
+          //-     img(src="./assets/images/building1.jpg", alt="")
+          //-   .swiper-slide
+          //-     img(src="./assets/images/building2.jpg", alt="")
+          //-   .swiper-slide
+          //-     img(src="./assets/images/building3.jpg", alt="")
+          //-   .swiper-slide
+          //-     img(src="./assets/images/building4.jpg", alt="")
+          //-   .swiper-slide
+          //-     <iframe class="building-swiper-video" width="560" height="315" src="https://www.youtube.com/embed/xModD1ROH5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          .swiper-pagination-container
+            .swiper-pagination
+            .swiper-button-container
+              .swiper-button-prev
+                +svg('arrow-prev')
+              .swiper-button-next 
+                +svg('arrow-next')

@@ -1,0 +1,155 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Iнфраструктура '
+    //- var id_page = 'infrastructure'
+    //- var class_page = 'infrastructure'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/map.js')
+  script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/infrastructure.js')
+  
+  //- script(defer src='./assets/scripts/footer.js')
+block arrow 
+  +svg('scroll-down').js-scroll-down 
+block content
+  include ../includes/breadcrumbs.pug
+  section.documents-content.infrastructure-content
+    .documents-sticker
+      h5 Infrastructure
+    h1.documents-title(data-span-entry2) Iнфраструктура
+    .infrastructure__title(data-span-entry2)
+      h2 Сучасне житло – це не тільки квартира чи будинок, а і те, що знаходиться навколо
+  .map.map-infrastructure(width="500" height="500px")
+    #map(width="500" height="500px")
+    .designations
+      .designations--mobile.js-open-list
+        span Умовні позначення
+        img(src="./assets/images/arrow-developer.svg", alt="").our-projects__arrow
+      ul.designations__list
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item.designations__item--active
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+        li.designations__item
+          img(class="marker" src="./assets/images/markers/kindergarden.svg", alt="")
+          |Дитячий садочок
+  .infrastructure
+    .infrastructure__cart
+      .infrastructure__cart-title 
+        h4 ДВІР-ПАРК
+      .infrastructure__cart-description
+        .infrastructure__cart-text
+          p В ЖК PARK LAND запроектовано великий внутрішній ДВІР-ПАРК. Його площа становить близько 2 га. У внутрішньому дворі облаштуємо локації для ігор та відпочинку для різних вікових категорій мешканців
+        .infrastructure__cart-img
+          img(data-paralax src="./assets/images/infrastructure1.jpg", alt="")
+    .infrastructure__cart
+      .infrastructure__cart-title 
+        h4 спорт-зони
+      .infrastructure__cart-description
+        .infrastructure__cart-text
+          p Давно хотіли в спортзал, але не вистачає часу? Не проблема – у вас буде свій спортивний майданчик з тренажерами. Адже що може бути краще, ніж спорт на свіжому повітрі?
+        .infrastructure__cart-img 
+          img(data-paralax src="./assets/images/infrastructure2.jpg", alt="")
+    .infrastructure__cart
+      .infrastructure__cart-title 
+        h4 МІСЦЕ ДЛЯ ВІДПОЧИНКУ
+      .infrastructure__cart-description
+        .infrastructure__cart-text
+          p Ми хочемо, щоб відпочити могли не тільки дітки, а і батьки, тому продумали і зони відпочинку для дорослих. Ви зможете провести час із рідними, близькими, і насолодитися атмосферою міні-пікніків не шукаючи вільного простору десь за містом
+        .infrastructure__cart-img 
+          img(data-paralax src="./assets/images/infrastructure3.jpg", alt="")
+    .infrastructure__cart.infrastructure__cart--video
+      .infrastructure__cart-title 
+        h4 ДИТЯЧІ МАЙДАНЧИКИ
+      .infrastructure__cart-description
+        .infrastructure__cart-text
+          p Будівельна компанія «Gazda» дбає про комфортні умови Вашого життя в наших жк створюючи дозвілля для найменших мешканців, яке є:
+        ul.infrastructure__cart--list 
+          li.infrastructure__cart--item
+            .item__number 1
+            .item__text Цікавим та різноманітним
+          li.infrastructure__cart--item
+            .item__number 2
+            .item__text Функціональним
+          li.infrastructure__cart--item
+            .item__number 3
+            .item__text Безпечним
+          li.infrastructure__cart--item
+            .item__number 4
+            .item__text Ергономічним
+          li.infrastructure__cart--item
+            .item__number 5
+            .item__text З використанням безпечних матеріалів
+          li.infrastructure__cart--item
+            .item__number 6
+            .item__text З продуманною колясочною   та велосипедною 
+        .infrastructure__cart-text
+          p В закритому дворі з цілодобовим відеоспостереженням Ви можете бути спокійними та впевненими — ваші діти зростають в правильному середовищі. Оточені зеленню майданчики в наших комплексах ми обладнуємо високоякісним покриттям – тачпадом. Він пом’якшує ненавмисне падіння, а теплоізоляція від грунту дозволяє малюкам сидіти на землі, а мами можуть не переживати, що це нашкодить здоров’ю дитини 
+        .infrastructure__cart-video
+          <iframe class="infrastructure-video" width="560" height="315" src="https://www.youtube.com/embed/4F_fXU0Fbrg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    .infrastructure__cart
+      .infrastructure__cart-title 
+        h4 ПАРКІНГ
+      .infrastructure__cart-description
+        .infrastructure__cart-text
+          p Паркінг є однією із ключових ознак класу житлового комплексу та турботи про своїх мешканців. Безпека наших мешканців –  в пріоритеті.
+          p Тому в ЖК Park Land ми максимально продумали паркінги з відеонаглядом, де можна спокійно залишати машини. Ми обрали максимально зручну для мешканців модель: просторий прибудинковий паркінг або власний гараж
+        .infrastructure__cart-img 
+          img(data-paralax src="./assets/images/infrastructure4.jpg", alt="")
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+

@@ -1,0 +1,61 @@
+extends ../layout/main
+	
+block meta
+  title= '404'
+  meta(name='description', content='')
+block head
+  link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  //- script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/menu.js')
+
+block content
+  .container-404
+    .container-404__img
+      img(src="./assets/images/404.png", alt="")
+    h4.text-404 Упс, щось пішло не так :(
+    .container-404__btn
+      .btn-404
+        a(href='#').btn-404__link
+          span.btn-404__text Повернутись назад
+      .btn-404
+        a(href='index.html').btn-404__link
+          span.btn-404__text на головну
+      
+
+	
+block header
+  include ../includes/header.pug
+
+ 
+//- block meta
+//-   title= 'Главная'
+//-   meta(name='description', content='')
+//- block head
+//-     link(rel='stylesheet', href="./assets/styles/main.min.css")
+//- block scripts
+//-   script(defer src='./assets/scripts/vendors.bundle.js')
+//-   script(defer src='./assets/scripts/index.bundle.js')
+//-   //- script(defer src='./assets/scripts/index.js')
+//-   script(defer src='./assets/scripts/libs.js')
+//-   //- script(defer src='./assets/scripts/header.js')
+//-   //- script(defer src='./assets/scripts/home.js')
+//-   script(defer src='./assets/scripts/script.js')
+//- block content 
+//-   .container-404
+//-     h1.title-404 404
+//-     h2.text-404 Упс, щось пішло не так =(
+//- 	.link-container
+//-   	a(href="#").link-404 повернутися Назад
+//-  	  a(href="index.html").link-404 На головну
+	
+//- block header
+//-   include ../includes/header.pug
+
+
+
+

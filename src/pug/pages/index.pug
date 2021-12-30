@@ -1,0 +1,199 @@
+extends ../layout/main
+block variable
+block meta
+  title= 'Main'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
+  script(defer src='./assets/scripts/animation.js')
+block arrow 
+    +svg('scroll-down').js-scroll-down
+block content
+  section.main-content 
+    .main-content-description 
+      .image
+        img(src="./assets/images/main1.jpg", alt="" data-paralax)
+      .text 
+        h1.title PARK LAND
+        .choose-realty
+          p Затишний житловий комплекс для сімей, у якому кожному буде чим зайнятись
+          a(href='#').realty
+            span обрати нерухомість
+    .main-content-img
+      img(src="./assets/images/main2.png", alt="" data-paralax)
+  section.advantage-content(id="p1") 
+    .advantage-sticker
+      h5 advantages
+    h2.advantage-title переваги жк PArkland
+    ul.advantage-content-list
+      li.advantage-content-item
+        div
+          img(src="./assets/images/benefits1.jpg", alt="" data-paralax)
+          p.description Закритий внутрішній парк
+      li.advantage-content-item
+        div
+          img(src="./assets/images/benefits2.jpg", alt="" data-paralax)
+          p.description Панорамні вікна Salamander
+      li.advantage-content-item
+        div
+          img(src="./assets/images/benefits3.jpg", alt="" data-paralax)
+          p.description Під'їзди, оздоблені під супроводом дизайнера
+      li.advantage-content-item
+        div
+          img(src="./assets/images/benefits4.jpg", alt="" data-paralax)
+          p.description Міжквартирна шумоізоляція і утеплення фасаду за допомогою мінеральної вати
+      li.advantage-content-item
+        div
+          img(src="./assets/images/benefits5.jpg", alt="" data-paralax)
+          p.description Продумана архітектура фасаду
+      li.advantage-content-item
+        div
+          img(src="./assets/images/benefits6.jpg", alt="" data-paralax)
+          p.description Наземний паркінг та гаражі
+      li.advantage-content-item
+        div
+          img(src="./assets/images/benefits7.jpg", alt="" data-paralax)
+          p.description Приміщення для зберігання дитячих візочків та окремо велосипедів
+      li.advantage-content-item
+        div
+          img(src="./assets/images/benefits8.jpg", alt="" data-paralax)
+          p.description Опалення, яке включає теплу підлогу, котел, гребінку на теплу підлогу, бойлер
+
+  section.about-us-content(id="p2")
+    .about-us-sticker
+      h5 about us
+    h2.about-us-title Проєкт в цифрах
+    ul.about-us-list
+      li.about-us-item
+        h6 Початок будівництва
+        p 2 кв 2018
+      li.about-us-item
+        h6 До центру міста
+        p 3 км
+      li.about-us-item
+        h6 Cекцій
+        p 12
+      li.about-us-item
+        h6 Кінець будівництва
+        p 3 кв 2021
+      li.about-us-item
+        h6 Вартість м2 від
+        p 815 $
+      li.about-us-item
+        h6 Поверхів
+        p 9
+
+  section.developer-content
+    .developer-sticker
+      h5 developer
+    .developer-content-description 
+      h2.developer-title забудовник ПРОЄКТУ 
+      p Компанія «Gazda» працює на ринку вже понад п'ять років. Від моменту свого створення фірма змінилася, перетворившись з невеликого підприємства у багатопрофільну компанію. 
+      
+      ul.developer-numbers 
+        li 
+          p.title 20+
+          p.description років на ринку
+        li 
+          p.title 1500+
+          p.description квартир зданих в експлуатацію
+
+      a(href='#').realty
+        span дізнатись більше
+    .developer-content-img 
+      img(src="./assets/images/main-builder.jpg", alt="")
+  section.news-content
+    .news-sticker
+      h5 developer
+    .news-title 
+      h2 останні Новини
+      .swiper-container-arrow
+        .swiper-button-prev
+          +svg('arrow-prev').swiper-button-arrow
+        .swiper-button-next
+          +svg('arrow-next').swiper-button-arrow
+    .news-swiper.mynews-swiper
+      .swiper-wrapper
+        .swiper-slide
+          a(href='#')
+            .swiper-slide-img
+              img(src="./assets/images/main-news1.jpg", alt="")
+            p.date 30.11.2021
+            .description 
+              p Будівництво ЖК Парк Ленд розпочато у 2 кварталі 2018 року на вулиці Легоцького 00 у 2 кварталі 2018 року на вулиці Легоцького 00
+              .button--skoll-arrow
+                +svg('arrow-next').swiper-slide-arrow
+        .swiper-slide 
+          a(href='#')
+            .swiper-slide-img
+              img(src="./assets/images/main-news2.jpg", alt="")
+            p.date 09.11.2021
+            .description 
+              p Завершення будівництва 1 черги  заплановане на 3 квартал 2021 року.
+              .button--skoll-arrow
+                +svg('arrow-next').swiper-slide-arrow
+        .swiper-slide 
+          a(href='#')
+            .swiper-slide-img
+              img(src="./assets/images/main-news3.jpg", alt="")
+            p.date 18.11.2021
+            .description 
+              p Будівництво ЖК Парк Ленд розпочато 
+              .button--skoll-arrow
+                +svg('arrow-next').swiper-slide-arrow
+        .swiper-slide
+          a(href='#')
+            .swiper-slide-img
+              img(src="./assets/images/main-news1.jpg", alt="")
+            p.date 30.11.2021
+            .description 
+              p Будівництво ЖК Парк Ленд розпочато у 2 кварталі 2018 року на вулиці Легоцького 00 у 2 кварталі 2018 року на вулиці Легоцького 00
+              .button--skoll-arrow
+                +svg('arrow-next').swiper-slide-arrow
+
+  section.gallery-content
+    .gallery-sticker
+      h5 GaLlery
+    .gallery-title 
+      h2 фотоГалерея
+      .swiper-container-arrow
+        .swiper-prev
+          +svg('arrow-prev').swiper-arrow
+        .swiper-next
+          +svg('arrow-next').swiper-arrow
+    .gallery-swiper.mygallery-swiper
+      .swiper-wrapper
+        .swiper-slide
+          .swiper-slide-img
+            img(src="./assets/images/main-gallery1.jpg", alt="")
+        .swiper-slide.vertical
+          .swiper-slide-img
+            img(src="./assets/images/benefits3.jpg", alt="")
+        .swiper-slide
+          .swiper-slide-img
+            img(src="./assets/images/main-gallery3.jpg", alt="")
+        .swiper-slide.vertical
+          .swiper-slide-img
+            img(src="./assets/images/benefits2.jpg", alt="")
+        .swiper-slide
+          .swiper-slide-img
+            img(src="./assets/images/main-gallery3.jpg", alt="")
+    
+
+
+
+block header
+  include ../includes/header.pug
+block footer
+  include ../includes/footer.pug
+
+
+
