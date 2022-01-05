@@ -1,5 +1,5 @@
 $default-font: 'Gilroy', sans-serif;
-$default-font2: 'LaserFont', sans-serif;
+$default-font2: 'Gilroy', sans-serif;
 
 // $mc2: #ff554c;
 // $mc3: #e5df06;
@@ -17,42 +17,43 @@ $default-font2: 'LaserFont', sans-serif;
 // $gold: #cfa46e;
 
 $white: #ffffff;
-$text: #595959;
-$grey: #dadadc;
-$orange: #ff5c00;
-$red: #ff2800;
-$black: #2d2d2d;
-$green: #79b43e;
+// $text: #595959;
+$grey: #f3f0ef;
+$red: #e20a0a;
+$yellow: #fec62e;
+$black: #000000;
+$bg-black: #141414;
+$green: #13c05b;
 
 $transition-fuction: all 0.2s ease-in-out;
 
 :root {
   --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
-  --header-h: 120px;
-  --logo-w: 270px;
-  --logo-h: 65px;
+  --header-h: 108px;
+  --logo-w: 157px;
+  --logo-h: 60px;
   // --sliceFigure: 239px;
   // --sliceFigure-big: 541px;
 }
 
-@media screen and (max-width: 1440px) {
-  :root {
-    --header-h: 90px;
-    --logo-w: 191px;
-    --logo-h: 45px;
-  }
-}
-@media screen and (max-width: 992px) {
-  :root {
-    --header-h: 80px;
-    --logo-w: 138px;
-    --logo-h: 31px;
-  }
-}
-@media screen and (max-width: 576px) {
-  :root {
-    --header-h: 75px;
-    --logo-w: 68px;
-    --logo-h: 33px;
-  }
-}
+// @media screen and (max-width: 1440px) {
+//   :root {
+//     --header-h: 90px;
+//     --logo-w: 191px;
+//     --logo-h: 45px;
+//   }
+// }
+// @media screen and (max-width: 992px) {
+//   :root {
+//     --header-h: 80px;
+//     --logo-w: 138px;
+//     --logo-h: 31px;
+//   }
+// }
+// @media screen and (max-width: 576px) {
+//   :root {
+//     --header-h: 75px;
+//     --logo-w: 68px;
+//     --logo-h: 33px;
+//   }
+// }

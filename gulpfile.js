@@ -1,4 +1,4 @@
-const proxy = 'park-land';
+const proxy = 'continent';
 let webPackSetting = true;
 let typeScriptSetting = false;
 
