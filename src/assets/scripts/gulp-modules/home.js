@@ -1,13 +1,12 @@
 $.Tween.propHooks.number = {
-  get: function(tween) {
-    var num = tween.elem.innerHTML.replace(/^[^\d-]+/, ' ');
+  get(tween) {
+    const num = tween.elem.innerHTML.replace(/^[^\d-]+/, ' ');
     return parseFloat(num) || 0;
   },
 
-  set: function(tween) {
-    var opts = tween.options;
-    tween.elem.innerHTML =
-      (opts.prefix || '') + tween.now.toFixed(opts.fixed || 0) + (opts.postfix || '');
+  set(tween) {
+    const opts = tween.options;
+    tween.elem.innerHTML = (opts.prefix || '') + tween.now.toFixed(opts.fixed || 0) + (opts.postfix || '');
   },
 };
 
@@ -51,25 +50,83 @@ $('#num-4')
     },
   );
 
-const swiper = new Swiper('.myProjects-swiper', {
-  speed: 600,
-  parallax: true,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+const swiper = new Swiper('.projects-swiper', {
+  loop: true,
+  spaceBetween: 0,
+  slidesPerView: 1,
+  // autoplay: {
+  //   delay: 100,
+  // },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
   pagination: {
     el: '.swiper-pagination',
-    clickable: true,
+    type: 'fraction',
+    touchStartPreventDefault: false,
+    formatFractionCurrent: addZero,
+    formatFractionTotal: addZero,
   },
+  // thumbs: {
+  //   swiper: swiper2,
+  // },
 });
+function addZero(num) {
+  return num > 9 ? num : `0${num}`;
+}
+
+// tab start
+const tabsBtn = document.querySelectorAll('.tabs__nav-btn');
+const tabsItems = document.querySelectorAll('.tabs__item');
+
+tabsBtn.forEach(onTabClick);
+
+function onTabClick(item) {
+  item.addEventListener('click', () => {
+    const currentBtn = item;
+    const tabId = currentBtn.getAttribute('data-tab');
+    const currentTab = document.querySelector(tabId);
+
+    if (!currentBtn.classList.contains('active')) {
+      tabsBtn.forEach((item) => {
+        item.classList.remove('active');
+      });
+
+      tabsItems.forEach((item) => {
+        item.classList.remove('active');
+      });
+
+      currentBtn.classList.add('active');
+      currentTab.classList.add('active');
+    }
+  });
+}
+document.querySelector('.tabs__nav-btn').click();
+// tab end
+
+// const swiper = new Swiper('.myProjects-swiper', {
+//   speed: 600,
+//   parallax: true,
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true,
+//   },
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true,
+//   },
+// });
 
 // const swiper = new Swiper('.mynews-swiper', {
 //   slidesPerView: 1.1,

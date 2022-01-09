@@ -17,7 +17,7 @@ block scripts
 block arrow 
     //- +svg('scroll-down').js-scroll-down 
 block content
-  //- section.main-content 
+  section.main-content 
     h1.main-content__title Благоустрої за сценарієм вашого життя
     a(href='#').realty
       span Обрати квартиру
@@ -39,11 +39,11 @@ block content
     .our-projects-title-container 
       h2.our-projects__title Наші проекти
       .tab
-        button.tablinks.active Aктивні проекти
+        button.tablinks.tabs__nav-btn(data-tab="#tab_1") Aктивні проекти
           span 5
-        button.tablinks Pеалізовані проекти
+        button.tablinks.tabs__nav-btn(data-tab="#tab_2") Pеалізовані проекти
           span 7
-    .tabcontent
+    .tabcontent.tabs__item(id="tab_1")
       ul.active-project
         li.active-project__item
           a(href="#").active-project__link
@@ -154,81 +154,55 @@ block content
               button.btn-subscribe
                 +svg('plus')
                 span Підписатись на розсилку
-    .tabcontent
-      
-
-
-      //- .projects-swiper.myProjects-swiper
-      //-   .swiper-wrapper
-      //-     .swiper-slide
-      //-       .swiper-slide-img
-      //-         img(src="./assets/images/project1.jpg", alt="")
-      //-       a(href="#") Bazar Vokzal 
-      //-       p Цивілізація – це Continent.
-      //-       p Нова візитка бучі!
-      //-     .swiper-slide
-      //-       .swiper-slide-img
-      //-         img(src="./assets/images/project2.jpg", alt="")
-      //-       a(href="#") Bazar Vokzal 
-      //-       p Цивілізація – це Continent.
-      //-       p Нова візитка бучі!
-      //- .swiper-button-next      
-      //- .swiper-button-prev
-      //- .swiper-scrollbar
-      .projects-swiper.myProjects-swiper
+    .tabcontent.tabs__item.tabcontent-realized(id="tab_2")
+      .projects-swiper
         .swiper-wrapper
           .swiper-slide
-            .swiper-slide-img
+            .projects-swiper__img
               img(src="./assets/images/project1.jpg", alt="")
-            a(href="#") Bazar Vokzal 
-            p Цивілізація – це Continent.
-            p Нова візитка бучі!
+            .swiper-slide__info
+              a(href="#") Bazar Vokzal 
+              p Цивілізація – це Continent.
+              p Нова візитка бучі!
           .swiper-slide
-            .swiper-slide-img
+            .projects-swiper__img
               img(src="./assets/images/project2.jpg", alt="")
-            a(href="#") Bazar Vokzal 
-            p Цивілізація – це Continent.
-            p Нова візитка бучі!
-      .swiper-button-next      
-      .swiper-button-prev
-      .swiper-scrollbar
+            .swiper-slide__info
+              a(href="#") !!!Bazar Vokzal 
+              p !!!Цивілізація – це Continent.
+              p !!!Нова візитка бучі!!!!
+        .swiper-navigation
+          .swiper-pagination
+          .container-scrollbar
+            .swiper-scrollbar
+          .swiper-btn
+            .swiper-button-prev
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="22" r="22" fill="black"/>
+                <path d="M24.6566 15.9999L18.9998 21.6567L24.6566 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            .swiper-button-next
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="22" r="22" fill="black"/>
+                <path d="M20.6569 15.9999L26.3137 21.6567L20.6569 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
 
 
-  //- section.gallery-content
-  //-   .gallery-sticker
-  //-     h5 GaLlery
-  //-   .gallery-title 
-  //-     h2 фотоГалерея
-  //-     .swiper-container-arrow
-  //-       .swiper-prev
-  //-         +svg('arrow-prev').swiper-arrow
-  //-       .swiper-next
-  //-         +svg('arrow-next').swiper-arrow
-  //-   .gallery-swiper.mygallery-swiper
-  //-     .swiper-wrapper
-  //-       .swiper-slide
-  //-         .swiper-slide-img
-  //-           img(src="./assets/images/main-gallery1.jpg", alt="")
-  //-       .swiper-slide.vertical
-  //-         .swiper-slide-img
-  //-           img(src="./assets/images/benefits3.jpg", alt="")
-  //-       .swiper-slide
-  //-         .swiper-slide-img
-  //-           img(src="./assets/images/main-gallery3.jpg", alt="")
-  //-       .swiper-slide.vertical
-  //-         .swiper-slide-img
-  //-           img(src="./assets/images/benefits2.jpg", alt="")
-  //-       .swiper-slide
-  //-         .swiper-slide-img
-  //-           img(src="./assets/images/main-gallery3.jpg", alt="")
-    
+
+
+
+
+
+
+
+
 
 
 
 block header
   include ../includes/header.pug
-block footer
-  include ../includes/footer.pug
+//- block footer
+//-   include ../includes/footer.pug
 
 
 
