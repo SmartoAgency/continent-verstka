@@ -1,33 +1,57 @@
-$(window).resize(() => {
-  window.locoScroll.update();
-  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-});
-document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+const socialItem = document.querySelectorAll('.footer-social__item');
+const socialLink = document.querySelectorAll('.footer-social__link');
 
-const buttonUp = document.querySelector('.js-btn-up');
+// socialLink.addEventListener('mouseover', () => {
+//   socialItem.style.backgroundColor = '#ffffff';
+// });
+// socialLink.addEventListener('mouseleave', () => {
+//   socialItem.style.backgroundColor = '';
+// });
+socialLink.forEach(el =>
+  el.addEventListener('mouseover', () => {
+    socialItem.forEach(el => (el.style.backgroundColor = '#ffffff'));
+  }),
+);
+// socialLink.forEach(el =>
+//   el.addEventListener('mouseover', () => {
+//     socialItem.style.backgroundColor = '#ffffff';
+//   }),
+// );
+socialLink.forEach(el =>
+  el.addEventListener('mouseleave', () => {
+    socialItem.forEach(el => (el.style.backgroundColor = ''));
+  }),
+);
+// $(window).resize(() => {
+//   window.locoScroll.update();
+//   document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+// });
+// document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
 
-if (buttonUp) {
-  buttonUp.addEventListener('click', () => {
-    window.locoScroll.scrollTo(0);
-  });
-}
+// const buttonUp = document.querySelector('.js-btn-up');
 
-const placeholderFooter = document.querySelector('.js-placeholder-footer');
-const inputFooter = document.querySelector('.js-input-footer');
+// if (buttonUp) {
+//   buttonUp.addEventListener('click', () => {
+//     window.locoScroll.scrollTo(0);
+//   });
+// }
 
-placeholderFooter.addEventListener('click', () => {
-  placeholderFooter.style.display = 'none';
-});
-inputFooter.addEventListener('focus', ({ target }) => {
-  // console.log(target.value);
-  placeholderFooter.style.display = 'none';
-});
-inputFooter.addEventListener('blur', ({ target }) => {
-  // console.log(target.value);
-  if (target.value.match(/\d/g) === null) {
-    placeholderFooter.style.display = '';
-  }
-});
+// const placeholderFooter = document.querySelector('.js-placeholder-footer');
+// const inputFooter = document.querySelector('.js-input-footer');
+
+// placeholderFooter.addEventListener('click', () => {
+//   placeholderFooter.style.display = 'none';
+// });
+// inputFooter.addEventListener('focus', ({ target }) => {
+//   // console.log(target.value);
+//   placeholderFooter.style.display = 'none';
+// });
+// inputFooter.addEventListener('blur', ({ target }) => {
+//   // console.log(target.value);
+//   if (target.value.match(/\d/g) === null) {
+//     placeholderFooter.style.display = '';
+//   }
+// });
 // console.log(buttonUp);
 
 // // form

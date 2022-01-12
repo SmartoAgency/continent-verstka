@@ -6,7 +6,15 @@ $.Tween.propHooks.number = {
 
   set(tween) {
     const opts = tween.options;
-    tween.elem.innerHTML = (opts.prefix || '') + tween.now.toFixed(opts.fixed || 0) + (opts.postfix || '');
+    let changedData = tween.now
+      .toFixed(0)
+      .toString()
+      .split('');
+    changedData.splice(2, 0, ' ');
+    changedData = changedData.join('');
+    tween.elem.innerHTML =
+      // (opts.prefix || '') + tween.now.toFixed(opts.fixed || 0) + (opts.postfix || '');
+      changedData;
   },
 };
 
@@ -49,32 +57,44 @@ $('#num-4')
       // postfix: '+',
     },
   );
-
-const swiper = new Swiper('.projects-swiper', {
-  loop: true,
-  spaceBetween: 0,
-  slidesPerView: 1,
-  // autoplay: {
-  //   delay: 100,
-  // },
+const swiper3 = new Swiper('.swiper-news', {
+  slidesPerView: 3.5,
+  spaceBetween: 40,
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    // hide: true,
+  },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'fraction',
-    touchStartPreventDefault: false,
-    formatFractionCurrent: addZero,
-    formatFractionTotal: addZero,
-  },
-  // thumbs: {
-  //   swiper: swiper2,
-  // },
 });
+
+// const swiper = new Swiper('.projects-swiper', {
+//   loop: true,
+//   spaceBetween: 0,
+//   slidesPerView: 1,
+//   // autoplay: {
+//   //   delay: 100,
+//   // },
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+//   pagination: {
+//     el: '.swiper-pagination',
+//     type: 'fraction',
+//     touchStartPreventDefault: false,
+//     formatFractionCurrent: addZero,
+//     formatFractionTotal: addZero,
+//   },
+//   // thumbs: {
+//   //   swiper: swiper2,
+//   // },
+// });
 function addZero(num) {
   return num > 9 ? num : `0${num}`;
 }
@@ -92,82 +112,212 @@ function onTabClick(item) {
     const currentTab = document.querySelector(tabId);
 
     if (!currentBtn.classList.contains('active')) {
-      tabsBtn.forEach((item) => {
+      tabsBtn.forEach(item => {
         item.classList.remove('active');
       });
 
-      tabsItems.forEach((item) => {
+      tabsItems.forEach(item => {
         item.classList.remove('active');
       });
 
       currentBtn.classList.add('active');
       currentTab.classList.add('active');
+      window.dispatchEvent(new Event('our-projects-switch-tab'));
     }
   });
 }
 document.querySelector('.tabs__nav-btn').click();
 // tab end
 
-// const swiper = new Swiper('.myProjects-swiper', {
-//   speed: 600,
-//   parallax: true,
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//   },
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//   },
+// // select start
+$('.select').each(function() {
+  const _this = $(this),
+    selectOption = _this.find('option'),
+    selectOptionLength = selectOption.length,
+    selectedOption = selectOption.filter(':selected'),
+    duration = 450; // длительность анимации
+
+  _this.hide();
+  _this.wrap('<div class="select"></div>');
+  $('<div>', {
+    class: 'new-select',
+    text: _this.children('option:disabled').text(),
+  }).insertAfter(_this);
+
+  const selectHead = _this.next('.new-select');
+  $('<div>', {
+    class: 'new-select__list',
+  }).insertAfter(selectHead);
+
+  const selectList = selectHead.next('.new-select__list');
+  for (let i = 1; i < selectOptionLength; i++) {
+    $('<div>', {
+      class: 'new-select__item',
+      html: $('<span>', {
+        text: selectOption.eq(i).text(),
+      }),
+    })
+      .attr('data-value', selectOption.eq(i).val())
+      .appendTo(selectList);
+  }
+
+  const selectItem = selectList.find('.new-select__item');
+  selectList.slideUp(0);
+  selectHead.on('click', function() {
+    if (!$(this).hasClass('on')) {
+      $(this).addClass('on');
+      selectList.slideDown(duration);
+
+      selectItem.on('click', function() {
+        let chooseItem = $(this).data('value');
+
+        $('select')
+          .val(chooseItem)
+          .attr('selected', 'selected');
+        selectHead.text(
+          $(this)
+            .find('span')
+            .text(),
+        );
+
+        selectList.slideUp(duration);
+        selectHead.removeClass('on');
+      });
+    } else {
+      $(this).removeClass('on');
+      selectList.slideUp(duration);
+    }
+  });
+});
+// // select end
+const swiper10 = new Swiper('.project-swiper-img', {
+  // spaceBetween: 10,
+  slidesPerView: 1,
+  // loop: true,
+  freeMode: true,
+  watchSlidesProgress: true,
+  // loop: true,
+  // autoplay: {
+  //   delay: 1000,
+  // },
+  thumbs: {
+    swiper: swiper11,
+  },
+});
+
+var swiper11 = new Swiper('.project-swiper', {
+  spaceBetween: 10,
+  slidesPerView: 1,
+  freeMode: true,
+  watchSlidesProgress: true,
+  // loop: true,
+  // autoplay: {
+  //   delay: 1000,
+  // },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'fraction',
+    touchStartPreventDefault: false,
+    formatFractionCurrent: addZero,
+    formatFractionTotal: addZero,
+  },
+  thumbs: {
+    swiper: swiper10,
+  },
+});
+
+window.addEventListener('our-projects-switch-tab', () => {
+  swiper11.update();
+  swiper10.update();
+});
+
+// const statusBtn = document.querySelectorAll('[data-work-status]');
+// const statusCircle = document.querySelectorAll('.circle');
+// statusBtn.forEach((el, index) => {
+//   el.addEventListener('mouseleave', () => {
+//     gsap.fromTo(statusCircle, 1, { strokeDashoffset: 0 }, { strokeDashoffset: 1000 });
+//   });
+//   el.addEventListener('mouseenter', () => {
+//     gsap.fromTo(statusCircle, 1, { strokeDashoffset: 1000 }, { strokeDashoffset: 0 });
+//   });
+// });
+$('.video')
+  .parent()
+  .click(function() {
+    if (
+      $(this)
+        .children('.video')
+        .get(0).paused
+    ) {
+      $(this)
+        .children('.video')
+        .get(0)
+        .play();
+      $(this)
+        .children('.playpause')
+        .fadeOut();
+    } else {
+      $(this)
+        .children('.video')
+        .get(0)
+        .pause();
+      $(this)
+        .children('.playpause')
+        .fadeIn();
+    }
+  });
+
+const socialBtn = document.querySelectorAll('.js-social');
+const socialLink1 = document.querySelectorAll('.social-link');
+
+// socialBtn.forEach(el => {
+//   el.addEventListener('click', () => {
+//     socialLink1.forEach(el => {
+//       el.classList.toggle('social-link__grow');
+//     });
+//   });
+// });
+// socialBtn.forEach(el => {
+//   el.addEventListener('click', () => {
+//     el.classList.toggle('social-link__grow');
+//   });
 // });
 
-// const swiper = new Swiper('.mynews-swiper', {
-//   slidesPerView: 1.1,
-//   spaceBetween: 20,
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-//   breakpoints: {
-//     575: {
-//       spaceBetween: 30,
-//       slidesPerView: 2.1,
-//     },
-//     992: {
-//       spaceBetween: 40,
-//       slidesPerView: 2.5,
-//     },
-//     1440: {
-//       spaceBetween: 60,
-//       slidesPerView: 2.5,
-//     },
-//   },
-// });
+socialBtn.forEach(el => {
+  el.addEventListener('click', () => {
+    el.classList.toggle('social-link__grow');
+  });
+});
 
-// const swiper2 = new Swiper('.mygallery-swiper', {
-//   // slidesPerView: 1.7,
-//   spaceBetween: 20,
-//   slidesPerView: 'auto',
-//   navigation: {
-//     nextEl: '.swiper-next',
-//     prevEl: '.swiper-prev',
-//   },
-//   breakpoints: {
-//     575: {
-//       spaceBetween: 30,
-//     },
-//     992: {
-//       spaceBetween: 40,
-//     },
-//     1440: {
-//       spaceBetween: 60,
-//     },
-//   },
+// function handleVisibilityOnScroll(elems = [], direction = 'up') {
+//   elems.forEach(elem => {
+//     switch (direction) {
+//       case 'down':
+//         elem[0].classList.add(elem[1]);
+//         break;
+//       default:
+//         elem[0].classList.remove(elem[1]);
+//         break;
+//     }
+//   });
+// }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const socialBtn = document.querySelectorAll('.js-social');
+//   window.locoScroll &&
+//     window.locoScroll.on('scroll', position => {
+//       if ((!isScrolling && position.scroll.y <= 50) || (isScrolling && position.scroll.y > 50))
+//         return;
+
+//       isScrolling = position.scroll.y > 50;
+//       const direction = isScrolling ? 'down' : 'up';
+//       handleVisibilityOnScroll([[socialBtn, 'visible']], direction);
+//     });
 // });

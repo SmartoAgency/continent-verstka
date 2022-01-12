@@ -11,11 +11,31 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/home.js')
-  //- script(defer src='./assets/scripts/scroll-down.js')
-  //- script(defer src='./assets/scripts/footer.js')
+  script(defer src='./assets/scripts/map.js')
+  script(defer src='./assets/scripts/footer.js')
   //- script(defer src='./assets/scripts/animation.js')
 block arrow 
     //- +svg('scroll-down').js-scroll-down 
+    .social-select
+      .select-container.js-social
+        .select-img
+          //- +svg('social-select')
+        ul.social-list 
+          li.social-item 
+            a(href="tel:+380676938069").social-link
+              +svg('tel')
+          li.social-item 
+            a(href="viber://chat?number=+380676938069" target="_blank").social-link
+              +svg('viber')
+          li.social-item 
+            a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank").social-link
+              +svg('telegram')
+          li.social-item 
+            a(href="https://www.facebook.com/continent.ua/" target="_blank").social-link
+              +svg('facebook')
+          li.social-item 
+            a(href="https://wa.me/380676938069" target="_blank").social-link
+              +svg('whatsapp')
 block content
   section.main-content 
     h1.main-content__title Благоустрої за сценарієм вашого життя
@@ -46,12 +66,9 @@ block content
     .tabcontent.tabs__item(id="tab_1")
       ul.active-project
         li.active-project__item
-          a(href="#").active-project__link
-            .active-project__container-title
-              .active-project__img
-                img(src="./assets/images/project1.jpg", alt="" data-paralax)
-              h3.active-project__title ЖК Continent Ray
-              h4.active-project__description Живи на яскравій стороні життя
+          .hover-content 
+            h3.active-project__title ЖК Continent Ray
+            h4.active-project__description Живи на яскравій стороні життя
             ul.active-project__description-list 
               li.active-project__description-item 
                 p.project-parameter Місто
@@ -68,21 +85,40 @@ block content
               li.active-project__description-item 
                 p.project-parameter клас жк
                 p.project-value комфорт
-            .advertising Підвищення цін з 15 жовтня
+            a(href="#").active-project__link Дізнатись більше
+          .active-project__container-title
+            .active-project__img
+              img(src="./assets/images/project1.jpg", alt="" data-paralax)
+            h3.active-project__title ЖК Continent Ray
+            h4.active-project__description Живи на яскравій стороні життя
+          ul.active-project__description-list 
+            li.active-project__description-item 
+              p.project-parameter Місто
+              p.project-value Буча
+            li.active-project__description-item 
+              p.project-parameter Вартість
+              p.project-value від 21 500 грн/м²
+            li.active-project__description-item 
+              p.project-parameter Площі
+              p.project-value від 35 м² до 108 м²
+            li.active-project__description-item 
+              p.project-parameter Відстань до метро
+              p.project-value 25 хв до м. Академмістечко
+            li.active-project__description-item 
+              p.project-parameter клас жк
+              p.project-value комфорт
+          .advertising Підвищення цін з 15 жовтня
         li.active-project__item
-          a(href="#").active-project__link
-            .active-project__container-title
-              .active-project__img
-                img(src="./assets/images/project2.jpg", alt="" data-paralax)
-              h3.active-project__title ЖК Continent RAY 2
-              h4.active-project__description живіть у серці міста
+          .hover-content 
+            h3.active-project__title ЖК Continent RAY 2
+            h4.active-project__description  живіть у серці міста
             ul.active-project__description-list 
               li.active-project__description-item 
                 p.project-parameter Місто
                 p.project-value Буча
               li.active-project__description-item 
                 p.project-parameter Вартість
-                p.project-value від 20 000 грн/м²
+                p.project-value від 21 500 грн/м²
               li.active-project__description-item 
                 p.project-parameter Площі
                 p.project-value від 35 м² до 108 м²
@@ -92,117 +128,305 @@ block content
               li.active-project__description-item 
                 p.project-parameter клас жк
                 p.project-value комфорт
+            a(href="#").active-project__link Дізнатись більше
+          .active-project__container-title
+            .active-project__img
+              img(src="./assets/images/project2.jpg", alt="" data-paralax)
+            h3.active-project__title ЖК Continent RAY 2
+            h4.active-project__description живіть у серці міста
+          ul.active-project__description-list 
+            li.active-project__description-item 
+              p.project-parameter Місто
+              p.project-value Буча
+            li.active-project__description-item 
+              p.project-parameter Вартість
+              p.project-value від 20 000 грн/м²
+            li.active-project__description-item 
+              p.project-parameter Площі
+              p.project-value від 35 м² до 108 м²
+            li.active-project__description-item 
+              p.project-parameter Відстань до метро
+              p.project-value 25 хв до м. Академмістечко
+            li.active-project__description-item 
+              p.project-parameter клас жк
+              p.project-value комфорт
         li.active-project__item
-          a(href="#").active-project__link
-            .active-project__container-title
-              .active-project__img
-                img(src="./assets/images/project3.jpg", alt="" data-paralax)
-              h3.active-project__title ЖК Continent RAY 2.2
-              h4.active-project__description живіть у серці міста
+          .hover-content 
+            h3.active-project__title ЖК Continent RAY 2.2
+            h4.active-project__description  живіть у серці міста
             ul.active-project__description-list 
               li.active-project__description-item 
                 p.project-parameter Місто
                 p.project-value Буча
               li.active-project__description-item 
                 p.project-parameter Вартість
-                p.project-value від 17 000 грн/м²
+                p.project-value від 21 500 грн/м²
               li.active-project__description-item 
                 p.project-parameter Площі
-                p.project-value від 29 м² до 64 м²
+                p.project-value від 35 м² до 108 м²
               li.active-project__description-item 
                 p.project-parameter Відстань до метро
                 p.project-value 25 хв до м. Академмістечко
               li.active-project__description-item 
                 p.project-parameter клас жк
                 p.project-value комфорт
+            a(href="#").active-project__link Дізнатись більше
+          .active-project__container-title
+            .active-project__img
+              img(src="./assets/images/project3.jpg", alt="" data-paralax)
+            h3.active-project__title ЖК Continent RAY 2.2
+            h4.active-project__description живіть у серці міста
+          ul.active-project__description-list 
+            li.active-project__description-item 
+              p.project-parameter Місто
+              p.project-value Буча
+            li.active-project__description-item 
+              p.project-parameter Вартість
+              p.project-value від 17 000 грн/м²
+            li.active-project__description-item 
+              p.project-parameter Площі
+              p.project-value від 29 м² до 64 м²
+            li.active-project__description-item 
+              p.project-parameter Відстань до метро
+              p.project-value 25 хв до м. Академмістечко
+            li.active-project__description-item 
+              p.project-parameter клас жк
+              p.project-value комфорт
         li.active-project__item
-          a(href="#").active-project__link
-            .active-project__container-title
-              .active-project__img
-                img(src="./assets/images/project4.jpg", alt="" data-paralax)
-              h3.active-project__title ЖК Continent RAY 2.2
-              h4.active-project__description живіть у серці міста
+          .hover-content 
+            h3.active-project__title ЖК Continent RAY 2.2
+            h4.active-project__description  живіть у серці міста
             ul.active-project__description-list 
               li.active-project__description-item 
                 p.project-parameter Місто
                 p.project-value Буча
               li.active-project__description-item 
                 p.project-parameter Вартість
-                p.project-value від 20 000 грн/м²
+                p.project-value від 21 500 грн/м²
               li.active-project__description-item 
                 p.project-parameter Площі
-                p.project-value від 35 м² до 86 м²
+                p.project-value від 35 м² до 108 м²
               li.active-project__description-item 
                 p.project-parameter Відстань до метро
                 p.project-value 25 хв до м. Академмістечко
               li.active-project__description-item 
                 p.project-parameter клас жк
                 p.project-value комфорт
+            a(href="#").active-project__link Дізнатись більше
+          .active-project__container-title
+            .active-project__img
+              img(src="./assets/images/project4.jpg", alt="" data-paralax)
+            h3.active-project__title ЖК Continent RAY 2.2
+            h4.active-project__description живіть у серці міста
+          ul.active-project__description-list 
+            li.active-project__description-item 
+              p.project-parameter Місто
+              p.project-value Буча
+            li.active-project__description-item 
+              p.project-parameter Вартість
+              p.project-value від 20 000 грн/м²
+            li.active-project__description-item 
+              p.project-parameter Площі
+              p.project-value від 35 м² до 86 м²
+            li.active-project__description-item 
+              p.project-parameter Відстань до метро
+              p.project-value 25 хв до м. Академмістечко
+            li.active-project__description-item 
+              p.project-parameter клас жк
+              p.project-value комфорт
         li.active-project__item
-          a(href="#").active-project__link
-            .active-project__container-title.active-project__anons-project(style="background-image:url('./assets/images/project-anons.jpg')")
-              +svg('continent')
-              h3.active-project__title Continent Black
-              h4.active-project__description Анонс нового проекту
-              ul.active-project__description-list 
-                li.active-project__description-item 
-                  p.project-parameter Місто
-                  p.project-value Буча
-                li.active-project__description-item 
-                  p.project-parameter клас жк
-                  p.project-value комфорт
-              button.btn-subscribe
-                +svg('plus')
-                span Підписатись на розсилку
+          .active-project__container-title.active-project__anons-project(style="background-image:url('./assets/images/project-anons.jpg')")
+            +svg('continent')
+            h3.active-project__title Continent Black
+            h4.active-project__description Анонс нового проекту
+            ul.active-project__description-list 
+              li.active-project__description-item 
+                p.project-parameter Місто
+                p.project-value Буча
+              li.active-project__description-item 
+                p.project-parameter клас жк
+                p.project-value комфорт
+            button.btn-subscribe
+              +svg('plus')
+              span Підписатись на розсилку
     .tabcontent.tabs__item.tabcontent-realized(id="tab_2")
-      .projects-swiper
-        .swiper-wrapper
-          .swiper-slide
-            .projects-swiper__img
-              img(src="./assets/images/project1.jpg", alt="")
-            .swiper-slide__info
-              a(href="#") Bazar Vokzal 
-              p Цивілізація – це Continent.
-              p Нова візитка бучі!
-          .swiper-slide
-            .projects-swiper__img
-              img(src="./assets/images/project2.jpg", alt="")
-            .swiper-slide__info
+      .realized-project-container
+        .project-swiper-img
+          .swiper-wrapper
+            .swiper-slide
+              img(src="./assets/images/slide1.jpg", alt="")
+            .swiper-slide
+              .video-box
+                video( class="swiper-video video") 
+                  <source src="./assets/images/video1.mp4" type="video/mp4">
+                .play-button.playpause
+                  .svg-wrapper
+                    <svg id='svg' width="100px" height="100px" viewbox='0 0 100 100'>
+
+                      <circle cx='50' cy='50' r='45' stroke='#FFFFFF' stroke-width='2'  fill='none' opacity='0.5'/>
+                      <circle id='circle' cx='50' cy='50' r='45' stroke='#FFFFFF' stroke-width='2'  fill='none'/>
+                    </svg>
+                    <svg class="play" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="36" cy="36" r="36"/>
+                      <path d="M44.5518 35.6401C45.2044 36.0276 45.2044 36.9724 44.5518 37.3599L31.5105 45.1031C30.8439 45.4989 30 45.0185 30 44.2433L30 28.7567C30 27.9815 30.8439 27.5011 31.5105 27.8969L44.5518 35.6401Z"/>
+                    </svg>
+
+              //- video(autoplay muted loop class="swiper-video") 
+              //-   <source src="./assets/images/video1.mp4" type="video/mp4">
+
+            
+        .project-swiper(thumbsSlider="")
+          .swiper-wrapper
+            .swiper-slide
+              a(href="#") 
+                h3 Bazar Vokzal 
+              .swiper-slide__text
+                p Цивілізація – це Continent.
+                p Нова візитка бучі!
+            .swiper-slide
               a(href="#") !!!Bazar Vokzal 
               p !!!Цивілізація – це Continent.
               p !!!Нова візитка бучі!!!!
-        .swiper-navigation
-          .swiper-pagination
-          .container-scrollbar
+          .navication-container
+            .swiper-pagination
             .swiper-scrollbar
-          .swiper-btn
-            .swiper-button-prev
-              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="22" cy="22" r="22" fill="black"/>
-                <path d="M24.6566 15.9999L18.9998 21.6567L24.6566 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            .swiper-button-next
-              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="22" cy="22" r="22" fill="black"/>
-                <path d="M20.6569 15.9999L26.3137 21.6567L20.6569 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
-              </svg>
+            .swiper-btn
+              .swiper-button-prev
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="22" cy="22" r="22" fill="black"/>
+                  <path d="M24.6566 15.9999L18.9998 21.6567L24.6566 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              .swiper-button-next
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="22" cy="22" r="22" fill="black"/>
+                  <path d="M20.6569 15.9999L26.3137 21.6567L20.6569 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
 
 
+  section.news
+    .our-projects-title-container 
+      h2.our-projects__title Акції та новини
+      a(href="news.html").news-link
+        span Всі новини та акції
+        +svg('arrow')
+    .swiper-news
+      .swiper-wrapper
+        .swiper-slide
+          a(href="#") 
+            img(src="./assets/images/news1.jpg", alt="" data-paralax)
+            h5.date 24.04.2021
+            h4.news-title Купуй більше – плати менше!
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news2.jpg", alt="" data-paralax)
+            h5.date 12.04.2021
+            h4.news-title Вхопіть великодню знижку за вуха! -4% на всі квартири від Континенту
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news3.jpg", alt="" data-paralax)
+            h5.date 19.03.2021
+            h4.news-title Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news1.jpg", alt="" data-paralax)
+            h5.date 24.04.2021
+            h4.news-title Купуй більше – плати менше!
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news1.jpg", alt="" data-paralax)
+            h5.date 24.04.2021
+            h4.news-title Вхопіть великодню знижку за вуха! -4% на всі квартири від Континенту
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news2.jpg", alt="" data-paralax)
+            h5.date 24.04.2021
+            h4.news-title Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news3.jpg", alt="" data-paralax)
+            h5.date 24.04.2021
+            h4.news-title Купуй більше – плати менше!
+      .swiper-news__navigation
+        .swiper-scrollbar
+        .swiper-button-prev
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="22" fill="black"/>
+            <path d="M24.6566 15.9999L18.9998 21.6567L24.6566 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        .swiper-button-next
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="22" fill="black"/>
+            <path d="M20.6569 15.9999L26.3137 21.6567L20.6569 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+
+  section.contacts 
+    .contacts__information
+      h2.our-projects__title Відділ продажів Strakhovskyi Group  
+      h4.contacts__adress м. Буча <br> пров. Олекси Тихого 4
+      .contacts__tel-container 
+        a(href='tel:+380503694892').contacts__tel-link
+          span 050 369-48-92
+        a(href='tel:+380676938069').contacts__tel-link
+          span 067 693-80-69
+      ul.schedule
+        li.schedule__link
+          .schedule__label Пн-Cб:
+          .schedule__value з 9:00 до 18:00
+        li.schedule__link
+          .schedule__label Нд:
+          .schedule__value з 11:00 до 17:00
+      a(href='mailto:office@continent.ua').contacts-mail office@continent.ua
+      button(type='button').nav__call-btn.contacts__call-btn.js-call
+        +svg('phone')
+        span.nav__call-btn-text Замовити дзвінок
+    .contacts__map.map
+      #map(width="500" height="500px")
+    
+  section.sing-up-review
+    .sing-up-review__form
+      h2.our-projects__title Запишіться на перегляд
+      h4 З радістю влаштуємо вам тур по житловому кварталу та пригостимо смачною кавою!
+      form( action="#" class="review-form")
+        .form-field
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
+            span.placeholder Ваше ім’я
+            .input-message(data-input-message)
+          .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+            input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+            span.placeholder Ваш номер телефону
+            .input-message(data-input-message)
+        .form-field-time
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="date" name="#" id="#" placeholder="Зручний день" autocomplete="on" value="")
+            span.checkmark Зручний день
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="time" name="#" id="#" placeholder="Зручний час" autocomplete="on" value="")
+            span.checkmark Зручний день
+          select(class="select" name="connection")
+            option(disabled) Пріоритетний зв’язок
+            option(value="tel") По телефону
+            option(value="viber") Написати в Viber
+            option(value="telegram") Написати в Telegram
+         
+        .form-field-confirm
+          button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
+            span Записатися на перегляд
+            +svg('arrow')
 
 
-
-
-
-
-
-
+    .sing-up-review__manager 
+      .manager-img 
+        img(src="./assets/images/manager.jpg", alt="manager")
+      .manager-name Вікторія Шевченко
+      .manager-role Керівниця відділу продажів
 
 
 
 block header
   include ../includes/header.pug
-//- block footer
-//-   include ../includes/footer.pug
+block footer
+  include ../includes/footer.pug
 
 
 
