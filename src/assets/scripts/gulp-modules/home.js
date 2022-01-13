@@ -274,50 +274,32 @@ $('.video')
     }
   });
 
+// btn social start
 const socialBtn = document.querySelectorAll('.js-social');
-const socialLink1 = document.querySelectorAll('.social-link');
-
-// socialBtn.forEach(el => {
-//   el.addEventListener('click', () => {
-//     socialLink1.forEach(el => {
-//       el.classList.toggle('social-link__grow');
-//     });
-//   });
-// });
-// socialBtn.forEach(el => {
-//   el.addEventListener('click', () => {
-//     el.classList.toggle('social-link__grow');
-//   });
-// });
-
 socialBtn.forEach(el => {
   el.addEventListener('click', () => {
     el.classList.toggle('social-link__grow');
   });
 });
 
-// function handleVisibilityOnScroll(elems = [], direction = 'up') {
-//   elems.forEach(elem => {
-//     switch (direction) {
-//       case 'down':
-//         elem[0].classList.add(elem[1]);
-//         break;
-//       default:
-//         elem[0].classList.remove(elem[1]);
-//         break;
-//     }
-//   });
-// }
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const socialBtn = document.querySelectorAll('.js-social');
-//   window.locoScroll &&
-//     window.locoScroll.on('scroll', position => {
-//       if ((!isScrolling && position.scroll.y <= 50) || (isScrolling && position.scroll.y > 50))
-//         return;
-
-//       isScrolling = position.scroll.y > 50;
-//       const direction = isScrolling ? 'down' : 'up';
-//       handleVisibilityOnScroll([[socialBtn, 'visible']], direction);
-//     });
-// });
+function handleVisibilityOnScroll(elems = [], direction = 'up') {
+  elems.forEach(elem => {
+    switch (direction) {
+      case 'down':
+        elem[0].classList.add(elem[1]);
+        break;
+      default:
+        elem[0].classList.remove(elem[1]);
+        break;
+    }
+  });
+}
+const socialSelect = document.querySelector('.social-select');
+locoScroll.on('scroll', position => {
+  if (position.scroll.y > 100) {
+    handleVisibilityOnScroll([[socialSelect, 'visible']], 'down');
+  } else {
+    handleVisibilityOnScroll([[socialSelect, 'visible']]);
+  }
+});
+// btn social end
