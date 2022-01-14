@@ -66,6 +66,11 @@
     // height: 50px;
     // font-size: 12px;
   }
+  &:hover {
+    @include from(992px) {
+      background: #ffbb01;
+    }
+  }
   // @include to(992px) {
   //   width: 200px;
   //   height: 45px;

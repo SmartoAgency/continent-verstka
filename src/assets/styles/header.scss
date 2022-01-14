@@ -12,6 +12,7 @@
   height: var(--header-h);
 
   background: inherit;
+  // background: #ffffff;
   // @include to(1440px) {
   //   padding: 0 vw(70, 1440);
   // }
@@ -39,12 +40,17 @@
   // @include to(575px) {
   //   display: none;
   // }
+  .logo-fill {
+    fill: $white;
+  }
 }
 .logo-group svg {
   width: 200px;
   height: 60px;
   cursor: pointer;
+  fill: #ffffff;
 }
+
 // .icon--logo-mobile {
 //   width: var(--logo-w);
 //   height: var(--logo-h);
@@ -178,6 +184,7 @@
     height: 14px;
     fill: none;
     margin-right: 10px;
+    fill: $white;
   }
 }
 

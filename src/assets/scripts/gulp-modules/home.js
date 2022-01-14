@@ -99,97 +99,97 @@ function addZero(num) {
   return num > 9 ? num : `0${num}`;
 }
 
-// tab start
-const tabsBtn = document.querySelectorAll('.tabs__nav-btn');
-const tabsItems = document.querySelectorAll('.tabs__item');
+// // tab start
+// const tabsBtn = document.querySelectorAll('.tabs__nav-btn');
+// const tabsItems = document.querySelectorAll('.tabs__item');
 
-tabsBtn.forEach(onTabClick);
+// tabsBtn.forEach(onTabClick);
 
-function onTabClick(item) {
-  item.addEventListener('click', () => {
-    const currentBtn = item;
-    const tabId = currentBtn.getAttribute('data-tab');
-    const currentTab = document.querySelector(tabId);
+// function onTabClick(item) {
+//   item.addEventListener('click', () => {
+//     const currentBtn = item;
+//     const tabId = currentBtn.getAttribute('data-tab');
+//     const currentTab = document.querySelector(tabId);
 
-    if (!currentBtn.classList.contains('active')) {
-      tabsBtn.forEach(item => {
-        item.classList.remove('active');
-      });
+//     if (!currentBtn.classList.contains('active')) {
+//       tabsBtn.forEach(item => {
+//         item.classList.remove('active');
+//       });
 
-      tabsItems.forEach(item => {
-        item.classList.remove('active');
-      });
+//       tabsItems.forEach(item => {
+//         item.classList.remove('active');
+//       });
 
-      currentBtn.classList.add('active');
-      currentTab.classList.add('active');
-      window.dispatchEvent(new Event('our-projects-switch-tab'));
-    }
-  });
-}
-document.querySelector('.tabs__nav-btn').click();
-// tab end
+//       currentBtn.classList.add('active');
+//       currentTab.classList.add('active');
+//       window.dispatchEvent(new Event('our-projects-switch-tab'));
+//     }
+//   });
+// }
+// document.querySelector('.tabs__nav-btn').click();
+// // tab end
 
-// // select start
-$('.select').each(function() {
-  const _this = $(this),
-    selectOption = _this.find('option'),
-    selectOptionLength = selectOption.length,
-    selectedOption = selectOption.filter(':selected'),
-    duration = 450; // длительность анимации
+// // // select start
+// $('.select').each(function() {
+//   const _this = $(this),
+//     selectOption = _this.find('option'),
+//     selectOptionLength = selectOption.length,
+//     selectedOption = selectOption.filter(':selected'),
+//     duration = 450; // длительность анимации
 
-  _this.hide();
-  _this.wrap('<div class="select"></div>');
-  $('<div>', {
-    class: 'new-select',
-    text: _this.children('option:disabled').text(),
-  }).insertAfter(_this);
+//   _this.hide();
+//   _this.wrap('<div class="select"></div>');
+//   $('<div>', {
+//     class: 'new-select',
+//     text: _this.children('option:disabled').text(),
+//   }).insertAfter(_this);
 
-  const selectHead = _this.next('.new-select');
-  $('<div>', {
-    class: 'new-select__list',
-  }).insertAfter(selectHead);
+//   const selectHead = _this.next('.new-select');
+//   $('<div>', {
+//     class: 'new-select__list',
+//   }).insertAfter(selectHead);
 
-  const selectList = selectHead.next('.new-select__list');
-  for (let i = 1; i < selectOptionLength; i++) {
-    $('<div>', {
-      class: 'new-select__item',
-      html: $('<span>', {
-        text: selectOption.eq(i).text(),
-      }),
-    })
-      .attr('data-value', selectOption.eq(i).val())
-      .appendTo(selectList);
-  }
+//   const selectList = selectHead.next('.new-select__list');
+//   for (let i = 1; i < selectOptionLength; i++) {
+//     $('<div>', {
+//       class: 'new-select__item',
+//       html: $('<span>', {
+//         text: selectOption.eq(i).text(),
+//       }),
+//     })
+//       .attr('data-value', selectOption.eq(i).val())
+//       .appendTo(selectList);
+//   }
 
-  const selectItem = selectList.find('.new-select__item');
-  selectList.slideUp(0);
-  selectHead.on('click', function() {
-    if (!$(this).hasClass('on')) {
-      $(this).addClass('on');
-      selectList.slideDown(duration);
+//   const selectItem = selectList.find('.new-select__item');
+//   selectList.slideUp(0);
+//   selectHead.on('click', function() {
+//     if (!$(this).hasClass('on')) {
+//       $(this).addClass('on');
+//       selectList.slideDown(duration);
 
-      selectItem.on('click', function() {
-        let chooseItem = $(this).data('value');
+//       selectItem.on('click', function() {
+//         let chooseItem = $(this).data('value');
 
-        $('select')
-          .val(chooseItem)
-          .attr('selected', 'selected');
-        selectHead.text(
-          $(this)
-            .find('span')
-            .text(),
-        );
+//         $('select')
+//           .val(chooseItem)
+//           .attr('selected', 'selected');
+//         selectHead.text(
+//           $(this)
+//             .find('span')
+//             .text(),
+//         );
 
-        selectList.slideUp(duration);
-        selectHead.removeClass('on');
-      });
-    } else {
-      $(this).removeClass('on');
-      selectList.slideUp(duration);
-    }
-  });
-});
-// // select end
+//         selectList.slideUp(duration);
+//         selectHead.removeClass('on');
+//       });
+//     } else {
+//       $(this).removeClass('on');
+//       selectList.slideUp(duration);
+//     }
+//   });
+// });
+// // // select end
 const swiper10 = new Swiper('.project-swiper-img', {
   // spaceBetween: 10,
   slidesPerView: 1,
@@ -294,12 +294,31 @@ function handleVisibilityOnScroll(elems = [], direction = 'up') {
     }
   });
 }
-const socialSelect = document.querySelector('.social-select');
+const socialSelect = document.querySelectorAll('.social-select');
 locoScroll.on('scroll', position => {
   if (position.scroll.y > 100) {
-    handleVisibilityOnScroll([[socialSelect, 'visible']], 'down');
+    handleVisibilityOnScroll([[socialSelect[0], 'visible']], 'down');
+    handleVisibilityOnScroll([[socialSelect[1], 'visible']], 'down');
   } else {
-    handleVisibilityOnScroll([[socialSelect, 'visible']]);
+    handleVisibilityOnScroll([[socialSelect[1], 'visible']]);
+    handleVisibilityOnScroll([[socialSelect[0], 'visible']]);
   }
 });
 // btn social end
+
+// const socialSelect = document.querySelectorAll('.social-select');
+// window.onscroll = function() {
+//   scrollFunction();
+// };
+
+// function scrollFunction() {
+//   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+//     socialSelect.forEach(el => {
+//       el.classList.add('visible');
+//     });
+//   } else {
+//     socialSelect.forEach(el => {
+//       el.classList.remove('visible');
+//     });
+//   }
+// }

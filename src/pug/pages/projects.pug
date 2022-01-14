@@ -1,7 +1,19 @@
 extends ../layout/main
 block variable
+  -
+    var title_page = 'Проекти'
+    var id_page = 'project'
+    var class_page = 'project'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
 block meta
-  title= 'Main'
+  //- title= 'Documents'
+  title= title_page
   meta(name='description', content='')
 block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
@@ -10,11 +22,11 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/home.js')
-  script(defer src='./assets/scripts/map.js')
-  script(defer src='./assets/scripts/footer.js')
   script(defer src='./assets/scripts/tab.js')
   script(defer src='./assets/scripts/select.js')
+  script(defer src='./assets/scripts/projects.js')
+  //- script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
 block arrow 
   .social-select
     .select-container.js-social
@@ -36,24 +48,7 @@ block arrow
           a(href="https://wa.me/380676938069" target="_blank").social-link
             +svg('whatsapp')
 block content
-  section.main-content.js-main-blur
-    h1.main-content__title Благоустрої за сценарієм вашого життя
-    a(href='#').realty
-      span Обрати квартиру
-      +svg('arrow')
-    ul.numbers-list
-      li.numbers-item.col
-        .number(id="num-1") 0
-        .text років на ринку нерухомості
-      li.numbers-item.col
-        .number(id="num-2") 0
-        .text об`єктів реалізовано 
-      li.numbers-item.col
-        .number(id="num-3") 0
-        .text м² здано в експлуатацію
-      li.numbers-item.col
-        .number(id="num-4") 0
-        .text об`єкти на стадії будівництва
+  include ../includes/breadcrumbs.pug
   section.our-projects
     .our-projects-title-container 
       h2.our-projects__title Наші проекти
@@ -277,7 +272,7 @@ block content
         .project-swiper(thumbsSlider="")
           .swiper-wrapper
             .swiper-slide
-              a(href="#") 
+              a(href="projects-realized-single.html") 
                 h3 Bazar Vokzal 
               .swiper-slide__text
                 p Цивілізація – це Continent.
@@ -301,86 +296,6 @@ block content
                   <path d="M20.6569 15.9999L26.3137 21.6567L20.6569 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
                 </svg>
 
-
-  section.news
-    .our-projects-title-container 
-      h2.our-projects__title Акції та новини
-      a(href="news.html").news-link
-        span Всі новини та акції
-        +svg('arrow')
-    .swiper-news
-      .swiper-wrapper
-        .swiper-slide
-          a(href="#") 
-            img(src="./assets/images/news1.jpg", alt="" data-paralax)
-            h5.date 24.04.2021
-            h4.news-title Купуй більше – плати менше!
-        .swiper-slide 
-          a(href="#")
-            img(src="./assets/images/news2.jpg", alt="" data-paralax)
-            h5.date 12.04.2021
-            h4.news-title Вхопіть великодню знижку за вуха! -4% на всі квартири від Континенту
-        .swiper-slide 
-          a(href="#")
-            img(src="./assets/images/news3.jpg", alt="" data-paralax)
-            h5.date 19.03.2021
-            h4.news-title Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!
-        .swiper-slide 
-          a(href="#")
-            img(src="./assets/images/news1.jpg", alt="" data-paralax)
-            h5.date 24.04.2021
-            h4.news-title Купуй більше – плати менше!
-        .swiper-slide 
-          a(href="#")
-            img(src="./assets/images/news1.jpg", alt="" data-paralax)
-            h5.date 24.04.2021
-            h4.news-title Вхопіть великодню знижку за вуха! -4% на всі квартири від Континенту
-        .swiper-slide 
-          a(href="#")
-            img(src="./assets/images/news2.jpg", alt="" data-paralax)
-            h5.date 24.04.2021
-            h4.news-title Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!
-        .swiper-slide 
-          a(href="#")
-            img(src="./assets/images/news3.jpg", alt="" data-paralax)
-            h5.date 24.04.2021
-            h4.news-title Купуй більше – плати менше!
-      .swiper-news__navigation
-        .swiper-scrollbar
-        .swiper-button-prev
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="22" cy="22" r="22" fill="black"/>
-            <path d="M24.6566 15.9999L18.9998 21.6567L24.6566 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        .swiper-button-next
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="22" cy="22" r="22" fill="black"/>
-            <path d="M20.6569 15.9999L26.3137 21.6567L20.6569 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-
-  section.contacts 
-    .contacts__information
-      h2.our-projects__title Відділ продажів Strakhovskyi Group  
-      h4.contacts__adress м. Буча <br> пров. Олекси Тихого 4
-      .contacts__tel-container 
-        a(href='tel:+380503694892').contacts__tel-link
-          span 050 369-48-92
-        a(href='tel:+380676938069').contacts__tel-link
-          span 067 693-80-69
-      ul.schedule
-        li.schedule__link
-          .schedule__label Пн-Cб:
-          .schedule__value з 9:00 до 18:00
-        li.schedule__link
-          .schedule__label Нд:
-          .schedule__value з 11:00 до 17:00
-      a(href='mailto:office@continent.ua').contacts-mail office@continent.ua
-      button(type='button').nav__call-btn.contacts__call-btn.js-call
-        +svg('phone')
-        span.nav__call-btn-text Замовити дзвінок
-    .contacts__map.map
-      #map(width="500" height="500px")
-    
   section.sing-up-review
     .sing-up-review__form
       h2.our-projects__title Запишіться на перегляд
@@ -424,8 +339,11 @@ block content
 
 block header
   include ../includes/header.pug
+  
 block footer
   include ../includes/footer.pug
+
+
 
 
 

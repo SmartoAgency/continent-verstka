@@ -1,0 +1,86 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Реалізований проект'
+    var id_page = 'project-realized'
+    var class_page = 'project-realized'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/project-realized.js')
+  //- script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
+block arrow 
+  .social-select
+    .select-container.js-social
+      .select-img
+      ul.social-list 
+        li.social-item 
+          a(href="tel:+380676938069").social-link
+            +svg('tel')
+        li.social-item 
+          a(href="viber://chat?number=+380676938069" target="_blank").social-link
+            +svg('viber')
+        li.social-item 
+          a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank").social-link
+            +svg('telegram')
+        li.social-item 
+          a(href="https://www.facebook.com/continent.ua/" target="_blank").social-link
+            +svg('facebook')
+        li.social-item 
+          a(href="https://wa.me/380676938069" target="_blank").social-link
+            +svg('whatsapp')
+block content
+  .realized-project
+    .swiper-wrapper
+      .swiper-slide
+        .realized-project__img 
+          img(src="./assets/images/realized-project1.jpg", alt="")
+        .realized-project__content
+          h1.realized-project__title Комфорт Хаус 1
+          p.realized-project__description Житловий комплекс, в основу назви якого не дарма взяте поняття комфорту.
+          p.realized-project__benefits Комфортне розташування будинку, комфортна та найнеобхідніша інфраструктура поруч, і головне - комфортні умови для життя кожної сім`ї.
+      .swiper-slide
+        .realized-project__img 
+          img(src="./assets/images/realized-project1.jpg", alt="")
+        .realized-project__content
+          h1.realized-project__title Комфорт Хаус 1
+          p.realized-project__description Житловий комплекс, в основу назви якого не дарма взяте поняття комфорту.
+          p.realized-project__benefits Комфортне розташування будинку, комфортна та найнеобхідніша інфраструктура поруч, і головне - комфортні умови для життя кожної сім`ї.
+      .swiper-slide
+        .realized-project__img 
+          img(src="./assets/images/realized-project1.jpg", alt="")
+        .realized-project__content
+          h1.realized-project__title Комфорт Хаус 1
+          p.realized-project__description Житловий комплекс, в основу назви якого не дарма взяте поняття комфорту.
+          p.realized-project__benefits Комфортне розташування будинку, комфортна та найнеобхідніша інфраструктура поруч, і головне - комфортні умови для життя кожної сім`ї.
+   
+    .swiper-navigation
+      .swiper-button-prev
+      .swiper-pagination
+      .swiper-button-next
+
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+
