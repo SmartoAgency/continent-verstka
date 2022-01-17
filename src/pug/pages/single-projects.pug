@@ -1,0 +1,155 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Реалізований проект'
+    var id_page = 'project-realized'
+    var class_page = 'project-realized'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+    var qqq = [
+      'Зони для воркауту зі спеціальним резиновим покриттям;',
+      'Ефективна і зручна мережа велодоріжок, яка відділятиметься бордюрами від тротуарів і робитиме безпечним пересування на велосипеді;',
+      'Мережа широких прогулянкових алей навколо кварталу;',
+      'Мультиспортивний майданчик для різних ігор',
+      'Великі цілорічні розвиваючі та ігрові простори для дітей різного віку',
+      'Рекреаційні зони для занять спортом, йога-простір'
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/social-btn.js')
+  //- script(defer src='./assets/scripts/project-realized.js')
+  //- script(defer src='./assets/scripts/scroll-down.js')
+  script(defer src='./assets/scripts/footer.js')
+block arrow 
+  .social-select
+    .select-container.js-social
+      .select-img
+      ul.social-list 
+        li.social-item 
+          a(href="tel:+380676938069").social-link
+            +svg('tel')
+        li.social-item 
+          a(href="viber://chat?number=+380676938069" target="_blank").social-link
+            +svg('viber')
+        li.social-item 
+          a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank").social-link
+            +svg('telegram')
+        li.social-item 
+          a(href="https://www.facebook.com/continent.ua/" target="_blank").social-link
+            +svg('facebook')
+        li.social-item 
+          a(href="https://wa.me/380676938069" target="_blank").social-link
+            +svg('whatsapp')
+block content
+  .realized-project.single-realized-project
+    .swiper-wrapper
+      .swiper-slide
+        .realized-project__img 
+          img(src="./assets/images/project1.jpg", alt="")
+        .realized-project__content
+          h1.realized-project__title Житловий Квартал Continent Ray
+          p.realized-project__description Новий центр Бучі
+          .realty
+            +svg('calculator')
+            span Kалькулятор вартості
+      .swiper-slide
+        .realized-project__img 
+          img(src="./assets/images/project3.jpg", alt="")
+        .realized-project__content
+          h1.realized-project__title Комфорт Хаус 1
+          p.realized-project__description Житловий комплекс, в основу назви якого не дарма взяте поняття комфорту.
+          .realty
+            +svg('calculator')
+            span Kалькулятор вартості
+      .swiper-slide
+        .realized-project__img 
+          img(src="./assets/images/project1.jpg", alt="")
+        .realized-project__content
+          h1.realized-project__title Комфорт Хаус 1
+          p.realized-project__description Житловий комплекс, в основу назви якого не дарма взяте поняття комфорту.
+          .realty
+            +svg('calculator')
+            span Kалькулятор вартості
+   
+    .swiper-navigation
+      .swiper-button-prev
+      .swiper-pagination
+      .swiper-button-next
+
+  .single-specification 
+    ul.single-specification__benefits-list 
+      li.single-specification__item 20 хв до Києва
+      li.single-specification__item закрита територія з картковою системою доступу
+      li.single-specification__item дитячий та спортивний майданчики
+      li.single-specification__item до школи — 500 метрів
+      li.single-specification__item дитячий садок — навпроти комплексу
+    ul.single-specification__description-list
+      li.single-specification__item
+        +svg('floor')
+        p Поверховість
+        p 8 - 10 поверхів
+      li.single-specification__item
+        +svg('ceiling')
+        p Стелі:
+        p 2,97 - 3,6 м
+      li.single-specification__item
+        +svg('space')
+        p Площі квартир:
+        p 38 - 156 м²
+      li.single-specification__item
+        +svg('calendar')
+        p Строк здачі:
+        p III кв. 2021
+
+  .single-section1 
+    .single-section1__big
+      p Це логічне продовження забудови Continent з ще більш вражаючими перевагами. У житловому кварталі Continent Ray втілена унікальна піраміда пріоритетів, де на першому місці комфорт і безпека жителів. 
+      p Будуючи Continent Ray, ми хочемо створити локацію, якою наші мешканці будуть пишатися і запрошувати сюди своїх друзів. Локацію, де буде приємно проводити час просто так, і не важливо - вдома чи на вулиці, наодинці чи з родиною. Тут буде комфортно і гармонійно.
+      .single-section1__img
+        img(src="./assets/images/single1.jpg", alt="")
+    .single-section1__small 
+      .single-section1__img
+        img(src="./assets/images/single2.jpg", alt="")
+      ul 
+        li 
+          .num 01
+          .text Найбільша прибудинкова територія у регіоні
+        li 
+          .num 02
+          .text Рекреаційні зони для відпочинку, зустрічей та роботи на відкритому повітрі 
+        li 
+          .num 03
+          .text Зручна мережа велодоріжок навколо кварталу  
+
+  .single-section2
+    .single-section2__small 
+      .single-section2__img
+        img(src="./assets/images/single3.jpg", alt="")
+      ul 
+        each v, i in qqq
+          li 
+            .num= '0' + (i + 1)
+            .text= v
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+

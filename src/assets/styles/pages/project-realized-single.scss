@@ -37,6 +37,7 @@
     display: flex;
     // justify-content: center;
     align-items: center;
+
     .realized-project__img {
       position: absolute;
       top: 0;
@@ -44,6 +45,15 @@
       width: 100%;
       height: 100%;
       z-index: -1;
+      &::after {
+        content: '';
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
     .realized-project__content {
       width: 43%;
@@ -122,4 +132,122 @@
   font-size: 18px;
   line-height: 1.25;
   color: #ffffff;
+}
+
+.specification {
+  padding: 64px vw(100, 1920) 0 vw(100, 1920);
+}
+.specification__container {
+  column-count: 3;
+  padding: 40px 0 80px 0;
+  border-bottom: 2px solid #000000;
+}
+.specification__item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 44px;
+  svg {
+    fill: none;
+    width: 24px;
+    max-height: 27px;
+    margin-right: 20px;
+  }
+}
+.specification__text {
+  display: flex;
+  flex-direction: column;
+  .title {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .description {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.25;
+    color: #000000;
+    padding-top: 5px;
+    max-width: 235px;
+  }
+}
+
+.description__container {
+  padding: 80px 0 80px vw(100, 1920);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.description__text {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .our-projects__title {
+    margin-bottom: 32px;
+  }
+  p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+  .navigation-container {
+    // position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 48px;
+    // padding: 38px 24px 24px vw(100, 1920);
+    .swiper-pagination1 {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 1.25;
+      color: #000000;
+      margin-right: 24px;
+      white-space: nowrap;
+    }
+    .swiper-btn {
+      display: flex;
+      .swiper-button-prev1 {
+        margin-right: 16px;
+      }
+      .swiper-button-prev1 svg,
+      .swiper-button-next1 svg {
+        cursor: pointer;
+        circle {
+          fill: $black;
+          transition: fill 0.4s ease;
+        }
+      }
+      .swiper-button-prev1 svg:hover,
+      .swiper-button-next1 svg:hover {
+        @include from(992px) {
+          circle {
+            fill: #fec62e;
+            transition: fill 0.4s ease;
+          }
+        }
+      }
+    }
+    .swiper-scrollbar1 {
+      width: 100%;
+      margin-right: 24px;
+      border-radius: 10px;
+      height: 2px;
+      position: relative;
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+.description-swiper {
+  width: 43%;
+  overflow: hidden;
+  .swiper-slide {
+    height: 416px;
+  }
 }

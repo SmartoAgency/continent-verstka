@@ -22,6 +22,7 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/social-btn.js')
   script(defer src='./assets/scripts/project-realized.js')
   //- script(defer src='./assets/scripts/scroll-down.js')
   script(defer src='./assets/scripts/footer.js')
@@ -74,6 +75,85 @@ block content
       .swiper-button-prev
       .swiper-pagination
       .swiper-button-next
+
+  .specification 
+    h2.our-projects__title Характеристики
+    .specification__container 
+      ul.specification__list 
+        li.specification__item
+          +svg('adress')
+          .specification__text 
+            p.title адреса
+            p.description м. Буча, пров. Олекси Тихого
+        li.specification__item
+          +svg('garden')
+          .specification__text 
+            p.title прибудинкові ділянки
+            p.description 0,5 соток
+        li.specification__item
+          +svg('build')
+          .specification__text 
+            p.title Технологія будівництва
+            p.description Газоблок, цегла
+        li.specification__item
+          +svg('calendar')
+          .specification__text 
+            p.title зданий в експлуатацію:
+            p.description ІІ кв. 2015 року
+        li.specification__item
+          +svg('plan')
+          .specification__text 
+            p.title територія
+            p.description Закрита
+        li.specification__item
+          +svg('warming')
+          .specification__text 
+            p.title опалення
+            p.description Автономне
+        li.specification__item
+          +svg('home')
+          .specification__text 
+            p.title будинків
+            p.description 19
+        li.specification__item
+          +svg('warm')
+          .specification__text 
+            p.title утеплення
+            p.description Пінополістирол, мінеральна вата
+
+  .description__container 
+    .description__text 
+      h2.our-projects__title Опис
+      p Кожен із будинків являє собою двоповерховий простір із власним подвір'ям, земельною ділянкою, парковкою та зоною для відпочинку.
+      p Проєктом передбачена закрита територія з охороною, поруч функціонують учбові заклади, а для вечірніх променадів є власна прогулянкова алея. Окрім інфраструктури Бучі, жителі C`HOUSE можуть користуватися благами ЖК Continent та торгового простору BAZAR-VOKZAL, що побудовані поруч.
+
+      .navigation-container
+        .swiper-pagination1
+        .swiper-scrollbar1
+        .swiper-btn
+          .swiper-button-prev1
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="22" fill="black"/>
+              <path d="M24.6566 15.9999L18.9998 21.6567L24.6566 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          .swiper-button-next1
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="22" cy="22" r="22" fill="black"/>
+              <path d="M20.6569 15.9999L26.3137 21.6567L20.6569 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+
+
+
+    .description-swiper 
+      .swiper-wrapper
+        .swiper-slide
+          img(src="./assets/images/realized-project2.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/project1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/realized-project2.jpg", alt="")
+
+ 
 
 
 block header

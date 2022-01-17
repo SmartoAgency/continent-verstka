@@ -1,0 +1,105 @@
+.realized-project.single-realized-project {
+  .realized-project__content {
+    width: 55%;
+  }
+  .realty {
+    margin-top: 60px;
+    width: auto;
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      margin-right: 10px;
+    }
+  }
+}
+
+.single-specification {
+  padding: 24px vw(100, 1920) 32px vw(100, 1920);
+  border-bottom: 2px solid #000000;
+  display: flex;
+  justify-content: space-between;
+
+  &__benefits-list {
+    .single-specification__item {
+      list-style: disc;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.43;
+      color: #000000;
+    }
+  }
+  &__description-list {
+    display: flex;
+    .single-specification__item {
+      margin-right: 40px;
+      svg {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 20px;
+        fill: none;
+      }
+      p {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.43;
+        color: #000000;
+      }
+    }
+  }
+}
+.single-section1 {
+  padding: 80px 150px 0 vw(100, 1920);
+  display: flex;
+  justify-content: space-between;
+  &__big {
+    width: 54%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    p {
+      width: 70%;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.25;
+      color: #000000;
+      margin-bottom: 16px;
+    }
+    p + .single-section1__img {
+      margin-top: 68px;
+    }
+  }
+  &__small {
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .single-section1__img {
+      margin-bottom: 68px;
+      width: 87.5%;
+    }
+    li {
+      display: flex;
+      .num {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+
+        color: #000000;
+        margin-right: 20px;
+      }
+      .text {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.25;
+        color: #000000;
+        margin-bottom: 24px;
+        // list-style: decimal-leading-zero;}
+      }
+    }
+  }
+}
