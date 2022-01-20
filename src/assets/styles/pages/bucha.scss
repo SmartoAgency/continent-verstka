@@ -1,0 +1,46 @@
+#bucha {
+  // .description__container {
+  //   padding: 0 0 128px vw(100, 1920);
+  // }
+  // .reverse {
+  //   flex-direction: row-reverse;
+  //   padding: 0 vw(100, 1920) 128px 0;
+  //   // .swiper-wrapper {
+  //   //   transform: translate3d(-65%, 0, 0) !important;
+  //   // }
+  //   .description-swiper {
+  //     width: 100%;
+  //     overflow: visible;
+  //     margin-left: auto;
+  //   }
+  //   .container-description-swiper {
+  //     width: 43%;
+  //     overflow: hidden;
+  //   }
+  //   .swiper-wrapper {
+  //     margin-left: -65%;
+  //   }
+  // }
+  .description__text {
+    .num {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 1.25;
+      color: #000000;
+      margin-bottom: 30px;
+    }
+  }
+}
+.busha-text {
+  padding: 40px vw(100, 1920) 67px vw(100, 1920);
+  .our-projects__title {
+    margin-bottom: 48px;
+  }
+  p {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.21;
+    color: #000000;
+    width: 55%;
+  }
+}

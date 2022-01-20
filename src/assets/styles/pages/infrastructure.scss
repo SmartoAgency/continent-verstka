@@ -1,0 +1,121 @@
+.infrastructure-container {
+  padding: 40px vw(100, 1920) 0 vw(100, 1920);
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 48px;
+    .text-small {
+      width: 47%;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.21;
+      color: #000000;
+    }
+    .text-big {
+      width: 48%;
+      border-left: 2px solid #fec62e;
+      padding-left: 16px;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 1.22;
+      color: #000000;
+    }
+  }
+}
+
+#infrastructure {
+  .description__container {
+    padding: 157px 0 126px vw(100, 1920);
+  }
+  .description__text-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .num {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.71;
+      color: #000000;
+      margin-bottom: 16px;
+    }
+    .text {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.21;
+      color: #000000;
+    }
+  }
+  .page__inner {
+    overflow: initial;
+  }
+}
+.infrastructure-mall {
+  background: #f3f0ef;
+  padding: 50px vw(100, 1920) 10px vw(100, 1920);
+  &__list {
+    columns: 6;
+    column-gap: 30px;
+  }
+  &__item {
+    margin-bottom: 45px;
+    width: 176px;
+    height: 100px;
+    padding: 20px 0;
+    img {
+      object-fit: contain;
+      max-width: 140px;
+      max-height: 80px;
+    }
+  }
+}
+.infrastructure-benefits {
+  display: flex;
+  &__img {
+    width: 46%;
+    height: 600px;
+    position: sticky;
+    top: 0;
+  }
+  &__list {
+    width: 54%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item {
+    width: 50%;
+    border: 1px solid #f3f0ef;
+    padding: 35px 60px 70px 32px;
+    display: flex;
+    flex-direction: column;
+    .num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #fec62e;
+      margin-bottom: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.71;
+      color: #000000;
+    }
+    .title {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.23;
+      color: #000000;
+      margin-bottom: 16px;
+    }
+    .text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.25;
+      color: #000000;
+    }
+  }
+}

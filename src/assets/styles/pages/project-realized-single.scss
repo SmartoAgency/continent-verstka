@@ -218,19 +218,17 @@
       }
       .swiper-button-prev1 svg,
       .swiper-button-next1 svg {
+        width: 44px;
+        height: 44px;
         cursor: pointer;
-        circle {
-          fill: $black;
-          transition: fill 0.4s ease;
-        }
+        fill: $black;
+        transition: fill 0.4s ease;
       }
       .swiper-button-prev1 svg:hover,
       .swiper-button-next1 svg:hover {
         @include from(992px) {
-          circle {
-            fill: #fec62e;
-            transition: fill 0.4s ease;
-          }
+          fill: #fec62e;
+          transition: fill 0.4s ease;
         }
       }
     }
@@ -247,6 +245,7 @@
 .description-swiper {
   width: 43%;
   overflow: hidden;
+  // margin-left: auto;
   .swiper-slide {
     height: 416px;
   }

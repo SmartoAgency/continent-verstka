@@ -1,0 +1,209 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Інфраструктура'
+    var id_page = 'infrastructure'
+    var class_page = 'infrastructure'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+    var mall = [
+      'antoshka.svg',
+      'apteka.png',
+      'atb.png',
+      'bee.svg',
+      'cinema.png',
+      'comfy.png',
+      'dobro.png',
+      'dominos.png',
+      'eko.png',
+      'eldorado.png',
+      'epick.png',
+      'eva.png',
+      'fora.png',
+      'galya.png',
+      'join.png',
+      'jysk.png',
+      'lavina.svg',
+      'mc.png',
+      'nova-pochta.png',
+      'novus.png',
+      'oxford.svg',
+      'privat.svg',
+      'roshen.png',
+      'rozetka.png',
+      'santa.png',
+      'silpo.png',
+      'suhi.png',
+      'toscana.png',
+      'vesta.png',
+      'watsons.png',
+    ]
+    var benefits = [
+      //- {
+      //-   title: 'Власна інфраструктура',
+      //-   text: 'На першому поверсі будинків зосереджено найнеобхідніше, а поруч  побудований сучасний торговельний простір BAZAR&VOKZAL',
+      //-   num: '1'
+      //- },
+      //- {
+      //-   title: 'Власна інфраструктура',
+      //-   text: 'На першому поверсі будинків зосереджено найнеобхідніше, а поруч  побудований сучасний торговельний простір BAZAR&VOKZAL',
+      //-   num: '1'
+      //- }
+
+      ['Власна інфраструктура', 'На першому поверсі будинків зосереджено найнеобхідніше, а поруч  побудований сучасний торговельний простір BAZAR&VOKZAL;'],
+      ['Поштомати і банкомати', 'У підїздах будинків встановлені поштомати від сервісів доставки НОВА ПОШТА та МІСТ-ЕКСПРЕС, а на є території банкомат і термінал ПРИВАТБАНКУ;'],
+      ['Транспортна розвязка', 'В пішій доступності - транспортна розвязка: електричка до Святошино, маршрутні таксі по місту, до міст-сусідів та Києва;'],
+      ['Власна управляюча компанія', 'Регулює та вирішує всі комунальні питання;'],
+      ['Державні школа та дитячий садок', 'В 5 хвилинах від будинків'],
+      ['Доглянуті власні сквери та променади для прогулянок з родиною;', ''],
+      ['Надійні дитячі майданчики та сучасні вуличні спортивні тренажери;', ''],
+      ['15 парків та 5 озер для відпочинку на свіжому повітрі.', '']
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  //- script(defer src='./assets/scripts/social-btn.js')
+  script(defer src='./assets/scripts/map.js')
+  script(defer src='./assets/scripts/accordeon.js')
+  script(defer src='./assets/scripts/infrastructure.js')
+  script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/footer.js')
+//- block arrow 
+  .social-select
+    .select-container.js-social
+      .select-img
+      ul.social-list 
+        li.social-item 
+          a(href="tel:+380676938069").social-link
+            +svg('tel')
+        li.social-item 
+          a(href="viber://chat?number=+380676938069" target="_blank").social-link
+            +svg('viber')
+        li.social-item 
+          a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank").social-link
+            +svg('telegram')
+        li.social-item 
+          a(href="https://www.facebook.com/continent.ua/" target="_blank").social-link
+            +svg('facebook')
+        li.social-item 
+          a(href="https://wa.me/380676938069" target="_blank").social-link
+            +svg('whatsapp')
+block content
+  include ../includes/breadcrumbs.pug
+  .infrastructure-container
+    h2.our-projects__title Інфраструктура
+    .infrastructure-container__text 
+      p.text-small Коли люди живуть, працюють, вирішують свої потреби, відпочивають, комунікують один з одним, знаходячись в одному і тому ж місці і маючи поруч все необхідне для комфортного життя - це і є, власне, хороша інфраструктура. 
+      p.text-big Житлові простори від Strakhovskyi Group — це той випадок, коли все необхідне навіть ближче, ніж просто поруч.
+
+  .description__container 
+    .description__text 
+      ul.description__text-list
+        li.description__text-item
+          .num 01.
+          .text Комплекси розташовані на перетині Бучі та Ірпеня, що дає можливість мешканцям користуватися перевагами одразу двох міст.
+        li.description__text-item
+          .num 02.
+          .text 5-20 хв до торговельних, розважальних, медичних, фінансових закладів відомих українських та навіть світових мереж.
+      .navigation-container
+        .swiper-pagination1
+        .swiper-scrollbar1
+        .swiper-btn
+          .swiper-button-prev1
+            +svg('swiper-prev')
+          .swiper-button-next1
+            +svg('swiper-next')
+    .description-swiper.infrastructure-swiper
+      .swiper-wrapper
+        .swiper-slide
+          img(src="./assets/images/infrastructure1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/project1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/realized-project2.jpg", alt="")
+
+  section.infrastructure-mall
+    ul.infrastructure-mall__list 
+      each v, i in mall
+        li.infrastructure-mall__item 
+          img(src='./assets/images/infrastructure/'+v)
+
+  section.infrastructure-benefits 
+    .infrastructure-benefits__img
+      img(src='./assets/images/infrastructure2.jpg')
+    ul.infrastructure-benefits__list 
+      each v, i in benefits
+        li.infrastructure-benefits__item 
+          //- .num= v.num
+          //- .title= v.title
+          //- .text= v.text
+          .num= i + 1
+          .title= v[0]
+          .text= v[1]
+
+  .project__map.map
+    #map(width="500" height="500px")
+
+    .accordion.js-accordion
+      .accordion-item.orange
+        .accordion-toggle
+          span Школи
+        .accordion-panel
+          .accordion-panel__item Школа №1
+          .accordion-panel__item Школа №2
+          .accordion-panel__item Школа №3
+      .accordion-item.pear
+        .accordion-toggle
+          span Дитячий садок
+        .accordion-panel
+          .accordion-panel__item Дитячий садок №1
+          .accordion-panel__item Дитячий садок №2
+      .accordion-item.blue
+        .accordion-toggle
+          span Медицина
+        .accordion-panel
+          .accordion-panel__item Дитячий садок №1
+          .accordion-panel__item Дитячий садок №2
+      .accordion-item.violet
+        .accordion-toggle
+          span Торговий центр
+        .accordion-panel
+          .accordion-panel__item Дитячий садок №1
+          .accordion-panel__item Дитячий садок №2
+      .accordion-item.pink
+        .accordion-toggle
+          span Кафе/ресторани
+        .accordion-panel
+          .accordion-panel__item Дитячий садок №1
+          .accordion-panel__item Дитячий садок №2
+      .accordion-item.green
+        .accordion-toggle
+          span Місця для відпочинку
+        .accordion-panel
+          .accordion-panel__item Дитячий садок №1
+          .accordion-panel__item Дитячий садок №2
+      .accordion-item.red
+        .accordion-toggle
+          span Спорт та культура
+        .accordion-panel
+          .accordion-panel__item Дитячий садок №1
+          .accordion-panel__item Дитячий садок №2
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug

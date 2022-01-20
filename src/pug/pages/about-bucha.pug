@@ -1,0 +1,130 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Про Бучу'
+    var id_page = 'bucha'
+    var class_page = 'bucha'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+   
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/bucha.js')
+  script(defer src='./assets/scripts/developer.js') 
+  //- script(defer src='./assets/scripts/map.js')
+  //- script(defer src='./assets/scripts/accordeon.js')
+  //- script(defer src='./assets/scripts/infrastructure.js')
+  //- script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/footer.js')
+
+block content
+  include ../includes/breadcrumbs.pug
+
+  .busha-text
+    h2.our-projects__title Про Бучу
+    p За версією журналу ФОКУС, Буча входить в ТОП-30 найкращих міст для життя в Україні. А житлові простори від нашої компанії доповнюють це місто, створюючи для людей справжній комфорт поруч з природою та необхідною інфраструктурою. 
+
+
+  .description__container.js-developer 
+    .description__text 
+      .num 01.
+      h2.our-projects__title Екологія Бучі
+      p На сьогоднішній день експерти відзначають високий рівень екології та цілюще повітря Бучі, яке можна порівняти хіба що з Карпатськими курортами.
+      p Ми побудували ЖК Сontinent саме в цьому місці, створивши для вас справжній комфорт та єднання з природою. Серед неймовірної кількості парків, скверів та зелених насаджень ви завжди будете почувати себе затишно та спокійно.
+      p Саме тут щодня ваша родина буде дихати чистим незагазованим повітрям та отримувати насолоду від життя.
+      .navigation-container
+        .swiper-pagination1
+        .swiper-scrollbar1
+        .swiper-btn
+          .swiper-button-prev1 
+            +svg('swiper-prev')
+          .swiper-button-next1
+            +svg('swiper-next')
+    .description-swiper.js-init-swiper 
+      .swiper-wrapper
+        .swiper-slide
+          img(src="./assets/images/bucha1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/project1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/realized-project2.jpg", alt="")
+     
+  .description__container.reverse.js-developer 
+    .description__text 
+      .num 02.
+      h2.our-projects__title Бучанський парк
+      p Міський парк в Бучі був створений у 2011 році. Це один із наймолодших та живописних парків Київщини. Бучанський міський парк в англійському стилі розмістився на території загальною площею 42га.
+      p Озера з фонтанами, Французький дворик, велодоріжки, розкішні клумби, скульптури та інсталяції, міні-зоопарк, скейт-парк, екстрім-парк, дитяче містечко та багато затишних кафе – тут є все для прекрасного сімейного відпочинку.
+      .navigation-container
+        .swiper-pagination1
+        .swiper-scrollbar1
+        .swiper-btn
+          .swiper-button-prev1
+            +svg('swiper-prev')
+          .swiper-button-next1
+            +svg('swiper-next')
+    .container-description-swiper
+      .description-swiper.js-init-swiper
+        .swiper-wrapper
+          .swiper-slide
+            img(src="./assets/images/bucha2.jpg", alt="")
+          .swiper-slide
+            img(src="./assets/images/project1.jpg", alt="")
+          .swiper-slide
+            img(src="./assets/images/realized-project2.jpg", alt="")
+  .description__container.js-developer 
+    .description__text 
+      .num 03.
+      h2.our-projects__title Новий мікрорайон Бучі – Тарасівка
+      p У Бучі активно розвивається та будується новий мікрорайон. Це новий етап забудови міста, який гармонійно поєднує в собі комфорт сучасного міського життя та екологічність. Мікрорайон стрімко розвивається та приваблює молоді амбіційні родини, а місцеві жителі люблять його за тихі доглянуті вулиці та розвиток інфраструктури.
+      .navigation-container
+        .swiper-pagination1
+        .swiper-scrollbar1
+        .swiper-btn
+          .swiper-button-prev1
+            +svg('swiper-prev')
+          .swiper-button-next1
+            +svg('swiper-next')
+    .description-swiper.js-init-swiper 
+      .swiper-wrapper
+        .swiper-slide
+          img(src="./assets/images/single4.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/project1.jpg", alt="")
+        .swiper-slide
+          img(src="./assets/images/realized-project2.jpg", alt="")
+ 
+
+  .video-box
+    video(muted loop preload="metadata" class="swiper-video video") 
+      <source src="./assets/images/video1.mp4" type="video/mp4">
+    .play-button.playpause
+      .svg-wrapper
+        <svg id='svg' width="100px" height="100px" viewbox='0 0 100 100'>
+          <circle cx='50' cy='50' r='45' stroke='#FFFFFF' stroke-width='2'  fill='none' opacity='0.5'/>
+          <circle id='circle' cx='50' cy='50' r='45' stroke='#FFFFFF' stroke-width='2'  fill='none'/>
+        </svg>
+        <svg class="play" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="36" cy="36" r="36"/>
+          <path d="M44.5518 35.6401C45.2044 36.0276 45.2044 36.9724 44.5518 37.3599L31.5105 45.1031C30.8439 45.4989 30 45.0185 30 44.2433L30 28.7567C30 27.9815 30.8439 27.5011 31.5105 27.8969L44.5518 35.6401Z"/>
+        </svg>
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug

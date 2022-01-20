@@ -1,4 +1,5 @@
-#developer {
+#developer,
+#infrastructure {
   .header {
     background: $white;
   }
@@ -54,12 +55,36 @@
     }
   }
 }
-#developer {
+#developer,
+#bucha {
   .video-box {
     padding: 160px 176px;
     .video {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  .description__container {
+    padding: 0 0 128px vw(100, 1920);
+  }
+  .reverse {
+    flex-direction: row-reverse;
+    padding: 0 vw(100, 1920) 128px 0;
+    // .swiper-wrapper {
+    //   transform: translate3d(-65%, 0, 0) !important;
+    // }
+    .description-swiper {
+      width: 100%;
+      overflow: visible;
+      margin-left: auto;
+    }
+    .container-description-swiper {
+      width: 43%;
+      overflow: hidden;
+    }
+    .swiper-wrapper {
+      margin-left: -65%;
     }
   }
 }
