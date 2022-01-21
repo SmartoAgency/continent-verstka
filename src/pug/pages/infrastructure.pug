@@ -12,36 +12,36 @@ block variable
       //- }
     ]
     var mall = [
-      'antoshka.svg',
-      'apteka.png',
-      'atb.png',
-      'bee.svg',
-      'cinema.png',
-      'comfy.png',
-      'dobro.png',
-      'dominos.png',
-      'eko.png',
-      'eldorado.png',
-      'epick.png',
-      'eva.png',
-      'fora.png',
-      'galya.png',
-      'join.png',
-      'jysk.png',
-      'lavina.svg',
-      'mc.png',
       'nova-pochta.png',
-      'novus.png',
-      'oxford.svg',
-      'privat.svg',
-      'roshen.png',
-      'rozetka.png',
-      'santa.png',
+      'eldorado.png',
+      'galya.png',
+      'dobrobut.png',
+      'dominos.png',
+      'privat.png',
       'silpo.png',
-      'suhi.png',
-      'toscana.png',
+      'bee.png',
+      'oxford.png',
+      'roshen.png',
+      'lavina.png',
+      'novus.png',
+      'antoshka.png',
+      'santa.png',
+      'jysk.png',
+      'mc.png',
+      'eko.png',
+      'cinema.png',
       'vesta.png',
+      'rozetka.png',
+      'epic.png',
+      'fora.png',
+      'eva.png',
+      'sushi.png',
+      'join.png',
+      'comfy.png',
+      'atb.png',
       'watsons.png',
+      'apteka.png',
+      'toscana.png',
     ]
     var benefits = [
       //- {
@@ -136,7 +136,7 @@ block content
           img(src="./assets/images/realized-project2.jpg", alt="")
 
   section.infrastructure-mall
-    ul.infrastructure-mall__list 
+    ul.infrastructure-mall__list.partners__wrapper
       each v, i in mall
         li.infrastructure-mall__item 
           img(src='./assets/images/infrastructure/'+v)

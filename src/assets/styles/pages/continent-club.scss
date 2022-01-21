@@ -1,0 +1,39 @@
+.block__title {
+  padding: 40px vw(100, 1920) 30px vw(100, 1920);
+}
+.block__container {
+  display: flex;
+}
+.block__img {
+  width: 46%;
+}
+.block__text {
+  width: 64%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10% 65px 5%;
+  h3 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.22;
+    color: #000000;
+    margin-bottom: 30px;
+  }
+  .percent {
+    padding: 29px 96px;
+    background: #fec62e;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.23;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 35px;
+  }
+  p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.23;
+    color: #000000;
+  }
+}

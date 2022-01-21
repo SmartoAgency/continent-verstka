@@ -1,0 +1,123 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Strakhovskyi Group'
+    var id_page = 'investor'
+    var class_page = 'investor'
+    var list = [
+      ["Топ-3 забудовників Київського регіону", "Сьогодні ми входимо до ТОП-3 девелоперів регіону по кількості землі для будівництва житлової та комерційної нерухомості."],
+      ["Вклади інвесторів процюють", "Ми продаємо нерухомість швидше, ніж будуємо, а це означає, що інвестиції наших інвесторів працюють."],
+      ["Налагоджений механізм роботи", "Ми не експериментуємо, а пропонуємо готові моделі інвестування в нерухомість, які вже довели свою ефективність та безпечність."]
+    ]
+   
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/accordeon.js')
+  //- script(defer src='./assets/scripts/developer.js') 
+  script(defer src='./assets/scripts/map.js')
+  //- script(defer src='./assets/scripts/accordeon.js')
+  //- script(defer src='./assets/scripts/infrastructure.js')
+  //- script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/footer.js')
+
+block content
+  .investor-main
+    h2.our-projects__title Strakhovskyi Group – це вигідні та безпечні інвестиції в нерухомість.
+    h2.our-projects__title Приєднуйтесь до партнерства з нами і заробляйте до 18% річних!
+  .investor-main__container
+    h2.our-projects__title Strakhovskyi Group - компанія, яка займається не лише будівництвом, а й інвестиціями в сфері нерухомості. 
+    p Ми запрошуємо до співпраці інвесторів, які шукають вигідні і безпечні об'єкти інвестування і готові вкласти кошти в діяльність компанії Strakhovskyi Group, а саме в купівлю квартир і земельних ділянок (для подальшого будівництва). При цьому інвестор може обрати зручний варіант інвестування.
+    ul.investor-list
+      each v, i in list
+        li.investor-item 
+          .num= '0' + (i + 1) + '.'
+          .title= v[0]
+          .text= v[1]
+  .in-numbers 
+    .in-numbers__img
+      img(src="./assets/images/investor1.jpg", alt="")
+    ul.in-numbers__list
+      li.in-numbers__item 
+        .num 10
+        .text років на ринку <br> нерухомості
+      li.in-numbers__item 
+        .num 8
+        .text об`єктів <br> реалізовано 
+      li.in-numbers__item 
+        .num 63.7
+        .text тис. м² <br> здано в експлуатацію
+
+  .investment-conditions 
+    .investment-conditions__text 
+      h2.investment-conditions__title Зручний варіант інвестування
+    .accordion.js-accordion
+      .accordion-item
+        .accordion-toggle
+          .num 01.
+          span Купівля житлового фонду та інвестиції в комерційну нерухомість.
+        .accordion-panel
+          p Придбання м.кв. житла і комерційних площ на ранній стадії будівництва з метою перепродажу на більш пізньому етапі або після введення в експлуатацію нерухомості, яка у той час буде коштувати значно дорожче або ж здаватиметься в оренду і приноситиме «пасивний» дохід з оренди.
+          p Придбання м.кв. житла і комерційних площ на ранній стадії будівництва з метою перепродажу на більш пізньому етапі або після введення в експлуатацію нерухомості, яка у той час буде коштувати значно дорожче або ж здаватиметься в оренду і приноситиме «пасивний» дохід з оренди.
+      .accordion-item
+        .accordion-toggle
+          .num 02.
+          span Інвестування під відсоток.
+        .accordion-panel
+          p Придбання м.кв. житла і комерційних площ на ранній стадії будівництва з метою перепродажу на більш пізньому етапі або після введення в експлуатацію нерухомості, яка у той час буде коштувати значно дорожче або ж здаватиметься в оренду і приноситиме «пасивний» дохід з оренди.
+      .accordion-item
+        .accordion-toggle
+          .num 03.
+          span Спільна діяльність. 
+        .accordion-panel
+          p Придбання м.кв. житла і комерційних площ на ранній стадії будівництва з метою перепродажу на більш пізньому етапі або після введення в експлуатацію нерухомості, яка у той час буде коштувати значно дорожче або ж здаватиметься в оренду і приноситиме «пасивний» дохід з оренди.
+
+  .guarantees
+    .guarantees__img
+      img(src="./assets/images/investor2.jpg", alt="")
+      .guarantees__img-description 
+        .name Страховський Андрій Андрійович
+        .tel +38 (067) 230 90 45
+    .guarantees__text 
+      h2.our-projects__title Гарантії та ефективність
+      ul 
+        li Наш договір дозволяє дострокове розірвання
+        li Ми відкриті для інвестора
+        li У нас є вся дозвільна документація
+        li Всі наші будинки побудовані і введені в експлуатацію
+        li У всіх об'єктах вчасно підключені комунікації
+      p Strakhovskyi Group - це сильний маркетинг і висока впізнаваність бренду. Всі свої домовленості і зобов'язання ми офіційно оформляємо в договорі, кожен пункт якого обговорюємо і роз'яснюємо. Також ми вказуємо всі необхідні гарантії, серед яких:
+      ul 
+        li Гарантія повернення
+        li Гарантія виконання зобов'язань
+        li Порука
+
+  .expirience 
+    p Але найважливіша гарантія - це наші 10 років на ринку нерухомості, десятки нагород у сфері нерухомості і постійне збільшення бажаючих придбати у нас житло. Все це формує благополучний інвестиційний клімат і підтверджує нашу компетентність та надійність. 
+
+  section.contacts 
+    .contacts__information
+      h4.contacts__adress м. Буча <br> пров. Олекси Тихого 4, офіс 1
+      ul.schedule
+        li.schedule__link
+          .schedule__label Пн-Cб:
+          .schedule__value з 9:00 до 18:00
+        li.schedule__link
+          .schedule__label Нд:
+          .schedule__value з 11:00 до 17:00
+      a(href='mailto:office@continent.ua').contacts-mail office@continent.ua
+    .contacts__map.map
+      #map(width="500" height="500px")
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug

@@ -1,0 +1,264 @@
+.investor-main {
+  width: 100vw;
+  // height: calc(100vh - var(--header-h));
+  height: 100vh;
+  // min-height: calc(100vh - 250px);
+  height: calc(var(--vh, 1vh) * 100);
+  padding: 108px vw(100, 1920) vw(100, 1920);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('../images/investor-bg.jpg');
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  // transition: all 0.2s ease;
+  .our-projects__title {
+    color: $white;
+    margin-bottom: 60px;
+    text-align: center;
+    width: 80%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.investor-main__container {
+  padding: 60px vw(100, 1920) 120px vw(100, 1920);
+  .our-projects__title {
+    width: 80%;
+    margin-bottom: 40px;
+  }
+  p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #000000;
+    width: 65%;
+  }
+  .investor-list {
+    padding-top: 60px;
+    column-count: 3;
+    column-gap: 100px;
+    .num {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #000000;
+      margin-bottom: 16px;
+    }
+    .title {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.23;
+      color: #000000;
+      margin-bottom: 16px;
+    }
+    .text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.25;
+      color: #000000;
+    }
+  }
+}
+
+.in-numbers {
+  display: flex;
+  &__img {
+    width: 57%;
+  }
+  &__list {
+    width: 43%;
+  }
+  &__item {
+    padding: 80px 0 80px 120px;
+    border: 1px solid #f3f0ef;
+    display: flex;
+    align-items: center;
+    .num {
+      font-weight: 800;
+      font-size: 64px;
+      line-height: 1.25;
+      color: #000000;
+      margin-right: 8px;
+    }
+    .text {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.23;
+
+      color: #000000;
+    }
+  }
+}
+
+.investment-conditions {
+  display: flex;
+  justify-content: space-between;
+  background: #141414;
+  padding: 80px vw(100, 1920);
+  &__text {
+    width: 22%;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.22;
+    color: #fec62e;
+  }
+  .accordion {
+    position: initial;
+    width: 66%;
+    height: auto;
+    background: #141414;
+    &-item {
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &-toggle {
+      border: 2px solid #202020;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 1.22;
+      color: #ffffff;
+      position: relative;
+      padding: 32px 104px;
+      &::before {
+        display: none;
+      }
+      &::after {
+        background-image: url(../images/plus-white.svg);
+        right: 40px;
+      }
+      .num {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.7;
+        color: #ffffff;
+        position: absolute;
+        left: 48px;
+        top: 38px;
+      }
+    }
+    .is-open .accordion-toggle {
+      background: initial;
+      border: none;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .is-open .accordion-panel {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .is-open .accordion-toggle::after {
+      background-image: url(../images/minus-white.svg);
+      right: 40px;
+    }
+    &-panel {
+      padding: 0 104px 52px 104px;
+      p {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.25;
+        color: #ffffff;
+        margin-bottom: 16px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.guarantees {
+  display: flex;
+  &__img {
+    width: 43%;
+    position: relative;
+    &-description {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 32px;
+      background: #ffffff;
+      .name {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 1.21;
+        color: #000000;
+        width: 80%;
+        margin-bottom: 16px;
+      }
+      .tel {
+        font-size: 16px;
+        line-height: 1.25;
+        color: #000000;
+      }
+    }
+  }
+  &__text {
+    width: 57%;
+    padding: 108px vw(100, 1920) 85px 104px;
+    .our-projects__title {
+      margin-bottom: 48px;
+    }
+    ul {
+      column-count: 2;
+      column-gap: 64px;
+      padding-left: 15px;
+    }
+    li {
+      margin-bottom: 30px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #000000;
+      list-style: disc;
+    }
+    p {
+      padding: 40px 0;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.23;
+      color: #000000;
+    }
+  }
+}
+.expirience {
+  padding: 112px 176px;
+  background: #fec62e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.22;
+    text-align: center;
+
+    color: #000000;
+  }
+}
+
+#investor {
+  .contacts {
+    // align-items: center;
+    // justify-content: center;
+    &__information {
+      background: #f3f0ef;
+      height: 690px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+      .contacts-mail {
+        width: 150px;
+      }
+    }
+  }
+}

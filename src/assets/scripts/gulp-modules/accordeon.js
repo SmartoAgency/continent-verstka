@@ -29,5 +29,5 @@ $(() => {
     }, 700);
     return false;
   });
-  openAccordeonOnAnchorLink();
+  // openAccordeonOnAnchorLink();
 });

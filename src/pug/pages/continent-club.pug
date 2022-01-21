@@ -1,0 +1,76 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Continent Club'
+    var id_page = 'cont-club'
+    var class_page = 'cont-club'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+   
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  //- script(defer src='./assets/scripts/bucha.js')
+  //- script(defer src='./assets/scripts/developer.js') 
+  //- script(defer src='./assets/scripts/map.js')
+  //- script(defer src='./assets/scripts/accordeon.js')
+  //- script(defer src='./assets/scripts/infrastructure.js')
+  //- script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/footer.js')
+
+block content
+  include ../includes/breadcrumbs.pug
+  .block__title
+    h2.our-projects__title Continent Сlub
+
+
+  .block__container
+    .block__img 
+      img(src="./assets/images/continent.jpg", alt="")
+    .block__text 
+      h3 Це система лояльності та безмежні можливості отримання бонусів від забудовника. 
+      .percent 
+        p Отримуйте фіксований 1% від її загальної суми угоди 
+      p Працює Continent Club досить просто: якщо ви інвестор житлових просторів Continent і маєте серед родичів, друзів або знайомих бажаючих придбати житло, - рекомендуйте нас і після заключення угоди отримуйте фіксований 1% від її загальної суми.
+
+  .form-opportunity 
+    h2.our-projects__title Відкривайте нові <br> можливості з Continent
+    form( action="#" class="review-form")
+      .form-field
+        .form-field-input(data-field-input data-field-name data-status="field--inactive")
+          input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
+          span.placeholder Ваше ім’я
+          .input-message(data-input-message)
+        .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+          input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+          span.placeholder Ваш номер телефону
+          .input-message(data-input-message)
+        .form-field-input(data-field-input data-field-name data-status="field--inactive")
+          input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
+          span.placeholder Номер договору
+          .input-message(data-input-message)
+        
+      .form-field-confirm
+        button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
+          span Відправити
+          +svg('arrow')
+
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
