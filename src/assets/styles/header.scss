@@ -5,11 +5,12 @@
   width: 100%;
   z-index: 100;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  // justify-content: space-between;
+  // align-items: center;
   padding: 0 vw(32, 1440);
   padding: 0 vw(100, 1920);
-  height: var(--header-h);
+  // height: var(--header-h);
 
   background: inherit;
   // background: #ffffff;
@@ -23,10 +24,16 @@
   //   padding: 0 vw(20, 360);
   // }
 }
-.menu-header {
-  filter: blur(8px);
-  pointer-events: none;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-h);
 }
+// .menu-header {
+//   filter: blur(8px);
+//   pointer-events: none;
+// }
 .logo-container {
   display: flex;
   align-items: center;
@@ -62,6 +69,7 @@
 .nav {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 .nav__tel-link {
   text-decoration: none;
@@ -271,5 +279,63 @@
   .cancel {
     background: #8bb514;
     color: $white;
+  }
+}
+
+.logo-container__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-h);
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 0 vw(100, 1920);
+  transition: height 0.5s ease-in-out;
+}
+.logo-container__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    width: 145px;
+    height: 27px;
+    margin-right: 28px;
+  }
+  .nav-menu-header {
+    display: flex;
+    align-items: center;
+    &__item {
+      margin-right: 28px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #000000;
+      }
+    }
+  }
+}
+.current-page {
+  position: relative;
+  &::before {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: #000000;
+    position: absolute;
+    left: 0;
+    bottom: -17px;
   }
 }

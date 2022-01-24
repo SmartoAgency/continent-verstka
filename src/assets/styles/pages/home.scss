@@ -28,13 +28,13 @@
   //   background: rgba(0, 0, 0, 0.4);
   // }
 }
-.blur {
-  filter: blur(8px);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('../images/main-backround.jpg');
-  pointer-events: none;
-  overflow: hidden;
-}
+// .blur {
+//   filter: blur(8px);
+//   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+//     url('../images/main-backround.jpg');
+//   pointer-events: none;
+//   overflow: hidden;
+// }
 .main-content__title {
   font-weight: 800;
   font-size: min(vw(64, 1440), 80px);

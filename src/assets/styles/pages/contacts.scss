@@ -1,0 +1,197 @@
+#contacts-page {
+  .contacts {
+    // margin-top: calc(var(--header-h) + 40px);
+    margin-top: var(--header-h);
+  }
+  .contacts .map {
+    height: 802px;
+    position: relative;
+    #map {
+      height: 802px;
+    }
+  }
+  .map-btn {
+    margin-right: 0;
+    background: #ffffff;
+    position: absolute;
+    right: 30px;
+    bottom: 60px;
+    transition: all 0.2s ease;
+  }
+  .map-btn-open {
+    background: #fec62e;
+    border-radius: 50%;
+    padding: 14px;
+    span {
+      display: none;
+    }
+    svg {
+      margin-right: 0;
+    }
+  }
+  .contacts__information {
+    position: relative;
+    padding-top: 95px;
+  }
+  .breadcrumbs {
+    position: absolute;
+    top: 40px;
+    left: vw(100, 1920);
+    margin: 0;
+  }
+  .our-projects__title {
+    margin-bottom: 40px;
+  }
+  .tablinks {
+    border: none;
+    border-radius: none;
+    background: none;
+    padding: 0;
+    font-weight: 600;
+    font-size: min(vw(14, 1440), 16px);
+    line-height: 1.25px;
+    color: rgba(0, 0, 0, 0.3);
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    margin-right: 28px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .tabs__item {
+    margin-top: 50px;
+  }
+  .active {
+    flex-direction: column;
+  }
+  .tablinks.active {
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    position: relative;
+    &::after {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      content: '';
+      height: 2px;
+      width: 100%;
+      background: #fec62e;
+    }
+  }
+  .menu-social {
+    margin-top: 50px;
+  }
+}
+
+.map-address {
+  position: absolute;
+  bottom: 130px;
+  right: 32px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  &__container {
+    position: relative;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 32px;
+    .close-map {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 32px;
+      right: 32px;
+    }
+    h4 {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.23;
+      color: #000000;
+      margin-bottom: 24px;
+    }
+    p {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.25;
+      color: #000000;
+    }
+    .navigation-servise {
+      display: flex;
+      padding: 20px 0;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #f3f0ef;
+      &__item {
+        margin-right: 10px;
+      }
+      &__link {
+        text-decoration: none;
+        border: 2px solid #f3f0ef;
+        border-radius: 44px;
+        height: 48px;
+        width: 192px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 1.21;
+        color: #000000;
+        svg {
+          fill: none;
+          margin-right: 8px;
+          width: 22px;
+          height: auto;
+        }
+      }
+    }
+    .public-transport {
+      column-count: 2;
+      column-gap: 70px;
+      padding: 16px 0 24px 0;
+      &__link {
+        margin-bottom: 16px;
+        .location {
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 1.2;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          color: #000000;
+          margin-bottom: 8px;
+        }
+        .transport {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 1.25;
+          color: #000000;
+        }
+      }
+    }
+    .trains {
+      .location {
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 8px;
+      }
+      .transport {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.25;
+        color: #000000;
+      }
+      .trains-btn {
+        margin-top: 16px;
+      }
+    }
+  }
+}
+.map-address-visible {
+  opacity: 1;
+}

@@ -39,7 +39,9 @@
   }
   .header {
     position: relative;
-    justify-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
+    height: var(--header-h);
     .nav__tel-link {
       color: #000000;
     }
@@ -83,106 +85,119 @@
       &:last-child {
         margin-bottom: 0;
       }
-      .menu-social {
-        display: flex;
-        padding-top: 20px;
-        &__item {
-          margin-right: 16px;
-          &:last-child {
-            margin-right: 0;
-          }
-        }
-        .facebook,
-        .telegram,
-        .youtube,
-        .tiktok {
-          circle {
-            fill: #f3f0ef;
-            transition: all 0.4s ease;
-          }
-          path {
-            fill: #000000;
-            transition: all 0.4s ease;
-          }
-          &:hover {
-            @include from(992px) {
-              circle {
-                fill: #227aee;
-              }
-              path {
-                fill: white;
-              }
-            }
-          }
-        }
-        .telegram {
-          &:hover {
-            @include from(992px) {
-              circle {
-                fill: #4fc0f9;
-              }
-              path {
-                fill: white;
-              }
-            }
-          }
-        }
-        .youtube {
-          &:hover {
-            @include from(992px) {
-              circle {
-                fill: #fc0d1b;
-              }
-              path {
-                fill: white;
-              }
-            }
-          }
-        }
-        .tiktok {
-          &:hover {
-            @include from(992px) {
-              circle {
-                fill: #000000;
-              }
-              path {
-                fill: white;
-              }
-            }
-          }
-        }
-        .menu-social__instagram {
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          background: #f3f0ef;
-          transition: all 0.4s ease;
-          position: relative;
-          svg {
-            fill: #000000;
-            transition: all 0.4s ease;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-          }
-          &:hover {
-            @include from(992px) {
-              background: radial-gradient(
-                circle at 30% 107%,
-                #fdf497 0%,
-                #fdf497 5%,
-                #fd5949 45%,
-                #d6249f 60%,
-                #285aeb 90%
-              );
-              svg {
-                fill: white;
-              }
-            }
-          }
-        }
-      }
+      // .menu-social {
+      //   display: flex;
+      //   padding-top: 20px;
+      //   &__item {
+      //     margin-right: 16px;
+      //     &:last-child {
+      //       margin-right: 0;
+      //     }
+      //   }
+      //   .facebook,
+      //   .telegram,
+      //   .youtube,
+      //   .tiktok,
+      //   .whatsapp {
+      //     circle {
+      //       fill: #f3f0ef;
+      //       transition: all 0.4s ease;
+      //     }
+      //     path {
+      //       fill: #000000;
+      //       transition: all 0.4s ease;
+      //     }
+      //     &:hover {
+      //       @include from(992px) {
+      //         circle {
+      //           fill: #227aee;
+      //         }
+      //         path {
+      //           fill: white;
+      //         }
+      //       }
+      //     }
+      //   }
+      //   .telegram {
+      //     &:hover {
+      //       @include from(992px) {
+      //         circle {
+      //           fill: #4fc0f9;
+      //         }
+      //         path {
+      //           fill: white;
+      //         }
+      //       }
+      //     }
+      //   }
+      //   .youtube {
+      //     &:hover {
+      //       @include from(992px) {
+      //         circle {
+      //           fill: #fc0d1b;
+      //         }
+      //         path {
+      //           fill: white;
+      //         }
+      //       }
+      //     }
+      //   }
+      //   .tiktok {
+      //     &:hover {
+      //       @include from(992px) {
+      //         circle {
+      //           fill: #000000;
+      //         }
+      //         path {
+      //           fill: white;
+      //         }
+      //       }
+      //     }
+      //   }
+      //   .whatsapp {
+      //     &:hover {
+      //       @include from(992px) {
+      //         circle {
+      //           fill: #34ce66;
+      //         }
+      //         path {
+      //           fill: white;
+      //         }
+      //       }
+      //     }
+      //   }
+      //   .menu-social__instagram {
+      //     width: 48px;
+      //     height: 48px;
+      //     border-radius: 50%;
+      //     background: #f3f0ef;
+      //     transition: all 0.4s ease;
+      //     position: relative;
+      //     svg {
+      //       fill: #000000;
+      //       transition: all 0.4s ease;
+      //       position: absolute;
+      //       top: 50%;
+      //       left: 50%;
+      //       transform: translate(-50%, -50%);
+      //     }
+      //     &:hover {
+      //       @include from(992px) {
+      //         background: radial-gradient(
+      //           circle at 30% 107%,
+      //           #fdf497 0%,
+      //           #fdf497 5%,
+      //           #fd5949 45%,
+      //           #d6249f 60%,
+      //           #285aeb 90%
+      //         );
+      //         svg {
+      //           fill: white;
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
     }
     &__link {
       text-decoration: none;
@@ -213,6 +228,119 @@
             transform: scale3d(1, 1, 1);
             color: #79b43e;
           }
+        }
+      }
+    }
+  }
+}
+.menu-social {
+  display: flex;
+  padding-top: 20px;
+  &__item {
+    margin-right: 16px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .facebook,
+  .telegram,
+  .youtube,
+  .tiktok,
+  .whatsapp {
+    circle {
+      fill: #f3f0ef;
+      transition: all 0.4s ease;
+    }
+    path {
+      fill: #000000;
+      transition: all 0.4s ease;
+    }
+    &:hover {
+      @include from(992px) {
+        circle {
+          fill: #227aee;
+        }
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+  .telegram {
+    &:hover {
+      @include from(992px) {
+        circle {
+          fill: #4fc0f9;
+        }
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+  .youtube {
+    &:hover {
+      @include from(992px) {
+        circle {
+          fill: #fc0d1b;
+        }
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+  .tiktok {
+    &:hover {
+      @include from(992px) {
+        circle {
+          fill: #000000;
+        }
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+  .whatsapp {
+    &:hover {
+      @include from(992px) {
+        circle {
+          fill: #34ce66;
+        }
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+  .menu-social__instagram {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f3f0ef;
+    transition: all 0.4s ease;
+    position: relative;
+    svg {
+      fill: #000000;
+      transition: all 0.4s ease;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:hover {
+      @include from(992px) {
+        background: radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
+        svg {
+          fill: white;
         }
       }
     }

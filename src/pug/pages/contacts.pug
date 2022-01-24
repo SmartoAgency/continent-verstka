@@ -1,0 +1,170 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Контакти'
+    var id_page = 'contacts-page'
+    var class_page = 'contacts-page'
+   
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/select.js')
+  script(defer src='./assets/scripts/contacts.js') 
+  script(defer src='./assets/scripts/map.js')
+  script(defer src='./assets/scripts/tab.js')
+  //- script(defer src='./assets/scripts/infrastructure.js')
+  //- script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/footer.js')
+
+block content
+  section.contacts 
+    .contacts__information
+      include ../includes/breadcrumbs.pug 
+      h2.our-projects__title Контакти 
+      .tab
+        button.tablinks.tabs__nav-btn(data-tab="#tab_1") Відділ продажів
+        button.tablinks.tabs__nav-btn(data-tab="#tab_2") Маркетинг
+        button.tablinks.tabs__nav-btn(data-tab="#tab_3") Постачання
+      .tabcontent.tabs__item(id="tab_1")
+        h4.contacts__adress м. Буча <br> пров. Олекси Тихого 4
+        .contacts__tel-container 
+          a(href='tel:+380503694892').contacts__tel-link
+            span 050 369-48-92
+          a(href='tel:+380676938069').contacts__tel-link
+            span 067 693-80-69
+        ul.schedule
+          li.schedule__link
+            .schedule__label Пн-Cб:
+            .schedule__value з 9:00 до 18:00
+          li.schedule__link
+            .schedule__label Нд:
+            .schedule__value з 11:00 до 17:00
+        .contacts-mail-link
+          a(href='mailto:office@continent.ua').contacts-mail office@continent.ua
+        ul.menu-social
+          li.menu-social__item
+            a(href="#").menu-social__link
+              <svg class="facebook" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24" />
+                <path d="M21.9053 34V25.502H19V22.125H21.9053V19.4643C21.9053 16.5734 23.7083 15 26.3409 15C27.6023 15 28.6856 15.0928 29 15.1336V18.1543H27.1742C25.7424 18.1543 25.4659 18.8223 25.4659 19.7982V22.125H28.697L28.2538 25.502H25.4659V34"/>
+              </svg>
+          li.menu-social__item.menu-social__instagram 
+            a(href="#").menu-social__link
+              <svg class="instagram" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24.0029 17.3339C20.3139 17.3339 17.3383 20.3102 17.3383 24C17.3383 27.6898 20.3139 30.6661 24.0029 30.6661C27.6919 30.6661 30.6675 27.6898 30.6675 24C30.6675 20.3102 27.6919 17.3339 24.0029 17.3339ZM24.0029 28.3338C21.619 28.3338 19.67 26.3903 19.67 24C19.67 21.6097 21.6132 19.6662 24.0029 19.6662C26.3926 19.6662 28.3358 21.6097 28.3358 24C28.3358 26.3903 26.3868 28.3338 24.0029 28.3338ZM32.4946 17.0613C32.4946 17.9257 31.7986 18.6161 30.9401 18.6161C30.0759 18.6161 29.3856 17.9199 29.3856 17.0613C29.3856 16.2026 30.0817 15.5064 30.9401 15.5064C31.7986 15.5064 32.4946 16.2026 32.4946 17.0613ZM36.9086 18.6393C36.81 16.5565 36.3344 14.7116 34.8089 13.1916C33.2892 11.6715 31.4447 11.1958 29.3624 11.0914C27.2163 10.9695 20.7837 10.9695 18.6376 11.0914C16.5611 11.19 14.7166 11.6657 13.1911 13.1858C11.6656 14.7058 11.1958 16.5507 11.0914 18.6335C10.9695 20.7801 10.9695 27.2141 11.0914 29.3607C11.19 31.4435 11.6656 33.2884 13.1911 34.8084C14.7166 36.3285 16.5553 36.8042 18.6376 36.9086C20.7837 37.0305 27.2163 37.0305 29.3624 36.9086C31.4447 36.81 33.2892 36.3343 34.8089 34.8084C36.3286 33.2884 36.8042 31.4435 36.9086 29.3607C37.0305 27.2141 37.0305 20.7859 36.9086 18.6393ZM34.1361 31.664C33.6837 32.8011 32.8078 33.6771 31.6651 34.1354C29.954 34.8142 25.8938 34.6576 24.0029 34.6576C22.112 34.6576 18.046 34.8084 16.3407 34.1354C15.2038 33.6829 14.3279 32.8069 13.8697 31.664C13.1911 29.9525 13.3477 25.8913 13.3477 24C13.3477 22.1087 13.1969 18.0417 13.8697 16.336C14.3221 15.1989 15.198 14.3229 16.3407 13.8646C18.0518 13.1858 22.112 13.3424 24.0029 13.3424C25.8938 13.3424 29.9598 13.1916 31.6651 13.8646C32.802 14.3171 33.6779 15.1931 34.1361 16.336C34.8147 18.0475 34.6581 22.1087 34.6581 24C34.6581 25.8913 34.8147 29.9583 34.1361 31.664Z"/>
+              </svg>
+          li.menu-social__item 
+            a(href="#").menu-social__link
+              <svg class="telegram" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24" />
+                <path d="M32.943 17.5476L29.9249 31.9738C29.6972 32.992 29.1034 33.2454 28.2596 32.7657L23.6609 29.3311L21.442 31.4941C21.1964 31.743 20.9911 31.9512 20.5178 31.9512L20.8482 27.2043L29.3713 19.3984C29.7418 19.0636 29.2909 18.878 28.7953 19.2129L18.2587 25.9373L13.7225 24.4983C12.7359 24.186 12.718 23.4982 13.9279 23.0185L31.6706 16.0905C32.4921 15.7783 33.2109 16.2761 32.943 17.5476Z" />
+              </svg>
+          li.menu-social__item 
+            a(href="https://wa.me/380676938069" target="_blank").social-link
+              <svg class="whatsapp" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24"/>
+                <path d="M33.2935 14.4344C32.6658 13.8632 30.1253 12.0421 24.461 12.0177C24.461 12.0177 17.7834 11.6222 14.5312 14.5711C12.7221 16.358 12.0845 18.9797 12.0153 22.2264C11.9461 25.473 11.8621 31.5562 17.7983 33.2064H17.8032L17.7983 35.7256C17.7983 35.7256 17.7587 36.746 18.4408 36.9511C19.2613 37.205 19.7457 36.4287 20.5315 35.5938C20.9616 35.1349 21.5547 34.4612 22.0045 33.9485C26.0673 34.2854 29.1861 33.514 29.542 33.4017C30.3625 33.1381 35.0037 32.5522 35.7549 26.469C36.5359 20.1905 35.3793 16.2261 33.2935 14.4344ZM33.9805 26.0101C33.3429 31.0876 29.5816 31.4098 28.8896 31.6295C28.593 31.7222 25.8499 32.396 22.4048 32.1763C22.4048 32.1763 19.8346 35.2374 19.0339 36.0332C18.772 36.292 18.4853 36.2676 18.4902 35.7549C18.4902 35.4181 18.51 31.5709 18.51 31.5709C18.5051 31.5709 18.5051 31.5709 18.51 31.5709C13.4784 30.1941 13.7749 25.0141 13.8293 22.3045C13.8837 19.5949 14.4026 17.3735 15.9349 15.8795C18.6879 13.414 24.3572 13.7802 24.3572 13.7802C29.1466 13.7997 31.44 15.2253 31.9738 15.7037C33.7383 17.1977 34.6379 20.7715 33.9805 26.0101ZM27.1102 22.0653C27.13 22.4851 26.4924 22.5144 26.4726 22.0945C26.4183 21.0205 25.9092 20.4981 24.8613 20.4395C24.4363 20.4151 24.4758 19.7853 24.8959 19.8097C26.2749 19.8829 27.041 20.6641 27.1102 22.0653ZM28.1136 22.6169C28.163 20.5469 26.8532 18.926 24.3671 18.7454C23.9469 18.7161 23.9914 18.0863 24.4115 18.1156C27.2783 18.3206 28.8056 20.2686 28.7512 22.6316C28.7463 23.0515 28.1037 23.0319 28.1136 22.6169ZM30.4366 23.2712C30.4416 23.691 29.799 23.6959 29.799 23.276C29.7694 19.297 27.0855 17.1293 23.8283 17.1049C23.4082 17.1001 23.4082 16.4751 23.8283 16.4751C27.471 16.4995 30.402 18.9846 30.4366 23.2712ZM29.8781 28.0606V28.0704C29.3443 28.998 28.3459 30.0232 27.3178 29.6961L27.3079 29.6815C26.265 29.3934 23.8085 28.1436 22.2565 26.923C21.4558 26.2981 20.7243 25.5609 20.1608 24.853C19.6518 24.2232 19.1377 23.4762 18.6385 22.5779C17.5857 20.6982 17.3534 19.8585 17.3534 19.8585C17.0223 18.843 18.0553 17.8568 18.9993 17.3295H19.0092C19.4639 17.0952 19.8989 17.1733 20.1905 17.5199C20.1905 17.5199 20.8034 18.2425 21.0654 18.5989C21.3125 18.9309 21.6436 19.463 21.8166 19.7609C22.1181 20.293 21.9303 20.8349 21.6338 21.0595L21.0406 21.5282C20.7391 21.7674 20.7787 22.2117 20.7787 22.2117C20.7787 22.2117 21.6585 25.4974 24.9453 26.3274C24.9453 26.3274 25.3951 26.3665 25.6373 26.0687L26.1118 25.4828C26.3392 25.1899 26.8878 25.0043 27.4266 25.3022C28.1531 25.7074 29.0774 26.3372 29.6903 26.9084C30.0363 27.1867 30.1154 27.6114 29.8781 28.0606Z"/>
+              </svg>
+
+         
+        .contacts-call-link
+          button(type='button').nav__call-btn.contacts__call-btn.js-call
+            +svg('phone')
+            span.nav__call-btn-text Замовити дзвінок
+      .tabcontent.tabs__item(id="tab_2")
+        h2.our-projects__title tab_2 
+      .tabcontent.tabs__item(id="tab_3")
+        h2.our-projects__title tab_3 
+    .contacts__map.map
+      #map(width="500" height="500px")
+      button(type='button').nav__call-btn.contacts__call-btn.map-btn.js-open-map
+        +svg('map')
+        span.nav__call-btn-text Як до нас дістатися
+      .map-address
+        .map-address__container
+          +svg('close-select').close-map.js-close-map
+          h4 Як до нас дістатися з Києва
+          p Варшавскою трасою 
+          p Новою трасою через Ірпінь
+          p Житомирською трасою через Забуччя
+          ul.navigation-servise
+            li.navigation-servise__item 
+              a(href="#").navigation-servise__link 
+                +svg('map')
+                span Google maps
+            li.navigation-servise__item 
+              a(href="#").navigation-servise__link 
+                +svg('waze')
+                span Waze
+          p Громадським транспортом
+          ul.public-transport 
+            li.public-transport__link 
+              .location Академмістечко - Буча
+              .transport № 381, 422
+            li.public-transport__link 
+              .location Ірпінь - Буча
+              .transport № 352
+            li.public-transport__link 
+              .location Героїв Дніпра - Буча
+              .transport № 421
+            li.public-transport__link 
+              .location Святошин - Лісова Буча
+              .transport № 352
+          .trains 
+            .location Електрички
+            .transport Святошин – Буча, Київ-пас. – Буча
+            .trains-btn 
+              a(href="#").navigation-servise__link 
+                +svg('timetable')
+                span Розклад електричок
+
+  section.sing-up-review
+    .sing-up-review__form
+      h2.our-projects__title Запишіться на перегляд
+      h4 З радістю влаштуємо вам тур по житловому кварталу та пригостимо смачною кавою!
+      form( action="#" class="review-form")
+        .form-field
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
+            span.placeholder Ваше ім’я
+            .input-message(data-input-message)
+          .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+            input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+            span.placeholder Ваш номер телефону
+            .input-message(data-input-message)
+        .form-field-time
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="date" name="#" id="#" placeholder="Зручний день" autocomplete="on" value="")
+            span.checkmark Зручний день
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="time" name="#" id="#" placeholder="Зручний час" autocomplete="on" value="")
+            span.checkmark Зручний день
+          select(class="select" name="connection")
+            option(disabled) Пріоритетний зв’язок
+            option(value="tel") По телефону
+            option(value="viber") Написати в Viber
+            option(value="telegram") Написати в Telegram
+        .form-field-confirm
+          button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
+            span Записатися на перегляд
+            +svg('arrow')
+    .sing-up-review__manager 
+      .manager-img 
+        img(src="./assets/images/manager.jpg", alt="manager")
+      .manager-name Вікторія Шевченко
+      .manager-role Керівниця відділу продажів
+
+
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug

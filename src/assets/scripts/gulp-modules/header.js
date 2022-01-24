@@ -9,23 +9,60 @@ window.onload = function() {
 const menuContainer = document.querySelector('.js-menu-container');
 const menuClose = document.querySelector('.js-menu-close');
 const menuOpen = document.querySelector('.js-menu-open');
-const blur = document.querySelector('.js-main-blur');
 const header = document.querySelector('.js-header');
+const headerBottom = document.querySelector('.js-header-bottom');
 menuOpen.addEventListener('click', () => {
   if (menuContainer.classList.contains('active-menu')) return;
   document.querySelector('body').style.overflow = 'hidden';
   menuContainer.classList.add('active-menu');
-  blur.classList.add('blur');
-  header.classList.add('menu-header');
+  // header.classList.add('menu-header');
 });
 
 menuClose.addEventListener('click', () => {
   if (!menuContainer.classList.contains('active-menu')) return;
   menuContainer.classList.remove('active-menu');
-  blur.classList.remove('blur');
   header.classList.remove('menu-header');
   document.querySelector('body').style.overflow = 'auto';
 });
+function handleHeader(scroller) {
+  const header = document.querySelector('.js-header');
+  header.state = 'open';
+  let prevScrollPosition = 0;
+  scroller.on('scroll', ({ scroll }) => {
+    const tempState = prevScrollPosition > scroll.y ? 'open' : 'close';
+    prevScrollPosition = scroll.y;
+    if (scroll.y > 150) {
+      changeState['untransparent']();
+      headerBottom.classList.add('active-header-menu');
+    } else {
+      changeState['transparent']();
+      headerBottom.classList.remove('active-header-menu');
+    }
+    if (tempState === header.state || scroll.y < 150) return;
+    header.state = tempState;
+    changeState[tempState]();
+  });
+
+  const changeState = {
+    open: () => {
+      gsap.to(header, { yPercent: 0 });
+    },
+    close: () => {
+      gsap.to(header, { yPercent: -100 });
+    },
+    transparent: () => {
+      gsap.to(header, { yPercent: 0 });
+      header.classList.add('transparent');
+      headerBottom.classList.add('active-header-menu');
+    },
+    untransparent: () => {
+      gsap.to(header, { yPercent: -100 });
+      header.classList.remove('transparent');
+      headerBottom.classList.remove('active-header-menu');
+    },
+  };
+}
+handleHeader(locoScroll);
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   document.querySelector('.js-sideform-call').style.display = '';
