@@ -22,8 +22,9 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/tab.js')
+  script(defer src='./assets/scripts/documents.js')
   script(defer src='./assets/scripts/accordeon.js')
+  script(defer src='./assets/scripts/select.js')
   script(defer src='./assets/scripts/footer.js')
 //- block arrow 
 //-   +svg('scroll-down').js-scroll-down
@@ -35,16 +36,15 @@ block content
       .accordion-item
         .accordion-toggle Введення в експлуатацію
         .accordion-panel
-          p Придбання м.кв. житла і комерційних площ на ранній стадії будівництва з метою перепродажу на більш пізньому етапі або після введення в експлуатацію нерухомості, яка у той час буде коштувати значно дорожче або ж здаватиметься в оренду і приноситиме «пасивний» дохід з оренди.
-          p Придбання м.кв. житла і комерційних площ на ранній стадії будівництва з метою перепродажу на більш пізньому етапі або після введення в експлуатацію нерухомості, яка у той час буде коштувати значно дорожче або ж здаватиметься в оренду і приноситиме «пасивний» дохід з оренди.
-      .accordion-item
-        .accordion-toggle Документи на земельну ділянку
-        .accordion-panel
           .tab
-            button.tablinks.tabs__nav-btn(data-tab="#tab_1") Земельна ділянка
+            button.tablinks.tabs__nav-btn.active(data-tab="#tab_1") Земельна ділянка
             button.tablinks.tabs__nav-btn(data-tab="#tab_2") Кадастровий номер земельної ділянки
-          .tabcontent.tabs__item(id="tab_1")
+          .tabcontent.tabs__item.active(id="tab_1")
             ul.documents-tabcontent__list 
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
               li.documents-tabcontent__item 
                 a(href="#").documents-tabcontent__link
                   +svg('pdf')
@@ -63,21 +63,183 @@ block content
                 a(href="#").documents-tabcontent__link
                   +svg('pdf')
                   span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+      .accordion-item
+        .accordion-toggle Документи на земельну ділянку
+        .accordion-panel
+          .tab
+            button.tablinks.tabs__nav-btn.active(data-tab="#tab_3") Земельна ділянка
+            button.tablinks.tabs__nav-btn(data-tab="#tab_4") Кадастровий номер земельної ділянки
+          .tabcontent.tabs__item.active(id="tab_3")
+            ul.documents-tabcontent__list 
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+          .tabcontent.tabs__item(id="tab_4")
+            ul.documents-tabcontent__list 
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
 
 
       .accordion-item
         .accordion-toggle Документи на будівництво
         .accordion-panel
-          p Придбання м.кв. житла і комерційних площ на ран
+          .tab
+            button.tablinks.tabs__nav-btn.active(data-tab="#tab_5") Право на виконання будівельних робіт
+            button.tablinks.tabs__nav-btn(data-tab="#tab_6") Право на виконання підготовчих робіт
+            button.tablinks.tabs__nav-btn(data-tab="#tab_7") Містобудівні умови та обмеження
+            button.tablinks.tabs__nav-btn(data-tab="#tab_8") Клас наслідків
+          .tabcontent.tabs__item.active(id="tab_5")
+            ul.documents-tabcontent__list 
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Декларація про початок виконання будівельних робіт серії КС №083161370833 від травня 2016 року;
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер 
+          .tabcontent.tabs__item(id="tab_6")
+            ul.documents-tabcontent__list 
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року
+          .tabcontent.tabs__item(id="tab_7")
+            ul.documents-tabcontent__list 
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року
+          .tabcontent.tabs__item(id="tab_8")
+            ul.documents-tabcontent__list 
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року
       .accordion-item
         .accordion-toggle Учасники будівництва
         .accordion-panel
-          p Придбання м.кв. житла і комерційних площ на ран
+          .tab
+            button.tablinks.tabs__nav-btn.active(data-tab="#tab_9") Генпідрядник
+            button.tablinks.tabs__nav-btn(data-tab="#tab_10") Замовник
+            button.tablinks.tabs__nav-btn(data-tab="#tab_11") Девелопер
+          .tabcontent.tabs__item.active(id="tab_9")
+            ul.documents-tabcontent__list 
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Електронна ліцензія на право проведення господарської діяльності, пов'язаної із створенням об'єктів архітектури № 2013065168 видана ТОВ «ПАЛЕКС-М» від 11.09.2019 року - безстроково.
+          .tabcontent.tabs__item(id="tab_10")
+            ul.documents-tabcontent__list 
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+          .tabcontent.tabs__item(id="tab_11")
+            ul.documents-tabcontent__list 
+              li.documents-tabcontent__item 
+                a(href="#").documents-tabcontent__link
+                  +svg('pdf')
+                  span Договір суперфиция від 10.09.2015 року (номер записи №НВ-3205041312015)
+            
+          
       .accordion-item
         .accordion-toggle Незалежний рейтинг
         .accordion-panel
-          p Придбання м.кв. житла і комерційних площ на ран
-    
+          ul.rating 
+            li.rating__item 
+              .logo
+                img(src="./assets/images/rating1.png", alt="")
+              .text.text-index Індекс надійності новобудови 
+                span.own 182
+                span.total з 220
+              .link 
+                a(href="#")
+                  +svg('pdf')
+                  span Завантажити звіт
+            li.rating__item 
+              .logo
+                img(src="./assets/images/rating2.png", alt="")
+              .text ТОВ "КОНТИНЕНТ РЕЙ"
+              .link 
+                a(href="#")
+                  +svg('pdf')
+                  span Завантажити звіт
+            li.rating__item 
+              .logo
+                img(src="./assets/images/rating3.png", alt="")
+              .text ТОВ "КОНТИНЕНТ РЕЙ"
+              .link 
+                a(href="#")
+                  +svg('pdf')
+                  span Завантажити звіт
+  section.sing-up-review
+    .sing-up-review__form
+      h2.our-projects__title Запишіться на перегляд
+      h4 З радістю влаштуємо вам тур по житловому кварталу та пригостимо смачною кавою!
+      form( action="#" class="review-form")
+        .form-field
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
+            span.placeholder Ваше ім’я
+            .input-message(data-input-message)
+          .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+            input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+            span.placeholder Ваш номер телефону
+            .input-message(data-input-message)
+        .form-field-time
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="date" name="#" id="#" placeholder="Зручний день" autocomplete="on" value="")
+            span.checkmark Зручний день
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="time" name="#" id="#" placeholder="Зручний час" autocomplete="on" value="")
+            span.checkmark Зручний день
+          select(class="select" name="connection")
+            option(disabled) Пріоритетний зв’язок
+            option(value="tel") По телефону
+            option(value="viber") Написати в Viber
+            option(value="telegram") Написати в Telegram
+        .form-field-confirm
+          button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
+            span Записатися на перегляд
+            +svg('arrow')
+    .sing-up-review__manager 
+      .manager-img 
+        img(src="./assets/images/manager.jpg", alt="manager")
+      .manager-name Вікторія Шевченко
+      .manager-role Керівниця відділу продажів
+
 block header
   include ../includes/header.pug
 block footer

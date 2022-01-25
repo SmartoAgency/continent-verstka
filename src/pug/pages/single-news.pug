@@ -1,0 +1,56 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Акції та новини'
+    var id_page = 'news-page'
+    var class_page = 'news-page'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+
+block content
+  include ../includes/breadcrumbs.pug
+  .single-news
+    .promotion-title
+      h2.our-projects__title Континент заключив договір про стратегічне співпрацю з Cushman & Wakefield
+      .date 19.03.2021
+    .single-news__content 
+      .single-news__main 
+        .single-news__img 
+          img(src="./assets/images/news/news1.jpg", alt="")
+
+   
+   
+   
+   
+      .single-news__timer
+        .timer-container
+         
+
+  
+
+
+
+
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug

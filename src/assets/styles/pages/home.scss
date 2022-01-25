@@ -55,7 +55,8 @@
   height: 64px;
   border-radius: 44px;
   font-weight: 800;
-  font-size: min(vw(18, 1440), 20px);
+  // font-size: min(vw(18, 1440), 20px);
+  font-size: 18px;
   line-height: 100%;
   text-decoration: none;
   white-space: nowrap;
@@ -143,9 +144,10 @@
   display: flex;
   .tablinks {
     border: none;
-    border-radius: 32px 0px 0px 32px;
+    // border-radius: 32px 0px 0px 32px;
     background: #f3f0ef;
     padding: 16px 27px;
+    height: 48px;
     font-weight: 600;
     font-size: min(vw(14, 1440), 16px);
     line-height: 1.25px;
@@ -153,7 +155,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    &:nth-child(2) {
+    // &:nth-child(2) {
+    //   border-radius: 0 32px 32px 0;
+    // }
+    &:first-child {
+      border-radius: 32px 0px 0px 32px;
+    }
+    &:last-child {
       border-radius: 0 32px 32px 0;
     }
     span {

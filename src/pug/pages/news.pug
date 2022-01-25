@@ -1,9 +1,9 @@
 extends ../layout/main
 block variable
   -
-    var title_page = 'новини та акції'
-    var id_page = 'page-news'
-    var class_page = 'page-news'
+    var title_page = 'Акції та новини'
+    var id_page = 'news-page'
+    var class_page = 'news-page'
     // var breadcrumbsBtn = 'filter'
     var breadcrumbsSubitem = [
       //- {
@@ -11,6 +11,7 @@ block variable
       //-   link: pagesLink[0].documents
       //- }
     ]
+
 block meta
   //- title= 'Documents'
   title= title_page
@@ -22,117 +23,165 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/filter.js')
-  script(defer src='./assets/scripts/news.js')
-  script(defer src='./assets/scripts/scroll-down.js')
-  script(defer src='./assets/scripts/footer.js')
-block arrow 
-  +svg('scroll-down').js-scroll-down
+  script(defer src='./assets/scripts/select.js')
 
 block content
   include ../includes/breadcrumbs.pug
- 
-  section.documents-content
-    .documents-sticker
-      h5 News & offers
-    h1.documents-title(data-span-entry2) новини та акції
-    .filter
-      .select
-        .select__year(data-select data-type="year")
-          input(type="hidden" data-type="year")
-          .select__year--selected(data-value="null") роки
-          ul.select__year--list.filter-form
-            li.select__year--item(data-value="null") роки
-            li.select__year--item(data-value="2021") 2021
-            li.select__year--item(data-value="2020") 2020
-            li.select__year--item(data-value="2019") 2019
-            li.select__year--item(data-value="2018") 2018
-        .select__month(data-select data-type="month")
-          input(type="hidden" data-type="month")
-          .select__month--selected(data-value="null") всі місяці
-          ul.select__month--list.js-filter
-            li.select__month--item(data-value="null") всі місяці
-            li.select__month--item(data-value="9") вересень
-            li.select__month--item(data-value="8") серпень
-            li.select__month--item(data-value="7") липень
-            li.select__month--item(data-value="6") червень
-            li.select__month--item(data-value="5") травень
-            li.select__month--item(data-value="4") квітень
-            li.select__month--item(data-value="3") березень
-            li.select__month--item(data-value="2") лютий
-            li.select__month--item(data-value="1") січень
-            li.select__month--item(data-value="12") ГРУДЕНЬ
-            li.select__month--item(data-value="11") ЛИСТОПАД
-            li.select__month--item(data-value="10") ЖОВТЕНЬ
-      .contacts__link
-        a(href="building.html").realty__link
-          span.realty__text хід будівництва
-    ul.news-content__list
-      li.news-content__item(data-filter-item data-month="10" data-year="2021" data-type="11")
-        a(href="single-news.html").news-content__link
-          .news-content__img 
-            img(src="./assets/images/news1.jpg", alt="")
-          .news-content__date 30.11.2021
-          .news-content__description 
-            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
-            .button--skoll-arrow
-              +svg('arrow-next').swiper-slide-arrow
-      li.news-content__item.news-content__item--offer(data-filter-item data-month="10" data-year="2021")
-        a(href="single-news.html").news-content__link
-          .news-content__img 
-            img(src="./assets/images/main-news2.jpg", alt="")
-          .news-content__date 30.10.2021
-          .news-content__description 
-            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
-            .button--skoll-arrow
-              +svg('arrow-next').swiper-slide-arrow
-      li.news-content__item(data-filter-item data-month="9" data-year="2021" data-type="9")
-        a(href="single-news.html").news-content__link
-          .news-content__img 
-            img(src="./assets/images/main-news3.jpg", alt="")
-          .news-content__date 30.09.2021
-          .news-content__description 
-            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
-            .button--skoll-arrow
-              +svg('arrow-next').swiper-slide-arrow
-      li.news-content__item(data-filter-item data-month="8" data-year="2020" data-type="8")
-        a(href="single-news.html").news-content__link
-          .news-content__img 
-            img(src="./assets/images/main-news1.jpg", alt="")
-          .news-content__date 30.08.2020
-          .news-content__description 
-            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
-            .button--skoll-arrow
-              +svg('arrow-next').swiper-slide-arrow
-      li.news-content__item(data-filter-item data-month="7" data-year="2020" data-type="7")
-        a(href="single-news.html").news-content__link
-          .news-content__img 
-            img(src="./assets/images/news1.jpg", alt="")
-          .news-content__date 30.07.2020
-          .news-content__description 
-            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
-            .button--skoll-arrow
-              +svg('arrow-next').swiper-slide-arrow
-      li.news-content__item(data-filter-item data-month="6" data-year="2019" data-type="6")
-        a(href="single-news.html").news-content__link
-          .news-content__img 
-            img(src="./assets/images/main-news2.jpg", alt="")
-          .news-content__date 30.06.2019
-          .news-content__description 
-            p.news-content__text Житловий комплекс "PARK LAND" - коли комфорт клієнта на першому місці.
-            .button--skoll-arrow
-              +svg('arrow-next').swiper-slide-arrow
+  .news-container
+    h2.our-projects__title Акції та новини
+    .news-filter
+      .tab
+        button.tablinks.tabs__nav-btn.active Всі акції та новини
+        button.tablinks.tabs__nav-btn Акції
+        button.tablinks.tabs__nav-btn Новини
+    
+      select(class="select" name="connection")
+        option(disabled) Всі ЖК
+        option(value="Continent-Ray") Continent Ray
+        option(value="Continent-Black") Continent Black
+        option(value="Continent-Ray-2.1") Continent Ray 2.1
 
-    .plagination
-      .plagination__list
-        .plagination__item.plagination__item--current 1
-        .plagination__item 2
-        .plagination__item 3
-        .plagination__item 4
+  ul.news-list 
+    li.news-item 
+      a(href="#").news-link
+        .news-img 
+          img(src="./assets/images/news/news1.jpg", alt="")
+        .news-text
+          h5.date 24.04.2021
+          h4.title Купуй більше – плати менше!
+        ul.markers 
+          li.markers-item акція
+          li.markers-item continent black
+    li.news-item 
+      a(href="#").news-link
+        .news-img 
+          img(src="./assets/images/news/news2.jpg", alt="")
+        .news-text
+          h5.date 12.04.2021
+          h4.title Вхопіть великодню знижку за вуха! -4% на всі квартири від Континенту
+        ul.markers 
+          li.markers-item новини 
+    li.news-item 
+      a(href="#").news-link
+        .news-img 
+          img(src="./assets/images/news/news3.jpg", alt="")
+        .news-text
+          h5.date 19.03.2021
+          h4.title Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!
+        ul.markers 
+          li.markers-item новини 
+          li.markers-item continent ray
+    li.news-item 
+      a(href="#").news-link
+        .news-img 
+          img(src="./assets/images/news/news4.jpg", alt="")
+        .news-text
+          h5.date 24.04.2021
+          h4.title Отримуйте безвідсоткову розстрочку або знижку до 140 000 грн на дворівневі квартири
+        ul.markers 
+          li.markers-item новини 
+          li.markers-item continent ray
+    li.news-item 
+      a(href="#").news-link
+        .news-img 
+          img(src="./assets/images/news/news5.jpg", alt="")
+        .news-text
+          h5.date 12.04.2021
+          h4.title Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!
+        ul.markers 
+          li.markers-item акція
+          li.markers-item continent ray
+    li.news-item 
+      a(href="#").news-link
+        .news-img 
+          img(src="./assets/images/news/news6.jpg", alt="")
+        .news-text
+          h5.date 19.03.2021
+          h4.title В ЖК «Континент» відкрився дитячий садочок «Зірочки»
+        ul.markers 
+          li.markers-item акція
+          li.markers-item continent ray
+    li.news-item 
+      a(href="#").news-link
+        .news-img 
+          img(src="./assets/images/news/news7.jpg", alt="")
+        .news-text
+          h5.date 24.04.2021
+          h4.title Отримуйте безвідсоткову розстрочку або знижку до 140 000 грн на дворівневі квартири
+        ul.markers 
+          li.markers-item новини
+          li.markers-item continent ray
+    li.news-item 
+      a(href="#").news-link
+        .news-img 
+          img(src="./assets/images/news/news8.jpg", alt="")
+        .news-text
+          h5.date 12.04.2021
+          h4.title Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!
+        ul.markers 
+          li.markers-item акція
+    li.news-item 
+      a(href="#").news-link
+        .news-img 
+          img(src="./assets/images/news/news9.jpg", alt="")
+        .news-text
+          h5.date 19.03.2021
+          h4.title В ЖК «Континент» відкрився дитячий садочок «Зірочки»
+        ul.markers 
+          li.markers-item новини
+          li.markers-item continent ray
+  .pagination
+    +svg('arrow-back')
+    ul.pagination-list 
+      li.pagination-item.active-item 1 
+      li.pagination-item 2
+      li.pagination-item 3
+      li.pagination-item 4
+      li.pagination-item 5
+      li.pagination-item 6
+      li.pagination-item ...
+      li.pagination-item 13
+    +svg('arrow')
+  section.sing-up-review
+    .sing-up-review__form
+      h2.our-projects__title Запишіться на перегляд
+      h4 З радістю влаштуємо вам тур по житловому кварталу та пригостимо смачною кавою!
+      form( action="#" class="review-form")
+        .form-field
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
+            span.placeholder Ваше ім’я
+            .input-message(data-input-message)
+          .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+            input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+            span.placeholder Ваш номер телефону
+            .input-message(data-input-message)
+        .form-field-time
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="date" name="#" id="#" placeholder="Зручний день" autocomplete="on" value="")
+            span.checkmark Зручний день
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="time" name="#" id="#" placeholder="Зручний час" autocomplete="on" value="")
+            span.checkmark Зручний день
+          select(class="select" name="connection")
+            option(disabled) Пріоритетний зв’язок
+            option(value="tel") По телефону
+            option(value="viber") Написати в Viber
+            option(value="telegram") Написати в Telegram
+        .form-field-confirm
+          button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
+            span Записатися на перегляд
+            +svg('arrow')
+    .sing-up-review__manager 
+      .manager-img 
+        img(src="./assets/images/manager.jpg", alt="manager")
+      .manager-name Вікторія Шевченко
+      .manager-role Керівниця відділу продажів
+
+
+
 block header
   include ../includes/header.pug
+  
 block footer
   include ../includes/footer.pug
-
-
-

@@ -1,0 +1,145 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Акції та новини'
+    var id_page = 'news-page'
+    var class_page = 'news-page'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/select.js')
+  script(defer src='./assets/scripts/timer.js')
+
+block content
+  include ../includes/breadcrumbs.pug
+  .single-news
+    .single-news__title
+      .date-promotion 
+        p.text До
+        p.date 20
+        p.month травня
+      .promotion-title
+        h2.our-projects__title Акції та новини
+        .markers-item continent black
+    .single-news__content 
+      .single-news__main 
+        .single-news__img 
+          img(src="./assets/images/news/news1.jpg", alt="")
+        h4 Акція! Дизайн проект у подарунок
+        h4 Акційна ціна 18 500 грн/м² на квартиру 77 м² + індифідуальний дизайн проект у подарунок
+        .proposal 
+          h3 Ціна від 475 тис. грн
+        ul.proposal-list
+          li.proposal-item 
+            p.title Ціна за м²: 
+            p.description 15 500 — 22 000 грн (була 14 600 — 21 500 грн)
+          li.proposal-item 
+            p.title 1-кімнатні:
+            p.description від 475 тис. грн (була від 432 тис. грн)
+          li.proposal-item 
+            p.title 2-кімнатні:
+            p.description від 828 тис. грн (була від 780 тис. грн)
+          li.proposal-item 
+            p.title 3-кімнатні:
+            p.description від 1.76 млн грн (була від 1.66 млн грн)
+
+        .single-news__social 
+          h5 Підпишись на наші соцмережі!
+          ul.social-list 
+            li.social-item 
+              a(href="https://www.facebook.com/continent.ua/" target="_blank")
+                +svg('facebook-color')
+            li.social-item 
+              a(href="#" target="_blank")
+                +svg('instagram-color')
+            li.social-item 
+              a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank")
+                +svg('telegram')
+            li.social-item 
+              a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank")
+                +svg('youtube-color')
+            li.social-item 
+              a(href="#" target="_blank")
+                +svg('tiktok-color')
+   
+   
+   
+   
+      .single-news__timer
+        .timer-container
+          .timer
+            img(src="./assets/images/timer.png", alt="")
+          p залишилось: 
+          //- .deadline-message(id="deadline-message") Time is up!
+          .countdown(id="countdown")
+            .countdown-number
+              span.days.countdown-time
+              span.countdown-text днів;
+            .countdown-number
+              span.hours.countdown-time
+              span.countdown-text годин; 
+            .countdown-number
+              span.minutes.countdown-time
+              span.countdown-text хвилин
+
+  
+
+  section.sing-up-review
+    .sing-up-review__form
+      h2.our-projects__title Запишіться на перегляд
+      h4 З радістю влаштуємо вам тур по житловому кварталу та пригостимо смачною кавою!
+      form( action="#" class="review-form")
+        .form-field
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
+            span.placeholder Ваше ім’я
+            .input-message(data-input-message)
+          .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+            input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+            span.placeholder Ваш номер телефону
+            .input-message(data-input-message)
+        .form-field-time
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="date" name="#" id="#" placeholder="Зручний день" autocomplete="on" value="")
+            span.checkmark Зручний день
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="time" name="#" id="#" placeholder="Зручний час" autocomplete="on" value="")
+            span.checkmark Зручний день
+          select(class="select" name="connection")
+            option(disabled) Пріоритетний зв’язок
+            option(value="tel") По телефону
+            option(value="viber") Написати в Viber
+            option(value="telegram") Написати в Telegram
+        .form-field-confirm
+          button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
+            span Записатися на перегляд
+            +svg('arrow')
+    .sing-up-review__manager 
+      .manager-img 
+        img(src="./assets/images/manager.jpg", alt="manager")
+      .manager-name Вікторія Шевченко
+      .manager-role Керівниця відділу продажів
+
+
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug

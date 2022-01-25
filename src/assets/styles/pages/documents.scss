@@ -33,6 +33,9 @@
   .is-open .accordion-toggle {
     background: #f3f0ef;
     border: none;
+    &::after {
+      background-image: url(../images/minus.svg);
+    }
   }
   .accordion-panel {
     background: #f3f0ef;
@@ -54,7 +57,7 @@
     text-decoration: none;
     display: flex;
     svg {
-      width: 16px;
+      width: 46px;
       height: 18px;
       fill: none;
       margin-right: 16px;
@@ -64,6 +67,89 @@
       font-size: 16px;
       line-height: 1.25;
       color: #000000;
+    }
+  }
+  .tab {
+    .tablinks {
+      height: 48px;
+      background: #ffffff;
+      border: 1px solid #f3f0ef;
+    }
+    .active {
+      background: #fec62e;
+    }
+  }
+}
+.rating {
+  display: flex;
+  flex-direction: column;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 44px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .logo {
+      width: 14.5%;
+      max-height: 64px;
+      img {
+        object-fit: contain;
+      }
+    }
+    .link {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        width: 180px;
+        background: $white;
+        border-radius: 44px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.21;
+        color: #000000;
+        svg {
+          fill: none;
+          width: 18px;
+          height: 18px;
+          margin-right: 10px;
+        }
+      }
+    }
+    .text {
+      width: 46%;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.21;
+      text-decoration-line: underline;
+      text-transform: uppercase;
+      color: #000000;
+    }
+    .text-index {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 1.21;
+      color: #000000;
+      text-decoration-line: none;
+      text-transform: none;
+      .own {
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 100%;
+        color: #fec62e;
+        margin-left: 0.4ch;
+      }
+      .total {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.25;
+        color: #000000;
+        margin-left: 1ch;
+      }
     }
   }
 }
