@@ -23,27 +23,153 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/single-news.js')
 
 block content
   include ../includes/breadcrumbs.pug
   .single-news
-    .promotion-title
-      h2.our-projects__title Континент заключив договір про стратегічне співпрацю з Cushman & Wakefield
-      .date 19.03.2021
     .single-news__content 
       .single-news__main 
+        h2.our-projects__title Континент заключив договір про стратегічне співпрацю з Cushman & Wakefield
+        .date 19.03.2021
         .single-news__img 
           img(src="./assets/images/news/news1.jpg", alt="")
+        h3.single-news__big Кульмінацією робочого візиту представників НАУ до Казахського державного юридичного університету ім. М.С. Нарікбаєва стала церемонія підписання Договору про співпрацю.
+        h3.single-news__small Після знайомства з університетом, його освітньою базою та потенціалом, плідного спілкування з керівництвом навчального закладу та обговорення можливостей міжуніверситетської взаємодії, ректор НАУ Максим Луцький та очільник Казахського державного юридичного університету ім. М.С. Нарікбаєва - голова правління Талгат Нарікбаєв, урочисто підписали документ який значно розширить можливості співпраці вишів у сфері освіти та науки.
+        .single-news__video
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Jk5kS0Qc69w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        h3.single-news__small У церемонії підписання Договору зі сторони НАУ взяли участь проректор з організаційно-правової та безпекової діяльності Сергій Юлдашев, директор Навчально-наукового інституту неперервної освіти Олексій Михальченко, декан Факультету міжнародних відносин Юрій Волошин, а також казахські колеги з КазДЮУ: ректор Сергій Пен, начальник відділу міжнародного співробітництва Шинар Закієва, декан Вищої школи права Ольга Бектібаєва, декан Вищої школи економіки Сауле Кемельбаєва, декан Вищої гуманітарної школи Анар Ібраєва та директорка Бізнес-школи КазДЮУ Жамал Аяпова.
+        .single-news-swiper
+          .swiper-wrapper
+            .swiper-slide
+              img(src="./assets/images/investor-bg.jpg", alt="")
+            .swiper-slide
+              img(src="./assets/images/project3.jpg", alt="")
+            .swiper-slide
+              img(src="./assets/images/project1.jpg", alt="")
+          .swiper-navigation2
+            .swiper-button-prev2
+            .swiper-pagination2
+            .swiper-button-next2
+        .single-news__social 
+          h5 Підпишись на наші соцмережі!
+          ul.social-list 
+            li.social-item 
+              a(href="https://www.facebook.com/continent.ua/" target="_blank")
+                +svg('facebook-color')
+            li.social-item 
+              a(href="#" target="_blank")
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="24" fill="url(#paint0_radial_1055_20486)"/>
+                  <path d="M24.0029 17.3339C20.3139 17.3339 17.3383 20.3102 17.3383 24C17.3383 27.6898 20.3139 30.6661 24.0029 30.6661C27.6919 30.6661 30.6675 27.6898 30.6675 24C30.6675 20.3102 27.6919 17.3339 24.0029 17.3339ZM24.0029 28.3338C21.619 28.3338 19.67 26.3903 19.67 24C19.67 21.6097 21.6132 19.6662 24.0029 19.6662C26.3926 19.6662 28.3358 21.6097 28.3358 24C28.3358 26.3903 26.3868 28.3338 24.0029 28.3338ZM32.4946 17.0613C32.4946 17.9257 31.7986 18.6161 30.9401 18.6161C30.0759 18.6161 29.3856 17.9199 29.3856 17.0613C29.3856 16.2026 30.0817 15.5064 30.9401 15.5064C31.7986 15.5064 32.4946 16.2026 32.4946 17.0613ZM36.9086 18.6393C36.81 16.5565 36.3344 14.7116 34.8089 13.1916C33.2892 11.6715 31.4447 11.1958 29.3624 11.0914C27.2163 10.9695 20.7837 10.9695 18.6376 11.0914C16.5611 11.19 14.7166 11.6657 13.1911 13.1858C11.6656 14.7058 11.1958 16.5507 11.0914 18.6335C10.9695 20.7801 10.9695 27.2141 11.0914 29.3607C11.19 31.4435 11.6656 33.2884 13.1911 34.8084C14.7166 36.3285 16.5553 36.8042 18.6376 36.9086C20.7837 37.0305 27.2163 37.0305 29.3624 36.9086C31.4447 36.81 33.2892 36.3343 34.8089 34.8084C36.3286 33.2884 36.8042 31.4435 36.9086 29.3607C37.0305 27.2141 37.0305 20.7859 36.9086 18.6393ZM34.1361 31.664C33.6837 32.8011 32.8078 33.6771 31.6651 34.1354C29.954 34.8142 25.8938 34.6576 24.0029 34.6576C22.112 34.6576 18.046 34.8084 16.3407 34.1354C15.2038 33.6829 14.3279 32.8069 13.8697 31.664C13.1911 29.9525 13.3477 25.8913 13.3477 24C13.3477 22.1087 13.1969 18.0417 13.8697 16.336C14.3221 15.1989 15.198 14.3229 16.3407 13.8646C18.0518 13.1858 22.112 13.3424 24.0029 13.3424C25.8938 13.3424 29.9598 13.1916 31.6651 13.8646C32.802 14.3171 33.6779 15.1931 34.1361 16.336C34.8147 18.0475 34.6581 22.1087 34.6581 24C34.6581 25.8913 34.8147 29.9583 34.1361 31.664Z" fill="white"/>
+                  <defs>
+                  <radialGradient id="paint0_radial_1055_20486" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11.5 41.5) rotate(-52.9975) scale(43.2001)">
+                  <stop stop-color="#FFAE22"/>
+                  <stop offset="0.494792" stop-color="#D73376"/>
+                  <stop offset="1" stop-color="#9F3DB6"/>
+                  </radialGradient>
+                  </defs>
+                </svg>
+            li.social-item 
+              a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank")
+                +svg('telegram')
+            li.social-item 
+              a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank")
+                +svg('youtube-color')
+            li.social-item 
+              a(href="#" target="_blank")
+                +svg('tiktok-color')
 
-   
-   
-   
-   
+
       .single-news__timer
         .timer-container
-         
+          .single-news__social 
+            h5 Будь в курсі новин. Підпишись на наші соцмережі!
+            ul.social-list 
+              li.social-item 
+                a(href="https://www.facebook.com/continent.ua/" target="_blank")
+                  +svg('facebook-color')
+              li.social-item 
+                a(href="#" target="_blank")
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="24" fill="url(#paint0_radial_1055_20486)"/>
+                    <path d="M24.0029 17.3339C20.3139 17.3339 17.3383 20.3102 17.3383 24C17.3383 27.6898 20.3139 30.6661 24.0029 30.6661C27.6919 30.6661 30.6675 27.6898 30.6675 24C30.6675 20.3102 27.6919 17.3339 24.0029 17.3339ZM24.0029 28.3338C21.619 28.3338 19.67 26.3903 19.67 24C19.67 21.6097 21.6132 19.6662 24.0029 19.6662C26.3926 19.6662 28.3358 21.6097 28.3358 24C28.3358 26.3903 26.3868 28.3338 24.0029 28.3338ZM32.4946 17.0613C32.4946 17.9257 31.7986 18.6161 30.9401 18.6161C30.0759 18.6161 29.3856 17.9199 29.3856 17.0613C29.3856 16.2026 30.0817 15.5064 30.9401 15.5064C31.7986 15.5064 32.4946 16.2026 32.4946 17.0613ZM36.9086 18.6393C36.81 16.5565 36.3344 14.7116 34.8089 13.1916C33.2892 11.6715 31.4447 11.1958 29.3624 11.0914C27.2163 10.9695 20.7837 10.9695 18.6376 11.0914C16.5611 11.19 14.7166 11.6657 13.1911 13.1858C11.6656 14.7058 11.1958 16.5507 11.0914 18.6335C10.9695 20.7801 10.9695 27.2141 11.0914 29.3607C11.19 31.4435 11.6656 33.2884 13.1911 34.8084C14.7166 36.3285 16.5553 36.8042 18.6376 36.9086C20.7837 37.0305 27.2163 37.0305 29.3624 36.9086C31.4447 36.81 33.2892 36.3343 34.8089 34.8084C36.3286 33.2884 36.8042 31.4435 36.9086 29.3607C37.0305 27.2141 37.0305 20.7859 36.9086 18.6393ZM34.1361 31.664C33.6837 32.8011 32.8078 33.6771 31.6651 34.1354C29.954 34.8142 25.8938 34.6576 24.0029 34.6576C22.112 34.6576 18.046 34.8084 16.3407 34.1354C15.2038 33.6829 14.3279 32.8069 13.8697 31.664C13.1911 29.9525 13.3477 25.8913 13.3477 24C13.3477 22.1087 13.1969 18.0417 13.8697 16.336C14.3221 15.1989 15.198 14.3229 16.3407 13.8646C18.0518 13.1858 22.112 13.3424 24.0029 13.3424C25.8938 13.3424 29.9598 13.1916 31.6651 13.8646C32.802 14.3171 33.6779 15.1931 34.1361 16.336C34.8147 18.0475 34.6581 22.1087 34.6581 24C34.6581 25.8913 34.8147 29.9583 34.1361 31.664Z" fill="white"/>
+                    <defs>
+                    <radialGradient id="paint0_radial_1055_20486" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11.5 41.5) rotate(-52.9975) scale(43.2001)">
+                    <stop stop-color="#FFAE22"/>
+                    <stop offset="0.494792" stop-color="#D73376"/>
+                    <stop offset="1" stop-color="#9F3DB6"/>
+                    </radialGradient>
+                    </defs>
+                  </svg>
+                  //- +svg('instagram-color')
 
+              li.social-item 
+                a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank")
+                  +svg('telegram')
+              li.social-item 
+                a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank")
+                  +svg('youtube-color')
+              li.social-item 
+                a(href="#" target="_blank")
+                  +svg('tiktok-color')
+         
   
+  section.news
+    .our-projects-title-container 
+      h2.our-projects__title Акції та новини
+      a(href="news.html").news-link
+        span Всі новини та акції
+        +svg('arrow')
+    .swiper-news
+      .swiper-wrapper
+        .swiper-slide
+          a(href="#") 
+            img(src="./assets/images/news1.jpg", alt="" data-paralax)
+            h5.date 24.04.2021
+            h4.news-title Купуй більше – плати менше!
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news2.jpg", alt="" data-paralax)
+            h5.date 12.04.2021
+            h4.news-title Вхопіть великодню знижку за вуха! -4% на всі квартири від Континенту
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news3.jpg", alt="" data-paralax)
+            h5.date 19.03.2021
+            h4.news-title Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news1.jpg", alt="" data-paralax)
+            h5.date 24.04.2021
+            h4.news-title Купуй більше – плати менше!
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news1.jpg", alt="" data-paralax)
+            h5.date 24.04.2021
+            h4.news-title Вхопіть великодню знижку за вуха! -4% на всі квартири від Континенту
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news2.jpg", alt="" data-paralax)
+            h5.date 24.04.2021
+            h4.news-title Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!
+        .swiper-slide 
+          a(href="#")
+            img(src="./assets/images/news3.jpg", alt="" data-paralax)
+            h5.date 24.04.2021
+            h4.news-title Купуй більше – плати менше!
+      .swiper-news__navigation
+        .swiper-scrollbar
+        .swiper-button-prev
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="22" fill="black"/>
+            <path d="M24.6566 15.9999L18.9998 21.6567L24.6566 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        .swiper-button-next
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="22" fill="black"/>
+            <path d="M20.6569 15.9999L26.3137 21.6567L20.6569 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
 
 
 

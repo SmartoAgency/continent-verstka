@@ -1,0 +1,229 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Комерційні приміщення'
+    var id_page = 'commerce'
+    var class_page = 'commerce'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+    var benefits = [
+      ['Панорамне скління', 'Панорамні вікна дозволяють не тільки повністю ізолювати приміщення від вулиці, але і надати можливість відвідувачам панорамного огляду.'],
+      ['Власний простір', 'Стелі висотою 5,6м дають можливість створити ідеальне приміщення для бізнесу. Втілюйте власне бачення інтер`єру, що відповідатиме усім вимогам і потребам ваших клієнтів та відвідувачів.'],
+      ['Вхідні групи', 'Вхідні групи кожного комерційного приміщення будуть оформлені в єдиному стилі. Вивіски розміщуватимуться на однаковій висоті від землі, матимуть схожий розмір, та гармонійно поєднуватимуться з екстер`єром.'],
+      ['Розширена карта для створення бізнесу ', 'Ми пропонуємо великий вибір планувань комерційних приміщень – в наявності майже 10000 м² різної квадратури, аби ви змогли реалізувати свою ідею.'],
+    ]
+   
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/commerce.js')
+  script(defer src='./assets/scripts/select.js') 
+  //- script(defer src='./assets/scripts/map.js')
+  //- script(defer src='./assets/scripts/accordeon.js')
+  //- script(defer src='./assets/scripts/infrastructure.js')
+  //- script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/footer.js')
+
+block content
+  include ../includes/breadcrumbs.pug
+  .busha-text
+    h2.our-projects__title Комерційні приміщення
+  //- .commerce-content 
+  //-   .commerce-content__img 
+  //-     img(src="./assets/images/commerce.jpg", alt="")
+  //-   .commerce-content__text
+  //-     ul.commerce-benefits 
+  //-       li.commerce-benefits__list 
+  section.infrastructure-benefits 
+    .infrastructure-benefits__img
+      img(src='./assets/images/commerce.jpg')
+    ul.infrastructure-benefits__list 
+      each v, i in benefits
+        li.infrastructure-benefits__item 
+          .num= i + 1
+          .title= v[0]
+          .text= v[1]
+
+  .planing-filter 
+    h2.our-projects__title Планування
+    .planing-filter__container 
+      .planing-filt__complex
+        select(class="select" name="connection")
+          option(disabled) Спочатку: Continent Ray
+          option(value="Continent-Ray") Continent Ray
+          option(value="Continent-Black") Continent Black
+          option(value="Continent-Ray-2.1") Continent Ray 2.1
+        .marker-text Житловий комплекс
+      .planing-filt__range
+        input(type="text" class="js-range-slider" name="my_range" value="" 
+        
+      
+       )
+        .marker-text Площа м²
+      .planing-filt__deadline
+        select(class="select" name="connection")
+          option(disabled) Будь-який 
+          option(value="2022") ІІІ кв. 2022
+          option(value="2023") ІІІ кв. 2023
+          option(value="2024") ІІІ кв. 2024
+        .marker-text Строк здачі
+  
+  section.planing(id="container")
+    .planing__nav 
+      .tab.buttons
+        button.tablinks.tabs__nav-btn.grid.js-btn-grid.active Картками
+        button.tablinks.tabs__nav-btn.list.js-btn-list Cписком 
+      select(class="select" name="connection")
+        option(disabled) Спочатку: Continent Ray
+        option(value="Continent-Ray") Continent Ray
+        option(value="Continent-Black") Continent Black
+        option(value="Continent-Ray-2.1") Continent Ray 2.1
+    .list-title.js-sort-title 
+      p.planing__img План
+      p.planing__title Житловий квартал
+      p.square Площа
+      p.deadlines Строки здачі
+    ul.planing__list.grid
+      li.planing__item
+        a(href="#").planing__link
+          .planing__img 
+            img(src='./assets/images/planing/planing1.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .square 
+            +svg('space')
+            .square-description 
+              p.title Площа:
+              p.value 48 м²
+          .deadlines ІІІ кв. 2021
+      li.planing__item
+        a(href="#").planing__link
+          .planing__img 
+            img(src='./assets/images/planing/planing2.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .square 
+            +svg('space')
+            .square-description 
+              p.title Площа:
+              p.value 48 м²
+          .deadlines ІІІ кв. 2021
+      li.planing__item
+        a(href="#").planing__link
+          .planing__img 
+            img(src='./assets/images/planing/planing3.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .square 
+            +svg('space')
+            .square-description 
+              p.title Площа:
+              p.value 48 м²
+          .deadlines ІІІ кв. 2021
+      li.planing__item
+        a(href="#").planing__link
+          .planing__img 
+            img(src='./assets/images/planing/planing1.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .square 
+            +svg('space')
+            .square-description 
+              p.title Площа:
+              p.value 48 м²
+          .deadlines ІІІ кв. 2021
+      li.planing__item
+        a(href="#").planing__link
+          .planing__img 
+            img(src='./assets/images/planing/planing3.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .square 
+            +svg('space')
+            .square-description 
+              p.title Площа:
+              p.value 48 м²
+          .deadlines ІІІ кв. 2021
+      li.planing__item
+        a(href="#").planing__link
+          .planing__img 
+            img(src='./assets/images/planing/planing1.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .square 
+            +svg('space')
+            .square-description 
+              p.title Площа:
+              p.value 48 м²
+          .deadlines ІІІ кв. 2021
+      li.planing__item
+        a(href="#").planing__link
+          .planing__img 
+            img(src='./assets/images/planing/planing1.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .square 
+            +svg('space')
+            .square-description 
+              p.title Площа:
+              p.value 48 м²
+          .deadlines ІІІ кв. 2021
+      li.planing__item
+        a(href="#").planing__link
+          .planing__img 
+            img(src='./assets/images/planing/planing2.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .square 
+            +svg('space')
+            .square-description 
+              p.title Площа:
+              p.value 48 м²
+          .deadlines ІІІ кв. 2021
+      li.planing__item
+        a(href="#").planing__link
+          .planing__img 
+            img(src='./assets/images/planing/planing3.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .square 
+            +svg('space')
+            .square-description 
+              p.title Площа:
+              p.value 48 м²
+          .deadlines ІІІ кв. 2021
+ 
+    button.show-more.show-more-js Показати ще 
+      span.number 3 
+      |з 
+      span.total 13 
+      |приміщень
+      +svg('plus')
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug 
