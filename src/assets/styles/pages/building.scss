@@ -1,0 +1,119 @@
+.building__list {
+  margin-top: 56px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.building__item {
+  width: calc(100% / 3);
+  border: 1px solid #f3f0ef;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  &:hover {
+    @include from(992px) {
+      .building__img::before,
+      .building__img::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+.building__img {
+  height: 380px;
+  position: relative;
+  // transition: all 2s ease-in-out;
+  &::after,
+  &::before {
+    transition: opacity 0.4s ease-in-out;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(254, 199, 46, 0.9);
+    opacity: 0;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('../images/scale.svg') no-repeat right center / contain;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+
+  @include to(1440px) {
+    height: 280px;
+  }
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: rgba(254, 199, 46, 0.9);
+  // }
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   background: url('../images/scale.svg') no-repeat right center / contain;
+  //   width: 72px;
+  //   height: 72px;
+  // }
+  iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+  & video {
+    object-fit: fill;
+  }
+  .play-button {
+    .svg-wrapper {
+      width: 70px;
+      height: 70px;
+    }
+    #svg {
+      width: 70px;
+      height: 70px;
+    }
+    .play {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+.building__description {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 50px 24px;
+  h4 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.23;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+  .text-container {
+    display: flex;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+    .number {
+      margin-right: 0.5ch;
+    }
+  }
+}

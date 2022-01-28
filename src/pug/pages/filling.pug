@@ -1,0 +1,81 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Наповнення'
+    var id_page = 'filling'
+    var class_page = 'filling'
+    // var breadcrumbsBtn = 'filter'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'Документи',
+    //-     link: pagesLink[0].documents
+    //-   }
+    //- ]
+    var characteristics = [
+      ['klass', 'Клас', 'Комфорт'],
+      ['apartment', 'Кількість квартир', '402'],
+      ['warm', 'Утеплення', 'Пінополістирол та мінеральна вата'],
+      ['water', 'водопостачання', 'Централізоване'],
+      ['section', 'Кількість секцій', '3'],
+      ['height', 'Висота стелі', '2,7 м'],
+      ['warming', 'Опалення', 'Автономне в кожній квартирі'],
+      ['lift', 'Ліфти', 'Надійні та безпечні від відомого виробника Mizui'],
+      ['floor', 'Поверховість', '10'],
+      ['build', 'Технологія будівництва', 'Цегляна'],
+      ['overlap', 'Перекриття', 'Залізобетонні плити']
+    ]
+    var filling = [
+      ['walls', 'Стіни', 'Цегла, чорнова штукатурка'],
+      ['walls', 'перестінки', 'Гіпсоплита'],
+      ['floor', 'підлога', 'Лазерна стяжка'],
+      ['door', 'Двері', 'Металеві якісних українських виробників'],
+      ['window', 'Вікна', 'VEKA, 2-х камерний склопакет, 5-ти камерний профіль'],
+      ['boiler', 'Котли', 'Двоконтурні провідних світових виробників'],
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/select.js')
+  script(defer src='./assets/scripts/footer.js')
+//- block arrow 
+//-   +svg('scroll-down').js-scroll-down
+
+block content
+  section.documents-container
+    h2.our-projects__title Наповнення
+    h3 Технічні характеристики будинку
+    ul.characteristics 
+      each v in characteristics
+        li.characteristics__item 
+          +svg(v[0])
+          .characteristics__description 
+            p.title= v[1]
+            .text= v[2]
+    h3.filling-title Наповнення квартири:
+    ul.characteristics.filling-apartments
+      each v in filling
+        li.characteristics__item 
+          +svg(v[0])
+          .characteristics__description 
+            p.title= v[1]
+            .text= v[2]
+
+
+  include ../includes/sing-up.pug
+ 
+
+block header
+  include ../includes/header.pug
+block footer
+  include ../includes/footer.pug
+
+
+

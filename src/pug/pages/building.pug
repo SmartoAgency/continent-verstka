@@ -1,0 +1,125 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Хід будівництва'
+    var id_page = 'building'
+    var class_page = 'building'
+    // var breadcrumbsBtn = 'filter'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'Документи',
+    //-     link: pagesLink[0].documents
+    //-   }
+    //- ]
+    var building = [
+      ['building1.jpg', 'Хід будівництва 1 квітня 2021', '13', 'фото'],
+      ['building2.jpg', 'Хід будівництва 1 березня 2021', '7', 'фото'],
+      ['building3.jpg', 'Хід будівництва 1 лютого 2021', '23', 'фото'],
+      ['building4.jpg', 'Хід будівництва 1 cічня 2021', '7', 'фото'],
+      ['building5.jpg', 'Хід будівництва 1 грудня 2020', '14', 'фото'],
+      ['building6.jpg', 'Хід будівництва 1 листопада 2020', '45', 'фото']
+    ]
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/select.js')
+  script(defer src='./assets/scripts/building.js')
+  script(defer src='./assets/scripts/footer.js')
+//- block arrow 
+//-   +svg('scroll-down').js-scroll-down
+
+block content
+  section.documents-container
+    h2.our-projects__title Хід будівництва
+  ul.building__list(data-build-container)
+    //- each v in building
+    //-   li.building__item 
+    //-     .building__img
+    //-       img(src="./assets/images/building/"+v[0], alt="")
+    //-     .building__description 
+    //-       h4= v[1] 
+    //-       .text-container 
+    //-         .number= v[2]
+    //-         .text= v[3]
+    //- li.building__item 
+      .building__img
+        video(class="video" autoplay width="100%" height="100%") 
+          <source src="./assets/images/video1.mp4" type="video/mp4">
+      .building__description 
+        h4 Хід будівництва 
+           span(data-build-date) 18 
+           span(data-build-month) червня 
+           span(data-build-year) 2021
+        .text-container 
+          .number 45
+          .text фото
+    //- li.building__item 
+      .building__img
+        video(class="video" autoplay loop width="100%" height="100%") 
+          <source src="./assets/images/video1.mp4" type="video/mp4">
+        //- .play-button.playpause
+          .svg-wrapper
+            <svg id='svg' width="50px" height="50px" viewbox='0 0 100 100'>
+              <circle cx='50' cy='50' r='45' stroke='#FFFFFF' stroke-width='2'  fill='none' opacity='0.5'/>
+              <circle id='circle' cx='50' cy='50' r='45' stroke='#FFFFFF' stroke-width='2'  fill='none'/>
+            </svg>
+            <svg class="play" width="30" height="30" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="36" cy="36" r="36"/>
+              <path d="M44.5518 35.6401C45.2044 36.0276 45.2044 36.9724 44.5518 37.3599L31.5105 45.1031C30.8439 45.4989 30 45.0185 30 44.2433L30 28.7567C30 27.9815 30.8439 27.5011 31.5105 27.8969L44.5518 35.6401Z"/>
+            </svg>
+      .building__description 
+        h4 Хід будівництва 1 березня 2021
+        .text-container 
+          .number 45
+          .text фото
+    //- li.building__item 
+      .building__img
+        video(class="video" autoplay width="100%" height="100%") 
+          <source src="./assets/images/video1.mp4" type="video/mp4">
+      .building__description 
+        h4 Хід будівництва 1 лютого 2021
+        .text-container 
+          .number 45
+          .text фото
+    //- li.building__item 
+      .building__img
+        img(src="./assets/images/building/building3.jpg", alt="")
+      .building__description 
+        h4 Хід будівництва 1 cічня 2021
+        .text-container 
+          .number 45
+          .text фото
+    //- li.building__item 
+      .building__img
+        img(src="./assets/images/building/building4.jpg", alt="")
+      .building__description 
+        h4 Хід будівництва 1 грудня 2020
+        .text-container 
+          .number 45
+          .text фото
+    //- li.building__item 
+      .building__img
+        <iframe class="video" width="100%" height="100%" src="https://www.youtube.com/embed/Jk5kS0Qc69w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      .building__description 
+        h4 Хід будівництва 1 листопада 2020
+        .text-container 
+          .number 45
+          .text фото
+  //- include ../includes/sing-up.pug
+ 
+
+block header
+  include ../includes/header.pug
+block footer
+  include ../includes/footer.pug
+
+
+

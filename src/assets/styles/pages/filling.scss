@@ -1,0 +1,58 @@
+#filling {
+  h3 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.23;
+    color: #000000;
+    margin-top: 56px;
+  }
+  .filling-title {
+    margin-top: 80px;
+  }
+}
+.characteristics {
+  margin-top: 48px;
+  padding-bottom: 80px;
+  border-bottom: 2px solid #000000;
+  column-count: 3;
+  column-gap: 130px;
+  &__item {
+    break-inside: avoid;
+    display: flex;
+    margin-bottom: 45px;
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 16px;
+      fill: none;
+    }
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    .title {
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 1.2;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #000000;
+      margin-bottom: 4px;
+    }
+    .text {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.2;
+      color: #000000;
+      max-width: 220px;
+    }
+  }
+}
+
+.filling-apartments {
+  border-bottom: none;
+  max-height: 250px;
+  .text {
+    max-width: 311px;
+  }
+}

@@ -1,0 +1,46 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'приміщення 95.2'
+    var id_page = 'single-commerce'
+    var class_page = 'single-commerce'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Комерційні приміщення',
+        link: pagesLink[0].documents
+      }
+    ]
+    
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/commerce.js')
+  script(defer src='./assets/scripts/select.js') 
+  //- script(defer src='./assets/scripts/map.js')
+  //- script(defer src='./assets/scripts/accordeon.js')
+  //- script(defer src='./assets/scripts/infrastructure.js')
+  //- script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/footer.js')
+
+block content
+  .busha-text
+    h2.our-projects__title Комерційні приміщення
+
+  .single-commerce-container
+    .single-commerce-container__img
+       include ../includes/breadcrumbs.pug
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug 

@@ -62,16 +62,14 @@ block content
     .planing-filter__container 
       .planing-filt__complex
         select(class="select" name="connection")
-          option(disabled) Спочатку: Continent Ray
+          option(disabled) Будь-який
           option(value="Continent-Ray") Continent Ray
           option(value="Continent-Black") Continent Black
           option(value="Continent-Ray-2.1") Continent Ray 2.1
         .marker-text Житловий комплекс
       .planing-filt__range
-        input(type="text" class="js-range-slider" name="my_range" value="" 
-        
-      
-       )
+        .planing-filt__range-container
+          input(type="text" class="js-range-slider" name="my_range" value="")
         .marker-text Площа м²
       .planing-filt__deadline
         select(class="select" name="connection")
@@ -80,7 +78,12 @@ block content
           option(value="2023") ІІІ кв. 2023
           option(value="2024") ІІІ кв. 2024
         .marker-text Строк здачі
-  
+    .planing-filter__close 
+      p.result-filter Знайдено 153 приміщення
+      button.reset-filter 
+        +svg('close-select')
+        span Скинути фільтр
+
   section.planing(id="container")
     .planing__nav 
       .tab.buttons
