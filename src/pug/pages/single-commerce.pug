@@ -25,19 +25,136 @@ block scripts
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/commerce.js')
   script(defer src='./assets/scripts/select.js') 
-  //- script(defer src='./assets/scripts/map.js')
+  script(defer src='./assets/scripts/single-commerce.js')
   //- script(defer src='./assets/scripts/accordeon.js')
   //- script(defer src='./assets/scripts/infrastructure.js')
   //- script(defer src='./assets/scripts/no-scroll.js')
   script(defer src='./assets/scripts/footer.js')
 
 block content
-  .busha-text
-    h2.our-projects__title Комерційні приміщення
-
   .single-commerce-container
     .single-commerce-container__img
-       include ../includes/breadcrumbs.pug
+      include ../includes/breadcrumbs.pug
+      .commerce-swiper 
+        .swiper-wrapper 
+          .swiper-slide 
+            +svg('flat1').flat
+            +svg('btn-scale').btn-scale.js-btn-scale
+            +svg('compas').btn-compass
+          .swiper-slide 
+            +svg('flat1').flat
+            +svg('btn-scale').btn-scale.js-btn-scale
+            +svg('compas').btn-compass
+          //- .swiper-slide 
+          //-   +svg('flat1').flat
+          //-   +svg('btn-scale').btn-scale.js-btn-scale
+          //-   +svg('compas').btn-compass
+        .swiper-pagination
+        .swiper-button-prev
+        .swiper-button-next
+
+    .single-commerce-container__description 
+      img(src="./assets/images/logo-bazar.png", alt="").logo-bazar
+      h3.single-commerce-container__title Приміщення 95.2 м² 
+      h4.single-commerce-container__title-complex Сontinent Black
+      ul.description-list 
+        li.description-item 
+          .title Кімнати
+          .content 3
+        li.description-item 
+          .title Поверх
+          .content 4/5
+        li.description-item 
+          .title Загальна площа
+          .content 95.2 м² 
+        li.description-item 
+          .title Строки здачі
+          .content ІІІ кв. 2021
+        li.description-item 
+          .title Строки окупності
+          .content 3 роки
+      p.benefits-text Приміщення вільного призначення. Хороша видимість дороги. Підійдe під магазин, аптеку, кав’ярню тощо.
+      .btn-container 
+        a(href="#")
+          +svg('pdf')
+          span Pdf-файл
+        a(href="#")
+          +svg('btn-telegram')
+          span В Telegram
+      button.nav__call-btn.js-call( type="button")
+        span.nav__call-btn-text Дізнатись ціну
+        +svg('arrow')
+         
+  .specification 
+    h2.our-projects__title Характеристики
+    .specification__container 
+      ul.specification__list 
+        li.specification__item
+          +svg('ventilation')
+          .specification__text 
+            p.description Вентиляція
+        li.specification__item
+          +svg('electricity')
+          .specification__text 
+            p.description Ел. потужність <br> від 200 Вт/м2
+        li.specification__item
+          +svg('window')
+          .specification__text 
+            p.description Вітринні вікна
+        li.specification__item
+          +svg('height')
+          .specification__text 
+            p.description Висота стелі <br> від 3,2 до 6,2 м
+        li.specification__item
+          +svg('water')
+          .specification__text 
+            p.description Холодне і гаряче водопостачання
+ 
+  .similar-apartment 
+    h2.our-projects__title Cхожі приміщення
+    .similar-apartment-swiper 
+      .swiper-wrapper 
+        .swipeer-slide
+          a(href="#").planing__link
+            .planing__img 
+              img(src='./assets/images/planing/planing1.jpg')
+            h4.planing__title
+              span ЖК: 
+              | Сontinent Black
+            .square 
+              +svg('space')
+              .square-description 
+                p.title Площа:
+                p.value 48 м²
+        .swipeer-slide
+          a(href="#").planing__link
+            .planing__img 
+              img(src='./assets/images/planing/planing2.jpg')
+            h4.planing__title
+              span ЖК: 
+              | Сontinent Black
+            .square 
+              +svg('space')
+              .square-description 
+                p.title Площа:
+                p.value 48 м²
+        .swipeer-slide
+          a(href="#").planing__link
+            .planing__img 
+              img(src='./assets/images/planing/planing3.jpg')
+            h4.planing__title
+              span ЖК: 
+              | Сontinent Black
+            .square 
+              +svg('space')
+              .square-description 
+                p.title Площа:
+                p.value 48 м²
+
+        .swiper-button-prev1
+        .swiper-button-next2
+
+  include ../includes/sing-up.pug
 
 block header
   include ../includes/header.pug

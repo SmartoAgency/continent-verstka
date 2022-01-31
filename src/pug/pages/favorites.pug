@@ -1,0 +1,58 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Oбране'
+    var id_page = 'favorites'
+    var class_page = 'favorites'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+   
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/favorites.js')
+  //- script(defer src='./assets/scripts/developer.js') 
+  //- script(defer src='./assets/scripts/map.js')
+  //- script(defer src='./assets/scripts/accordeon.js')
+  //- script(defer src='./assets/scripts/infrastructure.js')
+  //- script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/footer.js')
+
+block content
+  include ../includes/breadcrumbs.pug
+  .favorites-title
+    h2.our-projects__title Oбране
+    .favorites-title__btn 
+      a(href="#").favorites-title__link
+        +svg('pdf')
+        span Сформувати Pdf
+      a(href="#").favorites-title__link
+        +svg('btn-telegram')
+        span Надіслати в телеграм
+
+  ul.products-list 
+    li.products-item 
+      
+
+
+
+
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug

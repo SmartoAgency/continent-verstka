@@ -76,7 +76,7 @@ function createBuildCardWithVideo(build) {
   return `
   <li class="building__item js-build-card" data-build-id="${build.id}">
     <div class="building__img">
-      <video class="video" autoplay loop width="100%" height="100%")> 
+      <video ( class="video" autoplay loop muted width="100%" height="100%")> 
         <source src="${build.slider[build.slider.length - 1]}"></video>
     </div>
     <div class="building__description">
@@ -342,7 +342,7 @@ function createSliderPopup(slides) {
   }
   bigSliderContainer.innerHTML = slidesHtml;
   const swiperBig = new Swiper('.buildingSwiper', {
-    loop: true,
+    // loop: true,
     // spaceBetween: 10,
     preloadImages: false,
     lazy: true,
@@ -356,6 +356,9 @@ function createSliderPopup(slides) {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar',
     },
   });
 

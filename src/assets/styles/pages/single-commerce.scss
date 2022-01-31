@@ -1,0 +1,211 @@
+.single-commerce-container {
+  margin-top: var(--header-h);
+  display: flex;
+  &__img {
+    width: 57%;
+    background: #f3f0ef;
+    padding: 50px 60px 50px vw(100, 1920);
+
+    .breadcrumbs {
+      margin: 0;
+    }
+  }
+  &__description {
+    width: 43%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px vw(100, 1920) 50px 50px;
+    .logo-bazar {
+      width: 61px;
+      height: 34px;
+      margin-bottom: 24px;
+    }
+    .single-commerce-container__title {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 1.22;
+      color: #000000;
+      margin-bottom: 16px;
+    }
+    .single-commerce-container__title-complex {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.22;
+      color: #000000;
+      margin-bottom: 16px;
+    }
+    .description-list {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+      .description-item {
+        display: flex;
+        margin-bottom: 24px;
+        align-items: center;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .title {
+          width: 30%;
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 1.2;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          color: #000000;
+        }
+        .content {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 1.2;
+          color: #000000;
+        }
+      }
+    }
+    .benefits-text {
+      padding: 16px 24px;
+      border: 2px solid #fec62e;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.25;
+      color: #000000;
+      margin-bottom: 32px;
+    }
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      a {
+        width: 48%;
+        margin-right: 16px;
+        height: 48px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.2;
+        color: #000000;
+        background: #f3f0ef;
+        border-radius: 44px;
+        &:last-child {
+          margin-right: 0;
+        }
+        svg {
+          width: 18px;
+          height: 18px;
+          fill: none;
+          margin-right: 10px;
+        }
+      }
+    }
+    .nav__call-btn {
+      height: 64px;
+      margin-right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all 0.2s ease;
+      svg {
+        margin-left: 8px;
+        transition: all 0.2s ease;
+      }
+      &:hover {
+        @include from(992px) {
+          background: #ffbb01;
+          svg {
+            transform: translateX(8px);
+          }
+        }
+      }
+    }
+  }
+}
+.commerce-swiper {
+  overflow: hidden;
+  .swiper-pagination-bullet {
+    padding: 15px 24px;
+    background: $white;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    border-radius: 0;
+    opacity: 1;
+    margin: 0 !important;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.21;
+    color: #000000;
+    &:first-child {
+      border-radius: 40px 0px 0px 40px;
+    }
+    &:last-child {
+      border-radius: 0px 40px 40px 0px;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background: $yellow;
+  }
+  .swiper-slide {
+    position: relative;
+    height: 404px;
+    margin: 85px 0 85px;
+    .btn-scale {
+      fill: $white;
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      top: calc(50% - 24px);
+      right: 0;
+    }
+    .btn-compass {
+      position: absolute;
+      top: 0;
+      right: 0;
+      fill: none;
+      width: 53px;
+      height: 49px;
+    }
+    .flat {
+      width: 100%;
+      height: 100%;
+      fill: none;
+    }
+  }
+}
+
+#single-commerce {
+  .specification {
+    padding-top: 56px;
+  }
+  .specification__text .description {
+    max-width: 100%;
+  }
+  .specification__container {
+    border-bottom: none;
+  }
+}
+.similar-apartment {
+  background: #f3f0ef;
+  padding: 56px vw(100, 1920) 32px vw(100, 1920);
+  h2.our-projects__title {
+    margin-bottom: 56px;
+  }
+  .similar-apartment-swiper {
+    .swipeer-slide {
+      background: $white;
+      width: calc(100% / 3);
+      border: 1px solid #f3f0ef;
+      padding: 32px;
+      transition: all 0.2s ease;
+      &:hover {
+        @include from(992px) {
+          transform: scale(1.01);
+          box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+  }
+}
