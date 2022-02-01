@@ -4,3 +4,4 @@
 @@include('./jquery-mask/jquery.inputmask.min.js')
 @@include('./ion.rangeSlider/js/ion.rangeSlider.min.js')
 @@include('./gsap/gsap.js')
+@@include('./mfp/index.js')

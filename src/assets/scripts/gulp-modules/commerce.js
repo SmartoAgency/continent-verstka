@@ -19,36 +19,6 @@ $('button').on('click', function(e) {
   }
 });
 
-// // !!!!!!!!!
-// let incrementValue = 3,
-//   showPlansCount = incrementValue;
-// let $showMore = document.querySelector('.show-more-js'),
-//   constructList = document.querySelectorAll('.planing__list'),
-//   constructlength = constructList.length;
-
-// increasePlans(showPlansCount, constructList);
-// showPlansCount += incrementValue;
-// $showMore.onclick = evt => {
-//   increasePlans(showPlansCount, constructList);
-//   if (constructlength - showPlansCount <= incrementValue) {
-//     let lastIncrement = constructlength - showPlansCount;
-//     showPlansCount += lastIncrement;
-//   } else {
-//     showPlansCount += incrementValue;
-//   }
-//   console.log(showPlansCount);
-//   showPlansCount >= constructlength ? ($showMore.style.display = 'none') : null;
-// };
-// function increasePlans(count, list) {
-//   for (var i = list.length - 1; i >= count; i--) {
-//     list[i].style.display = `none`;
-//   }
-//   for (var i = 0; i < count; i++) {
-//     // list[i].style.display = `inline-block`;
-//   }
-// }
-// //
-
 $('.js-range-slider').ionRangeSlider({
   type: 'double',
   min: 38,

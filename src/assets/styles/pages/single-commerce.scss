@@ -159,7 +159,15 @@
       position: absolute;
       top: calc(50% - 24px);
       right: 0;
+      cursor: pointer;
+      transition: fill 0.2s ease;
+      &:hover {
+        @include from(992px) {
+          fill: $yellow;
+        }
+      }
     }
+
     .btn-compass {
       position: absolute;
       top: 0;
@@ -173,9 +181,30 @@
       height: 100%;
       fill: none;
     }
+    img {
+      object-fit: contain;
+    }
   }
 }
-
+.mfp-figure figure {
+  background: $white;
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+}
+img.mfp-img {
+  width: 50%;
+  height: 80%;
+  object-fit: contain;
+}
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  color: #000000;
+  right: 40px;
+  top: 40px;
+  font-size: 50px;
+}
 #single-commerce {
   .specification {
     padding-top: 56px;

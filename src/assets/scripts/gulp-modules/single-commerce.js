@@ -31,3 +31,18 @@ const swiper2 = new Swiper('.similar-apartment-swiper', {
     prevEl: '.swiper-button-prev2',
   },
 });
+
+document.querySelectorAll('.swiper-slide').forEach(el => {
+  el.querySelector('.js-btn-scale').addEventListener('click', () => {
+    console.log($(el));
+    $.magnificPopup.open({
+      items: {
+        src: el.querySelector('img').getAttribute('src'),
+      },
+      type: 'image',
+      callbacks: {
+        beforeOpen: function() {},
+      },
+    });
+  });
+});
