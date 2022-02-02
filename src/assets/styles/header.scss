@@ -6,34 +6,22 @@
   z-index: 100;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
-  // align-items: center;
-  padding: 0 vw(32, 1440);
-  padding: 0 vw(100, 1920);
-  // height: var(--header-h);
-
   background: inherit;
-  // background: #ffffff;
-  // @include to(1440px) {
-  //   padding: 0 vw(70, 1440);
-  // }
-  // @include to(992px) {
-  //   padding: 0 vw(40, 768);
-  // }
-  // @include to(575px) {
-  //   padding: 0 vw(20, 360);
-  // }
 }
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: var(--header-h);
+  padding: 0 vw(160, 1920);
+  @include to(1440px) {
+    padding: 0 vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 0 vw(32, 1440);
+  }
 }
-// .menu-header {
-//   filter: blur(8px);
-//   pointer-events: none;
-// }
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -41,7 +29,6 @@
 .logo__link svg {
   width: var(--logo-w);
   height: var(--logo-h);
-  // transition: $transition-fuction;
   cursor: pointer;
   margin-right: vw(48, 1440);
   // @include to(575px) {
@@ -58,14 +45,6 @@
   fill: #ffffff;
 }
 
-// .icon--logo-mobile {
-//   width: var(--logo-w);
-//   height: var(--logo-h);
-//   display: none;
-//   @include to(575px) {
-//     display: flex;
-//   }
-// }
 .nav {
   display: flex;
   align-items: center;
@@ -74,9 +53,9 @@
 .nav__tel-link {
   text-decoration: none;
   color: $white;
-  // transition: $transition-fuction;
   margin-right: 70px;
-  font-size: vw(16, 1440);
+  // font-size: vw(16, 1440);
+  font-size: 16px;
   line-height: 1.25;
   font-weight: 800;
   white-space: nowrap;
@@ -102,7 +81,8 @@
   margin-right: vw(32, 1280);
   font-family: $default-font;
   font-weight: 800;
-  font-size: vw(14, 1280);
+  // font-size: vw(14, 1280);
+  font-size: 14px;
   line-height: 1.25;
   color: $black;
   padding: 14px 20px;
@@ -286,17 +266,38 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: var(--header-h);
+  background: $white;
   opacity: 0;
   height: 0;
-  pointer-events: none;
+  position: initial;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: var(--header-h);
+  // top: 0;
+  // left: 0;
   width: 100%;
   z-index: 100;
-  padding: 0 vw(100, 1920);
   transition: height 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  padding: 0 vw(160, 1920);
+  @include to(1440px) {
+    padding: 0 vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 0 vw(32, 1440);
+  }
+}
+.realty.calculator {
+  height: 40px;
+  width: 200px;
+  font-size: 14px;
+  padding: 12px 17px;
+  svg {
+    fill: none;
+    margin-right: 8px;
+    margin-left: 0;
+    width: 13px;
+    height: 16px;
+  }
 }
 .logo-container__right {
   display: flex;
@@ -337,5 +338,61 @@
     position: absolute;
     left: 0;
     bottom: -17px;
+  }
+}
+#developer,
+#infrastructure,
+#cont-club,
+#investor,
+#contacts-page,
+#documents,
+#news-page,
+#commerce,
+#single-commerce,
+#filling,
+#building,
+#page-404,
+#favorites,
+#flats,
+#single-flats {
+  .header-container {
+    background: $white;
+  }
+  .nav__tel-link {
+    color: $black;
+  }
+  .realty__link svg {
+    stroke: $black;
+  }
+  .menu__img {
+    fill: $black;
+  }
+  .menu__text {
+    color: $black;
+  }
+  .logo__link svg {
+    .logo-fill {
+      fill: $black;
+    }
+  }
+  // .logo-group svg {
+  //   fill: $black;
+  // }
+  .logo-group {
+    display: none;
+  }
+}
+#documents {
+  .logo-container__bottom {
+    height: var(--header-bottom-h);
+
+    opacity: 1;
+    border: 2px solid #e5e5e5;
+  }
+  .active-header-menu {
+    pointer-events: pointed;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 }

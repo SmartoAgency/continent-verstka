@@ -1,0 +1,346 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = ' Квартири'
+    var id_page = 'single-flats'
+    var class_page = 'single-flats'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Комерційні приміщення',
+        link: pagesLink[0].documents
+      }
+    ]
+    
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/commerce.js')
+  script(defer src='./assets/scripts/select.js') 
+  script(defer src='./assets/scripts/single-flats.js')
+  //- script(defer src='./assets/scripts/accordeon.js')
+  //- script(defer src='./assets/scripts/infrastructure.js')
+  //- script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/footer.js')
+
+block content
+  .single-commerce-container
+    .single-commerce-container__img
+      include ../includes/breadcrumbs.pug
+      .commerce-swiper 
+        .swiper-wrapper 
+          .swiper-slide 
+            img(src='./assets/images/planing/planing1.png')
+            +svg('btn-scale').btn-scale.js-btn-scale
+            +svg('compas').btn-compass
+          .swiper-slide 
+            img(src='./assets/images/planing/planing2.png')
+            +svg('btn-scale').btn-scale.js-btn-scale
+            +svg('compas').btn-compass
+          .swiper-slide 
+            img(src='./assets/images/planing/planing2.png')
+            +svg('btn-scale').btn-scale.js-btn-scale
+            +svg('compas').btn-compass
+          .swiper-slide 
+            <iframe class="frame-class" allowfullscreen="" allow="vr;fullscreen *;xr-spatial-tracking;xr;" src="https://vrnet.io/view5.16a/?model=ua/bmu6/forresthome/1zhe" style="pointer-events: auto;"></iframe>
+        
+        .swiper-pagination
+        .swiper-button-prev
+        .swiper-button-next
+
+    .single-commerce-container__description 
+      .markers-container 
+        .views 
+          .numbers 235
+          | переглядів
+        .checkbox  Дворівнева 
+        .checkbox з терасою
+      h3.single-commerce-container__title Приміщення 95.2 м² 
+      h4.single-commerce-container__title-complex Сontinent Black
+      ul.description-list 
+        li.description-item 
+          .title Кімнати
+          .content 3
+        li.description-item 
+          .title Поверх
+          .content 4/5
+        li.description-item 
+          .title Загальна площа
+          .content 95.2 м² 
+        li.description-item 
+          .title Строки здачі
+          .content ІІІ кв. 2021
+     
+      .price-container
+        .old-price 
+          .total-price 1 350 000 ₴
+          .discount - 150 000 ₴
+        .new-price 1 200 000 ₴
+
+      .btn-container 
+        .add-favourite
+          label.favourite-label
+            input(type="checkbox")
+            +svg('star')
+          .checkbox-name В обране
+          
+        a(href="#" target="_blank")
+          +svg('pdf')
+          span Pdf-файл
+        a(href="#")
+          +svg('btn-telegram')
+          span В Telegram
+      button.nav__call-btn.js-call( type="button")
+        span.nav__call-btn-text Дізнатись ціну
+        +svg('arrow')
+         
+  .specification 
+    h2.our-projects__title Характеристики
+    .specification__container 
+      ul.specification__list 
+        li.specification__item
+          +svg('klass')
+          .specification__text 
+            p.title Клас
+            p.description Комфорт
+        li.specification__item
+          +svg('apartment')
+          .specification__text 
+            p.title Кількість квартир
+            p.description 402
+        li.specification__item
+          +svg('warm')
+          .specification__text 
+            p.title Утеплення
+            p.description Пінополістирол <br> та мінеральна вата
+        li.specification__item
+          +svg('build')
+          .specification__text 
+            p.title Технологія будівництва
+            p.description Цегляна
+        li.specification__item
+          +svg('warming')
+          .specification__text 
+            p.title опалення
+            p.description Автономне (двоконтурний котел)
+        li.specification__item
+          +svg('height')
+          .specification__text 
+            p.title Висота стелі
+            p.description 2,7 м
+        li.specification__item
+          +svg('floor')
+          .specification__text 
+            p.title Поверховість
+            p.description 10
+        li.specification__item
+          +svg('renovation')
+          .specification__text 
+            p.title стан квартири
+            p.description З чорновим ремонтом 
+        li.specification__item
+          +svg('walls')
+          .specification__text 
+            p.title перестінки
+            p.description Гіпсоплита
+  
+  .specification 
+    h2.our-projects__title Умови придбання
+    .conditions-container 
+      .conditions-item 
+        .text-container 
+          h4 Розстрочка
+          p.little-text з подорожчанням
+          p.conditions-text До
+            span.month 36
+            |місяців
+        .accent 
+          p Перший <br> внесок від
+          p.percents 30% 
+      .conditions-item 
+        .text-container 
+          h4 Повна оплата
+          p.little-text готівкова/безготівкова 
+          p.conditions-big-text 100
+            span %
+        .accent 
+          p Максимальна <br> знижка до
+          p.percents 15% 
+  .similar-apartment 
+    .title-container
+      h2.our-projects__title Cхожі квартири 
+      .swiper-btn
+        .swiper-button-prev2
+          +svg('swiper-prev')
+        .swiper-button-next1
+          +svg('swiper-next')
+    .similar-apartment-swiper 
+      .swiper-wrapper 
+        .swiper-slide
+          a(href="#").planing__link
+            .price
+              span.new-price 1 200 000 ₴
+            .favorite-star
+              .add-favourite
+                label.favourite-label
+                  input(type="checkbox")
+                  +svg('star-circle')
+            .planing__img 
+              img(src='./assets/images/planing/planing1.jpg')
+            h4.planing__title
+              span ЖК: 
+              | Сontinent Black
+            .flat-planing-container
+              .square 
+                +svg('space')
+                .square-description 
+                  p.title Площа:
+                  p.value 48 м²
+              .square 
+                +svg('living_space')
+                .square-description 
+                  p.title жила Площа:
+                  p.value 36 м² 
+              .square 
+                +svg('room')
+                .square-description 
+                  p.title Кімнат:
+                  p.value 1
+            .chekbox__container
+              .checkbox 
+                span Дворівнева 
+                span.hidden квартира
+              .checkbox 
+                span.hidden квартира 
+                span з терасою
+            .deadlines ІІІ кв. 2021
+        .swiper-slide
+          a(href="#").planing__link
+            .price
+              span.new-price 1 200 000 ₴
+            .favorite-star
+              .add-favourite
+                label.favourite-label
+                  input(type="checkbox")
+                  +svg('star-circle')
+            .planing__img 
+              img(src='./assets/images/planing/planing1.jpg')
+            h4.planing__title
+              span ЖК: 
+              | Сontinent Black
+            .flat-planing-container
+              .square 
+                +svg('space')
+                .square-description 
+                  p.title Площа:
+                  p.value 48 м²
+              .square 
+                +svg('living_space')
+                .square-description 
+                  p.title жила Площа:
+                  p.value 36 м² 
+              .square 
+                +svg('room')
+                .square-description 
+                  p.title Кімнат:
+                  p.value 1
+            .chekbox__container
+              .checkbox 
+                span Дворівнева 
+                span.hidden квартира
+              .checkbox 
+                span.hidden квартира 
+                span з терасою
+            .deadlines ІІІ кв. 2021
+        .swiper-slide
+          a(href="#").planing__link
+            .price
+              span.new-price 1 200 000 ₴
+            .favorite-star
+              .add-favourite
+                label.favourite-label
+                  input(type="checkbox")
+                  +svg('star-circle')
+            .planing__img 
+              img(src='./assets/images/planing/planing1.jpg')
+            h4.planing__title
+              span ЖК: 
+              | Сontinent Black
+            .flat-planing-container
+              .square 
+                +svg('space')
+                .square-description 
+                  p.title Площа:
+                  p.value 48 м²
+              .square 
+                +svg('living_space')
+                .square-description 
+                  p.title жила Площа:
+                  p.value 36 м² 
+              .square 
+                +svg('room')
+                .square-description 
+                  p.title Кімнат:
+                  p.value 1
+            .chekbox__container
+              .checkbox 
+                span Дворівнева 
+                span.hidden квартира
+              .checkbox 
+                span.hidden квартира 
+                span з терасою
+            .deadlines ІІІ кв. 2021
+        .swiper-slide
+          a(href="#").planing__link
+            .price
+              span.new-price 1 200 000 ₴
+            .favorite-star
+              .add-favourite
+                label.favourite-label
+                  input(type="checkbox")
+                  +svg('star-circle')
+            .planing__img 
+              img(src='./assets/images/planing/planing1.jpg')
+            h4.planing__title
+              span ЖК: 
+              | Сontinent Black
+            .flat-planing-container
+              .square 
+                +svg('space')
+                .square-description 
+                  p.title Площа:
+                  p.value 48 м²
+              .square 
+                +svg('living_space')
+                .square-description 
+                  p.title жила Площа:
+                  p.value 36 м² 
+              .square 
+                +svg('room')
+                .square-description 
+                  p.title Кімнат:
+                  p.value 1
+            .chekbox__container
+              .checkbox 
+                span Дворівнева 
+                span.hidden квартира
+              .checkbox 
+                span.hidden квартира 
+                span з терасою
+            .deadlines ІІІ кв. 2021
+
+  include ../includes/sing-up.pug
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug 

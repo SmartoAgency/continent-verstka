@@ -5,7 +5,6 @@ function handleHeader(scroller) {
   scroller.on('scroll', ({ scroll }) => {
     const tempState = prevScrollPosition > scroll.y ? 'open' : 'close';
     prevScrollPosition = scroll.y;
-    // console.log(tempState);
     if (scroll.y > 150) {
       changeState['untransparent']();
     } else {
@@ -19,21 +18,15 @@ function handleHeader(scroller) {
   const changeState = {
     open: () => {
       gsap.to(header, { yPercent: 0 });
-      headerBottom.classList.remove('active-header-menu');
     },
     close: () => {
       gsap.to(header, { yPercent: -100 });
-      headerBottom.classList.add('active-header-menu');
     },
     transparent: () => {
-      // gsap.to(header, { yPercent: 0 });
-      // header.classList.add('transparent');
-      // headerBottom.classList.add('active-header-menu');
+      header.classList.add('transparent');
     },
     untransparent: () => {
-      // gsap.to(header, { yPercent: -100 });
-      // header.classList.remove('transparent');
-      // headerBottom.classList.remove('active-header-menu');
+      header.classList.remove('transparent');
     },
   };
 }

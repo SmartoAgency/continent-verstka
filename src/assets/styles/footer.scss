@@ -15,9 +15,15 @@ footer {
         width: 100%;
         display: flex;
         justify-content: center;
-        padding: 56px 0 56px vw(100, 1920);
+        padding: 56px 0 56px vw(160, 1920);
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         border-right: 1px solid rgba(255, 255, 255, 0.5);
+        @include to(1440px) {
+          padding: 56px 0 56px vw(100, 1440);
+        }
+        @include to(1280px) {
+          padding: 56px 0 56px vw(32, 1280);
+        }
         .logo {
           width: 50%;
           svg {
@@ -39,9 +45,15 @@ footer {
       }
       .navigation-container__move {
         width: 100%;
-        padding: 52px 0 52px vw(100, 1920);
+        padding: 52px 0 52px vw(160, 1920);
         display: flex;
         border-right: 1px solid rgba(255, 255, 255, 0.5);
+        @include to(1440px) {
+          padding: 52px 0 52px vw(100, 1440);
+        }
+        @include to(1280px) {
+          padding: 52px 0 52px vw(32, 1280);
+        }
         ul {
           width: 50%;
           li {
@@ -74,7 +86,13 @@ footer {
         width: 100%;
         display: flex;
         flex-direction: column;
-        padding: 56px vw(100, 1920);
+        padding: 56px vw(160, 1920);
+        @include to(1440px) {
+          padding: 56px vw(100, 1440);
+        }
+        @include to(1280px) {
+          padding: 56px vw(32, 1280);
+        }
         .footer-map {
           margin-bottom: 50px;
           a {

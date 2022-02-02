@@ -163,6 +163,7 @@
       width: 10%;
     }
   }
+
   .list {
     li {
       .planing__img {
@@ -179,7 +180,7 @@
       }
       .chekbox__container {
         position: absolute;
-        left: 15%;
+        left: 14%;
         top: 22px;
         .hidden {
           display: none;
@@ -199,6 +200,7 @@
       .flat-planing-container {
         display: flex;
         width: 36%;
+        column-gap: 0;
         // .square {
         //   width: 33%;
         //   display: flex;
@@ -220,6 +222,15 @@
       .price {
         right: 12%;
         left: auto;
+        .old-price {
+          position: absolute;
+          white-space: nowrap;
+          left: 14px;
+          top: -31px;
+        }
+      }
+      .empty-price {
+        display: flex;
       }
       .square {
         width: 33%;
@@ -249,21 +260,56 @@
     position: absolute;
     top: 0x;
     left: 0;
-    padding: 6px 8px;
-    border: 2px solid #fec62e;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.2;
-    color: #000000;
+
+    .new-price {
+      padding: 6px 8px;
+      border: 2px solid #fec62e;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.2;
+      color: #000000;
+      margin-right: 20px;
+    }
+    .old-price {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.2;
+      text-decoration-line: line-through;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .empty-price {
+    border: none;
+    background: #f3f0ef;
+    border-radius: 44px;
+    padding: 8px 35px;
+    font-size: 14px;
+    display: none;
   }
   .favorite-star {
     position: absolute;
     top: 0;
     right: 0;
+    width: 48px;
+    height: 48px;
     svg {
       fill: #f3f0ef;
+      stroke: none;
       width: 48px;
       height: 48px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      // cursor: pointer;
+    }
+    .add-favourite {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border-radius: none;
     }
   }
   .chekbox__container {

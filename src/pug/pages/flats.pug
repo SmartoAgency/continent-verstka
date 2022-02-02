@@ -105,7 +105,7 @@ block content
         option(value="big-area") Спочатку з більшою площою
         option(value="smaller-area") Спочатку з меншою площою
         option(value="dedline") За строком сдачі
-    .list-title.js-sort-title(style="display:flex;") 
+    .list-title.js-sort-title
       p.planing__img План
       p.planing__title Житловий квартал
       p.square Площа 
@@ -114,12 +114,16 @@ block content
       p.deadlines Строки здачі
       p.price Вартість
       p.favorites
-    ul.planing__list.list
+    ul.planing__list.grid
       li.planing__item
         a(href="#").planing__link
-          .price 1 200 000 ₴
+          .price
+            span.new-price 1 200 000 ₴
           .favorite-star
-            +svg('star-circle')
+            .add-favourite
+              label.favourite-label
+                input(type="checkbox")
+                +svg('star-circle')
           .planing__img 
             img(src='./assets/images/planing/planing1.jpg')
           h4.planing__title
@@ -141,7 +145,6 @@ block content
               .square-description 
                 p.title Кімнат:
                 p.value 1
-            
           .chekbox__container
             .checkbox 
               span Дворівнева 
@@ -150,7 +153,196 @@ block content
               span.hidden квартира 
               span з терасою
           .deadlines ІІІ кв. 2021
-          .prise-list 111111111111
+          .prise-list 
+      li.planing__item
+        a(href="#").planing__link
+          .price
+            span.new-price 1 200 000 ₴
+          .favorite-star
+            .add-favourite
+              label.favourite-label
+                input(type="checkbox")
+                +svg('star-circle')
+          .planing__img 
+            img(src='./assets/images/planing/planing2.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .flat-planing-container
+            .square 
+              +svg('space')
+              .square-description 
+                p.title Площа:
+                p.value 48 м²
+            .square 
+              +svg('living_space')
+              .square-description 
+                p.title жила Площа:
+                p.value 36 м² 
+            .square 
+              +svg('room')
+              .square-description 
+                p.title Кімнат:
+                p.value 1
+          .chekbox__container
+            .checkbox 
+              span Дворівнева 
+              span.hidden квартира
+          .deadlines ІІІ кв. 2021
+          .prise-list 
+      li.planing__item
+        a(href="#").planing__link
+          .price.empty-price Дізнатись
+          .favorite-star
+            .add-favourite
+              label.favourite-label
+                input(type="checkbox")
+                +svg('star-circle')
+          .planing__img 
+            img(src='./assets/images/planing/planing2.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .flat-planing-container
+            .square 
+              +svg('space')
+              .square-description 
+                p.title Площа:
+                p.value 48 м²
+            .square 
+              +svg('living_space')
+              .square-description 
+                p.title жила Площа:
+                p.value 36 м² 
+            .square 
+              +svg('room')
+              .square-description 
+                p.title Кімнат:
+                p.value 1
+          .deadlines ІІІ кв. 2021
+          .prise-list 
+      li.planing__item
+        a(href="#").planing__link
+          .price
+            span.new-price 1 200 000 ₴
+            span.old-price 1 400 000 ₴
+          .favorite-star
+            .add-favourite
+              label.favourite-label
+                input(type="checkbox")
+                +svg('star-circle')
+          .planing__img 
+            img(src='./assets/images/planing/planing1.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .flat-planing-container
+            .square 
+              +svg('space')
+              .square-description 
+                p.title Площа:
+                p.value 48 м²
+            .square 
+              +svg('living_space')
+              .square-description 
+                p.title жила Площа:
+                p.value 36 м² 
+            .square 
+              +svg('room')
+              .square-description 
+                p.title Кімнат:
+                p.value 1
+          .chekbox__container
+            .checkbox 
+              span Дворівнева 
+              span.hidden квартира
+            .checkbox 
+              span.hidden квартира 
+              span з терасою
+          .deadlines ІІІ кв. 2021
+          .prise-list 
+      li.planing__item
+        a(href="#").planing__link
+          .price
+            span.new-price 1 200 000 ₴
+            span.old-price 1 400 000 ₴
+          .favorite-star
+            .add-favourite
+              label.favourite-label
+                input(type="checkbox")
+                +svg('star-circle')
+          .planing__img 
+            img(src='./assets/images/planing/planing1.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .flat-planing-container
+            .square 
+              +svg('space')
+              .square-description 
+                p.title Площа:
+                p.value 48 м²
+            .square 
+              +svg('living_space')
+              .square-description 
+                p.title жила Площа:
+                p.value 36 м² 
+            .square 
+              +svg('room')
+              .square-description 
+                p.title Кімнат:
+                p.value 1
+          .chekbox__container
+            .checkbox 
+              span Дворівнева 
+              span.hidden квартира
+            .checkbox 
+              span.hidden квартира 
+              span з терасою
+          .deadlines ІІІ кв. 2021
+          .prise-list 
+      li.planing__item
+        a(href="#").planing__link
+          .price
+            span.new-price 1 200 000 ₴
+            span.old-price 1 400 000 ₴
+          .favorite-star
+            .add-favourite
+              label.favourite-label
+                input(type="checkbox")
+                +svg('star-circle')
+          .planing__img 
+            img(src='./assets/images/planing/planing1.jpg')
+          h4.planing__title
+            span ЖК: 
+            | Сontinent Black
+          .flat-planing-container
+            .square 
+              +svg('space')
+              .square-description 
+                p.title Площа:
+                p.value 48 м²
+            .square 
+              +svg('living_space')
+              .square-description 
+                p.title жила Площа:
+                p.value 36 м² 
+            .square 
+              +svg('room')
+              .square-description 
+                p.title Кімнат:
+                p.value 1
+          .chekbox__container
+            .checkbox 
+              span Дворівнева 
+              span.hidden квартира
+            .checkbox 
+              span.hidden квартира 
+              span з терасою
+          .deadlines ІІІ кв. 2021
+          .prise-list 
+ 
+ 
     button.show-more.show-more-js Показати ще 
       span.number 3 
       |з 
