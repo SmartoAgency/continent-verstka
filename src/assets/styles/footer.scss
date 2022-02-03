@@ -7,10 +7,16 @@ footer {
   .footer {
     display: flex;
     width: 100%;
+    @include to(575px) {
+      flex-direction: column;
+    }
     .navigation-container {
       width: 50%;
       display: flex;
       flex-direction: column;
+      @include to(575px) {
+        width: 100%;
+      }
       .navigation-container__logo {
         width: 100%;
         display: flex;
@@ -24,11 +30,18 @@ footer {
         @include to(1280px) {
           padding: 56px 0 56px vw(32, 1280);
         }
+        @include to(575px) {
+          padding: 32px 22px;
+        }
         .logo {
           width: 50%;
           svg {
             width: 157px;
             height: 60px;
+            @include to(575px) {
+              width: 123px;
+              height: 47px;
+            }
             .logo-fill {
               fill: $white;
             }
@@ -40,6 +53,10 @@ footer {
             width: 200px;
             height: 60px;
             fill: #ffffff;
+            @include to(575px) {
+              width: 153px;
+              height: 45px;
+            }
           }
         }
       }
@@ -54,10 +71,17 @@ footer {
         @include to(1280px) {
           padding: 52px 0 52px vw(32, 1280);
         }
+        @include to(575px) {
+          padding: 32px 22px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
         ul {
           width: 50%;
           li {
             margin-bottom: 24px;
+            @include to(575px) {
+              max-width: 152px;
+            }
             &:last-child {
               margin-bottom: 0;
             }
@@ -82,6 +106,9 @@ footer {
       width: 50%;
       display: flex;
       flex-direction: column;
+      @include to(575px) {
+        width: 100%;
+      }
       .contact-container__info {
         width: 100%;
         display: flex;
@@ -93,26 +120,45 @@ footer {
         @include to(1280px) {
           padding: 56px vw(32, 1280);
         }
+        @include to(575px) {
+          padding: 32px 22px;
+        }
         .footer-map {
           margin-bottom: 50px;
+          @include to(575px) {
+            margin-bottom: 24px;
+          }
           a {
             text-decoration: none;
             font-weight: 600;
             font-size: 24px;
             line-height: 1.25;
             color: #ffffff;
+            @include to(575px) {
+              font-size: 16px;
+            }
           }
         }
         .footer-tel {
           margin-bottom: 50px;
           display: flex;
           flex-direction: column;
+          @include to(575px) {
+            flex-direction: row;
+            margin-bottom: 24px;
+          }
           a {
             text-decoration: none;
             font-weight: 600;
             font-size: 24px;
             line-height: 1.25;
             color: #ffffff;
+            @include to(575px) {
+              font-size: 16px;
+              &:first-child {
+                margin-right: 60px;
+              }
+            }
           }
         }
         .schedule {
@@ -122,6 +168,9 @@ footer {
             font-size: 24px;
             line-height: 1.25;
             color: #ffffff;
+            @include to(575px) {
+              font-size: 16px;
+            }
           }
           &__label {
             width: 18%;
@@ -132,12 +181,20 @@ footer {
         display: flex;
         width: 100%;
         border-top: 1px solid rgba(255, 255, 255, 0.5);
+        @include to(575px) {
+          flex-wrap: wrap;
+        }
         &__item {
           width: calc(100% / 4);
           border-right: 1px solid rgba(255, 255, 255, 0.5);
           padding: 44px 0 45px 0;
           // background: transparent;
           transition: background 0.4s ease;
+          @include to(575px) {
+            width: calc(100% / 2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 32px 0;
+          }
         }
         &__link {
           display: flex;
@@ -173,5 +230,8 @@ footer {
     line-height: 1.21;
     color: #ffffff;
     opacity: 0.5;
+    @include to(575px) {
+      padding: 24px 0;
+    }
   }
 }

@@ -6,11 +6,17 @@
   @include to(1280px) {
     padding: calc(var(--header-h) + 40px + var(--header-bottom-h)) vw(32, 1280) 0 vw(32, 1280);
   }
+  @include to(575px) {
+    padding: calc(var(--header-h) + 35px + var(--header-bottom-h)) vw(32, 1280) 0 22px;
+  }
   .accordion {
     margin: 56px 0 40px;
     width: 100%;
     height: auto;
     position: initial;
+    @include to(575px) {
+      margin: 24px 0 32px;
+    }
   }
   .accordion-item {
     margin-bottom: 16px;
@@ -21,8 +27,17 @@
   .accordion-toggle {
     padding: 38px 48px;
     border: 2px solid #f3f0ef;
+    @include to(575px) {
+      padding: 16px 38px 16px 16px;
+    }
     &::after {
       right: 40px;
+      @include to(575px) {
+        right: 16px;
+        top: calc(50% - 8px);
+        width: 16px;
+        height: 16px;
+      }
     }
     &::before {
       display: none;
@@ -38,11 +53,17 @@
   .accordion-panel {
     background: #f3f0ef;
     padding: 0px 48px 48px;
+    @include to(575px) {
+      padding: 0px 16px 24px;
+    }
   }
   .documents-tabcontent__list {
     padding-top: 48px;
     display: flex;
     flex-wrap: wrap;
+    @include to(575px) {
+      padding-top: 30px;
+    }
   }
   .documents-tabcontent__item {
     width: calc((100% - 120px) / 3);
@@ -50,28 +71,56 @@
     &:last-child {
       margin-right: 0;
     }
+    @include to(575px) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 24px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
   .documents-tabcontent__link {
     text-decoration: none;
     display: flex;
+    width: 100%;
     svg {
-      width: 46px;
+      width: 16px;
       height: 18px;
       fill: none;
       margin-right: 16px;
     }
     span {
+      width: 95%;
       font-weight: 600;
       font-size: 16px;
       line-height: 1.25;
       color: #000000;
+      @include to(575px) {
+        font-size: 14px;
+      }
     }
   }
   .tab {
+    @include to(575px) {
+      flex-wrap: wrap;
+    }
     .tablinks {
       height: 48px;
       background: #ffffff;
       border: 1px solid #f3f0ef;
+      @include to(575px) {
+        height: 39px;
+        width: 100%;
+        border-radius: none;
+        justify-content: flex-start;
+        &:first-child {
+          border-radius: 4px;
+        }
+        &:last-child {
+          border-radius: 4px;
+        }
+      }
     }
     .active {
       background: #fec62e;
@@ -89,9 +138,19 @@
     &:last-child {
       margin-bottom: 0;
     }
+    @include to(575px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .logo {
       width: 14.5%;
       max-height: 64px;
+      @include to(575px) {
+        width: auto;
+        max-height: 31px;
+        height: 31px;
+        margin-bottom: 16px;
+      }
       img {
         object-fit: contain;
       }
@@ -110,6 +169,9 @@
         font-size: 14px;
         line-height: 1.21;
         color: #000000;
+        @include to(575px) {
+          height: 40px;
+        }
         svg {
           fill: none;
           width: 18px;
@@ -126,6 +188,11 @@
       text-decoration-line: underline;
       text-transform: uppercase;
       color: #000000;
+      @include to(575px) {
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
     }
     .text-index {
       font-weight: 600;
@@ -134,12 +201,22 @@
       color: #000000;
       text-decoration-line: none;
       text-transform: none;
+      @include to(575px) {
+        font-size: 14px;
+        .mobile-text {
+          display: inline-block;
+          max-width: 153px;
+        }
+      }
       .own {
         font-weight: 600;
         font-size: 48px;
         line-height: 100%;
         color: #fec62e;
         margin-left: 0.4ch;
+        @include to(575px) {
+          font-size: 40px;
+        }
       }
       .total {
         font-weight: 600;
@@ -147,6 +224,9 @@
         line-height: 1.25;
         color: #000000;
         margin-left: 1ch;
+        @include to(575px) {
+          font-size: 14px;
+        }
       }
     }
   }

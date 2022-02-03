@@ -415,6 +415,9 @@
   color: #000000;
   border-bottom: 2px solid #f3f0ef;
   position: relative;
+  @include to(575px) {
+    font-size: 20px;
+  }
   &::before {
     content: '';
     display: inline-block;

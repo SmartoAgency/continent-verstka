@@ -4,7 +4,13 @@
 
   &__form {
     width: 61%;
-    padding: 80px vw(100, 1920) 80px vw(100, 1920);
+    padding: 80px vw(160, 1920) 80px vw(160, 1920);
+    @include to(1440px) {
+      padding: 80px vw(100, 1440) 80px vw(100, 1440);
+    }
+    @include to(1280px) {
+      padding: 80px vw(32, 1280) 80px vw(32, 1280);
+    }
     h4 {
       font-weight: 600;
       font-size: min(vw(22, 1440), 32px);

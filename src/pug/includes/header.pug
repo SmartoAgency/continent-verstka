@@ -57,6 +57,7 @@ header.header
         span.nav__tel-text 050 369-48-92
       a(href='tel:+380676938069').nav__tel-link
         span.nav__tel-text 067 693-80-69
+      +svg('phone').header-mobile-call.js-mobile-call
       button(type='button').nav__call-btn.js-call
         +svg('phone')
         span.nav__call-btn-text Замовити дзвінок
@@ -72,7 +73,9 @@ header.header
       span Kалькулятор вартості
     .logo-container__right
       +svg('continent-ray')
-      ul.nav-menu-header 
+      .mobile-list.js-mobile-bottom
+        .mobile-header-list
+      ul.nav-menu-header.js-header-list
         li.nav-menu-header__item 
           a(href="#") Про проект
         li.nav-menu-header__item 

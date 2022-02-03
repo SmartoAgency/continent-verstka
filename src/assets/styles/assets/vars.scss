@@ -51,10 +51,11 @@ $transition-fuction: all 0.2s ease-in-out;
 //     --logo-h: 31px;
 //   }
 // }
-// @media screen and (max-width: 576px) {
-//   :root {
-//     --header-h: 75px;
-//     --logo-w: 68px;
-//     --logo-h: 33px;
-//   }
-// }
+@media screen and (max-width: 576px) {
+  :root {
+    --header-h: 74px;
+    --header-bottom-h: 58px;
+    --logo-w: 122px;
+    --logo-h: 47px;
+  }
+}
