@@ -22,14 +22,10 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
-  script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/bucha.js')
+  script(defer src='./assets/scripts/header-single.js')
+  script(defer src='./assets/scripts/header-menu.js')
+  //- script(defer src='./assets/scripts/bucha.js')
   script(defer src='./assets/scripts/developer.js') 
-  //- script(defer src='./assets/scripts/map.js')
-  //- script(defer src='./assets/scripts/accordeon.js')
-  //- script(defer src='./assets/scripts/infrastructure.js')
-  //- script(defer src='./assets/scripts/no-scroll.js')
-  script(defer src='./assets/scripts/footer.js')
 
 block content
   include ../includes/breadcrumbs.pug
@@ -46,14 +42,14 @@ block content
       p На сьогоднішній день експерти відзначають високий рівень екології та цілюще повітря Бучі, яке можна порівняти хіба що з Карпатськими курортами.
       p Ми побудували ЖК Сontinent саме в цьому місці, створивши для вас справжній комфорт та єднання з природою. Серед неймовірної кількості парків, скверів та зелених насаджень ви завжди будете почувати себе затишно та спокійно.
       p Саме тут щодня ваша родина буде дихати чистим незагазованим повітрям та отримувати насолоду від життя.
-      .navigation-container
-        .swiper-pagination1
-        .swiper-scrollbar1
-        .swiper-btn
-          .swiper-button-prev1 
-            +svg('swiper-prev')
-          .swiper-button-next1
-            +svg('swiper-next')
+      //- .navigation-container
+      //-   .swiper-pagination1
+      //-   .swiper-scrollbar1
+      //-   .swiper-btn
+      //-     .swiper-button-prev1 
+      //-       +svg('swiper-prev')
+      //-     .swiper-button-next1
+      //-       +svg('swiper-next')
     .description-swiper.js-init-swiper 
       .swiper-wrapper
         .swiper-slide
@@ -62,6 +58,14 @@ block content
           img(src="./assets/images/project1.jpg", alt="")
         .swiper-slide
           img(src="./assets/images/realized-project2.jpg", alt="")
+      .navigation-container
+        .swiper-pagination1
+        .swiper-scrollbar1
+        .swiper-btn
+          .swiper-button-prev1 
+            +svg('swiper-prev')
+          .swiper-button-next1
+            +svg('swiper-next')
      
   .description__container.reverse.js-developer 
     .description__text 
@@ -69,7 +73,7 @@ block content
       h2.our-projects__title Бучанський парк
       p Міський парк в Бучі був створений у 2011 році. Це один із наймолодших та живописних парків Київщини. Бучанський міський парк в англійському стилі розмістився на території загальною площею 42га.
       p Озера з фонтанами, Французький дворик, велодоріжки, розкішні клумби, скульптури та інсталяції, міні-зоопарк, скейт-парк, екстрім-парк, дитяче містечко та багато затишних кафе – тут є все для прекрасного сімейного відпочинку.
-      .navigation-container
+      //- .navigation-container
         .swiper-pagination1
         .swiper-scrollbar1
         .swiper-btn
@@ -86,12 +90,20 @@ block content
             img(src="./assets/images/project1.jpg", alt="")
           .swiper-slide
             img(src="./assets/images/realized-project2.jpg", alt="")
+        .navigation-container
+          .swiper-pagination1
+          .swiper-scrollbar1
+          .swiper-btn
+            .swiper-button-prev1
+              +svg('swiper-prev')
+            .swiper-button-next1
+              +svg('swiper-next')
   .description__container.js-developer 
     .description__text 
       .num 03.
       h2.our-projects__title Новий мікрорайон Бучі – Тарасівка
       p У Бучі активно розвивається та будується новий мікрорайон. Це новий етап забудови міста, який гармонійно поєднує в собі комфорт сучасного міського життя та екологічність. Мікрорайон стрімко розвивається та приваблює молоді амбіційні родини, а місцеві жителі люблять його за тихі доглянуті вулиці та розвиток інфраструктури.
-      .navigation-container
+      //- .navigation-container
         .swiper-pagination1
         .swiper-scrollbar1
         .swiper-btn
@@ -107,6 +119,14 @@ block content
           img(src="./assets/images/project1.jpg", alt="")
         .swiper-slide
           img(src="./assets/images/realized-project2.jpg", alt="")
+      .navigation-container
+        .swiper-pagination1
+        .swiper-scrollbar1
+        .swiper-btn
+          .swiper-button-prev1
+            +svg('swiper-prev')
+          .swiper-button-next1
+            +svg('swiper-next')
  
 
   .video-box

@@ -31,13 +31,48 @@
 #developer,
 #bucha {
   .description__container {
-    padding: 0 0 128px vw(100, 1920);
+    padding: 0 0 128px vw(160, 1920);
+    @include to(1440px) {
+      padding: 0 0 128px vw(100, 1440);
+    }
+    @include to(1280px) {
+      padding: 0 0 128px vw(32, 1280);
+    }
+    @include to(575px) {
+      padding: 0 0 0px 22px;
+    }
   }
   .reverse {
     flex-direction: row-reverse;
-    padding: 0 vw(100, 1920) 128px 0;
+    padding: 0 vw(160, 1920) 128px 0;
     // .swiper-wrapper {
     //   transform: translate3d(-65%, 0, 0) !important;
+    // }
+
+    @include to(1440px) {
+      padding: 0 vw(100, 1440) 128px 0;
+    }
+    @include to(1280px) {
+      padding: 0 vw(32, 1280) 128px 0;
+    }
+    @include to(575px) {
+      flex-direction: column;
+      padding: 48px 0px 0px 22px;
+    }
+    .navigation-container {
+      right: vw(160, 1920);
+      left: auto;
+      @include to(1440px) {
+        right: vw(100, 1440);
+      }
+      @include to(1280px) {
+        right: vw(32, 1280);
+      }
+    }
+    // .description__text {
+    //   @include to(575px) {
+    //     padding-top: 0;
+    //   }
     // }
     .description-swiper {
       width: 100%;
@@ -47,9 +82,15 @@
     .container-description-swiper {
       width: 43%;
       overflow: hidden;
+      @include to(575px) {
+        width: 100%;
+      }
     }
     .swiper-wrapper {
       margin-left: -65%;
+      @include to(575px) {
+        margin-left: 0;
+      }
     }
   }
 }

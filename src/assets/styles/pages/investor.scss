@@ -1,21 +1,30 @@
 .investor-main {
   width: 100vw;
-  // height: calc(100vh - var(--header-h));
   height: 100vh;
-  // min-height: calc(100vh - 250px);
   height: calc(var(--vh, 1vh) * 100);
-  padding: 108px vw(100, 1920) vw(100, 1920);
+  padding: 108px vw(160, 1920) vw(160, 1920);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('../images/investor-bg.jpg');
-
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
-  // transition: all 0.2s ease;
+  @include to(1440px) {
+    padding: 108px vw(100, 1440) vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 108px vw(32, 1280) vw(32, 1280);
+  }
+  @include to(575px) {
+    height: auto;
+    padding: 130px 22px 56px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('../images/investor-bg-mob.jpg');
+  }
   .our-projects__title {
     color: $white;
     margin-bottom: 60px;
@@ -24,13 +33,31 @@
     &:last-child {
       margin-bottom: 0;
     }
+    @include to(575px) {
+      width: 100%;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
   }
 }
 .investor-main__container {
-  padding: 60px vw(100, 1920) 120px vw(100, 1920);
+  padding: 60px vw(160, 1920) 120px vw(160, 1920);
+  @include to(1440px) {
+    padding: 60px vw(100, 1440) 120px vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 60px vw(32, 1920) 120px vw(32, 1920);
+  }
+  @include to(575px) {
+    padding: 32px 22px 75px 22px;
+  }
   .our-projects__title {
     width: 80%;
     margin-bottom: 40px;
+    @include to(575px) {
+      width: 100%;
+      margin-bottom: 32px;
+    }
   }
   p {
     font-weight: 600;
@@ -38,17 +65,34 @@
     line-height: 1.25;
     color: #000000;
     width: 65%;
+    @include to(575px) {
+      width: 100%;
+    }
   }
   .investor-list {
     padding-top: 60px;
     column-count: 3;
     column-gap: 100px;
+    @include to(575px) {
+      padding-top: 40px;
+      column-count: 1;
+      column-gap: 0;
+      .investor-item {
+        margin-bottom: 32px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
     .num {
       font-weight: 600;
       font-size: 14px;
       line-height: 1.7;
       color: #000000;
       margin-bottom: 16px;
+      @include to(575px) {
+        font-size: 12px;
+      }
     }
     .title {
       font-weight: 600;
@@ -56,6 +100,9 @@
       line-height: 1.23;
       color: #000000;
       margin-bottom: 16px;
+      @include to(575px) {
+        font-size: 20px;
+      }
     }
     .text {
       font-weight: 600;
@@ -68,30 +115,48 @@
 
 .in-numbers {
   display: flex;
+  @include to(575px) {
+    flex-direction: column;
+  }
   &__img {
     width: 57%;
+    @include to(575px) {
+      width: 100%;
+    }
   }
   &__list {
     width: 43%;
+    @include to(575px) {
+      width: 100%;
+    }
   }
   &__item {
     padding: 80px 0 80px 120px;
     border: 1px solid #f3f0ef;
     display: flex;
     align-items: center;
+    @include to(575px) {
+      padding: 26px 22px;
+    }
     .num {
       font-weight: 800;
       font-size: 64px;
       line-height: 1.25;
       color: #000000;
       margin-right: 8px;
+      @include to(575px) {
+        font-size: 54px;
+        margin-right: 18px;
+      }
     }
     .text {
       font-weight: 600;
       font-size: 22px;
       line-height: 1.23;
-
       color: #000000;
+      @include to(575px) {
+        font-size: 18px;
+      }
     }
   }
 }
@@ -100,25 +165,48 @@
   display: flex;
   justify-content: space-between;
   background: #141414;
-  padding: 80px vw(100, 1920);
+  padding: 80px vw(160, 1920);
+  @include to(1440px) {
+    padding: 80px vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 80px vw(32, 1280);
+  }
+  @include to(575px) {
+    padding: 32px 22px;
+    flex-direction: column;
+  }
   &__text {
     width: 22%;
+    @include to(575px) {
+      width: 100%;
+    }
   }
   &__title {
     font-weight: 600;
     font-size: 32px;
     line-height: 1.22;
     color: #fec62e;
+    @include to(575px) {
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
   }
   .accordion {
     position: initial;
     width: 66%;
     height: auto;
     background: #141414;
+    @include to(575px) {
+      width: 100%;
+    }
     &-item {
       margin-bottom: 16px;
       &:last-child {
         margin-bottom: 0;
+      }
+      @include to(575px) {
+        margin-bottom: 8px;
       }
     }
     &-toggle {
@@ -130,12 +218,20 @@
       color: #ffffff;
       position: relative;
       padding: 32px 104px;
+      @include to(575px) {
+        padding: 24px 50px;
+        font-size: 22px;
+      }
       &::before {
         display: none;
       }
       &::after {
         background-image: url(../images/plus-white.svg);
         right: 40px;
+        @include to(575px) {
+          right: 16px;
+          width: 24px;
+        }
       }
       .num {
         font-weight: 600;
@@ -145,6 +241,10 @@
         position: absolute;
         left: 48px;
         top: 38px;
+        @include to(575px) {
+          left: 16px;
+          top: 28px;
+        }
       }
     }
     .is-open .accordion-toggle {
@@ -161,6 +261,9 @@
     }
     &-panel {
       padding: 0 104px 52px 104px;
+      @include to(575px) {
+        padding: 0 8px 24px 50px;
+      }
       p {
         font-weight: 600;
         font-size: 16px;
@@ -177,15 +280,25 @@
 
 .guarantees {
   display: flex;
+  @include to(575px) {
+    flex-direction: column-reverse;
+  }
   &__img {
     width: 43%;
     position: relative;
+    @include to(575px) {
+      width: 100%;
+    }
     &-description {
       position: absolute;
       left: 0;
       bottom: 0;
       padding: 32px;
       background: #ffffff;
+      @include to(575px) {
+        width: 80%;
+        padding: 16px 22px;
+      }
       .name {
         font-weight: 600;
         font-size: 24px;
@@ -193,6 +306,10 @@
         color: #000000;
         width: 80%;
         margin-bottom: 16px;
+        @include to(575px) {
+          width: 100%;
+          font-size: 22px;
+        }
       }
       .tel {
         font-size: 16px;
@@ -203,14 +320,32 @@
   }
   &__text {
     width: 57%;
-    padding: 108px vw(100, 1920) 85px 104px;
+    padding: 108px vw(160, 1920) 85px 104px;
+    @include to(1440px) {
+      padding: 108px vw(100, 1440) 85px 104px;
+    }
+    @include to(1280px) {
+      padding: 108px vw(32, 1280) 85px 104px;
+    }
+    @include to(575px) {
+      width: 100%;
+      padding: 40px 22px 20px 22px;
+    }
     .our-projects__title {
       margin-bottom: 48px;
+      @include to(575px) {
+        margin-bottom: 24px;
+      }
     }
     ul {
       column-count: 2;
       column-gap: 64px;
       padding-left: 15px;
+      @include to(575px) {
+        column-count: 1;
+        column-gap: 0;
+        padding-left: 16px;
+      }
     }
     li {
       margin-bottom: 30px;
@@ -219,6 +354,9 @@
       line-height: 1.5;
       color: #000000;
       list-style: disc;
+      @include to(575px) {
+        margin-bottom: 20px;
+      }
     }
     p {
       padding: 40px 0;
@@ -226,6 +364,10 @@
       font-size: 22px;
       line-height: 1.23;
       color: #000000;
+      @include to(575px) {
+        padding: 20px 0 24px 0;
+        font-size: 20px;
+      }
     }
   }
 }
@@ -235,13 +377,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include to(575px) {
+    padding: 32px 26px;
+  }
   p {
     font-weight: 600;
     font-size: 32px;
     line-height: 1.22;
     text-align: center;
-
     color: #000000;
+    @include to(575px) {
+      font-size: 22px;
+      text-align: left;
+    }
   }
 }
 
@@ -256,6 +404,12 @@
       flex-direction: column;
       justify-content: center;
       padding-top: 0;
+      @include to(1440px) {
+        height: 640px;
+      }
+      @include to(575px) {
+        height: auto;
+      }
       .contacts-mail {
         width: 150px;
       }

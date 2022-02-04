@@ -67,6 +67,12 @@
     // height: 50px;
     // font-size: 12px;
   }
+  @include to(575px) {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+    margin-right: 0;
+  }
   &:hover {
     @include from(992px) {
       background: #ffbb01;
@@ -570,16 +576,33 @@
 .contacts {
   display: flex;
   width: 100%;
+  @include to(575px) {
+    flex-direction: column;
+  }
   &__information {
     width: 35%;
     height: 100%;
-    padding: 80px vw(100, 1920) 56px vw(100, 1920);
+    padding: 80px vw(160, 1920) 56px vw(160, 1920);
+    @include to(1440px) {
+      padding: 80px vw(100, 1440) 56px vw(100, 1440);
+    }
+    @include to(1280px) {
+      padding: 80px vw(32, 1280) 56px vw(32, 1280);
+    }
+    @include to(575px) {
+      width: 100%;
+      padding: 48px 22px;
+    }
     .contacts__adress {
       margin-top: 32px;
       font-weight: 600;
       font-size: 24px;
       line-height: 1.2;
       color: #000000;
+      @include to(575px) {
+        margin-top: 48px;
+        font-size: 22px;
+      }
     }
     .contacts__tel-container {
       display: flex;
@@ -601,6 +624,9 @@
       padding: 24px 0 32px 0;
       display: flex;
       flex-direction: column;
+      @include to(575px) {
+        padding: 32px 0;
+      }
       &__link {
         display: flex;
         font-weight: 600;
@@ -610,6 +636,9 @@
       }
       &__label {
         width: 15%;
+        @include to(575px) {
+          width: 24%;
+        }
       }
     }
     .contacts-mail {
@@ -635,6 +664,9 @@
   }
   &__map {
     width: 65%;
+    @include to(575px) {
+      width: 100%;
+    }
   }
   .map {
     height: 690px;
@@ -646,10 +678,10 @@
     // @include to(992px) {
     //   height: 476px;
     // }
-    // @include to(575px) {
-    //   height: 100%;
-    //   // margin-bottom: 30px;
-    // }
+    @include to(575px) {
+      height: 300px;
+      // margin-bottom: 30px;
+    }
     #map {
       height: 690px;
       // height: 41vh;
@@ -659,10 +691,10 @@
       // @include to(992px) {
       //   height: 476px;
       // }
-      // @include to(575px) {
-      //   height: 224px;
-      //   margin-bottom: 30px;
-      // }
+      @include to(575px) {
+        height: 300px;
+        // margin-bottom: 30px;
+      }
     }
   }
 }

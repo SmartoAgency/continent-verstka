@@ -10,29 +10,7 @@
       height: 802px;
     }
   }
-  .map-btn {
-    margin-right: 0;
-    background: #ffffff;
-    position: absolute;
-    right: 30px;
-    bottom: 60px;
-    transition: all 0.2s ease;
-  }
-  .map-btn-open {
-    background: #fec62e;
-    border-radius: 50%;
-    padding: 14px;
-    span {
-      display: none;
-    }
-    svg {
-      margin-right: 0;
-    }
-  }
-  .contacts__information {
-    position: relative;
-    padding-top: 95px;
-  }
+
   .breadcrumbs {
     position: absolute;
     top: 40px;
@@ -86,24 +64,69 @@
     margin-top: 50px;
   }
 }
-
+#contacts-page,
+#investor {
+  .map-btn {
+    margin-right: 0;
+    background: #ffffff;
+    position: absolute;
+    right: 30px;
+    bottom: 60px;
+    transition: all 0.2s ease;
+    @include to(575px) {
+      display: flex;
+      left: 22px;
+      bottom: 22px;
+    }
+  }
+  .map-btn-open {
+    background: #fec62e;
+    border-radius: 50%;
+    padding: 14px;
+    span {
+      display: none;
+    }
+    svg {
+      margin-right: 0;
+    }
+  }
+  .contacts__information {
+    position: relative;
+    padding-top: 95px;
+  }
+}
 .map-address {
   position: absolute;
   bottom: 130px;
   right: 32px;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.4s ease;
+  @include to(575px) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
   &__container {
     position: relative;
     background: #ffffff;
     border-radius: 4px;
     padding: 32px;
+    @include to(575px) {
+      padding: 22px;
+    }
     .close-map {
       width: 20px;
       height: 20px;
       position: absolute;
       top: 32px;
       right: 32px;
+      @include to(575px) {
+        width: 16px;
+        height: 16px;
+        top: 28px;
+        right: 22px;
+      }
     }
     h4 {
       font-weight: 600;
@@ -139,6 +162,9 @@
         font-size: 14px;
         line-height: 1.21;
         color: #000000;
+        @include to(575px) {
+          width: 156px;
+        }
         svg {
           fill: none;
           margin-right: 8px;
@@ -194,4 +220,5 @@
 }
 .map-address-visible {
   opacity: 1;
+  pointer-events: painted;
 }

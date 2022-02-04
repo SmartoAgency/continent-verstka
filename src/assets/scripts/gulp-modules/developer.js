@@ -68,10 +68,9 @@ function initSlider(container) {
     // slidesPerView: 1.25,
     // watchSlidesProgress: true,
     slidesPerView: 1.25,
-    loop: !0,
     loopedSlides: e,
     speed: 750,
-    spaceBetween: 30,
+    spaceBetween: 16,
     pagination: {
       el: pagination,
       type: 'fraction',
@@ -81,6 +80,22 @@ function initSlider(container) {
     navigation: {
       nextEl: btnNext,
       prevEl: btnPrev,
+    },
+    scrollbar: {
+      el: '.swiper-scrollbar1',
+    },
+    breakpoints: {
+      575: {
+        spaceBetween: 30,
+      },
+      // 992: {
+      //   spaceBetween: 20,
+      //   slidesPerView: 4,
+      // },
+      // 1440: {
+      //   spaceBetween: 20,
+      //   slidesPerView: 4,
+      // },
     },
   });
 }

@@ -180,12 +180,20 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  @include to(575px) {
+    flex-direction: column;
+  }
 }
 .description__text {
   width: 38%;
   display: flex;
   flex-direction: column;
   position: relative;
+  @include to(575px) {
+    width: 100%;
+    padding-right: 22px;
+    // padding-top: 48px;
+  }
   .our-projects__title {
     margin-bottom: 32px;
   }
@@ -195,14 +203,51 @@
     line-height: 1.25;
     color: #000000;
     margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 95px;
+      @include to(575px) {
+        margin-bottom: 32px;
+      }
+    }
   }
+}
+.description-swiper {
+  width: 43%;
+  overflow: hidden;
+  // margin-left: auto;
+  @include to(575px) {
+    width: 100%;
+  }
+  .swiper-slide {
+    height: 416px;
+    @include to(575px) {
+      height: 250px;
+    }
+  }
+}
+.description-swiper {
   .navigation-container {
-    // position: absolute;
+    position: absolute;
     display: flex;
     align-items: center;
-    width: 100%;
+    // width: 100%;
     margin-top: 48px;
     // padding: 38px 24px 24px vw(100, 1920);
+    width: 37%;
+    left: vw(160, 1920);
+    bottom: 128px;
+    @include to(1440px) {
+      left: vw(100, 1440);
+    }
+    @include to(1280px) {
+      left: vw(32, 1280);
+    }
+    @include to(575px) {
+      position: initial;
+      width: 100%;
+      margin-top: 32px;
+      padding-right: 22px;
+    }
     .swiper-pagination1 {
       font-weight: 600;
       font-size: 12px;
@@ -215,6 +260,9 @@
       display: flex;
       .swiper-button-prev1 {
         margin-right: 16px;
+        @include to(575px) {
+          margin-right: 8px;
+        }
       }
       .swiper-button-prev1 svg,
       .swiper-button-next1 svg {
@@ -222,7 +270,12 @@
         height: 44px;
         cursor: pointer;
         fill: $black;
+        stroke: $white;
         transition: fill 0.4s ease;
+        @include to(575px) {
+          width: 32px;
+          height: 32px;
+        }
       }
       .swiper-button-prev1 svg:hover,
       .swiper-button-next1 svg:hover {
@@ -240,13 +293,5 @@
       position: relative;
       background: rgba(0, 0, 0, 0.1);
     }
-  }
-}
-.description-swiper {
-  width: 43%;
-  overflow: hidden;
-  // margin-left: auto;
-  .swiper-slide {
-    height: 416px;
   }
 }

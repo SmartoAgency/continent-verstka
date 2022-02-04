@@ -11,6 +11,10 @@
     @include to(1280px) {
       padding: 80px vw(32, 1280) 80px vw(32, 1280);
     }
+    @include to(575px) {
+      width: 100%;
+      padding: 40px 22px;
+    }
     h4 {
       font-weight: 600;
       font-size: min(vw(22, 1440), 32px);
@@ -21,6 +25,11 @@
       @include to(1440px) {
         font-size: 22px;
       }
+      @include to(575px) {
+        margin-top: 24px;
+        width: 100%;
+        font-size: 18px;
+      }
     }
   }
   &__manager {
@@ -29,6 +38,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include to(575px) {
+      display: none;
+    }
   }
 }
 .manager-img {
@@ -55,16 +67,25 @@
 
 .review-form {
   margin-top: 56px;
+  @include to(575px) {
+    margin-top: 24px;
+  }
   .form-field {
     display: flex;
     justify-content: space-between;
+    @include to(575px) {
+      flex-direction: column;
+    }
   }
   .form-field-input {
     width: 45%;
     // width: 320px;
     height: 48px;
     position: relative;
-
+    @include to(575px) {
+      width: 100%;
+      margin-bottom: 16px;
+    }
     .input-review {
       border: none;
       background: #ffffff;
@@ -104,12 +125,19 @@
       left: 0;
       top: 50%;
       transform: translate(16px, -50%);
+      @include to(575px) {
+        font-size: 14px;
+      }
     }
   }
   .form-field-time {
     display: flex;
     margin-top: 24px;
     margin-left: -8px;
+    @include to(575px) {
+      margin-top: 0;
+      flex-wrap: wrap;
+    }
     .form-field-input {
       // width: calc(100% / 3.2);
       --offset: 16px;
@@ -124,6 +152,9 @@
       font-size: 16px;
       line-height: 1.25;
       color: #000000;
+      @include to(575px) {
+        @include customOffsetWidth(50, var(--offset));
+      }
     }
     .input-date {
       width: 100%;
@@ -152,6 +183,9 @@
     margin-right: calc((var(--offset) / 2) * -1);
     @include customOffsetWidth(34.3, var(--offset));
     position: relative;
+    @include to(575px) {
+      @include customOffsetWidth(100, var(--offset));
+    }
   }
   .new-select {
     position: relative;
@@ -228,10 +262,17 @@
   }
   .form-field-confirm {
     margin-top: 70px;
+    @include to(575px) {
+      margin-top: 32px;
+    }
     .realty {
       border: none;
       width: 308px;
       font-family: $default-font;
+      @include to(575px) {
+        width: 100%;
+        margin-right: 0;
+      }
     }
   }
 }

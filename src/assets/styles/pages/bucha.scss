@@ -1,6 +1,9 @@
 #bucha {
   .video-box {
     padding: 0 176px;
+    @include to(575px) {
+      padding: 48px 22px;
+    }
     .video {
       width: 100%;
       height: 100%;
@@ -13,13 +16,28 @@
       line-height: 1.25;
       color: #000000;
       margin-bottom: 30px;
+      @include to(575px) {
+        margin-bottom: 16px;
+      }
     }
   }
 }
 .busha-text {
-  padding: 40px vw(100, 1920) 67px vw(100, 1920);
+  padding: 40px vw(160, 1920) 67px vw(160, 1920);
+  @include to(1440px) {
+    padding: 40px vw(100, 1440) 67px vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 40px vw(32, 1280) 67px vw(32, 1280);
+  }
+  @include to(575px) {
+    padding: 16px 22px 56px 22px;
+  }
   .our-projects__title {
     margin-bottom: 48px;
+    @include to(575px) {
+      margin-bottom: 32px;
+    }
   }
   p {
     font-weight: 600;
@@ -27,12 +45,21 @@
     line-height: 1.21;
     color: #000000;
     width: 55%;
+    @include to(575px) {
+      font-size: 20px;
+      width: 100%;
+    }
   }
 }
 .video-box__text {
   padding: 50px 176px 120px 176px;
   column-count: 2;
   column-gap: 45px;
+  @include to(575px) {
+    padding: 0px 22px 80px 22px;
+    column-count: 1;
+    column-gap: 0;
+  }
   p {
     font-weight: 600;
     font-size: 16px;
@@ -52,6 +79,9 @@
   align-items: center;
   justify-content: center;
   padding: 112px 0;
+  @include to(575px) {
+    padding: 64px 0 57px 0;
+  }
   .our-projects__title {
     text-align: center;
   }
@@ -76,6 +106,9 @@
       margin-top: 60px;
       display: flex;
       justify-content: center;
+      @include to(575px) {
+        margin-top: 8px;
+      }
     }
   }
 }
