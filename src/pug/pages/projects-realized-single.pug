@@ -21,11 +21,11 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
-  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/header-single.js')
+  script(defer src='./assets/scripts/header-menu.js')
   script(defer src='./assets/scripts/social-btn.js')
   script(defer src='./assets/scripts/project-realized.js')
-  //- script(defer src='./assets/scripts/scroll-down.js')
-  script(defer src='./assets/scripts/footer.js')
+ 
 block arrow 
   .social-select
     .select-container.js-social
@@ -58,7 +58,7 @@ block content
           p.realized-project__benefits Комфортне розташування будинку, комфортна та найнеобхідніша інфраструктура поруч, і головне - комфортні умови для життя кожної сім`ї.
       .swiper-slide
         .realized-project__img 
-          img(src="./asse ts/images/realized-project1.jpg", alt="")
+          img(src="./assets/images/realized-project1.jpg", alt="")
         .realized-project__content
           h1.realized-project__title Комфорт Хаус 1
           p.realized-project__description Житловий комплекс, в основу назви якого не дарма взяте поняття комфорту.
@@ -127,20 +127,6 @@ block content
       p Кожен із будинків являє собою двоповерховий простір із власним подвір'ям, земельною ділянкою, парковкою та зоною для відпочинку.
       p Проєктом передбачена закрита територія з охороною, поруч функціонують учбові заклади, а для вечірніх променадів є власна прогулянкова алея. Окрім інфраструктури Бучі, жителі C`HOUSE можуть користуватися благами ЖК Continent та торгового простору BAZAR-VOKZAL, що побудовані поруч.
 
-      .navigation-container
-        .swiper-pagination1
-        .swiper-scrollbar1
-        .swiper-btn
-          .swiper-button-prev1
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="22" cy="22" r="22" fill="black"/>
-              <path d="M24.6566 15.9999L18.9998 21.6567L24.6566 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          .swiper-button-next1
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="22" cy="22" r="22" fill="black"/>
-              <path d="M20.6569 15.9999L26.3137 21.6567L20.6569 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            </svg>
     .description-swiper 
       .swiper-wrapper
         .swiper-slide
@@ -149,8 +135,15 @@ block content
           img(src="./assets/images/project1.jpg", alt="")
         .swiper-slide
           img(src="./assets/images/realized-project2.jpg", alt="")
+      .navigation-container
+        .swiper-pagination1
+        .swiper-scrollbar1
+        .swiper-btn
+          .swiper-button-prev1
+            +svg('swiper-prev')
+          .swiper-button-next1
+            +svg('swiper-next')
 
- 
 
 
 block header

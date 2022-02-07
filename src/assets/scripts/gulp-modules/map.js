@@ -374,3 +374,48 @@ function getMapTheme() {
 //     titleArrow.style.transform = '';
 //   }
 // });
+
+// window.addEventListener('load', () => {
+//   /** Выдвижная панель маркеров на мобильной версии */
+//   const legend = document.querySelector('[data-mob-accordeon]');
+//   const legendTitle = legend.querySelector('.map-wrap__legend-title');
+//   const markersHeight = getComputedStyle(legend.querySelector('.map-wrap__legend-markers-wrap'))
+//     .height;
+//   // legend.classList.remove("opened");
+//   // gsap.timeline().fromTo(legend, { y: 0 }, { y: markersHeight });
+//   legendTitle.addEventListener('click', () => {
+//     legend.classList.toggle('opened');
+//     // добавить плавность появление блока с маркерами
+//     if (legend.classList.contains('opened')) {
+//       // gsap.fromTo('.map-wrap__legend-markers-wrap', { height: 0 }, { height: '124px' });
+//       gsap.timeline().fromTo(legend, { y: markersHeight }, { y: 0 });
+//       // .set('.map-wrap__legend-markers-wrap', { display: '' });
+//     } else {
+//       // gsap.fromTo('.map-wrap__legend-markers-wrap', { height: '124px' }, { height: 0 });
+//       gsap.timeline().fromTo(legend, { y: 0 }, { y: markersHeight });
+//       // .set('.map-wrap__legend-markers-wrap', { display: 'none' });
+//     }
+//   });
+//   legend.addEventListener('mouseenter', () => {
+//     if (locoScroll !== undefined) locoScroll.stop();
+//   });
+//   legend.addEventListener('mouseleave', () => {
+//     if (locoScroll !== undefined) locoScroll.start();
+//   });
+// });
+
+document.querySelectorAll('[data-nav-item-group]').forEach(el => {
+  if (el.querySelector('.map-nav-subitems') === null) return;
+  const openElement = el.querySelector('.map-nav-item');
+  openElement.addEventListener('click', () => {
+    el.classList.toggle('active');
+  });
+});
+
+document.querySelector('[data-mob-wrapper-mobile-opener]').addEventListener('click', function(evt) {
+  const navContainer = document.querySelector('.map-wrapper__nav');
+  navContainer.classList.toggle('closed');
+  this.querySelector('span').textContent = navContainer.classList.contains('closed')
+    ? this.dataset.closedText
+    : this.dataset.openedText;
+});

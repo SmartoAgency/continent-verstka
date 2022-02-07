@@ -14,6 +14,7 @@
   align-items: center;
   height: var(--header-h);
   padding: 0 vw(160, 1920);
+  // transition: all 0.3s ease;
   @include to(1440px) {
     padding: 0 vw(100, 1440);
   }
@@ -476,7 +477,8 @@
 #favorites,
 #flats,
 #single-flats,
-#bucha {
+#bucha,
+#project-realized {
   .header-container {
     background: $white;
   }
@@ -517,4 +519,9 @@
     top: 0;
     left: 0;
   }
+}
+
+.not-on-top {
+  transform: translate(0%, -100%);
+  transition: all 0.5s ease;
 }

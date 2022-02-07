@@ -1,28 +1,28 @@
-#project-realized {
-  .header {
-    background: $white;
-  }
-  .nav__tel-link {
-    color: $black;
-  }
-  .realty__link svg {
-    stroke: $black;
-  }
-  .menu__img {
-    fill: $black;
-  }
-  .menu__text {
-    color: $black;
-  }
-  .logo__link svg {
-    .logo-fill {
-      fill: $black;
-    }
-  }
-  .logo-group svg {
-    fill: $black;
-  }
-}
+// #project-realized {
+//   .header {
+//     background: $white;
+//   }
+//   .nav__tel-link {
+//     color: $black;
+//   }
+//   .realty__link svg {
+//     stroke: $black;
+//   }
+//   .menu__img {
+//     fill: $black;
+//   }
+//   .menu__text {
+//     color: $black;
+//   }
+//   .logo__link svg {
+//     .logo-fill {
+//       fill: $black;
+//     }
+//   }
+//   .logo-group svg {
+//     fill: $black;
+//   }
+// }
 
 .realized-project {
   width: 100%;
@@ -58,16 +58,32 @@
     .realized-project__content {
       width: 43%;
       height: 100%;
-      padding-left: vw(100, 1920);
+      padding-left: vw(160, 1920);
       display: flex;
       flex-direction: column;
       align-items: start;
       justify-content: center;
+      @include to(1440px) {
+        padding-left: vw(100, 1440);
+      }
+      @include to(1280px) {
+        padding-left: vw(32, 1280);
+      }
+      @include to(575px) {
+        padding-left: 22px;
+        width: 85%;
+      }
       .realized-project__title {
         margin-bottom: 28px;
+        @include to(575px) {
+          margin-bottom: 24px;
+        }
       }
       .realized-project__description {
         margin-bottom: 40px;
+        @include to(575px) {
+          margin-bottom: 32px;
+        }
       }
     }
   }
@@ -107,12 +123,25 @@
     }
   }
   .swiper-button-next::before {
-    content: '>';
-    color: $white;
+    content: '';
+    display: inline-block;
+    background-image: url('../images/project-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 13px;
+    height: 13px;
+    transform-origin: center;
+    transform: rotate(180deg);
   }
   .swiper-button-prev::before {
-    content: '<';
-    color: $white;
+    content: '';
+    display: inline-block;
+    background-image: url('../images/project-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 13px;
+    height: 13px;
+    transform-origin: center;
   }
 }
 .realized-project__title {
@@ -120,12 +149,18 @@
   font-size: 64px;
   line-height: 100%;
   color: #ffffff;
+  @include to(575px) {
+    font-size: 32px;
+  }
 }
 .realized-project__description {
   font-weight: 800;
   font-size: 24px;
   line-height: 100%;
   color: #ffffff;
+  @include to(575px) {
+    font-size: 20px;
+  }
 }
 .realized-project__benefits {
   font-weight: 600;
@@ -135,22 +170,43 @@
 }
 
 .specification {
-  padding: 64px vw(100, 1920) 0 vw(100, 1920);
+  padding: 64px vw(160, 1920) 0 vw(160, 1920);
+  @include to(1440px) {
+    padding: 64px vw(100, 1440) 0 vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 64px vw(32, 1280) 0 vw(32, 1280);
+  }
+  @include to(575px) {
+    padding: 40px 22px 0 22px;
+  }
 }
 .specification__container {
   column-count: 3;
   padding: 40px 0 80px 0;
   border-bottom: 2px solid #000000;
+  @include to(575px) {
+    padding: 30px 0 20px 0;
+    column-count: 2;
+  }
 }
 .specification__item {
   display: flex;
   align-items: flex-start;
   margin-bottom: 44px;
+  @include to(575px) {
+    flex-direction: column;
+    margin-bottom: 24px;
+    min-height: 90px;
+  }
   svg {
     fill: none;
     width: 24px;
     max-height: 27px;
     margin-right: 20px;
+    @include to(575px) {
+      margin-bottom: 8px;
+    }
   }
 }
 .specification__text {
@@ -171,17 +227,27 @@
     color: #000000;
     padding-top: 5px;
     max-width: 235px;
+    @include to(575px) {
+      font-size: 16px;
+    }
   }
 }
 
 .description__container {
-  padding: 80px 0 80px vw(100, 1920);
+  padding: 80px 0 80px vw(160, 1920);
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  @include to(1440px) {
+    padding: 80px 0 80px vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 80px 0 80px vw(32, 1280);
+  }
   @include to(575px) {
     flex-direction: column;
+    padding: 40px 22px 48px 22px;
   }
 }
 .description__text {
@@ -233,7 +299,7 @@
     // width: 100%;
     margin-top: 48px;
     // padding: 38px 24px 24px vw(100, 1920);
-    width: 37%;
+    width: 34%;
     left: vw(160, 1920);
     bottom: 128px;
     @include to(1440px) {
@@ -292,6 +358,16 @@
       height: 2px;
       position: relative;
       background: rgba(0, 0, 0, 0.1);
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: width 0.5s ease-in-out;
+        height: 100%;
+        background-color: $black;
+        width: var(--width, 0%);
+      }
     }
   }
 }

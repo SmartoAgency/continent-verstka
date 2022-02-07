@@ -22,32 +22,15 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
-  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/header-single.js')
+  script(defer src='./assets/scripts/header-menu.js')
   script(defer src='./assets/scripts/social-btn.js')
   //- script(defer src='./assets/scripts/map.js')
-  script(defer src='./assets/scripts/developer.js')
+  //- script(defer src='./assets/scripts/developer.js')
+  script(defer src='./assets/scripts/bucha.js')
   script(defer src='./assets/scripts/select.js')
   script(defer src='./assets/scripts/footer.js')
-//- block arrow 
-  .social-select
-    .select-container.js-social
-      .select-img
-      ul.social-list 
-        li.social-item 
-          a(href="tel:+380676938069").social-link
-            +svg('tel')
-        li.social-item 
-          a(href="viber://chat?number=+380676938069" target="_blank").social-link
-            +svg('viber')
-        li.social-item 
-          a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank").social-link
-            +svg('telegram')
-        li.social-item 
-          a(href="https://www.facebook.com/continent.ua/" target="_blank").social-link
-            +svg('facebook')
-        li.social-item 
-          a(href="https://wa.me/380676938069" target="_blank").social-link
-            +svg('whatsapp')
+
 block content
   include ../includes/breadcrumbs.pug
   section.about-developer
@@ -75,14 +58,6 @@ block content
     .description__text 
       h2.our-projects__title Клієнтоорієнтованість
       p А інакше і бути не може. Від першого візиту у відділ продажу до моменту заселення у власне житло, - для нашої команди немає нічого важливішого, ніж інвестори. Після заселення до справи беруться спеціалісти власної управляючої компанії “Комфорт-Сервіс” і кожного дня працюють над тим, аби мешканці отримували задоволення від проживання у ЖК. 
-      .navigation-container
-        .swiper-pagination1
-        .swiper-scrollbar1
-        .swiper-btn
-          .swiper-button-prev1 
-            +svg('swiper-prev')
-          .swiper-button-next1
-            +svg('swiper-next')
     .description-swiper.js-init-swiper 
       .swiper-wrapper
         .swiper-slide
@@ -91,19 +66,20 @@ block content
           img(src="./assets/images/project1.jpg", alt="")
         .swiper-slide
           img(src="./assets/images/realized-project2.jpg", alt="")
+      .navigation-container
+        .swiper-pagination1
+        .swiper-scrollbar1
+        .swiper-btn
+          .swiper-button-prev1 
+            +svg('swiper-prev')
+          .swiper-button-next1
+            +svg('swiper-next')
      
   .description__container.reverse.js-developer 
     .description__text 
       h2.our-projects__title Соціальна відповідальність
       p Добудувати корпус початкової школи; створити неймовірної краси сквер; розробити проєкт сучасного бібліотечного простору і дати друге життя старій бібліотеці; реконструювати залізничний переїзд; побудувати безпечний пішохідний перехід; постійно підтримувати та розвивати молодих спортсменів - це про Strakhovskyi Group. І це норма. Адже, тільки роблячи внесок у краще суспільство, бізнес може рости, рухатися вперед і бути успішним.
-      .navigation-container
-        .swiper-pagination1
-        .swiper-scrollbar1
-        .swiper-btn
-          .swiper-button-prev1
-            +svg('swiper-prev')
-          .swiper-button-next1
-            +svg('swiper-next')
+      
     .container-description-swiper
       .description-swiper.js-init-swiper
         .swiper-wrapper
@@ -113,19 +89,20 @@ block content
             img(src="./assets/images/project1.jpg", alt="")
           .swiper-slide
             img(src="./assets/images/realized-project2.jpg", alt="")
+        .navigation-container
+          .swiper-pagination1
+          .swiper-scrollbar1
+          .swiper-btn
+            .swiper-button-prev1
+              +svg('swiper-prev')
+            .swiper-button-next1
+              +svg('swiper-next')
   .description__container.js-developer 
     .description__text 
       h2.our-projects__title Унікальна концепція кожного простору
       p Будуючи свої житлові простори, ми хочемо створювати локації, якими мешканці будуть пишатися, запрошувати своїх друзів, де буде приємно проводити час  не важливо як - вдома чи на вулиці, наодинці чи з родиною, де буде сконцентрована найнеобхідніша інфраструктура, де буде школа та садочок в 5 хвилинах, де навіть у під`їзді буде затишно, наче вдома. 
       p Людина та цивілізовані умови поруч з нею - ось концепція, яку ми з кожним новим ЖК вдосконалюємо,  якій слідуємо вже 10 років, і яку в жодному разу не змінимо.
-      .navigation-container
-        .swiper-pagination1
-        .swiper-scrollbar1
-        .swiper-btn
-          .swiper-button-prev1
-            +svg('swiper-prev')
-          .swiper-button-next1
-            +svg('swiper-next')
+      
     .description-swiper.js-init-swiper 
       .swiper-wrapper
         .swiper-slide
@@ -134,11 +111,6 @@ block content
           img(src="./assets/images/project1.jpg", alt="")
         .swiper-slide
           img(src="./assets/images/realized-project2.jpg", alt="")
-  .description__container.reverse.js-developer 
-    .description__text 
-      h2.our-projects__title Увага до деталей
-      p У Strakhovskyi Grouр це поняття розуміють, як ніхто і ніде не розуміє. Нам здається, що саме деталі  допомагають скласти необхідний пазл, намалювати загальну картину і справити враження. 
-      p Здавалося б, ми всього задекорували стіни під`їздів справжнім мохом, реалізували доступ на територію ЖК за допомогою телефону, висадили вздовж будинків дивовижні бельгійські граби, - та коли ви складете всі ці деталі в єдине ціле, то отримаєте те саме місце, в якому захочете жити і насолоджуватися кожним моментом.  
       .navigation-container
         .swiper-pagination1
         .swiper-scrollbar1
@@ -147,6 +119,12 @@ block content
             +svg('swiper-prev')
           .swiper-button-next1
             +svg('swiper-next')
+  .description__container.reverse.js-developer 
+    .description__text 
+      h2.our-projects__title Увага до деталей
+      p У Strakhovskyi Grouр це поняття розуміють, як ніхто і ніде не розуміє. Нам здається, що саме деталі  допомагають скласти необхідний пазл, намалювати загальну картину і справити враження. 
+      p Здавалося б, ми всього задекорували стіни під`їздів справжнім мохом, реалізували доступ на територію ЖК за допомогою телефону, висадили вздовж будинків дивовижні бельгійські граби, - та коли ви складете всі ці деталі в єдине ціле, то отримаєте те саме місце, в якому захочете жити і насолоджуватися кожним моментом.  
+      
     .container-description-swiper
       .description-swiper.js-init-swiper
         .swiper-wrapper
@@ -156,18 +134,19 @@ block content
             img(src="./assets/images/project1.jpg", alt="")
           .swiper-slide
             img(src="./assets/images/realized-project2.jpg", alt="")
+        .navigation-container
+          .swiper-pagination1
+          .swiper-scrollbar1
+          .swiper-btn
+            .swiper-button-prev1
+              +svg('swiper-prev')
+            .swiper-button-next1
+              +svg('swiper-next')
   .description__container.js-developer 
     .description__text 
       h2.our-projects__title Унікальна концепція кожного простору
       p Чесно кажучи, не зовсім перевагою вважаємо “якісні матеріали”. Це - норма, якій мають слідувати всі забудовники. Кожен перед собою повинен ставити за ціль комфорт та затишок майбутніх мешканців житлових комплексів. А без якості не може бути комфорту та затишку, погодьтеся. 
-      .navigation-container
-        .swiper-pagination1
-        .swiper-scrollbar1
-        .swiper-btn
-          .swiper-button-prev1
-            +svg('swiper-prev')
-          .swiper-button-next1
-            +svg('swiper-next')
+      
     .description-swiper.js-init-swiper 
       .swiper-wrapper
         .swiper-slide
@@ -176,45 +155,16 @@ block content
           img(src="./assets/images/project1.jpg", alt="")
         .swiper-slide
           img(src="./assets/images/realized-project2.jpg", alt="")
-  section.sing-up-review
-    .sing-up-review__form
-      h2.our-projects__title Запишіться на перегляд
-      h4 З радістю влаштуємо вам тур по житловому кварталу та пригостимо смачною кавою!
-      form( action="#" class="review-form")
-        .form-field
-          .form-field-input(data-field-input data-field-name data-status="field--inactive")
-            input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
-            span.placeholder Ваше ім’я
-            .input-message(data-input-message)
-          .form-field-input(data-field-input data-field-phone data-status="field--inactive")
-            input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
-            span.placeholder Ваш номер телефону
-            .input-message(data-input-message)
-        .form-field-time
-          .form-field-input(data-field-input data-field-name data-status="field--inactive")
-            input(class="input-date form-name form-field__input contact-form-input" type="date" name="#" id="#" placeholder="Зручний день" autocomplete="on" value="")
-            span.checkmark Зручний день
-          .form-field-input(data-field-input data-field-name data-status="field--inactive")
-            input(class="input-date form-name form-field__input contact-form-input" type="time" name="#" id="#" placeholder="Зручний час" autocomplete="on" value="")
-            span.checkmark Зручний день
-          select(class="select" name="connection")
-            option(disabled) Пріоритетний зв’язок
-            option(value="tel") По телефону
-            option(value="viber") Написати в Viber
-            option(value="telegram") Написати в Telegram
-         
-        .form-field-confirm
-          button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
-            span Записатися на перегляд
-            +svg('arrow')
+      .navigation-container
+        .swiper-pagination1
+        .swiper-scrollbar1
+        .swiper-btn
+          .swiper-button-prev1
+            +svg('swiper-prev')
+          .swiper-button-next1
+            +svg('swiper-next')
 
-
-    .sing-up-review__manager 
-      .manager-img 
-        img(src="./assets/images/manager.jpg", alt="manager")
-      .manager-name Вікторія Шевченко
-      .manager-role Керівниця відділу продажів
-
+  include ../includes/sing-up.pug
 
 block header
   include ../includes/header.pug

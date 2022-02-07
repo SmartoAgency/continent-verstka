@@ -42,6 +42,8 @@
     align-items: flex-end;
     justify-content: center;
     height: var(--header-h);
+    padding-right: vw(160, 1920);
+
     .nav__tel-link {
       color: #000000;
     }

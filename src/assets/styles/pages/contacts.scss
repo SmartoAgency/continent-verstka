@@ -4,18 +4,40 @@
     margin-top: var(--header-h);
   }
   .contacts .map {
-    height: 802px;
+    height: 839px;
     position: relative;
+    @include to(1440px) {
+      height: 829px;
+    }
+    @include to(575px) {
+      height: 300px;
+    }
     #map {
-      height: 802px;
+      height: 839px;
+      @include to(1440px) {
+        height: 829px;
+      }
+      @include to(575px) {
+        height: 300px;
+      }
     }
   }
 
   .breadcrumbs {
     position: absolute;
     top: 40px;
-    left: vw(100, 1920);
+    left: vw(160, 1920);
     margin: 0;
+    @include to(1440px) {
+      left: vw(100, 1440);
+    }
+    @include to(1280px) {
+      left: vw(32, 1280);
+    }
+    @include to(575px) {
+      left: 22px;
+      top: 10px;
+    }
   }
   .our-projects__title {
     margin-bottom: 40px;
@@ -26,7 +48,7 @@
     background: none;
     padding: 0;
     font-weight: 600;
-    font-size: min(vw(14, 1440), 16px);
+    font-size: 14px;
     line-height: 1.25px;
     color: rgba(0, 0, 0, 0.3);
     display: flex;
@@ -38,9 +60,15 @@
     &:last-child {
       margin-right: 0;
     }
+    @include to(575px) {
+      margin-right: 24px;
+    }
   }
   .tabs__item {
     margin-top: 50px;
+    @include to(575px) {
+      margin-top: 0;
+    }
   }
   .active {
     flex-direction: column;
@@ -58,10 +86,17 @@
       height: 2px;
       width: 100%;
       background: #fec62e;
+      @include to(575px) {
+        bottom: 10px;
+      }
     }
   }
   .menu-social {
     margin-top: 50px;
+    @include to(575px) {
+      order: 3;
+      margin-top: 12px;
+    }
   }
 }
 #contacts-page,
@@ -93,6 +128,9 @@
   .contacts__information {
     position: relative;
     padding-top: 95px;
+    @include to(575px) {
+      padding-top: 38px;
+    }
   }
 }
 .map-address {

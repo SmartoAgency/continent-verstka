@@ -1,15 +1,33 @@
 .infrastructure-container {
-  padding: 40px vw(100, 1920) 0 vw(100, 1920);
+  padding: 40px vw(160, 1920) 0 vw(160, 1920);
+  @include to(1440px) {
+    padding: 40px vw(100, 1440) 0 vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 40px vw(32, 1280) 0 vw(32, 1280);
+  }
+  @include to(575px) {
+    padding: 16px 22px 0 22px;
+  }
   &__text {
     display: flex;
     justify-content: space-between;
     padding-top: 48px;
+    @include to(575px) {
+      padding-top: 32px;
+      flex-direction: column;
+    }
     .text-small {
       width: 47%;
       font-weight: 600;
       font-size: 24px;
       line-height: 1.21;
       color: #000000;
+      @include to(575px) {
+        width: 100%;
+        font-size: 20px;
+        padding-bottom: 32px;
+      }
     }
     .text-big {
       width: 48%;
@@ -19,20 +37,39 @@
       font-size: 32px;
       line-height: 1.22;
       color: #000000;
+      @include to(575px) {
+        width: 100%;
+        font-size: 24px;
+      }
     }
   }
 }
 
 #infrastructure {
   .description__container {
-    padding: 157px 0 126px vw(100, 1920);
+    padding: 157px 0 126px vw(160, 1920);
+    @include to(1440px) {
+      padding: 157px 0 126px vw(100, 1440);
+    }
+    @include to(1280px) {
+      padding: 157px 0 126px vw(32, 1280);
+    }
+    @include to(575px) {
+      padding: 30px 0 48px 22px;
+    }
   }
   .description__text-item {
     display: flex;
     flex-direction: column;
     margin-bottom: 48px;
+    @include to(575px) {
+      margin-bottom: 32px;
+    }
     &:last-child {
       margin-bottom: 0;
+      @include to(575px) {
+        margin-bottom: 32px;
+      }
     }
     .num {
       font-weight: 600;
@@ -40,12 +77,18 @@
       line-height: 1.71;
       color: #000000;
       margin-bottom: 16px;
+      @include to(575px) {
+        font-size: 12px;
+      }
     }
     .text {
       font-weight: 600;
       font-size: 24px;
       line-height: 1.21;
       color: #000000;
+      @include to(575px) {
+        font-size: 20px;
+      }
     }
   }
   .page__inner {
@@ -54,16 +97,35 @@
 }
 .infrastructure-mall {
   background: #f3f0ef;
-  padding: 50px vw(100, 1920) 10px vw(100, 1920);
+  padding: 50px vw(160, 1920) 10px vw(160, 1920);
+  @include to(1440px) {
+    padding: 50px vw(100, 1440) 10px vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 50px vw(32, 1280) 10px vw(32, 1280);
+  }
+  @include to(575px) {
+    padding: 16px 22px 10px 22px;
+  }
   &__list {
     columns: 6;
     column-gap: 30px;
+    @include to(575px) {
+      columns: 3;
+      column-gap: 30px;
+    }
   }
   &__item {
     margin-bottom: 45px;
     width: 176px;
     height: 100px;
     padding: 30px 0;
+    @include to(575px) {
+      margin-bottom: 0;
+      width: 85px;
+      height: 50px;
+      padding: 14px 10px;
+    }
     img {
       object-fit: contain;
       max-width: 140px;
@@ -73,21 +135,37 @@
       &:hover {
         filter: none;
       }
+      @include to(575px) {
+        max-width: 60px;
+        max-height: 23px;
+      }
     }
   }
 }
 .infrastructure-benefits {
   display: flex;
+  @include to(575px) {
+    flex-direction: column;
+  }
   &__img {
     width: 46%;
     height: 600px;
     position: sticky;
     top: 0;
+    @include to(575px) {
+      width: 100%;
+      position: initial;
+      height: 288px;
+    }
   }
   &__list {
     width: 54%;
     display: flex;
     flex-wrap: wrap;
+    @include to(575px) {
+      width: 100%;
+      flex-direction: column;
+    }
   }
   &__item {
     width: 50%;
@@ -95,6 +173,10 @@
     padding: 35px 60px 50px 32px;
     display: flex;
     flex-direction: column;
+    @include to(575px) {
+      width: 100%;
+      padding: 24px 22px;
+    }
     .num {
       width: 32px;
       height: 32px;
@@ -108,6 +190,9 @@
       font-size: 14px;
       line-height: 1.71;
       color: #000000;
+      @include to(575px) {
+        margin-bottom: 16px;
+      }
     }
     .title {
       font-weight: 600;
@@ -157,5 +242,46 @@
   }
   100% {
     transform: translateY(5px);
+  }
+}
+
+#infrastructure {
+  .description__container {
+    align-items: flex-start;
+  }
+  .navigation-container {
+    width: 34%;
+    @include to(575px) {
+      width: 100%;
+    }
+  }
+}
+
+.map-wrapper__nav-mob-opener {
+  display: none;
+  @include to(575px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 32px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    background: #f3f0ef;
+    &::after {
+      content: '';
+      display: inline-block;
+      background-image: url('../images/arrow-select.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 10px;
+      height: 7px;
+      transform-origin: center;
+      transition: transform 0.5s ease-in-out;
+    }
   }
 }

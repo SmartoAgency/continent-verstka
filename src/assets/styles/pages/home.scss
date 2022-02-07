@@ -580,7 +580,8 @@
     flex-direction: column;
   }
   &__information {
-    width: 35%;
+    // width: 35%;
+    width: 40%;
     height: 100%;
     padding: 80px vw(160, 1920) 56px vw(160, 1920);
     @include to(1440px) {
@@ -609,6 +610,9 @@
       padding: 16px 0 24px 0;
       border-bottom: 2px solid #000000;
       width: 100%;
+      @include to(575px) {
+        width: 75%;
+      }
     }
     .contacts__tel-link {
       text-decoration: none;
@@ -616,6 +620,9 @@
       font-size: 24px;
       line-height: 1.2;
       color: #000000;
+      @include to(575px) {
+        font-size: 16px;
+      }
     }
     .contacts__tel-link:first-child {
       margin-right: 24px;
@@ -660,6 +667,9 @@
     }
     .contacts__call-btn {
       margin-top: 44px;
+      @include to(575px) {
+        display: flex;
+      }
     }
   }
   &__map {

@@ -112,3 +112,8 @@
     }
   }
 }
+.mobile-padding {
+  @include to(575px) {
+    margin-top: 48px;
+  }
+}

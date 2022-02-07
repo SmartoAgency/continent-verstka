@@ -381,6 +381,13 @@
     // }
   }
 }
+.infrastructure-map {
+  width: 85%;
+  height: auto;
+  top: auto;
+  bottom: 0;
+  position: absolute;
+}
 .accordion {
   width: 35%;
   height: 690px;
@@ -390,6 +397,13 @@
   top: 0;
   left: 0;
   z-index: 2;
+  @include to(575px) {
+    width: 100%;
+    height: auto;
+    top: auto;
+    bottom: 0;
+    position: initial;
+  }
 }
 .accordion-panel__item {
   padding: 34px 32px;
@@ -406,6 +420,10 @@
     border-radius: 50%;
     margin: auto 16px 4px 0;
   }
+  @include to(575px) {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }
 .accordion-toggle {
   padding: 34px 32px;
@@ -416,7 +434,8 @@
   border-bottom: 2px solid #f3f0ef;
   position: relative;
   @include to(575px) {
-    font-size: 20px;
+    font-size: 14px;
+    padding: 10px 20px;
   }
   &::before {
     content: '';
@@ -437,6 +456,11 @@
     position: absolute;
     top: 38px;
     right: 32px;
+    @include to(575px) {
+      width: 16px;
+      height: 16px;
+      top: 10px;
+    }
   }
 }
 .orange {
