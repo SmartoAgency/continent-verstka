@@ -21,13 +21,12 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
-  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/header-single.js')
+  script(defer src='./assets/scripts/header-menu.js')
   script(defer src='./assets/scripts/social-btn.js')
   script(defer src='./assets/scripts/tab.js')
   script(defer src='./assets/scripts/select.js')
   script(defer src='./assets/scripts/projects.js')
-  //- script(defer src='./assets/scripts/scroll-down.js')
-  script(defer src='./assets/scripts/footer.js')
 block arrow 
   .social-select
     .select-container.js-social
@@ -80,11 +79,12 @@ block content
               li.active-project__description-item 
                 p.project-parameter клас жк
                 p.project-value комфорт
-            a(href="#").active-project__link Дізнатись більше
+            a(href="single-projects.html").active-project__link Дізнатись більше
           .active-project__container-title
             .active-project__img
               img(src="./assets/images/project1.jpg", alt="" data-paralax)
-            h3.active-project__title ЖК Continent Ray
+            a(href="single-projects.html")
+              h3.active-project__title ЖК Continent Ray
             h4.active-project__description Живи на яскравій стороні життя
           ul.active-project__description-list 
             li.active-project__description-item 
@@ -123,11 +123,12 @@ block content
               li.active-project__description-item 
                 p.project-parameter клас жк
                 p.project-value комфорт
-            a(href="#").active-project__link Дізнатись більше
+            a(href="single-projects.html").active-project__link Дізнатись більше
           .active-project__container-title
             .active-project__img
               img(src="./assets/images/project2.jpg", alt="" data-paralax)
-            h3.active-project__title ЖК Continent RAY 2
+            a(href="single-projects.html")
+              h3.active-project__title ЖК Continent RAY 2
             h4.active-project__description живіть у серці міста
           ul.active-project__description-list 
             li.active-project__description-item 
@@ -165,11 +166,12 @@ block content
               li.active-project__description-item 
                 p.project-parameter клас жк
                 p.project-value комфорт
-            a(href="#").active-project__link Дізнатись більше
+            a(href="single-projects.html").active-project__link Дізнатись більше
           .active-project__container-title
             .active-project__img
               img(src="./assets/images/project3.jpg", alt="" data-paralax)
-            h3.active-project__title ЖК Continent RAY 2.2
+            a(href="single-projects.html")
+              h3.active-project__title ЖК Continent RAY 2.2
             h4.active-project__description живіть у серці міста
           ul.active-project__description-list 
             li.active-project__description-item 
@@ -207,11 +209,12 @@ block content
               li.active-project__description-item 
                 p.project-parameter клас жк
                 p.project-value комфорт
-            a(href="#").active-project__link Дізнатись більше
+            a(href="single-projects.html").active-project__link Дізнатись більше
           .active-project__container-title
             .active-project__img
               img(src="./assets/images/project4.jpg", alt="" data-paralax)
-            h3.active-project__title ЖК Continent RAY 2.2
+            a(href="single-projects.html")
+              h3.active-project__title ЖК Continent RAY 2.2
             h4.active-project__description живіть у серці міста
           ul.active-project__description-list 
             li.active-project__description-item 
@@ -296,47 +299,8 @@ block content
                   <circle cx="22" cy="22" r="22" fill="black"/>
                   <path d="M20.6569 15.9999L26.3137 21.6567L20.6569 27.3136" stroke="white" stroke-width="2" stroke-linecap="round"/>
                 </svg>
-
-  section.sing-up-review
-    .sing-up-review__form
-      h2.our-projects__title Запишіться на перегляд
-      h4 З радістю влаштуємо вам тур по житловому кварталу та пригостимо смачною кавою!
-      form( action="#" class="review-form")
-        .form-field
-          .form-field-input(data-field-input data-field-name data-status="field--inactive")
-            input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
-            span.placeholder Ваше ім’я
-            .input-message(data-input-message)
-          .form-field-input(data-field-input data-field-phone data-status="field--inactive")
-            input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
-            span.placeholder Ваш номер телефону
-            .input-message(data-input-message)
-        .form-field-time
-          .form-field-input(data-field-input data-field-name data-status="field--inactive")
-            input(class="input-date form-name form-field__input contact-form-input" type="date" name="#" id="#" placeholder="Зручний день" autocomplete="on" value="")
-            span.checkmark Зручний день
-          .form-field-input(data-field-input data-field-name data-status="field--inactive")
-            input(class="input-date form-name form-field__input contact-form-input" type="time" name="#" id="#" placeholder="Зручний час" autocomplete="on" value="")
-            span.checkmark Зручний день
-          select(class="select" name="connection")
-            option(disabled) Пріоритетний зв’язок
-            option(value="tel") По телефону
-            option(value="viber") Написати в Viber
-            option(value="telegram") Написати в Telegram
-         
-        .form-field-confirm
-          button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
-            span Записатися на перегляд
-            +svg('arrow')
-
-
-    .sing-up-review__manager 
-      .manager-img 
-        img(src="./assets/images/manager.jpg", alt="manager")
-      .manager-name Вікторія Шевченко
-      .manager-role Керівниця відділу продажів
-
-
+  include ../includes/sing-up.pug
+ 
 
 block header
   include ../includes/header.pug

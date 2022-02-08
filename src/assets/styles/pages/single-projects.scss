@@ -15,11 +15,16 @@
 }
 
 .single-specification {
-  padding: 24px vw(100, 1920) 32px vw(100, 1920);
+  padding: 24px vw(160, 1920) 32px vw(160, 1920);
   border-bottom: 2px solid #000000;
   display: flex;
   justify-content: space-between;
-
+  @include to(1440px) {
+    padding: 24px vw(100, 1440) 32px vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 24px vw(32, 1280) 32px vw(32, 1280);
+  }
   &__benefits-list {
     .single-specification__item {
       list-style: disc;
@@ -52,6 +57,7 @@
   padding: 80px 150px 0 vw(100, 1920);
   display: flex;
   justify-content: space-between;
+
   &__big {
     width: 60%;
     display: flex;

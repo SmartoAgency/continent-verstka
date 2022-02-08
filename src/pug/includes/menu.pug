@@ -1,5 +1,6 @@
 .menu-container.js-menu-container
   header.header.header-js
+    +svg('logo').mobile-menu-logo
     .nav
       a(href='tel:+380503694892').nav__tel-link
         span.nav__tel-text 050 369-48-92
@@ -8,7 +9,8 @@
       button(type='button').nav__call-btn.js-call
         +svg('phone')
         span.nav__call-btn-text Замовити дзвінок
-      a(href='#').realty__link
+      +svg('phone').header-mobile-call.js-mobile-call
+      a(href='favorites.html').realty__link
         +svg('star')
       .menu.js-menu-close
         +svg('close-select').menu__img
@@ -19,12 +21,12 @@
         li.menu-block__item
           a(href="projects.html").menu-block__link Проекти
         li.menu-block__item
-          a(href="#").menu-block__link
+          a(href="flats.html").menu-block__link
             span Планування
         li.menu-block__item
-          a(href="#").menu-block__link
+          a(href="commerce.html").menu-block__link
             span Комерційні приміщення
-        li.menu-block__item
+        li.menu-block__item.mobile-menu-sociale
           ul.menu-social
             li.menu-social__item
               a(href="#").menu-social__link
@@ -62,25 +64,25 @@
     .menu-content__section
       ul.menu-block 
         li.menu-block__item
-          a(href="#").menu-block__link
+          a(href="developer.html").menu-block__link
             span Про компанію
         li.menu-block__item
-          a(href="#").menu-block__link
+          a(href="news.html").menu-block__link
             span Акції та новини
         li.menu-block__item
-          a(href="#").menu-block__link
+          a(href="about-bucha.html").menu-block__link
             span Про Бучу
         li.menu-block__item
-          a(href="#").menu-block__link
+          a(href="contacts.html").menu-block__link
             span Контакти
         li.menu-block__item
-          a(href="#").menu-block__link
+          a(href="investor.html").menu-block__link
             span Інвестиції
         li.menu-block__item
-          a(href="#").menu-block__link
+          a(href="infrastructure.html").menu-block__link
             span Інфрастурктура
         li.menu-block__item
-          a(href="#").menu-block__link
+          a(href="continent-club.html").menu-block__link
             span Continent Club
       .bottom-contant
         include ../components/lang/lang.pug
