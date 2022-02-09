@@ -2,6 +2,9 @@
   margin-top: 56px;
   display: flex;
   flex-wrap: wrap;
+  @include to(575px) {
+    margin-top: 32px;
+  }
 }
 .building__item {
   width: calc(100% / 3);
@@ -16,6 +19,9 @@
         opacity: 1;
       }
     }
+  }
+  @include to(575px) {
+    width: 100%;
   }
 }
 .building__img {
@@ -97,12 +103,18 @@
   display: flex;
   flex-direction: column;
   padding: 24px 24px 50px 24px;
+  @include to(575px) {
+    padding: 24px 24px 40px 24px;
+  }
   h4 {
     font-weight: 600;
     font-size: 22px;
     line-height: 1.23;
     color: #000000;
     margin-bottom: 8px;
+    @include to(575px) {
+      font-size: 20px;
+    }
   }
   .text-container {
     display: flex;

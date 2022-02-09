@@ -3,6 +3,9 @@
     padding-bottom: 30px;
   }
   .busha-text {
+    @include to(575px) {
+      padding-bottom: 32px;
+    }
     .our-projects__title {
       margin-bottom: 0;
     }
@@ -10,13 +13,25 @@
 }
 .planing {
   background: #f3f0ef;
-  padding: 48px vw(100, 1920) 70px;
+  padding: 48px vw(160, 1920) 70px;
   display: flex;
   flex-direction: column;
+  @include to(1440px) {
+    padding: 48px vw(100, 1440) 70px;
+  }
+  @include to(1280px) {
+    padding: 48px vw(32, 1280) 70px;
+  }
+  @include to(575px) {
+    padding: 0 22px 32px;
+  }
   .planing__nav {
     display: flex;
     justify-content: space-between;
     margin-bottom: 48px;
+    @include to(575px) {
+      margin-bottom: 32px;
+    }
     .tab {
       .tablinks {
         background: $white;
@@ -30,6 +45,9 @@
     display: block;
     width: 385px;
     position: relative;
+    @include to(575px) {
+      display: none;
+    }
   }
   .new-select {
     position: relative;
@@ -120,6 +138,9 @@
       box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
     }
   }
+  @include to(575px) {
+    padding: 14px 20px;
+  }
   .column {
     width: 100%;
     height: 100%;
@@ -137,10 +158,18 @@
 
     margin-left: auto;
     margin-right: auto;
+    @include to(575px) {
+      padding-bottom: 20px;
+      padding-top: 10px;
+    }
     img {
       object-fit: contain;
       width: 266px;
       height: 266px;
+      @include to(575px) {
+        width: 190px;
+        height: 190px;
+      }
     }
   }
   .planing__title {
@@ -149,6 +178,9 @@
     line-height: 1.22;
     color: #000000;
     margin-bottom: 28px;
+    @include to(575px) {
+      margin-bottom: 16px;
+    }
   }
   .square {
     display: flex;
@@ -161,6 +193,7 @@
     &-description {
       display: flex;
       flex-direction: column;
+
       .title {
         font-weight: 600;
         font-size: 10px;
@@ -230,8 +263,20 @@
   }
   .planing__title {
     width: 40%;
+    @include to(575px) {
+      width: 100%;
+      position: absolute;
+      left: calc(15% + 40px);
+      top: 0;
+    }
     span {
       display: none;
+    }
+  }
+  .square-description {
+    @include to(575px) {
+      padding-top: 30px;
+      margin-left: 40px;
     }
   }
   .square {
@@ -241,6 +286,9 @@
     }
     .title {
       display: none;
+      @include to(575px) {
+        display: flex;
+      }
     }
   }
   .deadlines {
@@ -251,6 +299,10 @@
   float: left;
   width: calc(100% / 3);
   height: 500px;
+  @include to(575px) {
+    width: 100%;
+    height: 345px;
+  }
 }
 
 .show-more {
@@ -268,11 +320,21 @@
   line-height: 100%;
   color: #000000;
   white-space: nowrap;
+  @include to(575px) {
+    margin-top: 32px;
+    width: calc(100% - 44px);
+    height: 48px;
+    font-size: 14px;
+  }
   svg {
     width: 24px;
     height: 24px;
     fill: none;
     margin-left: 8px;
+    @include to(575px) {
+      width: 18px;
+      height: 18px;
+    }
   }
   span {
     margin: 0 0.5ch;
@@ -283,10 +345,22 @@
 .planing-filter {
   display: flex;
   flex-direction: column;
-  padding: 60px vw(100, 1920) 48px vw(100, 1920);
+  padding: 60px vw(160, 1920) 48px vw(160, 1920);
+  @include to(1440px) {
+    padding: 60px vw(100, 1440) 48px vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 60px vw(32, 1920) 48px vw(32, 1920);
+  }
+  @include to(575px) {
+    padding: 40px 22px 32px 22px;
+  }
   .our-projects__title {
     font-size: 32px;
     margin-bottom: 38px;
+    @include to(575px) {
+      margin-bottom: 28px;
+    }
   }
   .select {
     display: block;
@@ -537,5 +611,90 @@
     font-size: 16px;
     line-height: 1.25;
     color: #000000;
+  }
+}
+
+.btn-mobile-filter {
+  display: none;
+  @include to(575px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #000000;
+    border: none;
+    background: #f3f0ef;
+    border-radius: 44px;
+    svg {
+      width: 18px;
+      height: 13px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.mobile-filter {
+  @include to(575px) {
+    padding: 24px;
+    .mobile-filter {
+      flex-direction: column;
+    }
+    .planing-filt__complex {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 32px;
+    }
+    .planing-filt__range {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 32px;
+    }
+    .planing-filt__deadline {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 32px;
+    }
+    .planing-filter__container {
+      flex-direction: column;
+    }
+    .result-filter {
+      position: initial;
+      color: #000000;
+      font-size: 14px;
+      line-height: 1.2;
+
+      display: flex;
+      justify-content: center;
+
+      background: #fec62e;
+      border-radius: 44px;
+      padding: 17px 0;
+      width: calc(100% - 44px);
+    }
+    .planing-filter__close {
+      flex-direction: column-reverse;
+      margin-top: 0;
+      align-items: center;
+    }
+    .reset-filter {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .result-filter {
+      svg {
+        display: flex;
+        width: 13px;
+        height: 13px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+.result-filter {
+  svg {
+    display: none;
   }
 }

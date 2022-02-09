@@ -13,8 +13,8 @@ var swiper = new Swiper('.single-news-swiper', {
 });
 
 const swiper3 = new Swiper('.swiper-news', {
-  slidesPerView: 3.5,
-  spaceBetween: 40,
+  slidesPerView: 1.25,
+  spaceBetween: 20,
   scrollbar: {
     el: '.swiper-scrollbar',
     // hide: true,
@@ -22,5 +22,11 @@ const swiper3 = new Swiper('.swiper-news', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    575: {
+      slidesPerView: 3.5,
+      spaceBetween: 40,
+    },
   },
 });

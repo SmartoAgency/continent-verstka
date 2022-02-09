@@ -1,10 +1,16 @@
 /* eslint-disable no-undef */
 // Google map start
-function func() {
+function func(index) {
+  console.log(document.querySelector('[data-map="true"]'));
+  if (document.querySelector('[data-map="true"]')) {
+    initMap(index);
+    return;
+  }
   const script = document.createElement('script');
   // let key = '';
   // if (window.location.href.match(/localhost/)) key = '';
   const key = '';
+  script.dataset.map = 'true';
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`;
   document.getElementsByTagName('head')[0].appendChild(script);
 }
@@ -15,7 +21,7 @@ const options = {
   threshold: 0.1,
 };
 
-maps.forEach(image => {
+maps.forEach((image, index) => {
   const callback = (entries, observer) => {
     /* Content excerpted, show below */
     entries.forEach(entry => {
@@ -23,7 +29,8 @@ maps.forEach(image => {
         const lazyImage = entry.target;
         lazyImage.src = lazyImage.dataset.src;
         observer.unobserve(image);
-        func();
+        console.log(initMap);
+        func(index);
       }
     });
   };
@@ -33,7 +40,7 @@ maps.forEach(image => {
 });
 
 // eslint-disable-next-line no-unused-vars
-function initMap() {
+function initMap(mapIndex) {
   const gmarkers1 = [];
   const center = {
     lat: 48.465315387607184,
@@ -44,7 +51,10 @@ function initMap() {
   choosedCategories.add('main');
   /** Р•Р»РµРјРµРЅС‚С‹, РїСЂРё РєР»РёРєРµ РЅР° РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ РїСЂРѕРёСЃС…РѕРґРёС‚СЊ С„РёР»СЊС‚СЂР°С†РёСЏ */
   const filterItems = document.querySelectorAll('[data-marker]');
-  const map = new google.maps.Map(document.getElementById('map'), {
+  const mapContainer = mapIndex
+    ? document.querySelectorAll('[id="map"]')[mapIndex]
+    : document.getElementById('map');
+  const map = new google.maps.Map(mapContainer, {
     zoom: 15,
     center,
     scrollwheel: false,
@@ -413,9 +423,29 @@ document.querySelectorAll('[data-nav-item-group]').forEach(el => {
 });
 
 document.querySelector('[data-mob-wrapper-mobile-opener]').addEventListener('click', function(evt) {
+  const openbutton = document.querySelector('[data-mob-wrapper-mobile-opener]');
   const navContainer = document.querySelector('.map-wrapper__nav');
   navContainer.classList.toggle('closed');
+  if (navContainer.classList.contains('closed')) {
+    gsap.fromTo(
+      navContainer,
+      { height: navContainer.scrollHeight },
+      { height: openbutton.scrollHeight, duration: 0.5, ease: 'Power4.out' },
+    );
+  } else {
+    gsap.fromTo(
+      navContainer,
+      { height: 0 },
+      { height: navContainer.scrollHeight, duration: 0.5, ease: 'Power4.out' },
+    );
+  }
   this.querySelector('span').textContent = navContainer.classList.contains('closed')
     ? this.dataset.closedText
     : this.dataset.openedText;
 });
+
+// if (navContainer.classList.contains('closed')) {
+//   gsap.fromTo(navContainer, { height: 0 }, { height: navContainer.scrollHeight });
+// } else {
+//   gsap.fromTo(navContainer, { height: navContainer.scrollHeight }, { height: 0 });
+// }

@@ -1,5 +1,14 @@
 .news-container {
-  padding: 40px vw(100, 1920) 50px;
+  padding: 40px vw(160, 1920) 50px;
+  @include to(1440px) {
+    padding: 40px vw(100, 1440) 50px;
+  }
+  @include to(1280px) {
+    padding: 40px vw(32, 1440) 50px;
+  }
+  @include to(575px) {
+    padding: 40px vw(32, 1440) 50px;
+  }
   .our-projects__title {
     margin-bottom: 40px;
   }
@@ -100,6 +109,9 @@
   border: 1px solid #f3f0ef;
   display: flex;
   flex-direction: column;
+  @include to(575px) {
+    width: 100%;
+  }
   .news-link {
     text-decoration: none;
     position: relative;
@@ -108,18 +120,28 @@
     }
     .news-text {
       padding: 24px 24px 56px 24px;
+      @include to(575px) {
+        padding: 24px 24px 32px 24px;
+      }
       .date {
         font-weight: 600;
         font-size: 12px;
         line-height: 1.25;
         color: #000000;
         margin-bottom: 16px;
+        @include to(575px) {
+          font-size: 10px;
+          margin-bottom: 8px;
+        }
       }
       .title {
         font-weight: 600;
         font-size: 22px;
         line-height: 1.23;
         color: #000000;
+        @include to(575px) {
+          font-size: 20px;
+        }
       }
     }
   }
@@ -159,6 +181,9 @@
     align-items: center;
     justify-content: center;
     padding: 0 140px;
+    @include to(575px) {
+      padding: 0 38px;
+    }
   }
   &-item {
     width: 48px;
@@ -174,6 +199,12 @@
     margin-right: 20px;
     &:last-child {
       margin-right: 0;
+    }
+    @include to(575px) {
+      width: 38px;
+      height: 38px;
+      font-size: 20px;
+      margin-right: 0px;
     }
   }
   .active-item {

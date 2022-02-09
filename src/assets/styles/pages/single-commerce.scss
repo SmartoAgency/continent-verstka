@@ -1,11 +1,23 @@
 .single-commerce-container {
   margin-top: var(--header-h);
   display: flex;
+  @include to(575px) {
+    flex-direction: column;
+  }
   &__img {
     width: 57%;
     background: #f3f0ef;
-    padding: 50px 60px 50px vw(100, 1920);
-
+    padding: 50px 60px 50px vw(160, 1920);
+    @include to(1440px) {
+      padding: 50px 60px 50px vw(100, 1440);
+    }
+    @include to(1280px) {
+      padding: 50px 60px 50px vw(32, 1280);
+    }
+    @include to(575px) {
+      width: 100%;
+      padding: 17px 22px 50px 22px;
+    }
     .breadcrumbs {
       margin: 0;
     }
@@ -14,7 +26,17 @@
     width: 43%;
     display: flex;
     flex-direction: column;
-    padding: 20px vw(100, 1920) 50px 50px;
+    padding: 20px vw(160, 1920) 50px 50px;
+    @include to(1440px) {
+      padding: 20px vw(100, 1440) 50px 50px;
+    }
+    @include to(1280px) {
+      padding: 20px vw(32, 1280) 50px 50px;
+    }
+    @include to(575px) {
+      width: 100%;
+      padding: 20px 22px 50px 50px;
+    }
     .logo-bazar {
       width: 61px;
       height: 34px;
@@ -125,6 +147,18 @@
 }
 .commerce-swiper {
   overflow: hidden;
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    @include to(575px) {
+      display: initial;
+    }
+  }
+  .swiper-pagination {
+    @include to(575px) {
+      display: none;
+    }
+  }
   .swiper-pagination-bullet {
     padding: 15px 24px;
     background: $white;
@@ -218,7 +252,16 @@ img.mfp-img {
 }
 .similar-apartment {
   background: #f3f0ef;
-  padding: 56px vw(100, 1920) 32px vw(100, 1920);
+  padding: 56px vw(160, 1920) 32px vw(160, 1920);
+  @include to(1440px) {
+    padding: 56px vw(100, 1440) 32px vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 56px vw(32, 1440) 32px vw(32, 1440);
+  }
+  @include to(575px) {
+    padding: 56px 22px 32px 22px;
+  }
   h2.our-projects__title {
     margin-bottom: 56px;
   }

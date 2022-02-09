@@ -4,6 +4,10 @@
   line-height: 1.23;
   color: #ffffff;
   margin-bottom: 32px;
+  @include to(575px) {
+    font-size: 20px;
+    width: 80%;
+  }
   span {
     margin-right: 0.5ch;
   }
@@ -23,6 +27,11 @@
       fill: $yellow;
       // animation: rotate-center 0.6s ease-in-out;
     }
+  }
+  @include to(575px) {
+    width: 32px;
+    height: 32px;
+    right: 22px;
   }
 }
 @keyframes rotate-center {
@@ -177,9 +186,9 @@
   // @include to(1440px) {
   //   padding: 0 vw(281, 1440);
   // }
-  // @include to(992px) {
-  //   padding: 0 vw(40, 768);
-  // }
+  @include to(575px) {
+    padding: 40px 22px;
+  }
 }
 .building-sticker {
   position: absolute;
@@ -309,6 +318,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include to(575px) {
+      justify-content: flex-start;
+    }
   }
 
   .swiper-slide {
@@ -348,11 +360,9 @@
     //   margin-bottom: 35px;
     //   margin-top: 100px;
     // }
-    // @include to(992px) {
-    //   margin-bottom: 30px;
-    //   margin-top: 0;
-    //   height: 39vh;
-    // }
+    @include to(575px) {
+      height: 60vh;
+    }
   }
 
   .swiper-pagination {
@@ -392,6 +402,10 @@
           fill: #fec62e;
           transition: fill 0.4s ease;
         }
+      }
+      @include to(575px) {
+        width: 32px;
+        height: 32px;
       }
     }
     .swiper-button-prev {

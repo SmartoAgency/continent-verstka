@@ -1,12 +1,26 @@
 .single-news {
-  padding: 40px vw(100, 1920) 80px;
+  padding: 40px vw(160, 1920) 80px;
   display: flex;
   flex-direction: column;
+  @include to(1440px) {
+    padding: 40px vw(100, 1440) 80px;
+  }
+  @include to(1280px) {
+    padding: 40px vw(32, 1280) 80px;
+  }
+  @include to(575px) {
+    padding: 16px 22px 32px;
+  }
 }
 .single-news__title {
   display: flex;
   align-items: center;
   padding-bottom: 40px;
+  @include to(575px) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-bottom: 24px;
+  }
 }
 .date-promotion {
   display: flex;
@@ -18,6 +32,11 @@
   height: 96px;
   transform: rotate(15deg);
   margin-right: 12px;
+  @include to(575px) {
+    flex-shrink: 0;
+    width: 76px;
+    height: 76px;
+  }
   &::after {
     content: '';
     position: absolute;
@@ -52,37 +71,61 @@
     background: #f3f0ef;
     width: max-content;
     margin-top: 24px;
+    @include to(575px) {
+      margin-top: 16px;
+    }
   }
 }
 .single-news__content {
   display: flex;
   justify-content: space-between;
+  @include to(575px) {
+    position: relative;
+  }
 }
 .single-news__main {
   width: 63%;
   display: flex;
   flex-direction: column;
+  @include to(575px) {
+    width: 100%;
+  }
   .single-news__img {
     margin-bottom: 32px;
+    @include to(575px) {
+      height: 240px;
+      margin-bottom: 157px;
+    }
   }
   h4 {
     font-weight: 600;
     font-size: 22px;
     line-height: 1.23;
     color: #000000;
+    @include to(575px) {
+      font-size: 18px;
+    }
   }
   .proposal {
     margin: 40px 0;
     padding: 37px 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     background: #fec62e;
     border-radius: 8px;
+    @include to(575px) {
+      margin: 24px 0 40px 0;
+      padding: 24px 0;
+    }
     h3 {
       font-weight: 600;
       font-size: 32px;
       line-height: 1.22;
       color: #000000;
+      @include to(575px) {
+        font-size: 20px;
+      }
     }
     &::before {
       content: '';
@@ -109,6 +152,9 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
+    @include to(575px) {
+      margin-bottom: 24px;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -118,12 +164,18 @@
       line-height: 1.25;
       color: #000000;
       margin-bottom: 8px;
+      @include to(575px) {
+        font-size: 14px;
+      }
     }
     .description {
       font-weight: 600;
       font-size: 22px;
       line-height: 1.25;
       color: #000000;
+      @include to(575px) {
+        font-size: 18px;
+      }
     }
   }
 }
@@ -135,11 +187,21 @@
   border: 2px solid #fec62e;
   border-radius: 4px;
   margin-top: 80px;
+  @include to(575px) {
+    margin-top: 48px;
+    flex-direction: column;
+    padding: 24px 19px;
+  }
   h5 {
     font-weight: 600;
     font-size: 26px;
     line-height: 1.23;
     color: #000000;
+    @include to(575px) {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
   }
   .social-list {
     display: flex;
@@ -157,6 +219,15 @@
 }
 .single-news__timer {
   width: 30%;
+  @include to(1440px) {
+    width: 35%;
+  }
+  @include to(575px) {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 256px;
+  }
 
   .timer-container {
     padding: 46px 40px 35px;
@@ -165,10 +236,16 @@
     align-items: center;
     border: 2px solid #fec62e;
     border-radius: 4px;
+    @include to(575px) {
+      padding: 16px 18px;
+    }
   }
   .timer {
     width: 44px;
     height: auto;
+    @include to(575px) {
+      width: 28px;
+    }
   }
   p {
     margin-top: 13px;
@@ -178,12 +255,19 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #000000;
+    @include to(575px) {
+      font-size: 10px;
+      margin-top: 8px;
+    }
   }
   .countdown {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
+    @include to(575px) {
+      margin-top: 8px;
+    }
     .countdown-number {
       display: flex;
       font-weight: 600;
@@ -191,6 +275,9 @@
       line-height: 1.22;
       color: #ff7a00;
       margin-right: 8px;
+      @include to(575px) {
+        font-size: min(vw(20, 375), 18px);
+      }
       span {
         margin-right: 0.5ch;
       }

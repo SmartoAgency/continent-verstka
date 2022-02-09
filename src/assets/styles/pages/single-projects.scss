@@ -1,10 +1,17 @@
 .realized-project.single-realized-project {
   .realized-project__content {
     width: 55%;
+    @include to(575px) {
+      width: 100%;
+      padding-top: 100px;
+    }
   }
   .realty {
     margin-top: 60px;
     width: auto;
+    @include to(575px) {
+      margin-top: 30px;
+    }
     svg {
       width: 24px;
       height: 24px;
@@ -25,6 +32,12 @@
   @include to(1280px) {
     padding: 24px vw(32, 1280) 32px vw(32, 1280);
   }
+  @include to(575px) {
+    flex-direction: column;
+    padding: 16px 22px 10px 22px;
+    order: 2;
+    border-bottom: none;
+  }
   &__benefits-list {
     .single-specification__item {
       list-style: disc;
@@ -36,13 +49,24 @@
   }
   &__description-list {
     display: flex;
+    @include to(575px) {
+      margin-top: 30px;
+      column-count: 2;
+      display: initial;
+    }
     .single-specification__item {
       margin-right: 40px;
+      @include to(575px) {
+        margin-bottom: 30px;
+      }
       svg {
         width: 24px;
         height: 24px;
         margin-bottom: 20px;
         fill: none;
+        @include to(575px) {
+          margin-bottom: 10px;
+        }
       }
       p {
         font-weight: 600;
@@ -54,16 +78,28 @@
   }
 }
 .single-section1 {
-  padding: 80px 150px 0 vw(100, 1920);
+  padding: 80px 150px 0 vw(160, 1920);
   display: flex;
   justify-content: space-between;
-
+  @include to(1440px) {
+    padding: 80px 150px 0 vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 80px 128px 0 vw(32, 1280);
+  }
+  @include to(575px) {
+    padding: 22px;
+    flex-direction: column;
+    order: 4;
+  }
   &__big {
     width: 60%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
+    @include to(575px) {
+      width: 100%;
+    }
     p {
       width: 70%;
       font-weight: 600;
@@ -71,9 +107,20 @@
       line-height: 1.25;
       color: #000000;
       margin-bottom: 16px;
+      @include to(575px) {
+        width: 100%;
+        &:first-child {
+          margin-top: 32px;
+        }
+      }
     }
     p + .single-section1__img {
       margin-top: 68px;
+      width: 100%;
+      @include to(575px) {
+        order: -1;
+        margin-top: 20px;
+      }
     }
   }
   &__small {
@@ -81,10 +128,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
+    @include to(575px) {
+      width: 100%;
+    }
     .single-section1__img {
       margin-bottom: 68px;
       width: 87.5%;
+      @include to(575px) {
+        width: 100%;
+        margin-top: 16px;
+        margin-bottom: 24px;
+      }
     }
     li {
       display: flex;
@@ -110,95 +164,39 @@
   }
 }
 
-// .single-section2 {
-//   padding: 80px vw(100, 1920) 0 vw(100, 1920);
-//   display: flex;
-//   justify-content: space-between;
-//   @include to(1440px) {
-//     // padding: 80px vw(32, 1440) 0 vw(32, 1440);
-//   }
-//   &__small {
-//     width: 35%;
-//     .single-section2__img {
-//       margin-bottom: 68px;
-//       width: 87.5%;
-//       height: 400px;
-//     }
-//     ul {
-//       padding-left: 18%;
-//     }
-//     li {
-//       display: flex;
-//       margin-bottom: 24px;
-//       &:last-child {
-//         margin-bottom: 0;
-//       }
-//       .num {
-//         font-weight: 600;
-//         font-size: 10px;
-//         line-height: 1.2;
-//         letter-spacing: 0.04em;
-//         text-transform: uppercase;
-//         color: #000000;
-//         margin-right: 20px;
-//         padding-top: 5px;
-//       }
-//       .text {
-//         font-weight: 600;
-//         font-size: 16px;
-//         line-height: 1.25;
-//         color: #000000;
-
-//         // list-style: decimal-leading-zero;}
-//       }
-//     }
-//   }
-//   &__big {
-//     width: 54%;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: flex-end;
-//     .our-projects__title {
-//       margin-bottom: 32px;
-//     }
-//     .single-section2__img {
-//       margin-top: 88px;
-//       height: 450px;
-//     }
-//     .single-section2__text {
-//       width: 85%;
-//       padding-right: 15%;
-//       display: flex;
-//       flex-direction: column;
-//     }
-//     p {
-//       // width: 70%;
-//       font-weight: 600;
-//       font-size: 16px;
-//       line-height: 1.25;
-//       color: #000000;
-//       margin-bottom: 16px;
-//     }
-//     p + .single-section2__img {
-//       margin-top: 68px;
-//     }
-//   }
-// }
 .single-section2 {
-  padding: 80px vw(140, 1920) 0 vw(100, 1920);
+  padding: 80px vw(140, 1920) 0 vw(160, 1920);
   display: flex;
   justify-content: space-between;
   align-items: center;
   @include to(1440px) {
-    // padding: 80px vw(140, 1440) 0 vw(32, 1440);
+    padding: 80px vw(140, 1920) 0 vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 80px vw(140, 1920) 0 vw(32, 1280);
+  }
+  @include to(575px) {
+    padding: 0 22px 22px 22px;
+    flex-direction: column;
+    order: 5;
   }
   .single-section2__img {
     width: 28%;
+    @include to(575px) {
+      width: 100%;
+    }
   }
   .single-section2__text {
     width: 40%;
+    @include to(575px) {
+      width: 100%;
+      padding-top: 40px;
+    }
     .our-projects__title {
       margin-bottom: 40px;
+      @include to(575px) {
+        margin-bottom: 24px;
+      }
     }
     p {
       font-weight: 600;
@@ -211,16 +209,33 @@
 }
 
 .single-section3 {
-  padding: 40px vw(100, 1920) 0 vw(150, 1920);
+  padding: 40px vw(160, 1920) 0 vw(150, 1920);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include to(1440px) {
+    padding: 40px vw(100, 1440) 0 vw(150, 1920);
+  }
+  @include to(1280px) {
+    padding: 40px vw(32, 1280) 0 vw(150, 1920);
+  }
+  @include to(575px) {
+    padding: 0 22px 22px 22px;
+    flex-direction: column-reverse;
+    order: 5;
+  }
   ul {
     width: 35%;
+    @include to(575px) {
+      width: 100%;
+    }
   }
   li {
     display: flex;
     margin-bottom: 24px;
+    @include to(575px) {
+      margin-bottom: 16px;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -245,19 +260,32 @@
   }
   .single-section3__img {
     width: 60%;
+    @include to(575px) {
+      width: 100%;
+      margin-bottom: 24px;
+    }
   }
 }
 .single-section4 {
-  padding: 80px vw(100, 1920) 0 vw(100, 1920);
+  padding: 80px vw(160, 1920) 0 vw(160, 1920);
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   @include to(1440px) {
-    // padding: 80px vw(32, 1440) 0 vw(32, 1440);
+    padding: 80px vw(100, 1440) 0 vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 80px vw(32, 1280) 0 vw(32, 1280);
+  }
+  @include to(575px) {
+    padding: 40px 22px 22px 22px;
+    flex-direction: column;
   }
   &__text {
     width: 23%;
+    @include to(575px) {
+      width: 100%;
+    }
     .our-projects__title {
       margin-bottom: 40px;
     }
@@ -275,9 +303,16 @@
   &__img {
     width: 33%;
     height: 550px;
+    @include to(575px) {
+      width: 100%;
+      margin: 42px 0 24px 0;
+    }
   }
   ul {
     width: 23%;
+    @include to(575px) {
+      width: 100%;
+    }
   }
   li {
     display: flex;
@@ -313,28 +348,86 @@
   align-items: flex-start;
   padding-top: 80px;
   padding-bottom: 100px;
+  @include to(575px) {
+    padding-top: 28px;
+    padding-bottom: 235px;
+    position: relative;
+  }
+  @include to(500px) {
+    padding-bottom: 250px;
+  }
+  @include to(440px) {
+    padding-bottom: 270px;
+  }
+  @include to(390px) {
+    padding-bottom: 283px;
+  }
   .single-section3__img {
     margin-top: -170px;
+    @include to(575px) {
+      margin-top: 0;
+    }
     ul {
       padding-top: 60px;
       width: 100%;
       column-count: 2;
       column-gap: 60px;
+      @include to(575px) {
+        column-count: 1;
+        column-gap: 0px;
+        position: absolute;
+        bottom: 48px;
+        left: 22px;
+        padding-right: 40px;
+      }
     }
   }
 }
 
 .layout {
   background: #f3f0ef;
-  padding: 60px vw(100, 1920);
+  padding: 60px vw(160, 1920);
+  @include to(1440px) {
+    padding: 60px vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 60px vw(32, 1280);
+  }
+  @include to(575px) {
+    padding: 35px 22px 145px 22px;
+    position: relative;
+    order: 3;
+    .realty {
+      position: absolute;
+      bottom: 40px;
+      width: calc(100% - 44px);
+    }
+  }
 }
 .layout__title-container {
   display: flex;
   justify-content: space-between;
   // align-items: center;
-  padding-top: 70px;
+  // padding-top: 70px;
   .our-projects__title {
     width: 50%;
+    @include to(575px) {
+      width: 100%;
+    }
+  }
+  .swiper-btn {
+    display: none;
+    @include to(575px) {
+      display: flex;
+      .swiper-button-prev2 {
+        margin-right: 8px;
+      }
+      svg {
+        width: 32px;
+        height: 32px;
+        stroke: $white;
+      }
+    }
   }
 }
 .layout__list {
@@ -344,14 +437,22 @@
 }
 .layout__item {
   width: calc(100% / 3);
+  height: 500px;
   &:nth-child(2) {
     border-right: 1px solid #f3f0ef;
     border-left: 1px solid #f3f0ef;
+  }
+  @include to(575px) {
+    height: 360px;
   }
 }
 .layout__container-text {
   width: 50%;
   padding-top: 45px;
+  @include to(575px) {
+    width: 100%;
+    padding-top: 24px;
+  }
   p {
     font-weight: 600;
     font-size: 16px;
@@ -389,17 +490,27 @@
 }
 .infrastructure-map {
   width: 85%;
+  overflow: hidden;
   height: auto;
   top: auto;
   bottom: 0;
   position: absolute;
+  // transition: height 1.5s ease;
 }
+.map {
+  // .closed {
+  //   height: 50px;
+  //   overflow: hidden;
+  //   // transition: height 1.5s ease;
+  // }
+}
+
 .accordion {
   width: 35%;
   height: 690px;
   overflow-y: scroll;
   background: #ffffff;
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
@@ -553,30 +664,52 @@
 }
 
 .about-group {
-  padding: 115px 136px 136px 136px;
+  padding: 115px 176px 136px 176px;
   background: #141414;
-  // .group-logo {
-  //   width: 384px;
-  //   height: 113px;
-  // }
+  @include to(1440px) {
+    padding: 115px 156px 136px 156px;
+  }
+  @include to(1280px) {
+    padding: 115px 136px 136px 136px;
+  }
+  @include to(575px) {
+    padding: 22px;
+  }
   .group-logo {
     margin-bottom: 80px;
     width: 384px;
+    @include to(575px) {
+      margin-bottom: 30px;
+    }
   }
   .group-logo svg {
     width: 384px;
     height: 113px;
     fill: $white;
+    @include to(575px) {
+      width: 248px;
+      height: 74px;
+    }
   }
   .about__container {
     width: 66%;
+    @include to(575px) {
+      width: 100%;
+    }
     .our-projects__title {
       color: $yellow;
       margin-bottom: 70px;
+      @include to(575px) {
+        margin-bottom: 40px;
+      }
     }
     .about__list {
       column-count: 2;
       column-gap: 65px;
+      @include to(575px) {
+        column-count: 1;
+        column-gap: 0;
+      }
     }
     .about__item {
       display: flex;
@@ -584,6 +717,13 @@
       break-inside: avoid;
       &:nth-child(odd) {
         margin-bottom: 48px;
+        @include to(575px) {
+          margin-bottom: 32px;
+        }
+      }
+      @include to(575px) {
+        flex-direction: row;
+        margin-bottom: 32px;
       }
       .num {
         font-weight: 600;
@@ -593,6 +733,9 @@
         text-transform: uppercase;
         color: #ffffff;
         margin-bottom: 16px;
+        @include to(575px) {
+          margin-right: 20px;
+        }
       }
       .text {
         font-weight: 600;
@@ -618,16 +761,81 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @include to(575px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('../images/single2.jpg');
+  }
   h5 {
     font-weight: 800;
     font-size: 18px;
     line-height: 100%;
     color: #ffffff;
+    @include to(575px) {
+      font-size: 14px;
+    }
   }
   h2 {
     font-weight: 600;
     font-size: 112px;
     line-height: 1.22;
     color: #ffffff;
+    white-space: nowrap;
+    @include to(575px) {
+      font-size: 48px;
+    }
+  }
+}
+#project-realized {
+  .map {
+    height: 754px;
+    #map {
+      height: 754px;
+    }
+  }
+}
+.layout-inf {
+  padding-top: 0;
+  @include to(575px) {
+    flex-direction: column;
+    padding-top: 35px;
+    .layout__title-container {
+      flex-direction: column;
+    }
+  }
+}
+
+.block-class {
+  display: flex;
+  flex-direction: column;
+}
+#project-realized {
+  @include to(575px) {
+    .single-section5 {
+      order: 8;
+    }
+    .single-section4 {
+      order: 7;
+    }
+    .single-section6 {
+      order: 9;
+    }
+    .layout-inf {
+      order: 10;
+    }
+    .project__map {
+      order: 11;
+    }
+    .about-group {
+      order: 12;
+    }
+    .our-philosophy {
+      order: 13;
+    }
+    .contacts {
+      order: 14;
+    }
+    .sing-up-review {
+      order: 15;
+    }
   }
 }

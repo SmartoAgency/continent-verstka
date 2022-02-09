@@ -22,14 +22,11 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
-  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/header-single.js')
+  script(defer src='./assets/scripts/header-menu.js')
   script(defer src='./assets/scripts/commerce.js')
   script(defer src='./assets/scripts/select.js') 
   script(defer src='./assets/scripts/single-commerce.js')
-  //- script(defer src='./assets/scripts/accordeon.js')
-  //- script(defer src='./assets/scripts/infrastructure.js')
-  //- script(defer src='./assets/scripts/no-scroll.js')
-  script(defer src='./assets/scripts/footer.js')
 
 block content
   .single-commerce-container
@@ -51,7 +48,17 @@ block content
         
         .swiper-pagination
         .swiper-button-prev
+          <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.0007 1.99971L2.00039 10L10.0007 18.0003" stroke="#939393" stroke-width="2.33333" stroke-linecap="round"/>
+          </svg>
+
         .swiper-button-next
+          <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.9998 1.99971L9.99961 9.99951L1.9998 17.9993" stroke="#939393" stroke-width="2.33333" stroke-linecap="round"/>
+          </svg>
+
+
+
 
     .single-commerce-container__description 
       img(src="./assets/images/logo-bazar.png", alt="").logo-bazar

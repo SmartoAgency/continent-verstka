@@ -40,3 +40,24 @@ var swiper2 = new Swiper('.description-swiper', {
     formatFractionTotal: addZero,
   },
 });
+
+var swiper3 = new Swiper('.swiper-example', {
+  spaceBetween: 20,
+  slidesPerView: 1.25,
+  // freeMode: true,
+  watchSlidesProgress: true,
+  // loop: true,
+  // autoplay: {
+  //   delay: 1000,
+  // },
+  navigation: {
+    nextEl: '.swiper-button-next2',
+    prevEl: '.swiper-button-prev2',
+  },
+  breakpoints: {
+    575: {
+      slidesPerView: 3,
+      spaceBetween: 0,
+    },
+  },
+});

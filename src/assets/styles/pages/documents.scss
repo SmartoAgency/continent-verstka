@@ -7,7 +7,7 @@
     padding: calc(var(--header-h) + 40px + var(--header-bottom-h)) vw(32, 1280) 0 vw(32, 1280);
   }
   @include to(575px) {
-    padding: calc(var(--header-h) + 35px + var(--header-bottom-h)) vw(32, 1280) 0 22px;
+    padding: calc(var(--header-h) + 35px + var(--header-bottom-h)) 22px 0 22px;
   }
   .accordion {
     margin: 56px 0 40px;

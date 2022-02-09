@@ -22,7 +22,8 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
-  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/header-single.js')
+  script(defer src='./assets/scripts/header-menu.js')
   script(defer src='./assets/scripts/favorites.js')
   //- script(defer src='./assets/scripts/developer.js') 
   //- script(defer src='./assets/scripts/map.js')
@@ -59,6 +60,14 @@ block content
         a(href="#").products-link
           +svg('flat2')
         +svg('popup-close').close-products
+      li.products-item 
+        .view Це планування дивились 
+          span.total 89 
+          | разів
+        a(href="#").products-link
+          +svg('flat2')
+        +svg('popup-close').close-products
+     
       li.products-item 
         .view Це планування дивились 
           span.total 89 

@@ -484,6 +484,7 @@
 #contacts-page,
 #documents,
 #news-page,
+#news-page-single,
 #commerce,
 #single-commerce,
 #filling,
@@ -531,12 +532,14 @@
   }
 }
 #documents,
-#project-realized {
+#project-realized,
+#filling,
+#building {
   .logo-container__bottom {
     height: var(--header-bottom-h);
-
     opacity: 1;
     border: 2px solid #e5e5e5;
+    pointer-events: painted;
   }
   .active-header-menu {
     pointer-events: pointed;

@@ -22,7 +22,9 @@
       }
     }
   }
+}
 
+#contacts-page {
   .breadcrumbs {
     position: absolute;
     top: 40px;
@@ -99,8 +101,11 @@
     }
   }
 }
+
 #contacts-page,
-#investor {
+#investor,
+#project-realized,
+#home {
   .map-btn {
     margin-right: 0;
     background: #ffffff;
