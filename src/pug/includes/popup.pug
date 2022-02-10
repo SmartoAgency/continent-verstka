@@ -1,33 +1,3 @@
-//- .building-popup
-  .building-popup__container
-    h2.building-popup__title Хід будівництва 1 березня 2021
-    +svg('popup-close').btn-popup
-
-    .building-swiper
-      .swiper-wrapper
-        .swiper-slide
-          .building-swiper__img 
-            img(src="./assets/images/building/building1.jpg", alt="")
-        .swiper-slide
-          .building-swiper__img 
-            img(src="./assets/images/building/building2.jpg", alt="")
-        .swiper-slide
-          .building-swiper__img 
-            img(src="./assets/images/building/building3.jpg", alt="")
-        .swiper-slide
-          .building-swiper__img 
-            img(src="./assets/images/building/building3.jpg", alt="")
-          
-      .swiper-navigation
-        .swiper-button-prev
-        .swiper-pagination
-        .swiper-button-next
-
-
-
-
-
-
 .building-popup( data-build-popup-container)
   .building-popup__container
     +svg('popup-close').btn-popup(data-close-build-popup)
@@ -56,3 +26,91 @@
             +svg('swiper-prev')
           .swiper-button-next 
             +svg('swiper-next')
+
+
+.calculator-popup 
+  .calculator-popup__content
+    +svg('close-select').close-popup
+    .calculator-popup__title 
+      +svg('logo-calc')
+      h3 Калькулятор вартості
+      h4 Ми допоможемо розрахувати вартiсть вашої майбутньої квартири
+    .calculator-popup__quiz.js-init-swiper
+      form( class="calc-form" action="#" data-form-quiz data-action="qviz" autocomplete="off")
+        .swiper-pagination13
+        .swiper-calculator 
+          .swiper-wrapper
+            .swiper-slide
+              .swiper-slide__title Оберіть тип квартири
+              .form-field
+                .form-field-input(data-field-input data-field-name data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-name form-field__input contact-form-input" type="radio" id="one-room" autocomplete="on" value="" name="#")
+                  label(class="label__checkbox" for="one-room") Однокімнатна
+                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="two-room"  autocomplete="on" name="#" )
+                  label(class="label__checkbox" for="two-room") Двокімнатна
+                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="three-room"  autocomplete="on" name="#" )
+                  label(class="label__checkbox" for="three-room") Трикімнатна
+                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="four-room"  autocomplete="on" name="#" )
+                  label(class="label__checkbox" for="four-room") Чотирьокімнатна
+
+            .swiper-slide
+              .swiper-slide__title Оберіть дiапазон бажаної поверховостi
+              .form-field
+                .form-field-input(data-field-input data-field-name data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-name form-field__input contact-form-input" type="radio" id="one-floor" autocomplete="on" value="" name="#")
+                  label(class="label__checkbox" for="one-floor") 1 - 2 поверх
+                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="two-floor"  autocomplete="on" name="#" )
+                  label(class="label__checkbox" for="two-floor") 3 - 6 поверх
+                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="three-floor"  autocomplete="on" name="#" )
+                  label(class="label__checkbox" for="three-floor") 6 - 9 поверх
+                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="four-floor"  autocomplete="on" name="#" )
+                  label(class="label__checkbox" for="four-floor") 10+ тераса
+
+            .swiper-slide
+              .swiper-slide__title Чи цікавить вас розстрочка?
+              .form-field
+                .form-field-input(data-field-input data-field-name data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-name form-field__input contact-form-input" type="radio" id="pay-yes" autocomplete="on" value="" name="#")
+                  label(class="label__checkbox" for="pay-yes") Так
+                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="pay-no"  autocomplete="on" name="#" )
+                  label(class="label__checkbox" for="pay-no") Ні
+                
+            .swiper-slide
+              .swiper-slide__title Розрахунок готовий!
+              .swiper-slide__title-little Вкажіть ваші контакти, щоб ми зв’язалися з вами
+              .form-field.contact-form-field
+                .form-field-input.mob-in(data-field-input data-field-name data-status="field--inactive")
+                  //- label(for="callback-form-name") ваше im’я
+                  input(class="input-name input-sideform form-name form-field__input contact-form-input" type="text" name="name" id="callback-form-name" placeholder="Ваше ім’я" autocomplete="on" value="")
+                  .input-message(data-input-message)
+                .form-field-input.mob-in(data-field-input data-field-phone data-status="field--inactive")
+                  //- label(for="callback-form-phone") ваш номер
+                  input(class="input-name input-sideform form-tel form-field__input contact-form-input js-input-form" type="text" id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+                  //- span.placeholder-form.js-placeholder-form Номер
+                  .input-message(data-input-message)
+
+            .swiper-slide
+              .timer-container
+                 div(id="timer_container")
+                  p(id="time")
+
+              .swiper-slide__title Дякуємо за ваше звернення
+              .swiper-slide__title-little-black Протягом однієї хвилини на Ваш мобільний прийде повідомлення. Щоб ми Вас зайвий раз не турбували, — оберіть в цьому повідомленні зручний для себе день та час, коли Вам буде зручно розмовляти з нашим менеджером.
+              a(href="#").realty На головну сторінку
+                      
+
+
+        .swiper-scrollbar13 
+        .swiper-btn-container
+          .swiper-button-prev13  
+            +svg('arrow-back')
+            | Попередній крок
+          .swiper-button-next13 Oбрати 
+            +svg('arrow')

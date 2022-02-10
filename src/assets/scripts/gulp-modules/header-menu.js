@@ -74,3 +74,67 @@ btnBottomHeader.forEach(el =>
 );
 window.locoScroll.update();
 // bottom-header end
+
+// popup-calculator
+const swiper23 = new Swiper('.swiper-calculator', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  scrollbar: {
+    el: '.swiper-scrollbar13',
+    // hide: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next13',
+    prevEl: '.swiper-button-prev13',
+  },
+  pagination: {
+    el: '.swiper-pagination13',
+    type: 'fraction',
+    touchStartPreventDefault: false,
+    formatFractionCurrent: addZero,
+    formatFractionTotal: addZero,
+  },
+  // breakpoints: {
+  //   575: {
+  //     slidesPerView: 3.5,
+  //     spaceBetween: 40,
+  //   },
+  // },
+});
+
+function addZero(num) {
+  return num > 9 ? num : `0${num}`;
+}
+
+// // timer 1 minute
+var timeleft, time;
+timeleft = time = 60;
+$('#time').html(timeleft);
+$('#timer_container').fadeTo('slow', 1);
+$('#time').fadeTo('slow', 1);
+var i, j, rotation, width;
+
+for (i = 0; i < timeleft; i++) {
+  document.getElementById('timer_container').innerHTML += "<div class='tictic'></div>";
+}
+var x = document.getElementById('timer_container');
+var y = x.getElementsByTagName('div');
+width = document.getElementById('timer_container').offsetWidth;
+for (i = 0; i < timeleft; i++) {
+  rotation = (360 / timeleft) * i;
+  console.log(rotation + '\n');
+  console.log(width + '\n');
+  y[i].style.cssText = 'transform:rotate(' + rotation + 'deg) translate(0px, -' + width / 2 + 'px)';
+}
+var i = 0;
+remainingtime = setInterval(function() {
+  $('#time').html(timeleft);
+  y[i].style.backgroundColor = '#ffffff';
+  timeleft -= 1;
+  i += 1;
+  if (timeleft <= 0 && i >= time) {
+    clearInterval(remainingtime);
+    $('div').remove('.tictic');
+    $('#time').html('Time out!');
+  }
+}, 1000);

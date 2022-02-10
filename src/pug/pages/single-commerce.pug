@@ -118,7 +118,13 @@ block content
             p.description Холодне і гаряче водопостачання
  
   .similar-apartment 
-    h2.our-projects__title Cхожі приміщення
+    .similar-apartment__title
+      h2.our-projects__title Cхожі приміщення
+      .swiper-btn
+        .swiper-button-prev1
+          +svg('swiper-prev')
+        .swiper-button-next1
+          +svg('swiper-next')
     .similar-apartment-swiper 
       .swiper-wrapper 
         .swiper-slide
@@ -157,9 +163,8 @@ block content
               .square-description 
                 p.title Площа:
                 p.value 48 м²
-
-        .swiper-button-prev1
-        .swiper-button-next2
+      
+      
 
   include ../includes/sing-up.pug
 

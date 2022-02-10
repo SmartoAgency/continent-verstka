@@ -16,7 +16,8 @@
     }
     @include to(575px) {
       width: 100%;
-      padding: 17px 22px 50px 22px;
+      padding: 17px 56px 120px 56px;
+      position: relative;
     }
     .breadcrumbs {
       margin: 0;
@@ -35,7 +36,8 @@
     }
     @include to(575px) {
       width: 100%;
-      padding: 20px 22px 50px 50px;
+      padding: 40px 22px 50px 22px;
+      position: relative;
     }
     .logo-bazar {
       width: 61px;
@@ -48,6 +50,10 @@
       line-height: 1.22;
       color: #000000;
       margin-bottom: 16px;
+      @include to(575px) {
+        font-size: 30px;
+        margin-bottom: 32px;
+      }
     }
     .single-commerce-container__title-complex {
       font-weight: 600;
@@ -75,6 +81,9 @@
           letter-spacing: 0.04em;
           text-transform: uppercase;
           color: #000000;
+          @include to(575px) {
+            width: 50%;
+          }
         }
         .content {
           font-weight: 600;
@@ -97,6 +106,9 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 32px;
+      @include to(575px) {
+        margin-bottom: 0;
+      }
       a {
         width: 48%;
         margin-right: 16px;
@@ -130,9 +142,20 @@
       justify-content: center;
       font-size: 18px;
       transition: all 0.2s ease;
+      @include to(575px) {
+        display: flex !important;
+        height: 48px;
+        width: calc(100% - 44px);
+        font-size: 14px;
+        top: -77px;
+        left: 22px;
+      }
       svg {
         margin-left: 8px;
         transition: all 0.2s ease;
+        @include to(575px) {
+          display: flex !important;
+        }
       }
       &:hover {
         @include from(992px) {
@@ -152,7 +175,15 @@
     display: none;
     @include to(575px) {
       display: initial;
+      position: absolute;
+      top: 50%;
     }
+  }
+  .swiper-button-prev {
+    left: 22px;
+  }
+  .swiper-button-next {
+    right: 22px;
   }
   .swiper-pagination {
     @include to(575px) {
@@ -186,6 +217,10 @@
     position: relative;
     height: 404px;
     margin: 85px 0 85px;
+    @include to(575px) {
+      height: 270px;
+      margin: 15px 0 10px;
+    }
     .btn-scale {
       fill: $white;
       width: 48px;
@@ -199,6 +234,12 @@
         @include from(992px) {
           fill: $yellow;
         }
+      }
+      @include to(575px) {
+        width: 32px;
+        height: 32px;
+        top: auto;
+        bottom: -9px;
       }
     }
 
@@ -242,6 +283,13 @@ img.mfp-img {
 #single-commerce {
   .specification {
     padding-top: 56px;
+    @include to(575px) {
+      padding-top: 0;
+      .our-projects__title {
+        padding-top: 40px;
+        border-top: 1px solid $black;
+      }
+    }
   }
   .specification__text .description {
     max-width: 100%;
@@ -261,9 +309,32 @@ img.mfp-img {
   }
   @include to(575px) {
     padding: 56px 22px 32px 22px;
+    .similar-apartment__title {
+      display: flex;
+      justify-content: space-between;
+      .swiper-btn {
+        display: flex;
+        svg {
+          width: 32px;
+          height: 32px;
+          stroke: $white;
+          stroke-width: 2;
+        }
+        .swiper-button-prev1 {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  .swiper-btn {
+    display: none;
   }
   h2.our-projects__title {
     margin-bottom: 56px;
+    @include to(575px) {
+      margin-bottom: 26px;
+      width: 60%;
+    }
   }
   .similar-apartment-swiper {
     .swiper-slide {

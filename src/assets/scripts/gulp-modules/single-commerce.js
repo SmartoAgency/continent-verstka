@@ -20,15 +20,21 @@ const swiper = new Swiper('.commerce-swiper', {
 });
 
 const swiper2 = new Swiper('.similar-apartment-swiper', {
-  slidesPerView: 3,
-  // spaceBetween: 40,
+  slidesPerView: 1.25,
+  spaceBetween: 20,
   // scrollbar: {
   // el: '.swiper-scrollbar',
   // hide: true,
   // },
   navigation: {
     nextEl: '.swiper-button-next1',
-    prevEl: '.swiper-button-prev2',
+    prevEl: '.swiper-button-prev1',
+  },
+  breakpoints: {
+    575: {
+      slidesPerView: 3,
+      spaceBetween: 0,
+    },
   },
 });
 

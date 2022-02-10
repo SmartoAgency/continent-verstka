@@ -1,4 +1,10 @@
 #flats {
+  .planing .select {
+    @include to(575px) {
+      // display: block;
+      display: none;
+    }
+  }
   .planing-filter__container {
     flex-wrap: wrap;
   }
@@ -18,7 +24,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    @include to(575px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
     .checkbox__block-item {
       display: flex;
       align-items: center;
@@ -46,6 +55,7 @@
       background-color: #f3f0ef;
       z-index: 2;
       margin-right: 8px;
+      flex-shrink: 0;
     }
     .filter__checkbox:checked + label {
       background-color: #fec62e;
@@ -58,6 +68,7 @@
     justify-content: center;
     .result-filter {
       position: initial;
+      width: 100%;
     }
   }
   .realty {
@@ -132,6 +143,10 @@
 #flats {
   .grid li {
     height: 540px;
+    @include to(575px) {
+      height: 516px;
+      margin-bottom: 16px;
+    }
   }
   .planing__link .planing__img img {
     width: 232px;
@@ -177,11 +192,19 @@
         width: 20%;
         // display: flex;
         // justify-content: center;
+        @include to(575px) {
+          position: absolute;
+          width: 100%;
+          left: calc(16% + 20px);
+        }
       }
       .chekbox__container {
         position: absolute;
         left: 14%;
         top: 22px;
+        @include to(575px) {
+          display: none;
+        }
         .hidden {
           display: none;
         }
@@ -193,6 +216,9 @@
         width: 12%;
         display: flex;
         justify-content: center;
+        @include to(575px) {
+          display: none;
+        }
       }
       // .price-list {
       //   width: 18%;
@@ -201,13 +227,14 @@
         display: flex;
         width: 36%;
         column-gap: 0;
-        // .square {
-        //   width: 33%;
-        //   display: flex;
-        //   align-items: center;
-        // }
+        @include to(575px) {
+          width: 84%;
+        }
         .square-description {
           flex-direction: row;
+          @include to(575px) {
+            flex-direction: column;
+          }
           .value {
             white-space: nowrap;
           }
@@ -215,13 +242,22 @@
       }
       .favorite-star {
         right: 30px;
+        @include to(575px) {
+          display: none;
+        }
       }
       .prise-list {
         width: 28%;
+        @include to(575px) {
+          display: none;
+        }
       }
       .price {
         right: 12%;
         left: auto;
+        @include to(575px) {
+          display: none;
+        }
         .old-price {
           position: absolute;
           white-space: nowrap;
@@ -231,11 +267,19 @@
       }
       .empty-price {
         display: flex;
+        @include to(575px) {
+          display: none;
+        }
       }
       .square {
         width: 33%;
         display: flex;
         align-items: center;
+      }
+      .square-description {
+        @include to(575px) {
+          margin-left: 0;
+        }
       }
     }
   }
@@ -269,6 +313,9 @@
       line-height: 1.2;
       color: #000000;
       margin-right: 20px;
+      @include to(575px) {
+        font-size: 10px;
+      }
     }
     .old-price {
       font-weight: 600;
@@ -276,6 +323,9 @@
       line-height: 1.2;
       text-decoration-line: line-through;
       color: rgba(0, 0, 0, 0.5);
+      @include to(575px) {
+        font-size: 10px;
+      }
     }
   }
   .empty-price {
@@ -326,6 +376,18 @@
       text-transform: uppercase;
       color: #000000;
       margin-right: 16px;
+      white-space: nowrap;
     }
   }
+}
+
+@include to(575px) {
+  #flats {
+    .planing__img {
+      padding-top: 26px;
+    }
+  }
+}
+.mobile-filter-btn {
+  display: none;
 }

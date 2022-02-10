@@ -52,13 +52,27 @@ block content
           .num= i + 1
           .title= v[0]
           .text= v[1]
-
+  .mobile-sort-list2.js-sort-list
+    .contant 
+      .mobile-filter-close 
+        h4 Сортувати
+        +svg('close-select').js-close-sort
+      ul.sort-list 
+        li.sort-item.check Спочатку з більшою площою
+        li.sort-item Спочатку з меншою площою
+        li.sort-item За строком сдачі
   .planing-filter 
     h2.our-projects__title Планування
-    button.btn-mobile-filter 
-      +svg('filter')
-      span Фільтр
-    .mobile-filter
+    .mobile-filter-btn
+      .mobile-btn-nav 
+      button.btn-mobile-filter.js-open-filter
+        +svg('filter')
+        span Фільтр
+      .mobile-btn-sort.js-sort-btn
+    .mobile-filter.js-mobile-filter
+      .mobile-filter-close 
+        h4 Фільтр
+        +svg('close-select').js-close-filter
       .planing-filter__container 
         .planing-filt__complex
           select(class="select" name="connection")
@@ -79,7 +93,9 @@ block content
             option(value="2024") ІІІ кв. 2024
           .marker-text Строк здачі
       .planing-filter__close 
-        .result-filter Знайдено 153 приміщення
+        .result-filter Знайдено 
+          .number 153 
+          | приміщення
           +svg('arrow')
         button.reset-filter 
           +svg('close-select')
