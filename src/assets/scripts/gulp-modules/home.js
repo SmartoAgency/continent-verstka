@@ -205,6 +205,10 @@ if (isMobile()) {
     swiper.update();
   });
 
+  window.addEventListener('our-projects-switch-tab', () => {
+    swiper.update();
+  });
+
   const slidesLength = document.querySelectorAll(
     '.active-project .swiper-slide:not(.swiper-slide-duplicate)',
   ).length;
@@ -259,3 +263,25 @@ function handleHeader(scroller) {
   };
 }
 handleHeader(locoScroll);
+
+// number start
+const swiper20 = new Swiper('.swiper-numbers-list', {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  // loop: true,
+  autoplay: {
+    delay: 5000,
+  },
+
+  breakpoints: {
+    670: {
+      slidesPerView: 4,
+      spaceBetween: 60,
+    },
+  },
+});
+
+swiper20.on('reachEnd', () => {
+  swiper20.autoplay.stop();
+});
+// number end

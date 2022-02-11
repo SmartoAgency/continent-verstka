@@ -34,11 +34,12 @@ block content
       .favorites-title__btn 
         a(href="#").favorites-title__link
           +svg('pdf')
-          span Сформувати Pdf
+          span.desctop Сформувати Pdf
+          span.mobile Pdf-файл
         a(href="#").favorites-title__link
           +svg('btn-telegram')
-          span Надіслати в телеграм
-
+          span.desctop Надіслати в телеграм
+          span.mobile В Telegram
 
     .favorites-container
       ul.parametrs-list.fixed-parametrs-list
@@ -62,210 +63,181 @@ block content
           .town Місто
         li.parametrs-item 
           .floor Поверх
-
       .swiper-favorites 
+        .swiper-button-prev
+          +svg('arrow-back')
+        .swiper-button-next
+          +svg('arrow')
         .swiper-wrapper
           .swiper-slide
             .container-img
-              img(src="./assets/images/planing/planing1.jpg", alt="")
+              .views 
+                .desctop Це планування дивились 
+                .number 89 
+                .desctop разів
+                .mobile переглядів
+              a(href="flats.html").swiper-img
+                img(src="./assets/images/planing/planing2.jpg", alt="")
+              .delete-slide 
+                +svg('close-select')
             ul.parametrs-list
+              li.parametrs-item-mobile Квартира
               li.parametrs-item 
                 .flat Квартира 95.2 м²
+              li.parametrs-item-mobile Проект
               li.parametrs-item 
                 .project Continent Black
+              li.parametrs-item-mobile Заселення
               li.parametrs-item 
                 .deadline ІІІ квартал 2021 р.
+              li.parametrs-item-mobile клас жк
               li.parametrs-item 
                 .class Комфорт
               li.parametrs-item.title-list
-                .title 
+                .title.title-mobile Метраж
+              li.parametrs-item-mobile Загальна площа
               li.parametrs-item 
                 .total-area 95.2 м²
+              li.parametrs-item-mobile Жила площа
               li.parametrs-item 
                 .area 70.2 м²
               li.parametrs-item.title-list
-                .title 
+                .title.title-mobile Розташування
+              li.parametrs-item-mobile Місто
               li.parametrs-item 
                 .town Буча
+              li.parametrs-item-mobile Поверх
               li.parametrs-item 
                 .floor 5/7
             .realty Дізнатись ціну
-
-          .swiper-slide 
+          .swiper-slide
             .container-img
-              img(src="./assets/images/planing/planing3.jpg", alt="")
+              .views 
+                .desctop Це планування дивились 
+                .number 89 
+                .desctop разів
+                .mobile переглядів
+              a(href="flats.html").swiper-img
+                img(src="./assets/images/planing/planing3.jpg", alt="")
+              .delete-slide 
+                +svg('close-select')
             ul.parametrs-list
+              li.parametrs-item-mobile Квартира
               li.parametrs-item 
                 .flat Квартира 95.2 м²
+              li.parametrs-item-mobile Проект
               li.parametrs-item 
                 .project Continent Black
+              li.parametrs-item-mobile Заселення
               li.parametrs-item 
                 .deadline ІІІ квартал 2021 р.
+              li.parametrs-item-mobile клас жк
               li.parametrs-item 
                 .class Комфорт
               li.parametrs-item.title-list
-                .title 
+                .title.title-mobile Метраж
+              li.parametrs-item-mobile Загальна площа
               li.parametrs-item 
                 .total-area 95.2 м²
+              li.parametrs-item-mobile Жила площа
               li.parametrs-item 
                 .area 70.2 м²
               li.parametrs-item.title-list
-                .title 
+                .title.title-mobile Розташування
+              li.parametrs-item-mobile Місто
               li.parametrs-item 
                 .town Буча
+              li.parametrs-item-mobile Поверх
               li.parametrs-item 
                 .floor 5/7
             .realty Дізнатись ціну
-          .swiper-slide 
+          .swiper-slide
             .container-img
-              img(src="./assets/images/planing/planing2.jpg", alt="")
+              .views 
+                .desctop Це планування дивились 
+                .number 89 
+                .desctop разів
+                .mobile переглядів
+              a(href="flats.html").swiper-img
+                img(src="./assets/images/planing/planing1.jpg", alt="")
+              .delete-slide 
+                +svg('close-select')
             ul.parametrs-list
+              li.parametrs-item-mobile Квартира
               li.parametrs-item 
                 .flat Квартира 95.2 м²
+              li.parametrs-item-mobile Проект
               li.parametrs-item 
                 .project Continent Black
+              li.parametrs-item-mobile Заселення
               li.parametrs-item 
                 .deadline ІІІ квартал 2021 р.
+              li.parametrs-item-mobile клас жк
               li.parametrs-item 
                 .class Комфорт
               li.parametrs-item.title-list
-                .title 
+                .title.title-mobile Метраж
+              li.parametrs-item-mobile Загальна площа
               li.parametrs-item 
                 .total-area 95.2 м²
+              li.parametrs-item-mobile Жила площа
               li.parametrs-item 
                 .area 70.2 м²
               li.parametrs-item.title-list
-                .title 
+                .title.title-mobile Розташування
+              li.parametrs-item-mobile Місто
               li.parametrs-item 
                 .town Буча
+              li.parametrs-item-mobile Поверх
               li.parametrs-item 
                 .floor 5/7
             .realty Дізнатись ціну
-
-    //- ul.products-list 
-    //-   li.products-item 
-    //-   li.products-item 
-    //-     .view Це планування дивились 
-    //-       span.total 89 
-    //-       | разів
-    //-     a(href="#").products-link
-    //-       +svg('flat2')
-    //-     +svg('popup-close').close-products
-    //-   li.products-item 
-    //-     .view Це планування дивились 
-    //-       span.total 89 
-    //-       | разів
-    //-     a(href="#").products-link
-    //-       +svg('flat2')
-    //-     +svg('popup-close').close-products
-    //-   li.products-item 
-    //-     .view Це планування дивились 
-    //-       span.total 89 
-    //-       | разів
-    //-     a(href="#").products-link
-    //-       +svg('flat2')
-    //-     +svg('popup-close').close-products
-     
-    //-   li.products-item 
-    //-     .view Це планування дивились 
-    //-       span.total 89 
-    //-       | разів
-    //-     a(href="#").products-link
-    //-       +svg('flat2')
-    //-     +svg('popup-close').close-products
-    //- ul.products-list.products-parametrs
-    //-   li.products-item 
-    //-     .title-item Квартира
-    //-   li.products-item 
-    //-     .title-description Квартира 95.2 м²
-    //-   li.products-item 
-    //-     .title-description Квартира 35.5 м²
-    //-   li.products-item 
-    //-     .title-description Квартира 48.2 м²
-    //- ul.products-list.products-parametrs
-    //-   li.products-item 
-    //-     .title-item Проект
-    //-   li.products-item 
-    //-     .title-description Continent Black
-    //-   li.products-item 
-    //-     .title-description Continent Ray
-    //-   li.products-item 
-    //-     .title-description Continent Ray
-    //- ul.products-list.products-parametrs
-    //-   li.products-item 
-    //-     .title-item Заселення
-    //-   li.products-item 
-    //-     .title-description ІІІ квартал 2021 р.
-    //-   li.products-item 
-    //-     .title-description ІV квартал 2021 р.
-    //-   li.products-item 
-    //-     .title-description І квартал 2022 р.
-    //- ul.products-list.products-parametrs
-    //-   li.products-item 
-    //-     .title-item клас жк
-    //-   li.products-item 
-    //-     .title-description Комфорт
-    //-   li.products-item 
-    //-     .title-description Комфорт
-    //-   li.products-item 
-    //-     .title-description Комфорт
-    //- h3.title-parametrs Метраж
-    //- ul.products-list.products-parametrs
-    //-   li.products-item 
-    //-     .title-item Загальна площа
-    //-   li.products-item 
-    //-     .title-description 95.2 м²
-    //-   li.products-item 
-    //-     .title-description 35.5 м²
-    //-   li.products-item 
-    //-     .title-description 48.2 м²
-    //- ul.products-list.products-parametrs
-    //-   li.products-item 
-    //-     .title-item Жила площа
-    //-   li.products-item 
-    //-     .title-description 70.2 м²
-    //-   li.products-item 
-    //-     .title-description 20.2 м²
-    //-   li.products-item 
-    //-     .title-description 33.2 м²
-    //- h3.title-parametrs Розташування
-    //- ul.products-list.products-parametrs
-    //-   li.products-item 
-    //-     .title-item Місто
-    //-   li.products-item 
-    //-     .title-description Буча
-    //-   li.products-item 
-    //-     .title-description Буча
-    //-   li.products-item 
-    //-     .title-description Буча
-    //- ul.products-list.products-parametrs
-    //-   li.products-item 
-    //-     .title-item Поверх
-    //-   li.products-item 
-    //-     .title-description 5/7
-    //-   li.products-item 
-    //-     .title-description 2/7
-    //-   li.products-item 
-    //-     .title-description 3/5
-    //- ul.products-list.products-parametrs
-      li.products-item 
-        .title-item 
-      li.products-item 
-        .title-description 
-          button(class="realty") 
-            span Дізнатись ціну
-      li.products-item 
-        .title-description 
-          button(class="realty") 
-            span Дізнатись ціну
-      li.products-item 
-        .title-description 
-          button(class="realty") 
-            span Дізнатись ціну
+          .swiper-slide
+            .container-img
+              .views 
+                .desctop Це планування дивились 
+                .number 89 
+                .desctop разів
+                .mobile переглядів
+              a(href="flats.html").swiper-img
+                img(src="./assets/images/planing/planing1.jpg", alt="")
+              .delete-slide 
+                +svg('close-select')
+            ul.parametrs-list
+              li.parametrs-item-mobile Квартира
+              li.parametrs-item 
+                .flat Квартира 95.2 м²
+              li.parametrs-item-mobile Проект
+              li.parametrs-item 
+                .project Continent Black
+              li.parametrs-item-mobile Заселення
+              li.parametrs-item 
+                .deadline ІІІ квартал 2021 р.
+              li.parametrs-item-mobile клас жк
+              li.parametrs-item 
+                .class Комфорт
+              li.parametrs-item.title-list
+                .title.title-mobile Метраж
+              li.parametrs-item-mobile Загальна площа
+              li.parametrs-item 
+                .total-area 95.2 м²
+              li.parametrs-item-mobile Жила площа
+              li.parametrs-item 
+                .area 70.2 м²
+              li.parametrs-item.title-list
+                .title.title-mobile Розташування
+              li.parametrs-item-mobile Місто
+              li.parametrs-item 
+                .town Буча
+              li.parametrs-item-mobile Поверх
+              li.parametrs-item 
+                .floor 5/7
+            .realty Дізнатись ціну
+   
+   
  
  
- 
-  //- .favorites-empty 
+  .favorites-empty 
     +svg('favorites-logo')
     h3.title-parametrs Ви поки що нічого не додали до обраного 
     a(href="#").realty

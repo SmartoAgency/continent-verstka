@@ -1,10 +1,14 @@
 .frame-class {
   width: 100%;
   height: 100%;
+  border: none;
 }
 .markers-container {
   display: flex;
   margin-bottom: 60px;
+  @include to(575px) {
+    margin-bottom: 32px;
+  }
   .views {
     padding: 6px 11px;
     border: 2px solid #fec62e;
@@ -44,6 +48,9 @@
 #single-flats {
   .description-list {
     margin-bottom: 100px;
+    @include to(575px) {
+      margin-bottom: 85px;
+    }
   }
   .description-list ~ .price-container {
     margin-top: -50px;
@@ -51,16 +58,26 @@
   .btn-container {
     a {
       width: 30%;
+      @include to(575px) {
+        width: 50%;
+      }
     }
   }
   .single-commerce-container__description {
     padding-top: 40px;
+    padding-bottom: 0;
   }
   .single-commerce-container__title-complex {
     margin-bottom: 55px;
   }
   .single-commerce-container__description .btn-container {
     margin-bottom: 55px;
+
+    @include to(575px) {
+      padding-bottom: 48px;
+      border-bottom: 2px solid #000000;
+      margin-bottom: 0;
+    }
   }
   .specification__container {
     padding: 40px 0 36px 0;
@@ -141,7 +158,15 @@
 
   background: #f3f0ef;
   border-radius: 44px;
-
+  @include to(575px) {
+    width: 48px;
+    height: 48px;
+    background: $white;
+    position: absolute;
+    right: 56px;
+    top: -422px;
+    transform: translate(0, -51%);
+  }
   svg {
     width: 16px;
     height: 16px;
@@ -158,6 +183,9 @@
   .favourite-label {
     width: 16px;
     height: 16px;
+    @include to(575px) {
+      margin-top: -7px;
+    }
   }
   input:checked + svg {
     fill: $yellow;
@@ -169,26 +197,47 @@
     line-height: 1.2;
     color: #000000;
     margin-left: 10px;
+    @include to(575px) {
+      display: none;
+    }
   }
 }
 .conditions-container {
   display: flex;
   justify-content: space-between;
   padding: 40px 0 70px;
+  @include to(575px) {
+    flex-direction: column;
+    padding: 24px 0 32px;
+  }
   .conditions-item {
     width: 48%;
     border: 2px solid #f3f0ef;
     padding: 32px;
     display: flex;
     justify-content: space-between;
+    @include to(575px) {
+      width: 100%;
+      padding: 8px 8px 24px 24px;
+      position: relative;
+      &:first-child {
+        margin-bottom: 16px;
+      }
+    }
     .text-container {
       width: 41%;
+      @include to(575px) {
+        width: 60%;
+      }
       h4 {
         font-weight: 600;
         font-size: 32px;
         line-height: 1.2;
         color: #000000;
         margin-bottom: 16px;
+        @include to(575px) {
+          font-size: 24px;
+        }
       }
       .little-text {
         font-weight: 600;
@@ -196,6 +245,11 @@
         line-height: 1.2;
         color: #000000;
         margin-bottom: 60px;
+        @include to(575px) {
+          font-size: 16px;
+          margin-bottom: 40px;
+          width: 150px;
+        }
       }
       .conditions-big-text {
         font-weight: 600;
@@ -203,6 +257,9 @@
         line-height: 1.2;
         color: #000000;
         display: flex;
+        @include to(575px) {
+          font-size: 72px;
+        }
         span {
           font-weight: 600;
           font-size: 40px;
@@ -222,15 +279,27 @@
           line-height: 1.2;
           color: #000000;
           margin: 15px 0.5ch;
+          @include to(575px) {
+            font-size: 72px;
+            margin: 15px 0.3ch;
+          }
         }
       }
     }
     .accent {
-      width: 35%;
+      width: 39%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       position: relative;
+      @include to(575px) {
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+      }
+
       p {
         font-weight: 600;
         font-size: 22px;
@@ -238,6 +307,12 @@
         text-align: center;
         color: #000000;
         margin-bottom: 6px;
+        @include to(575px) {
+          font-size: 14px;
+        }
+        &:first-child {
+          padding-top: 15px;
+        }
       }
       .percents {
         font-weight: 600;
@@ -245,6 +320,9 @@
         line-height: 1;
         text-align: center;
         color: #000000;
+        @include to(575px) {
+          font-size: 35px;
+        }
       }
       &::after {
         content: '';
@@ -256,6 +334,42 @@
         background: url('../images/star.svg') no-repeat right center / contain;
         z-index: -1;
       }
+    }
+  }
+}
+#single-flats {
+  @include to(575px) {
+    .commerce-swiper {
+      padding-top: 50px;
+      // .swiper-button-next,
+      // .swiper-button-prev {
+      //   top: 41%;
+      // }
+    }
+    .single-commerce-container__title {
+      order: -1;
+      margin-bottom: 16px;
+    }
+    .markers-container .views {
+      position: absolute;
+      top: -455px;
+      left: 50%;
+      transform: translate(-50%, 70%);
+      margin-right: 0;
+    }
+    .single-commerce-container__title-complex {
+      margin-bottom: 32px;
+    }
+    .swiper-slide .btn-compass {
+      right: auto;
+      left: 0;
+      top: -17%;
+    }
+    .planing__link .price {
+      display: none;
+    }
+    .planing__link .favorite-star .add-favourite {
+      display: none;
     }
   }
 }

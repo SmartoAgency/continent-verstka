@@ -1,10 +1,24 @@
 .favorites-title {
-  padding: 42px vw(100, 1920) 52px;
+  padding: 42px vw(160, 1920) 52px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include to(1440px) {
+    padding: 42px vw(100, 1440) 52px;
+  }
+  @include to(1280px) {
+    padding: 42px vw(32, 1440) 52px;
+  }
+  @include to(575px) {
+    padding: 16px 22px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   &__btn {
     display: flex;
+    @include to(575px) {
+      margin-top: 32px;
+    }
   }
   &__link {
     display: flex;
@@ -19,8 +33,23 @@
     background: #f3f0ef;
     border-radius: 44px;
     margin-right: 16px;
+    white-space: nowrap;
+    @include to(575px) {
+      margin-right: 8px;
+    }
     &:last-child {
       margin-right: 0;
+    }
+    .desctop {
+      @include to(575px) {
+        display: none;
+      }
+    }
+    .mobile {
+      display: none;
+      @include to(575px) {
+        display: block;
+      }
     }
     svg {
       fill: none;
@@ -111,7 +140,19 @@
   line-height: 1.2;
   color: #000000;
   margin: 64px 0 24px;
-  padding-left: vw(100, 1920);
+  padding: 0 vw(160, 1920);
+  text-align: center;
+  @include to(1440px) {
+    padding: 0 vw(100, 1440);
+  }
+  @include to(1280px) {
+    padding: 0 vw(32, 1280);
+  }
+  @include to(575px) {
+    padding: 0 22px;
+    font-size: 24px;
+    margin: 24px 0 40px;
+  }
 }
 .favorites-empty {
   --offset: calc(var(--header-h) + 50px);
@@ -121,6 +162,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @include to(575px) {
+    --offset: calc(var(--header-h) + 32px);
+  }
   svg {
     fill: none;
     width: 112px;
@@ -129,11 +173,18 @@
   .title-parametrs {
     margin: 32px 0 40px;
   }
+  .realty {
+    @include to(575px) {
+      width: calc(100% - 44px);
+    }
+  }
 }
+// start
 
 .favorites-container {
   display: flex;
   padding: 0 vw(160, 1920);
+  position: relative;
   @include to(1440px) {
     padding: 0 vw(100, 1440);
   }
@@ -143,10 +194,52 @@
   @include to(575px) {
     padding: 0 22px;
   }
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 150px;
+    z-index: 20;
+    svg {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      stroke-width: 4px;
+    }
+    @include to(575px) {
+      display: none;
+    }
+  }
+  .swiper-button-prev {
+    left: vw(160, 1920);
+    @include to(1440px) {
+      left: vw(100, 1440);
+    }
+    @include to(1280px) {
+      left: vw(32, 1280);
+    }
+    @include to(575px) {
+      left: 22px;
+    }
+  }
+  .swiper-button-next {
+    right: vw(160, 1920);
+    @include to(1440px) {
+      right: vw(100, 1440);
+    }
+    @include to(1280px) {
+      right: vw(32, 1280);
+    }
+    @include to(575px) {
+      right: 22px;
+    }
+  }
 }
 .parametrs-list.fixed-parametrs-list {
   width: 20%;
   padding-top: 320px;
+  @include to(575px) {
+    display: none;
+  }
   .parametrs-item {
     text-align: left;
     font-weight: 600;
@@ -163,6 +256,10 @@
   flex-direction: column;
   .title-list {
     height: 128px;
+    // @include to(575px) {
+    //   height: 86px;
+    //   justify-content: flex-start;
+    // }
   }
   .parametrs-item {
     height: 90px;
@@ -175,20 +272,166 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include to(575px) {
+      height: 52px;
+      font-size: 16px;
+    }
     .title {
       font-weight: 600;
       font-size: 32px;
       line-height: 1.2;
       color: #000000;
       text-transform: none;
+      @include to(575px) {
+        font-size: 22px;
+      }
+    }
+
+    .title-mobile {
+      display: none;
+      @include to(575px) {
+        display: flex;
+        text-align: left;
+      }
+    }
+  }
+}
+.parametrs-list .parametrs-item.title-list {
+  @include to(575px) {
+    height: 86px;
+    justify-content: flex-start;
+  }
+}
+.container-img {
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  position: relative;
+  @include to(575px) {
+    height: 264px;
+  }
+  .views {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+    padding: 9px 11px;
+    border: 2px solid #fec62e;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    display: flex;
+    white-space: nowrap;
+    @include to(575px) {
+      margin: 0 0.5ch 0 0;
+      padding: 6px 11px;
+    }
+    .number {
+      margin: 0 0.5ch;
+      @include to(575px) {
+        margin: 0 0.5ch 0 0;
+      }
+    }
+    .desctop {
+      @include to(575px) {
+        display: none;
+      }
+    }
+    .mobile {
+      display: none;
+      @include to(575px) {
+        display: flex;
+      }
+    }
+  }
+  .swiper-img {
+    margin-top: 66px;
+    width: 160px;
+    height: 160px;
+    transition: transform 0.2s ease;
+    @include to(575px) {
+      width: 115px;
+      height: 115px;
+    }
+    img {
+      object-fit: contain;
+    }
+    &:hover {
+      @include from(992px) {
+        transform: scale(1.05);
+      }
+    }
+  }
+  .delete-slide {
+    margin-top: 32px;
+    width: 32px;
+    height: 32px;
+    background: #f3f0ef;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    svg {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:hover {
+      @include from(992px) {
+        transform: rotate(90deg);
+      }
     }
   }
 }
 
-.container-img {
-  height: 320px;
-}
-
 .swiper-favorites {
   width: 80%;
+  overflow: hidden;
+  @include to(575px) {
+    width: 100%;
+  }
+  .swiper-slide {
+    @include to(575px) {
+      border-right: 2px solid #f3f0ef;
+      border-top: 2px solid #f3f0ef;
+    }
+    .realty {
+      margin: 48px auto 100px;
+      @include to(992px) {
+        height: 48px;
+        width: 200px;
+      }
+      @include to(575px) {
+        height: 48px;
+        width: 136px;
+        margin: 24px auto 56px;
+      }
+    }
+  }
+}
+
+.parametrs-item-mobile {
+  display: none;
+  @include to(575px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background: #f3f0ef;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #000000;
+  }
 }

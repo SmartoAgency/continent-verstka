@@ -1,24 +1,23 @@
 var swiper2 = new Swiper('.swiper-favorites', {
   spaceBetween: 0,
-  slidesPerView: 3,
-  // freeMode: true,
+  slidesPerView: 2.2,
   watchSlidesProgress: true,
-  // loop: true,
+  loop: true,
   // autoplay: {
   //   delay: 1000,
   // },
   navigation: {
-    nextEl: '.swiper-button-next2',
-    prevEl: '.swiper-button-prev2',
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
-  // scrollbar: {
-  //   el: '.swiper-scrollbar2',
-  // },
-  // pagination: {
-  //   el: '.swiper-pagination2',
-  //   type: 'fraction',
-  //   // touchStartPreventDefault: false,
-  //   formatFractionCurrent: addZero,
-  //   formatFractionTotal: addZero,
-  // },
+  breakpoints: {
+    575: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 0,
+    },
+  },
 });

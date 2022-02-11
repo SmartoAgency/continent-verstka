@@ -38,9 +38,9 @@ const swiper2 = new Swiper('.similar-apartment-swiper', {
   },
 });
 
-document.querySelectorAll('.swiper-slide').forEach(el => {
+document.querySelectorAll('.commerce-swiper .swiper-slide').forEach(el => {
+  console.log(el);
   el.querySelector('.js-btn-scale').addEventListener('click', () => {
-    console.log($(el));
     $.magnificPopup.open({
       items: {
         src: el.querySelector('img').getAttribute('src'),

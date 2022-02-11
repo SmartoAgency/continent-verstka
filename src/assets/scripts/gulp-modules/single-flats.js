@@ -20,8 +20,8 @@ const swiper = new Swiper('.commerce-swiper', {
 });
 
 const swiper2 = new Swiper('.similar-apartment-swiper', {
-  slidesPerView: 3.1,
-  // spaceBetween: 40,
+  slidesPerView: 1.25,
+  spaceBetween: 20,
   // scrollbar: {
   // el: '.swiper-scrollbar',
   // hide: true,
@@ -30,11 +30,17 @@ const swiper2 = new Swiper('.similar-apartment-swiper', {
     nextEl: '.swiper-button-next1',
     prevEl: '.swiper-button-prev2',
   },
+  breakpoints: {
+    575: {
+      slidesPerView: 3.1,
+      spaceBetween: 0,
+    },
+  },
 });
 
-document.querySelectorAll('.swiper-slide').forEach(el => {
+document.querySelectorAll('.commerce-swiper .swiper-slide').forEach(el => {
+  console.log($(el));
   el.querySelector('.js-btn-scale').addEventListener('click', () => {
-    console.log($(el));
     $.magnificPopup.open({
       items: {
         src: el.querySelector('img').getAttribute('src'),

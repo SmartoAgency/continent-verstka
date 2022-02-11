@@ -69,6 +69,11 @@
     .result-filter {
       position: initial;
       width: 100%;
+      display: flex;
+      justify-content: center;
+      .number {
+        margin: 0 0.5ch;
+      }
     }
   }
   .realty {

@@ -20,13 +20,13 @@ block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
-  //- script(defer src='./assets/scripts/header-single.js')
   script(defer src='./assets/scripts/header-menu.js')
   script(defer src='./assets/scripts/social-btn.js')
   script(defer src='./assets/scripts/home.js')
   script(defer src='./assets/scripts/map.js')
   script(defer src='./assets/scripts/tab.js')
   script(defer src='./assets/scripts/select.js')
+  script(defer src='./assets/scripts/contacts.js')
 block arrow 
   .social-select
     .select-container.js-social
@@ -53,19 +53,38 @@ block content
     a(href='#').realty
       span Обрати квартиру
       +svg('arrow')
-    ul.numbers-list
-      li.numbers-item.col
-        .number(id="num-1") 0
-        .text років на ринку нерухомості
-      li.numbers-item.col
-        .number(id="num-2") 0
-        .text об`єктів реалізовано 
-      li.numbers-item.col
-        .number(id="num-3") 0
-        .text м² здано в експлуатацію
-      li.numbers-item.col
-        .number(id="num-4") 0
-        .text об`єкти на стадії будівництва
+    //- ul.numbers-list
+    //-   li.numbers-item.col
+    //-     .number(id="num-1") 0
+    //-     .text років на ринку нерухомості
+    //-   li.numbers-item.col
+    //-     .number(id="num-2") 0
+    //-     .text об`єктів реалізовано 
+    //-   li.numbers-item.col
+    //-     .number(id="num-3") 0
+    //-     .text м² здано в експлуатацію
+    //-   li.numbers-item.col
+    //-     .number(id="num-4") 0
+    //-     .text об`єкти на стадії будівництва
+    .numbers-list
+      .swiper-numbers-list
+        .swiper-wrapper
+          .swiper-slide
+            .numbers-item.col
+              .number(id="num-1") 0
+              .text років на ринку нерухомості
+          .swiper-slide
+            .numbers-item.col
+              .number(id="num-2") 0
+              .text об`єктів реалізовано 
+          .swiper-slide.num-3
+            .numbers-item.col
+              .number(id="num-3") 0
+              .text м² здано в експлуатацію
+          .swiper-slide
+            .numbers-item.col
+              .number(id="num-4") 0
+              .text об`єкти на стадії будівництва
   section.our-projects
     .our-projects-title-container 
       h2.our-projects__title Наші проекти
@@ -401,6 +420,46 @@ block content
         span.nav__call-btn-text Замовити дзвінок
     .contacts__map.map
       #map(width="500" height="500px")
+      button(type='button').nav__call-btn.contacts__call-btn.map-btn.js-open-map
+        +svg('map')
+        span.nav__call-btn-text Як до нас дібратись
+      .map-address
+        .map-address__container
+          +svg('close-select').close-map.js-close-map
+          h4 Як до нас дістатися з Києва
+          p Варшавскою трасою 
+          p Новою трасою через Ірпінь
+          p Житомирською трасою через Забуччя
+          ul.navigation-servise
+            li.navigation-servise__item 
+              a(href="#").navigation-servise__link 
+                +svg('map')
+                span Google maps
+            li.navigation-servise__item 
+              a(href="#").navigation-servise__link 
+                +svg('waze')
+                span Waze
+          p Громадським транспортом
+          ul.public-transport 
+            li.public-transport__link 
+              .location Академмістечко - Буча
+              .transport № 381, 422
+            li.public-transport__link 
+              .location Ірпінь - Буча
+              .transport № 352
+            li.public-transport__link 
+              .location Героїв Дніпра - Буча
+              .transport № 421
+            li.public-transport__link 
+              .location Святошин - Лісова Буча
+              .transport № 352
+          .trains 
+            .location Електрички
+            .transport Святошин – Буча, Київ-пас. – Буча
+            .trains-btn 
+              a(href="#").navigation-servise__link 
+                +svg('timetable')
+                span Розклад електричок
 
 
   include ../includes/sing-up.pug
