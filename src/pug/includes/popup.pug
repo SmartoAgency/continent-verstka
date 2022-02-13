@@ -1,4 +1,4 @@
-.building-popup( data-build-popup-container)
+.building-popup(data-build-popup-container)
   .building-popup__container
     +svg('popup-close').btn-popup(data-close-build-popup)
     h2.building-popup__title Хід будівництва 
@@ -35,10 +35,10 @@
       +svg('logo-calc')
       h3 Калькулятор вартості
       h4 Ми допоможемо розрахувати вартiсть вашої майбутньої квартири
-    .calculator-popup__quiz.js-init-swiper
+    .calculator-popup__quiz.js-developer
       form( class="calc-form" action="#" data-form-quiz data-action="qviz" autocomplete="off")
         .swiper-pagination13
-        .swiper-calculator 
+        .swiper-calculator.js-init-swiper 
           .swiper-wrapper
             .swiper-slide
               .swiper-slide__title Оберіть тип квартири
@@ -114,3 +114,7 @@
             | Попередній крок
           .swiper-button-next13 Oбрати 
             +svg('arrow')
+
+
+
+

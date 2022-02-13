@@ -25,12 +25,38 @@ block scripts
   script(defer src='./assets/scripts/header-menu.js')
   script(defer src='./assets/scripts/header-single.js')
   script(defer src='./assets/scripts/select.js')
+  script(defer src='./assets/scripts/news.js')
 
 block content
   include ../includes/breadcrumbs.pug
+  .mobile-sort-list2.js-mobile-filter
+    .contant 
+      .mobile-filter-close 
+          h4 Фільтр
+          +svg('close-select').js-close-filter
+      ul.sort-list 
+        li.sort-item.check Всі акції та новини
+        li.sort-item Акції
+        li.sort-item Новини        
+  .mobile-sort-list2.js-sort-list
+    .contant 
+      .mobile-filter-close 
+          h4 Фільтр
+          +svg('close-select').js-close-sort
+      ul.sort-list 
+        li.sort-item.check Всі ЖК
+        li.sort-item Continent Ray
+        li.sort-item Continent Black
+        li.sort-item Continent Ray 2.1            
   .news-container
     h2.our-projects__title Акції та новини
     .news-filter
+      button.btn-mobile-filter.js-open-filter
+        +svg('filter')
+        span Фільтр
+      button.btn-mobile-filter.js-sort-btn
+        span Всі ЖК 
+        +svg('arrow-select')
       .tab
         button.tablinks.tabs__nav-btn.active Всі акції та новини
         button.tablinks.tabs__nav-btn Акції

@@ -16,11 +16,7 @@
     pointer-events: painted;
   }
 }
-.contact-form-field {
-  @include to(575px) {
-    flex-direction: column;
-  }
-}
+
 .calculator-popup__content {
   width: 100%;
   height: 100%;
@@ -108,6 +104,7 @@
   overflow: hidden;
   @include to(575px) {
     width: 100%;
+    height: 100%;
     padding-top: 10vh;
   }
 }
@@ -146,12 +143,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // display: grid;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 1fr 1fr;
+    // justify-items: center;
     .swiper-slide__title {
       font-weight: 600;
       font-size: 32px;
       line-height: 1.2;
       color: #000000;
       margin-bottom: 48px;
+      text-align: center;
       @include to(575px) {
         font-size: 24px;
         padding: 0 22px;
@@ -183,24 +185,38 @@
     .input__checkbox:checked + label {
       border: 2px solid $yellow;
     }
+
     .form-field {
-      display: flex;
-      flex-wrap: wrap;
+      // display: flex;
+      // flex-wrap: wrap;
       padding: 0 200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
       @include to(1280px) {
         padding: 0 160px;
       }
-      @include to(575px) {
+      @include to(1100px) {
+        padding: 0 100px;
+      }
+      @include to(950px) {
+        padding: 0 22px;
+      }
+
+      @include to(675px) {
         width: 100%;
         padding: 0 22px;
         justify-content: space-between;
       }
+
       .form-field-input {
-        width: calc((100% / 2) - 16px);
-        &:nth-child(1),
-        &:nth-child(3) {
-          margin-right: 16px;
-        }
+        // width: calc((100% / 2) - 16px);
+        // &:nth-child(1),
+        // &:nth-child(3) {
+        //   margin-right: 16px;
+        // }
+        width: 90%;
       }
       .input-name {
         @include to(575px) {
@@ -214,14 +230,24 @@
         }
       }
     }
+    .contact-form-field {
+      @include to(575px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+    }
+    .realty {
+      @include to(575px) {
+        width: 65%;
+      }
+    }
   }
 }
 .swiper-calculator {
   width: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+  @include to(575px) {
+    height: 250px;
+  }
 }
 .swiper-btn-container {
   display: flex;
@@ -240,6 +266,11 @@
   justify-content: center;
   border-radius: 44px;
   transition: background 0.2s ease;
+  @include to(575px) {
+    width: 190px;
+    font-size: 14px;
+    padding: 15px 19px;
+  }
   &:hover {
     @include from(992px) {
       background: $yellow;
@@ -253,6 +284,10 @@
 }
 .swiper-button-prev13 {
   margin-right: 16px;
+  @include to(575px) {
+    width: 150px;
+    text-align: left;
+  }
   svg {
     margin-right: 8px;
   }
@@ -263,11 +298,26 @@
   }
 }
 .swiper-scrollbar13 {
+  margin: 8vh 0 60px 0;
   width: 100%;
+  margin-right: 24px;
+  border-radius: 10px;
   height: 2px;
-  background: red;
-  margin: 8vh 0 30px 0;
-  display: flex !important;
+  position: relative;
+  background: #f3f0ef;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: width 0.5s ease-in-out;
+    height: 100%;
+    background-color: #fec62e;
+    width: var(--width, 0%);
+  }
+  @include to(575px) {
+    margin: 30px 0 24px 0;
+  }
 }
 
 .swiper-slide__title-little {
@@ -343,9 +393,11 @@
   background-color: $yellow;
 }
 
-.timer-container {
-  width: 122px;
-  height: 122px;
-  position: relative;
-  margin-bottom: 20px;
+.calc-form {
+  .timer-container {
+    width: 122px;
+    height: 122px;
+    position: relative;
+    margin-bottom: 20px;
+  }
 }
