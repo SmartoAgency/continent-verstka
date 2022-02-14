@@ -266,11 +266,11 @@
     height: 50px;
     padding-left: 30px;
     padding-right: 32px;
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 600;
-    line-height: 100%;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
+    line-height: 1.2;
+    // letter-spacing: -0.03em;
+    // text-transform: uppercase;
     background: #f3f0ef;
     &::after {
       content: '';
@@ -284,4 +284,7 @@
       transition: transform 0.5s ease-in-out;
     }
   }
+}
+.map-wrapper__nav.closed .map-wrapper__nav-mob-opener::after {
+  transform: rotate(-180deg);
 }

@@ -23,25 +23,56 @@
             
   
 
+.form-gratitude.js-form-gratitude
+  .form-close.js-close
+    +svg('close-select')
+  .form
+    .gratitude-form-content
+      h1 Вже не дочекаємось, коли вас почуємо!
+      h2 Протягом однієї хвилини на Ваш мобільний прийде повідомлення. Щоб ми Вас зайвий раз не турбували, — оберіть в цьому повідомленні зручний для себе день та час, коли Вам буде зручно розмовляти з нашим менеджером.
 
-//- .form-gratitude.js-form-gratitude(style="display: none;")
-//-   .form
-//-     .form-container__btn 
-//-       .form-close.js-close
-//-         +svg('close')
-//-     .form-content 
-//-       .form-content__title 
-//-         h1 Заявка прийнята. Дякуємо за звернення!
-//-       p.form-gratitude__text Очікуйте на дзвінок з відділу продажів PARKLAND. Бажаємо гарного дня =)
-//-       .container-404__btn
-//-         .btn-404
-//-           a(href='#').btn-404__link
-//-             span.btn-404__text Повернутись назад
-//-         .btn-404
-//-           a(href='index.html').btn-404__link
-//-             span.btn-404__text на головну
-          
-    
+
+.form-sing-up
+  section.sing-up-review
+    .sing-up-review__form
+      h2.our-projects__title Запишіться на перегляд
+      h4 З радістю влаштуємо вам тур по житловому кварталу та пригостимо смачною кавою!
+      form( action="#" class="review-form")
+        .form-field
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
+            span.placeholder Ваше ім’я
+            .input-message(data-input-message)
+          .form-field-input(data-field-input data-field-phone data-status="field--inactive")
+            input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+            span.placeholder Ваш номер телефону
+            .input-message(data-input-message)
+        .form-field-time
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="date" name="#" id="#" placeholder="Зручний день" autocomplete="on" value="")
+            span.checkmark Зручний день
+          .form-field-input(data-field-input data-field-name data-status="field--inactive")
+            input(class="input-date form-name form-field__input contact-form-input" type="time" name="#" id="#" placeholder="Зручний час" autocomplete="on" value="")
+            span.checkmark Зручний час
+          select(class="select" name="connection")
+            option(disabled) Пріоритетний зв’язок
+            option(value="tel") По телефону
+            option(value="viber") Написати в Viber
+            option(value="telegram") Написати в Telegram
+        .form-field-confirm
+          button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
+            span Записатися на перегляд
+            +svg('arrow')
+    .sing-up-review__manager 
+      .manager-img 
+        img(src="./assets/images/manager.jpg", alt="manager")
+      .manager-name Вікторія Шевченко
+      .manager-role Керівниця відділу продажів
+
+    //- .sing-up-review__congrats.appearance-gratitude
+      +svg('logo-congrats')
+      h2 Дякуємо за запис на перегляд!
+      h3 Ви записані на вівторок, 20 вересня
 
 
 

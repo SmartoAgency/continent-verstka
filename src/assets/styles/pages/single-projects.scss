@@ -489,12 +489,14 @@
   }
 }
 .infrastructure-map {
-  width: 85%;
+  width: 100%;
   overflow: hidden;
+  overflow-y: scroll;
   height: auto;
   top: auto;
   bottom: 0;
   position: absolute;
+  height: 320px;
   // transition: height 1.5s ease;
 }
 .map {
