@@ -1,0 +1,444 @@
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Реалізований проект'
+    var id_page = 'project-realized'
+    var class_page = 'project-realized'
+    // var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      //- {
+      //-   label: 'новини та акції',
+      //-   link: pagesLink[0].documents
+      //- }
+    ]
+  
+block meta
+  //- title= 'Documents'
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/header-menu.js')
+  script(defer src='./assets/scripts/social-btn.js')
+  script(defer src='./assets/scripts/map.js')
+  script(defer src='./assets/scripts/contacts.js')
+  script(defer src='./assets/scripts/accordeon.js')
+  script(defer src='./assets/scripts/select.js')
+  script(defer src='./assets/scripts/project-realized.js')
+block arrow 
+  .social-select
+    .select-container.js-social
+      .select-img
+      ul.social-list 
+        li.social-item 
+          a(href="tel:+380676938069").social-link
+            +svg('tel')
+        li.social-item 
+          a(href="viber://chat?number=+380676938069" target="_blank").social-link
+            +svg('viber')
+        li.social-item 
+          a(href="https://t.me/joinchat/AAAAAFW8NgjZAunQdxwMcg" target="_blank").social-link
+            +svg('telegram')
+        li.social-item 
+          a(href="https://www.facebook.com/continent.ua/" target="_blank").social-link
+            +svg('facebook')
+        li.social-item 
+          a(href="https://wa.me/380676938069" target="_blank").social-link
+            +svg('whatsapp')
+block content 
+  .block-class
+    section.realized-project.single-realized-project
+      .swiper-wrapper
+        .swiper-slide
+          .realized-project__img 
+            img(src="./assets/images/slide1.jpg", alt="")
+          .realized-project__content
+            h1.realized-project__title ЖК Continent
+            p.realized-project__description Цивілізація – це Continent
+            .realty
+              +svg('calculator')
+              span Kалькулятор вартості
+        .swiper-slide
+          .realized-project__img 
+            img(src="./assets/images/project3.jpg", alt="")
+          .realized-project__content
+            h1.realized-project__title ЖК Continent
+            p.realized-project__description Цивілізація – це Continent
+            .realty
+              +svg('calculator')
+              span Kалькулятор вартості
+        .swiper-slide
+          .realized-project__img 
+            img(src="./assets/images/project1.jpg", alt="")
+          .realized-project__content
+            h1.realized-project__title ЖК Continent
+            p.realized-project__description Цивілізація – це Continent
+            .realty
+              +svg('calculator')
+              span Kалькулятор вартості
+    
+      .swiper-navigation
+        .swiper-button-prev
+        .swiper-pagination
+        .swiper-button-next
+
+    .single-specification 
+      ul.single-specification__benefits-list 
+        li.single-specification__item 20 хв до Києва
+        li.single-specification__item закрита територія з картковою системою доступу
+        li.single-specification__item дитячий та спортивний майданчики
+        li.single-specification__item до школи — 500 метрів
+        li.single-specification__item дитячий садок — навпроти комплексу
+      ul.single-specification__description-list
+        li.single-specification__item
+          +svg('floor')
+          p Поверховість
+          p 8 - 10 поверхів
+        li.single-specification__item
+          +svg('ceiling')
+          p Стелі:
+          p 2,97 - 3,6 м
+        li.single-specification__item
+          +svg('space')
+          p Площі квартир:
+          p 38 - 156 м²
+        li.single-specification__item
+          +svg('calendar')
+          p Строк здачі:
+          p III кв. 2021
+
+    .section1 
+      h1.our-projects__title «Цивілізація – це Continent» — реальність, а не просто слоган. 
+      .text-container
+        p Ми створюємо для своїх мешканців максимум можливостей для життя, відпочинку та навіть створення власної справи. Це цінність, яку створили у Strakhovskyi Group, у яку вірять, і яку будуть завжди відстоювати.
+        p Це — унікальний спосіб життя, який подобається мешканцям, і яким пишаємося ми.
+      .section1__img
+        img(src="./assets/images/continent1.jpg", alt="") 
+    
+    .section2 
+      .title 
+        h1.our-projects__title Бо зручно
+      .text Одним із найважливіших факторів комфортного і насиченого життя є розташування житла. Мешканцям має бути зручно дістатися від будинку до будь-якої точки пішки, на велосипеді, на автобусі, на електричці, чи на власному на автомобілі. 
+      .big-img 
+        img(src="./assets/images/continent2.jpg", alt="")
+      .list-text 
+        ul 
+          li 
+            .num 01
+            .text зупинка електрички та маршрутних таксі по місту і до Києва - в 3 хв від комплексу;
+          li 
+            .num 02
+            .text виїзд до Києва за 15 хвилин трьома зручними для кожного шляхами: Варшавської трасою, Новою трасою через Ірпінь, чи Житомирською трасою через Забуччя;
+          li 
+            .num 03
+            .text окрім цього, ЖК Continent розташований на перетині міст Буча та Ірпінь, тож у мешканців є чудова можливість користуватися перевагами обох міст одночасно - відпочивати у парках, відвідувати ТРЦ та супермаркети, кафе та ресторани, медичні установи, спортивні заклади та ін.
+      .little-img 
+        img(src="./assets/images/continent3.jpg", alt="")
+
+    .section3 
+      .little-img 
+        img(src="./assets/images/continent5.jpg", alt="")
+      .list-text 
+        ul 
+          li 
+            .num 01
+            .text територія комплексу повністю закрита від сторонніх, з картковою системою доступу BAS-IP, що дозволяє мешканцям почувати себе комфортно і захищено;
+          li 
+            .num 02
+            .text відеоспостереження по периметру ЖК та у внутрішньому дворі;
+          li 
+            .num 03
+            .text найбільший паркінг у регіоні - безкоштовний або під охороною - жодного авто на території ЖК, лише безпечний простір для життя мешканців;
+          li 
+            .num 04
+            .text створена керуюча компанія, яка слідкує за порядком у ЖК та вирішує всі житлово-комунальні питання мешканців.
+      .text 
+        h1.our-projects__title Бо головні — люди
+        .text-container
+          p Концепція житлового комплексу “Continent” розроблена з урахуванням найважливіших потреб мешканців. На території ЖК передбачені цілорічні дитячі та спортивні комплекси для мешканців будь-якого віку, є багато зручних вуличних меблів для відпочинку на свіжому повітрі. 
+          p Під`їзди оформлені за унікальним дизайн-проектом та декоровані стабілізованим мохом Ягелю, встановлені швидкісні безшумні ліфти, а ще:
+      .big-img 
+        img(src="./assets/images/continent6.jpg", alt="")
+ 
+    .section2 
+      .title 
+        h1.our-projects__title Бо все поруч
+      .text Враховуючи досвід своїх реалізованих об`єктів, ми знаємо, що важливо для жителів сучасних житлових комплексів. Окрім міської інфраструктури, люди хочуть вирішувати важливі життєві питання у кроковій доступності від свого будинку. Саме таким ми і створили житловий комплекс Continent:
+      .big-img 
+        img(src="./assets/images/continent2.jpg", alt="")
+      .list-text.padding
+        ul 
+          li 
+            .num 01
+            .text поруч із ЖК розташований новий торговий простір BAZAR&VOKZAL;
+          li 
+            .num 02
+            .text навпроти комплексу супермаркет АТБ, ЛОТОК;
+          li 
+            .num 03
+            .text у будинку розташовані супермаркет “Пчелка Маркет”, магазин мережі домашніх заморожених страв “Галя балувана”, ресторан японської кухні Сушия, банкомат та термінал ПриватБанку; поштомати Нової пошти та Міст Експрес;
+          li 
+            .num 04
+            .text у 2 хвилинах від будинку є аптека, стоматологічна клініка, ремонт одягу, пункт видачі товарів ROZETKA, магазин одягу, ветеринарна клініка;”
+          li 
+            .num 05
+            .text у 5 хвилинах від комплексу - супермаркет NOVUS;
+          li 
+            .num 06
+            .text навпроти будинків - школа з новим сучасним корпусом для початкої школи, у 5 хвилинах  - дитячий садок.
+   
+   
+      .little-img 
+        img(src="./assets/images/continent3.jpg", alt="")
+ 
+    //- .single-section1 
+    //-   .single-section1__big
+    //-     p Це логічне продовження забудови Continent з ще більш вражаючими перевагами. У житловому кварталі Continent Ray втілена унікальна піраміда пріоритетів, де на першому місці комфорт і безпека жителів. 
+    //-     p Будуючи Continent Ray, ми хочемо створити локацію, якою наші мешканці будуть пишатися і запрошувати сюди своїх друзів. Локацію, де буде приємно проводити час просто так, і не важливо - вдома чи на вулиці, наодинці чи з родиною. Тут буде комфортно і гармонійно.
+    //-     .single-section1__img
+    //-       img(src="./assets/images/single1.jpg", alt="")
+    //-   .single-section1__small 
+    //-     .single-section1__img
+    //-       img(src="./assets/images/single2.jpg", alt="")
+    //-     ul 
+    //-       each v, i in block1
+    //-         li 
+    //-           .num= '0' + (i + 1)
+    //-           .text= v
+    //- .single-section2
+    //-     .single-section2__img
+    //-       img(src="./assets/images/single3.jpg", alt="")
+    //-     .single-section2__text
+    //-       h1.our-projects__title Be healthy
+    //-       p У шаленому і швидкому ритмі сучасного міського життя  ми майже не маємо вільного часу для занять спортом та якісної підтримки здоров’я. Ми кожного ранку поспішаємо на роботу і запізнюємося на важливі зустрічі, а кожного вечора кажемо собі, що з понеділка точно йдемо спортзал. Але знову кудись треба йти, щоб пробігтися зручною доріжкою, пройтися затишною алеєю чи проїхати на велосипеді безпечною доріжкою.
+    //-       p Житловий квартал Continent Ray створюється за принципом Be healthy, в основі якого - підтримка здоров`я мешканців  поруч зі своїм житлом:
+      
+    //- .single-section3
+    //-   ul 
+    //-     each v, i in block2
+    //-       li 
+    //-         .num= '0' + (i + 1)
+    //-         .text= v
+    //-   .single-section3__img
+    //-     img(src="./assets/images/single4.jpg", alt="")
+
+    //- .single-section4
+    //-   .single-section4__text
+    //-     h1.our-projects__title Двори для життя
+    //-     p А вулиці для автомобілів. Саме цієї концепції ми притримуємося під час створення житлового кварталу Continent RAY. 
+    //-     p Не думати, як обійти десятки припаркованих автомобілів, не хвилюватися за безпеку дітей, не бачити незнайомих зайвих перехожих, а кожного дня насолоджуватися тишею і спокоєм у внутрішньому дворі свого будинку завдяки:
+    //-   .single-section4__img
+    //-       img(src="./assets/images/single5.jpg", alt="")
+    //-   ul 
+    //-     each v, i in block3
+    //-       li 
+    //-         .num= '0' + (i + 1)
+    //-         .text= v
+
+    //- .single-section2.single-section5
+    //-     .single-section2__img
+    //-       img(src="./assets/images/single2.jpg", alt="")
+    //-     .single-section2__text
+    //-       h1.our-projects__title Вхідні групи
+    //-       p Лобі — це повноцінний напівприватний простір для мешканців будинку. Тут має бути комфортно перебувати, зустрічатися, знайомитися і спілкуватися із сусідами. Для лобі важлива функціональність і тут має бути зручно як вдома, а може навіть трохи зручніше. Під час проектування лобі будинків житлового кварталу Continent RAY ми це врахували, і ось що отримають наші майбутні мешканці:
+    
+    //- .single-section3.single-section6 
+    //-   ul 
+    //-     each v, i in block4
+    //-       li 
+    //-         .num= '0' + (i + 1)
+    //-         .text= v
+    //-   .single-section3__img
+    //-     img(src="./assets/images/single1.jpg", alt="")
+    //-     ul 
+    //-       each v, i in block5
+    //-         li 
+    //-           .num= '0' + (i + (n + 1))
+    //-           .text= v
+    section.layout 
+      .layout__title-container
+        h1.our-projects__title Приклади планувань
+        a(href='#').realty
+          span Всі планування
+          +svg('arrow')
+        .swiper-btn
+          .swiper-button-prev2
+            +svg('swiper-prev')
+          .swiper-button-next2
+            +svg('swiper-next')
+      .swiper-example.layout__list 
+        .swiper-wrapper
+          .swiper-slide.layout__item 
+            img(src="./assets/images/layout1.jpg", alt="")
+          .swiper-slide.layout__item 
+            img(src="./assets/images/layout2.jpg", alt="")
+          .swiper-slide.layout__item 
+            img(src="./assets/images/layout3.jpg", alt="")
+    section.layout.layout-inf
+      .layout__title-container
+        h1.our-projects__title Розташування та інфраструктура
+        .layout__container-text 
+          p Коли люди живуть, працюють, вирішують свої потреби, відпочивають, комунікують один з одним, знаходячись в одному і тому ж місці і маючи поруч все необхідне для комфортного життя — це і є хороша інфраструктура. Житлові простори від Strakhovskyi Group — це той випадок, коли все необхідне навіть ближче, ніж просто поруч.
+          a(href='infrastructure.html').realty
+            span Дізнатись більше про інфраструктуру
+            +svg('arrow')
+
+    .project__map.map
+      #map(width="500" height="500px")
+      .infrastructure-map.map-wrapper__nav
+        .map-wrapper__nav-mob-opener(data-mob-wrapper-mobile-opener="" data-opened-text="Згорнути інфраструктуру" data-closed-text="Розгорнути інфраструктуру")
+          span Згорнути інфраструктуру
+        .accordion.js-accordion.map-wrapper__nav
+          .accordion-item.orange
+            .accordion-toggle
+              span Школи
+            .accordion-panel
+              .accordion-panel__item Школа №1
+              .accordion-panel__item Школа №2
+              .accordion-panel__item Школа №3
+          .accordion-item.pear
+            .accordion-toggle
+              span Дитячий садок
+            .accordion-panel
+              .accordion-panel__item Дитячий садок №1
+              .accordion-panel__item Дитячий садок №2
+          .accordion-item.blue
+            .accordion-toggle
+              span Медицина
+            .accordion-panel
+              .accordion-panel__item Дитячий садок №1
+              .accordion-panel__item Дитячий садок №2
+          .accordion-item.violet
+            .accordion-toggle
+              span Торговий центр
+            .accordion-panel
+              .accordion-panel__item Дитячий садок №1
+              .accordion-panel__item Дитячий садок №2
+          .accordion-item.pink
+            .accordion-toggle
+              span Кафе/ресторани
+            .accordion-panel
+              .accordion-panel__item Дитячий садок №1
+              .accordion-panel__item Дитячий садок №2
+          .accordion-item.green
+            .accordion-toggle
+              span Місця для відпочинку
+            .accordion-panel
+              .accordion-panel__item Дитячий садок №1
+              .accordion-panel__item Дитячий садок №2
+          .accordion-item.red
+            .accordion-toggle
+              span Спорт та культура
+            .accordion-panel
+              .accordion-panel__item Дитячий садок №1
+              .accordion-panel__item Дитячий садок №2
+
+    section.about-group
+      .group-logo
+        +svg('logo-group')
+      .about__container
+        h1.our-projects__title Що варто знати про Strakhovskyi Group
+        ul.about__list 
+          li.about__item 
+            .num 01
+            .text Входимо у 
+              span ТОП-3 девелоперів регіону
+              | по кількості землі для будівництва житлової та комерційної нерухомості.
+          li.about__item 
+            .num 02
+            .text Постійно вдосконалюємося, вивчаємо іноземний досвід у девелопменті і завжди на перше місце ставимо побажання майбутніх власників своєї нерухомості!
+          li.about__item 
+            .num 03
+            .text Щороку входимо до 
+              span ТОП-5 найкращих відділів продажу 
+              | Києва та області. 
+          li.about__item 
+            .num 04
+            .text Вже побудували і здали в експлуатацію 72 000 м² нерухомості
+
+    section.our-philosophy 
+      h5 Наша філософія
+      h2 Будуємо, як для себе
+
+    section.contacts 
+      .contacts__information
+        h2.our-projects__title Відділ продажів Strakhovskyi Group  
+        h4.contacts__adress м. Буча <br> пров. Олекси Тихого 4
+        .contacts__tel-container 
+          a(href='tel:+380503694892').contacts__tel-link
+            span 050 369-48-92
+          a(href='tel:+380676938069').contacts__tel-link
+            span 067 693-80-69
+        ul.schedule
+          li.schedule__link
+            .schedule__label Пн-Cб:
+            .schedule__value з 9:00 до 18:00
+          li.schedule__link
+            .schedule__label Нд:
+            .schedule__value з 11:00 до 17:00
+        a(href='mailto:office@continent.ua').contacts-mail office@continent.ua
+        button(type='button').nav__call-btn.contacts__call-btn.js-call
+          +svg('phone')
+          span.nav__call-btn-text Замовити дзвінок
+      .contacts__map.map
+        #map(width="500" height="500px")
+        button(type='button').nav__call-btn.contacts__call-btn.map-btn.js-open-map
+          +svg('map')
+          span.nav__call-btn-text Як до нас дістатися
+        .map-address
+          .map-address__container
+            +svg('close-select').close-map.js-close-map
+            h4 Як до нас дістатися з Києва
+            p Варшавскою трасою 
+            p Новою трасою через Ірпінь
+            p Житомирською трасою через Забуччя
+            ul.navigation-servise
+              li.navigation-servise__item 
+                a(href="#").navigation-servise__link 
+                  +svg('map')
+                  span Google maps
+              li.navigation-servise__item 
+                a(href="#").navigation-servise__link 
+                  +svg('waze')
+                  span Waze
+            p Громадським транспортом
+            ul.public-transport 
+              li.public-transport__link 
+                .location Академмістечко - Буча
+                .transport № 381, 422
+              li.public-transport__link 
+                .location Ірпінь - Буча
+                .transport № 352
+              li.public-transport__link 
+                .location Героїв Дніпра - Буча
+                .transport № 421
+              li.public-transport__link 
+                .location Святошин - Лісова Буча
+                .transport № 352
+            .trains 
+              .location Електрички
+              .transport Святошин – Буча, Київ-пас. – Буча
+              .trains-btn 
+                a(href="#").navigation-servise__link 
+                  +svg('timetable')
+                  span Розклад електричок
+
+      
+    include ../includes/sing-up.pug
+
+
+
+block header
+  include ../includes/header.pug
+  
+block footer
+  include ../includes/footer.pug
+
+
+
+               
