@@ -62,7 +62,9 @@ class FilteredList {
     this.startIndex = 0;
     this.portionForRender = this.initialPortionForRender;
     this.$container.scrollTo(0, 0);
-    this.$wrapper.querySelector('[data-filtered-list-sum]').textContent = this.data.length;
+    this.$wrapper.querySelectorAll('[data-filtered-list-sum]').forEach((el) => {
+      el.textContent = this.data.length;
+    });
     this.$container.innerHTML = '';
     const arrayOfData = Object.entries(this.preparedData);
     for (let i = 0; i < this.portionForRender; i++) {
