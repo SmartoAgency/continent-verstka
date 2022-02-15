@@ -1,4 +1,4 @@
-var menu = ['Планування', 'Детальне', 'На поверсі', '3д тур'];
+const menu = ['Планування', 'Детальне', 'На поверсі', '3д тур'];
 const swiper = new Swiper('.commerce-swiper', {
   // slidesPerView: 3.5,
   // spaceBetween: 40,
@@ -13,8 +13,8 @@ const swiper = new Swiper('.commerce-swiper', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
-    renderBullet: function(index, className) {
-      return '<span class="' + className + '">' + menu[index] + '</span>';
+    renderBullet(index, className) {
+      return `<span class="${className}">${menu[index]}</span>`;
     },
   },
 });
@@ -38,7 +38,7 @@ const swiper2 = new Swiper('.similar-apartment-swiper', {
   },
 });
 
-document.querySelectorAll('.commerce-swiper .swiper-slide').forEach(el => {
+document.querySelectorAll('.commerce-swiper .swiper-slide').forEach((el) => {
   console.log($(el));
   el.querySelector('.js-btn-scale').addEventListener('click', () => {
     $.magnificPopup.open({
@@ -47,7 +47,7 @@ document.querySelectorAll('.commerce-swiper .swiper-slide').forEach(el => {
       },
       type: 'image',
       callbacks: {
-        beforeOpen: function() {},
+        beforeOpen() {},
       },
     });
   });

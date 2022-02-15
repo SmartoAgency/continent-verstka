@@ -1,6 +1,6 @@
 $('.video')
   .parent()
-  .click(function() {
+  .click(function () {
     if (
       $(this)
         .children('.video')
@@ -103,12 +103,12 @@ function initSlider(container) {
     .length;
 
   const scrollbar = container.querySelector('.swiper-scrollbar1');
-  scrollbar.style.setProperty('--width', 100 / slidesLength + '%');
-  swiper.on('activeIndexChange', swiper => {
+  scrollbar.style.setProperty('--width', `${100 / slidesLength}%`);
+  swiper.on('activeIndexChange', (swiper) => {
     const singleSlideInPercent = 100 / slidesLength;
     scrollbar.style.setProperty(
       '--width',
-      (swiper.realIndex * 100) / slidesLength + singleSlideInPercent + '%',
+      `${(swiper.realIndex * 100) / slidesLength + singleSlideInPercent}%`,
     );
     console.log(swiper);
   });

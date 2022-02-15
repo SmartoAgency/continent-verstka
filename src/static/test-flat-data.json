@@ -1,5 +1,6 @@
 [
     {
+        "complex": "Continent-Ray",
         "id": 1,
         "all__room": 120.9,
         "deadline": 2022,
@@ -11,6 +12,7 @@
         "life_room": 135
     },
     {
+        "complex": "Continent-Ray",
         "id": 2,
         "all__room": 107.1,
         "deadline": 2022,
@@ -22,6 +24,7 @@
         "life_room": 32
     },
     {
+        "complex": "Continent-Ray",
         "id": 3,
         "all__room": 55.1,
         "deadline": 2025,
@@ -33,6 +36,7 @@
         "life_room": 100
     },
     {
+        "complex": "Continent-Ray",
         "id": 4,
         "all__room": 110.0,
         "deadline": 2021,
@@ -44,6 +48,7 @@
         "life_room": 79
     },
     {
+        "complex": "Continent-Ray",
         "id": 5,
         "all__room": 131.0,
         "deadline": 2024,
@@ -55,6 +60,7 @@
         "life_room": 49
     },
     {
+        "complex": "Continent-Ray",
         "id": 6,
         "all__room": 73.0,
         "deadline": 2024,
@@ -66,6 +72,7 @@
         "life_room": 86
     },
     {
+        "complex": "Continent-Ray",
         "id": 7,
         "all__room": 124.8,
         "deadline": 2025,
@@ -77,6 +84,7 @@
         "life_room": 152
     },
     {
+        "complex": "Continent-Ray",
         "id": 8,
         "all__room": 59.3,
         "deadline": 2024,
@@ -88,6 +96,7 @@
         "life_room": 70
     },
     {
+        "complex": "Continent-Ray",
         "id": 9,
         "all__room": 112.4,
         "deadline": 2023,
@@ -99,6 +108,7 @@
         "life_room": 37
     },
     {
+        "complex": "Continent-Ray",
         "id": 10,
         "all__room": 193.9,
         "deadline": 2022,
@@ -110,6 +120,7 @@
         "life_room": 174
     },
     {
+        "complex": "Continent-Ray",
         "id": 11,
         "all__room": 149.0,
         "deadline": 2021,
@@ -121,6 +132,7 @@
         "life_room": 49
     },
     {
+        "complex": "Continent-Ray",
         "id": 12,
         "all__room": 144.9,
         "deadline": 2021,
@@ -132,6 +144,7 @@
         "life_room": 134
     },
     {
+        "complex": "Continent-Ray",
         "id": 13,
         "all__room": 128.7,
         "deadline": 2025,
@@ -143,6 +156,7 @@
         "life_room": 82
     },
     {
+        "complex": "Continent-Ray",
         "id": 14,
         "all__room": 81.1,
         "deadline": 2023,
@@ -154,6 +168,7 @@
         "life_room": 46
     },
     {
+        "complex": "Continent-Ray",
         "id": 15,
         "all__room": 149.5,
         "deadline": 2024,
@@ -165,6 +180,7 @@
         "life_room": 87
     },
     {
+        "complex": "Continent-Ray",
         "id": 16,
         "all__room": 117.2,
         "deadline": 2024,
@@ -176,6 +192,7 @@
         "life_room": 169
     },
     {
+        "complex": "Continent-Ray",
         "id": 17,
         "all__room": 179.9,
         "deadline": 2024,
@@ -187,6 +204,7 @@
         "life_room": 135
     },
     {
+        "complex": "Continent-Ray",
         "id": 18,
         "all__room": 139.6,
         "deadline": 2025,
@@ -198,6 +216,7 @@
         "life_room": 93
     },
     {
+        "complex": "Continent-Ray",
         "id": 19,
         "all__room": 94.4,
         "deadline": 2025,
@@ -209,6 +228,7 @@
         "life_room": 178
     },
     {
+        "complex": "Continent-Ray",
         "id": 20,
         "all__room": 64.8,
         "deadline": 2025,
@@ -220,6 +240,7 @@
         "life_room": 119
     },
     {
+        "complex": "Continent-Ray",
         "id": 21,
         "all__room": 160.5,
         "deadline": 2021,
@@ -231,6 +252,7 @@
         "life_room": 46
     },
     {
+        "complex": "Continent-Ray",
         "id": 22,
         "all__room": 66.6,
         "deadline": 2025,
@@ -242,6 +264,7 @@
         "life_room": 158
     },
     {
+        "complex": "Continent-Ray",
         "id": 23,
         "all__room": 168.3,
         "deadline": 2022,
@@ -253,6 +276,7 @@
         "life_room": 33
     },
     {
+        "complex": "Continent-Ray",
         "id": 24,
         "all__room": 190.7,
         "deadline": 2024,
@@ -264,6 +288,7 @@
         "life_room": 166
     },
     {
+        "complex": "Continent-Ray",
         "id": 25,
         "all__room": 123.9,
         "deadline": 2025,
@@ -275,6 +300,7 @@
         "life_room": 141
     },
     {
+        "complex": "Continent-Ray",
         "id": 26,
         "all__room": 148.6,
         "deadline": 2024,
@@ -286,6 +312,7 @@
         "life_room": 107
     },
     {
+        "complex": "Continent-Ray",
         "id": 27,
         "all__room": 54.7,
         "deadline": 2021,
@@ -297,6 +324,7 @@
         "life_room": 136
     },
     {
+        "complex": "Continent-Ray",
         "id": 28,
         "all__room": 176.1,
         "deadline": 2025,
@@ -308,6 +336,7 @@
         "life_room": 166
     },
     {
+        "complex": "Continent-Ray",
         "id": 29,
         "all__room": 40.4,
         "deadline": 2025,
@@ -319,6 +348,7 @@
         "life_room": 106
     },
     {
+        "complex": "Continent-Ray",
         "id": 30,
         "all__room": 101.3,
         "deadline": 2024,
@@ -330,6 +360,7 @@
         "life_room": 169
     },
     {
+        "complex": "Continent-Ray",
         "id": 31,
         "all__room": 112.9,
         "deadline": 2022,
@@ -341,6 +372,7 @@
         "life_room": 31
     },
     {
+        "complex": "Continent-Ray",
         "id": 32,
         "all__room": 113.5,
         "deadline": 2021,
@@ -352,6 +384,7 @@
         "life_room": 68
     },
     {
+        "complex": "Continent-Ray",
         "id": 33,
         "all__room": 108.9,
         "deadline": 2025,
@@ -363,6 +396,7 @@
         "life_room": 26
     },
     {
+        "complex": "Continent-Ray",
         "id": 34,
         "all__room": 94.3,
         "deadline": 2021,
@@ -374,6 +408,7 @@
         "life_room": 76
     },
     {
+        "complex": "Continent-Ray",
         "id": 35,
         "all__room": 58.0,
         "deadline": 2025,
@@ -385,6 +420,7 @@
         "life_room": 161
     },
     {
+        "complex": "Continent-Ray",
         "id": 36,
         "all__room": 194.7,
         "deadline": 2021,
@@ -396,6 +432,7 @@
         "life_room": 69
     },
     {
+        "complex": "Continent-Ray",
         "id": 37,
         "all__room": 183.8,
         "deadline": 2023,
@@ -407,6 +444,7 @@
         "life_room": 38
     },
     {
+        "complex": "Continent-Ray",
         "id": 38,
         "all__room": 155.8,
         "deadline": 2021,
@@ -418,6 +456,7 @@
         "life_room": 71
     },
     {
+        "complex": "Continent-Ray",
         "id": 39,
         "all__room": 135.0,
         "deadline": 2023,
@@ -429,6 +468,7 @@
         "life_room": 139
     },
     {
+        "complex": "Continent-Ray",
         "id": 40,
         "all__room": 76.7,
         "deadline": 2024,
@@ -440,6 +480,7 @@
         "life_room": 90
     },
     {
+        "complex": "Continent-Ray",
         "id": 41,
         "all__room": 112.8,
         "deadline": 2022,
@@ -451,6 +492,7 @@
         "life_room": 28
     },
     {
+        "complex": "Continent-Ray",
         "id": 42,
         "all__room": 147.4,
         "deadline": 2022,
@@ -462,6 +504,7 @@
         "life_room": 156
     },
     {
+        "complex": "Continent-Ray",
         "id": 43,
         "all__room": 99.3,
         "deadline": 2022,
@@ -473,6 +516,7 @@
         "life_room": 160
     },
     {
+        "complex": "Continent-Ray",
         "id": 44,
         "all__room": 50.0,
         "deadline": 2023,
@@ -484,6 +528,7 @@
         "life_room": 31
     },
     {
+        "complex": "Continent-Ray",
         "id": 45,
         "all__room": 63.4,
         "deadline": 2025,
@@ -495,6 +540,7 @@
         "life_room": 152
     },
     {
+        "complex": "Continent-Ray",
         "id": 46,
         "all__room": 190.9,
         "deadline": 2023,
@@ -506,6 +552,7 @@
         "life_room": 108
     },
     {
+        "complex": "Continent-Ray",
         "id": 47,
         "all__room": 165.5,
         "deadline": 2024,
@@ -517,6 +564,7 @@
         "life_room": 105
     },
     {
+        "complex": "Continent-Ray",
         "id": 48,
         "all__room": 188.1,
         "deadline": 2025,
@@ -528,6 +576,7 @@
         "life_room": 153
     },
     {
+        "complex": "Continent-Ray",
         "id": 49,
         "all__room": 179.3,
         "deadline": 2022,
@@ -539,6 +588,7 @@
         "life_room": 88
     },
     {
+        "complex": "Continent-Ray",
         "id": 50,
         "all__room": 50.9,
         "deadline": 2022,
@@ -550,6 +600,7 @@
         "life_room": 148
     },
     {
+        "complex": "Continent-Ray",
         "id": 51,
         "all__room": 124.1,
         "deadline": 2022,
@@ -561,6 +612,7 @@
         "life_room": 155
     },
     {
+        "complex": "Continent-Ray",
         "id": 52,
         "all__room": 128.6,
         "deadline": 2022,
@@ -572,6 +624,7 @@
         "life_room": 36
     },
     {
+        "complex": "Continent-Ray",
         "id": 53,
         "all__room": 114.9,
         "deadline": 2023,
@@ -583,6 +636,7 @@
         "life_room": 76
     },
     {
+        "complex": "Continent-Ray",
         "id": 54,
         "all__room": 38.4,
         "deadline": 2025,
@@ -594,6 +648,7 @@
         "life_room": 167
     },
     {
+        "complex": "Continent-Ray",
         "id": 55,
         "all__room": 185.3,
         "deadline": 2025,
@@ -605,6 +660,7 @@
         "life_room": 179
     },
     {
+        "complex": "Continent-Ray",
         "id": 56,
         "all__room": 151.6,
         "deadline": 2024,
@@ -616,6 +672,7 @@
         "life_room": 144
     },
     {
+        "complex": "Continent-Ray",
         "id": 57,
         "all__room": 155.0,
         "deadline": 2021,
@@ -627,6 +684,7 @@
         "life_room": 34
     },
     {
+        "complex": "Continent-Ray",
         "id": 58,
         "all__room": 60.6,
         "deadline": 2022,
@@ -638,6 +696,7 @@
         "life_room": 53
     },
     {
+        "complex": "Continent-Ray",
         "id": 59,
         "all__room": 112.8,
         "deadline": 2024,
@@ -649,6 +708,7 @@
         "life_room": 47
     },
     {
+        "complex": "Continent-Ray",
         "id": 60,
         "all__room": 164.8,
         "deadline": 2025,
@@ -660,6 +720,7 @@
         "life_room": 125
     },
     {
+        "complex": "Continent-Ray",
         "id": 61,
         "all__room": 65.1,
         "deadline": 2022,
@@ -671,6 +732,7 @@
         "life_room": 87
     },
     {
+        "complex": "Continent-Ray",
         "id": 62,
         "all__room": 164.2,
         "deadline": 2021,
@@ -682,6 +744,7 @@
         "life_room": 177
     },
     {
+        "complex": "Continent-Ray",
         "id": 63,
         "all__room": 198.1,
         "deadline": 2025,
@@ -693,6 +756,7 @@
         "life_room": 110
     },
     {
+        "complex": "Continent-Ray",
         "id": 64,
         "all__room": 187.5,
         "deadline": 2022,
@@ -704,6 +768,7 @@
         "life_room": 111
     },
     {
+        "complex": "Continent-Ray",
         "id": 65,
         "all__room": 100.6,
         "deadline": 2022,
@@ -715,6 +780,7 @@
         "life_room": 115
     },
     {
+        "complex": "Continent-Ray",
         "id": 66,
         "all__room": 157.8,
         "deadline": 2022,
@@ -726,6 +792,7 @@
         "life_room": 112
     },
     {
+        "complex": "Continent-Ray",
         "id": 67,
         "all__room": 142.8,
         "deadline": 2021,
@@ -737,6 +804,7 @@
         "life_room": 32
     },
     {
+        "complex": "Continent-Ray",
         "id": 68,
         "all__room": 55.4,
         "deadline": 2023,
@@ -748,6 +816,7 @@
         "life_room": 77
     },
     {
+        "complex": "Continent-Ray",
         "id": 69,
         "all__room": 69.4,
         "deadline": 2021,
@@ -759,6 +828,7 @@
         "life_room": 116
     },
     {
+        "complex": "Continent-Ray",
         "id": 70,
         "all__room": 135.1,
         "deadline": 2021,
@@ -770,6 +840,7 @@
         "life_room": 153
     },
     {
+        "complex": "Continent-Ray",
         "id": 71,
         "all__room": 158.8,
         "deadline": 2023,
@@ -781,6 +852,7 @@
         "life_room": 54
     },
     {
+        "complex": "Continent-Ray",
         "id": 72,
         "all__room": 159.8,
         "deadline": 2024,
@@ -792,6 +864,7 @@
         "life_room": 67
     },
     {
+        "complex": "Continent-Ray",
         "id": 73,
         "all__room": 80.0,
         "deadline": 2023,
@@ -803,6 +876,7 @@
         "life_room": 78
     },
     {
+        "complex": "Continent-Ray",
         "id": 74,
         "all__room": 130.2,
         "deadline": 2025,
@@ -814,6 +888,7 @@
         "life_room": 176
     },
     {
+        "complex": "Continent-Ray",
         "id": 75,
         "all__room": 136.1,
         "deadline": 2025,
@@ -825,6 +900,7 @@
         "life_room": 145
     },
     {
+        "complex": "Continent-Ray",
         "id": 76,
         "all__room": 179.0,
         "deadline": 2024,
@@ -836,6 +912,7 @@
         "life_room": 133
     },
     {
+        "complex": "Continent-Ray",
         "id": 77,
         "all__room": 64.9,
         "deadline": 2023,
@@ -847,6 +924,7 @@
         "life_room": 46
     },
     {
+        "complex": "Continent-Ray",
         "id": 78,
         "all__room": 107.4,
         "deadline": 2022,
@@ -858,6 +936,7 @@
         "life_room": 111
     },
     {
+        "complex": "Continent-Ray",
         "id": 79,
         "all__room": 195.2,
         "deadline": 2024,
@@ -869,6 +948,7 @@
         "life_room": 180
     },
     {
+        "complex": "Continent-Ray",
         "id": 80,
         "all__room": 130.1,
         "deadline": 2025,
@@ -880,6 +960,7 @@
         "life_room": 134
     },
     {
+        "complex": "Continent-Ray",
         "id": 81,
         "all__room": 105.1,
         "deadline": 2022,
@@ -891,6 +972,7 @@
         "life_room": 48
     },
     {
+        "complex": "Continent-Ray",
         "id": 82,
         "all__room": 42.3,
         "deadline": 2023,
@@ -902,6 +984,7 @@
         "life_room": 136
     },
     {
+        "complex": "Continent-Ray",
         "id": 83,
         "all__room": 49.9,
         "deadline": 2024,
@@ -913,6 +996,7 @@
         "life_room": 140
     },
     {
+        "complex": "Continent-Ray",
         "id": 84,
         "all__room": 88.6,
         "deadline": 2022,
@@ -924,6 +1008,7 @@
         "life_room": 28
     },
     {
+        "complex": "Continent-Ray",
         "id": 85,
         "all__room": 55.2,
         "deadline": 2023,
@@ -935,6 +1020,7 @@
         "life_room": 40
     },
     {
+        "complex": "Continent-Ray",
         "id": 86,
         "all__room": 54.6,
         "deadline": 2024,
@@ -946,6 +1032,7 @@
         "life_room": 31
     },
     {
+        "complex": "Continent-Ray",
         "id": 87,
         "all__room": 185.7,
         "deadline": 2021,
@@ -957,6 +1044,7 @@
         "life_room": 172
     },
     {
+        "complex": "Continent-Ray",
         "id": 88,
         "all__room": 170.5,
         "deadline": 2025,
@@ -968,6 +1056,7 @@
         "life_room": 121
     },
     {
+        "complex": "Continent-Ray",
         "id": 89,
         "all__room": 87.1,
         "deadline": 2021,
@@ -979,6 +1068,7 @@
         "life_room": 69
     },
     {
+        "complex": "Continent-Ray",
         "id": 90,
         "all__room": 45.3,
         "deadline": 2022,
@@ -990,6 +1080,7 @@
         "life_room": 44
     },
     {
+        "complex": "Continent-Ray",
         "id": 91,
         "all__room": 196.5,
         "deadline": 2024,
@@ -1001,6 +1092,7 @@
         "life_room": 163
     },
     {
+        "complex": "Continent-Ray",
         "id": 92,
         "all__room": 62.2,
         "deadline": 2021,
@@ -1012,6 +1104,7 @@
         "life_room": 71
     },
     {
+        "complex": "Continent-Ray",
         "id": 93,
         "all__room": 109.8,
         "deadline": 2024,
@@ -1023,6 +1116,7 @@
         "life_room": 39
     },
     {
+        "complex": "Continent-Ray",
         "id": 94,
         "all__room": 171.3,
         "deadline": 2023,
@@ -1034,6 +1128,7 @@
         "life_room": 118
     },
     {
+        "complex": "Continent-Ray",
         "id": 95,
         "all__room": 42.1,
         "deadline": 2021,
@@ -1045,6 +1140,7 @@
         "life_room": 72
     },
     {
+        "complex": "Continent-Ray",
         "id": 96,
         "all__room": 161.4,
         "deadline": 2024,
@@ -1056,6 +1152,7 @@
         "life_room": 178
     },
     {
+        "complex": "Continent-Ray",
         "id": 97,
         "all__room": 51.0,
         "deadline": 2023,
@@ -1067,6 +1164,7 @@
         "life_room": 135
     },
     {
+        "complex": "Continent-Ray",
         "id": 98,
         "all__room": 180.4,
         "deadline": 2022,
@@ -1078,6 +1176,7 @@
         "life_room": 126
     },
     {
+        "complex": "Continent-Ray",
         "id": 99,
         "all__room": 165.0,
         "deadline": 2024,
@@ -1089,6 +1188,7 @@
         "life_room": 29
     },
     {
+        "complex": "Continent-Ray",
         "id": 100,
         "all__room": 88.8,
         "deadline": 2021,
@@ -1100,6 +1200,7 @@
         "life_room": 54
     },
     {
+        "complex": "Continent-Ray",
         "id": 101,
         "all__room": 156.3,
         "deadline": 2025,
@@ -1111,6 +1212,7 @@
         "life_room": 157
     },
     {
+        "complex": "Continent-Ray",
         "id": 102,
         "all__room": 138.8,
         "deadline": 2024,
@@ -1122,6 +1224,7 @@
         "life_room": 124
     },
     {
+        "complex": "Continent-Ray",
         "id": 103,
         "all__room": 173.5,
         "deadline": 2025,
@@ -1133,6 +1236,7 @@
         "life_room": 76
     },
     {
+        "complex": "Continent-Ray",
         "id": 104,
         "all__room": 186.2,
         "deadline": 2023,
@@ -1144,6 +1248,7 @@
         "life_room": 153
     },
     {
+        "complex": "Continent-Ray",
         "id": 105,
         "all__room": 168.0,
         "deadline": 2022,
@@ -1155,6 +1260,7 @@
         "life_room": 35
     },
     {
+        "complex": "Continent-Ray",
         "id": 106,
         "all__room": 132.2,
         "deadline": 2025,
@@ -1166,6 +1272,7 @@
         "life_room": 163
     },
     {
+        "complex": "Continent-Ray",
         "id": 107,
         "all__room": 58.7,
         "deadline": 2021,
@@ -1177,6 +1284,7 @@
         "life_room": 177
     },
     {
+        "complex": "Continent-Ray",
         "id": 108,
         "all__room": 92.9,
         "deadline": 2024,
@@ -1188,6 +1296,7 @@
         "life_room": 127
     },
     {
+        "complex": "Continent-Ray",
         "id": 109,
         "all__room": 123.2,
         "deadline": 2025,
@@ -1199,6 +1308,7 @@
         "life_room": 29
     },
     {
+        "complex": "Continent-Ray",
         "id": 110,
         "all__room": 59.3,
         "deadline": 2025,
@@ -1210,6 +1320,7 @@
         "life_room": 47
     },
     {
+        "complex": "Continent-Ray",
         "id": 111,
         "all__room": 157.0,
         "deadline": 2022,
@@ -1221,6 +1332,7 @@
         "life_room": 108
     },
     {
+        "complex": "Continent-Ray",
         "id": 112,
         "all__room": 119.6,
         "deadline": 2025,
@@ -1232,6 +1344,7 @@
         "life_room": 103
     },
     {
+        "complex": "Continent-Ray",
         "id": 113,
         "all__room": 172.8,
         "deadline": 2021,
@@ -1243,6 +1356,7 @@
         "life_room": 42
     },
     {
+        "complex": "Continent-Ray",
         "id": 114,
         "all__room": 193.6,
         "deadline": 2022,
@@ -1254,6 +1368,7 @@
         "life_room": 107
     },
     {
+        "complex": "Continent-Ray",
         "id": 115,
         "all__room": 120.5,
         "deadline": 2025,
@@ -1265,6 +1380,7 @@
         "life_room": 74
     },
     {
+        "complex": "Continent-Ray",
         "id": 116,
         "all__room": 193.8,
         "deadline": 2022,
@@ -1276,6 +1392,7 @@
         "life_room": 132
     },
     {
+        "complex": "Continent-Ray",
         "id": 117,
         "all__room": 122.9,
         "deadline": 2022,
@@ -1287,6 +1404,7 @@
         "life_room": 60
     },
     {
+        "complex": "Continent-Ray",
         "id": 118,
         "all__room": 52.3,
         "deadline": 2025,
@@ -1298,6 +1416,7 @@
         "life_room": 50
     },
     {
+        "complex": "Continent-Ray",
         "id": 119,
         "all__room": 144.5,
         "deadline": 2024,
@@ -1309,6 +1428,7 @@
         "life_room": 71
     },
     {
+        "complex": "Continent-Ray",
         "id": 120,
         "all__room": 53.1,
         "deadline": 2021,
@@ -1320,6 +1440,7 @@
         "life_room": 49
     },
     {
+        "complex": "Continent-Ray",
         "id": 121,
         "all__room": 167.9,
         "deadline": 2025,
@@ -1331,6 +1452,7 @@
         "life_room": 95
     },
     {
+        "complex": "Continent-Ray",
         "id": 122,
         "all__room": 60.2,
         "deadline": 2025,
@@ -1342,6 +1464,7 @@
         "life_room": 139
     },
     {
+        "complex": "Continent-Ray",
         "id": 123,
         "all__room": 39.8,
         "deadline": 2024,
@@ -1353,6 +1476,7 @@
         "life_room": 81
     },
     {
+        "complex": "Continent-Ray",
         "id": 124,
         "all__room": 74.1,
         "deadline": 2023,
@@ -1364,6 +1488,7 @@
         "life_room": 52
     },
     {
+        "complex": "Continent-Ray",
         "id": 125,
         "all__room": 57.0,
         "deadline": 2021,
@@ -1375,6 +1500,7 @@
         "life_room": 126
     },
     {
+        "complex": "Continent-Ray",
         "id": 126,
         "all__room": 77.5,
         "deadline": 2024,
@@ -1386,6 +1512,7 @@
         "life_room": 83
     },
     {
+        "complex": "Continent-Ray",
         "id": 127,
         "all__room": 166.5,
         "deadline": 2022,
@@ -1397,6 +1524,7 @@
         "life_room": 103
     },
     {
+        "complex": "Continent-Ray",
         "id": 128,
         "all__room": 166.4,
         "deadline": 2025,
@@ -1408,6 +1536,7 @@
         "life_room": 138
     },
     {
+        "complex": "Continent-Ray",
         "id": 129,
         "all__room": 134.1,
         "deadline": 2021,
@@ -1419,6 +1548,7 @@
         "life_room": 25
     },
     {
+        "complex": "Continent-Ray",
         "id": 130,
         "all__room": 39.2,
         "deadline": 2024,
@@ -1430,6 +1560,7 @@
         "life_room": 166
     },
     {
+        "complex": "Continent-Ray",
         "id": 131,
         "all__room": 118.8,
         "deadline": 2023,
@@ -1441,6 +1572,7 @@
         "life_room": 158
     },
     {
+        "complex": "Continent-Ray",
         "id": 132,
         "all__room": 170.4,
         "deadline": 2021,
@@ -1452,6 +1584,7 @@
         "life_room": 171
     },
     {
+        "complex": "Continent-Ray",
         "id": 133,
         "all__room": 172.0,
         "deadline": 2022,
@@ -1463,6 +1596,7 @@
         "life_room": 167
     },
     {
+        "complex": "Continent-Ray",
         "id": 134,
         "all__room": 73.0,
         "deadline": 2022,
@@ -1474,6 +1608,7 @@
         "life_room": 26
     },
     {
+        "complex": "Continent-Ray",
         "id": 135,
         "all__room": 170.3,
         "deadline": 2021,
@@ -1485,6 +1620,7 @@
         "life_room": 71
     },
     {
+        "complex": "Continent-Ray",
         "id": 136,
         "all__room": 70.9,
         "deadline": 2021,
@@ -1496,6 +1632,7 @@
         "life_room": 148
     },
     {
+        "complex": "Continent-Ray",
         "id": 137,
         "all__room": 157.2,
         "deadline": 2024,
@@ -1507,6 +1644,7 @@
         "life_room": 81
     },
     {
+        "complex": "Continent-Ray",
         "id": 138,
         "all__room": 65.7,
         "deadline": 2022,
@@ -1518,6 +1656,7 @@
         "life_room": 146
     },
     {
+        "complex": "Continent-Ray",
         "id": 139,
         "all__room": 62.2,
         "deadline": 2021,
@@ -1529,6 +1668,7 @@
         "life_room": 80
     },
     {
+        "complex": "Continent-Ray",
         "id": 140,
         "all__room": 154.3,
         "deadline": 2022,
@@ -1540,6 +1680,7 @@
         "life_room": 162
     },
     {
+        "complex": "Continent-Ray",
         "id": 141,
         "all__room": 45.3,
         "deadline": 2021,
@@ -1551,6 +1692,7 @@
         "life_room": 65
     },
     {
+        "complex": "Continent-Ray",
         "id": 142,
         "all__room": 77.1,
         "deadline": 2022,
@@ -1562,6 +1704,7 @@
         "life_room": 175
     },
     {
+        "complex": "Continent-Ray",
         "id": 143,
         "all__room": 76.3,
         "deadline": 2021,
@@ -1573,6 +1716,7 @@
         "life_room": 37
     },
     {
+        "complex": "Continent-Ray",
         "id": 144,
         "all__room": 43.0,
         "deadline": 2025,
@@ -1584,6 +1728,7 @@
         "life_room": 112
     },
     {
+        "complex": "Continent-Ray",
         "id": 145,
         "all__room": 65.0,
         "deadline": 2022,
@@ -1595,6 +1740,7 @@
         "life_room": 33
     },
     {
+        "complex": "Continent-Ray",
         "id": 146,
         "all__room": 193.9,
         "deadline": 2022,
@@ -1606,6 +1752,7 @@
         "life_room": 42
     },
     {
+        "complex": "Continent-Ray",
         "id": 147,
         "all__room": 161.1,
         "deadline": 2023,
@@ -1617,6 +1764,7 @@
         "life_room": 150
     },
     {
+        "complex": "Continent-Ray",
         "id": 148,
         "all__room": 148.1,
         "deadline": 2022,
@@ -1628,6 +1776,7 @@
         "life_room": 152
     },
     {
+        "complex": "Continent-Ray",
         "id": 149,
         "all__room": 43.0,
         "deadline": 2025,
@@ -1639,6 +1788,7 @@
         "life_room": 32
     },
     {
+        "complex": "Continent-Ray",
         "id": 150,
         "all__room": 176.3,
         "deadline": 2023,

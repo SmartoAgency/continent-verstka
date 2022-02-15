@@ -7,9 +7,9 @@ function handleHeader(scroller) {
     prevScrollPosition = scroll.y;
     // console.log(tempState);
     if (scroll.y > 150) {
-      changeState['untransparent']();
+      changeState.untransparent();
     } else {
-      changeState['transparent']();
+      changeState.transparent();
     }
     if (tempState === header.state || scroll.y < 150) return;
     header.state = tempState;

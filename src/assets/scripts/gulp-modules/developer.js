@@ -1,6 +1,6 @@
 $('.video')
   .parent()
-  .click(function() {
+  .click(function () {
     if (
       $(this)
         .children('.video')

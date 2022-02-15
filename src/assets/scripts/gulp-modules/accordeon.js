@@ -5,7 +5,7 @@ $(() => {
   const $allItems = $('.accordion-item');
 
   // Event listeners
-  $accordion.on('click', '.accordion-toggle', function() {
+  $accordion.on('click', '.accordion-toggle', function () {
     if (
       $(this)
         .next()

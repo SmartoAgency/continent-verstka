@@ -1,6 +1,6 @@
 $('.video')
   .parent()
-  .click(function() {
+  .click(function () {
     if (
       $(this)
         .children('.video')
@@ -105,8 +105,7 @@ function createBuilds(currentCount, builds, count = 6) {
 }
 
 function loadMoreHandler(state, containers) {
-  const count =
-    state.countShowBuild + 6 < state.builds.length ? 6 : state.builds.length - state.countShowBuild;
+  const count = state.countShowBuild + 6 < state.builds.length ? 6 : state.builds.length - state.countShowBuild;
   if (count < 6 || state.countShowBuild + 6 === state.builds.length) {
     // eslint-disable-next-line no-param-reassign
     // containers.loadMore.style.display = 'none';
@@ -284,7 +283,7 @@ async function initBuild() {
       if (index <= 0) return this.buildsList.length - 1;
       return index - 1;
     },
-    updateCurrentId: id => {
+    updateCurrentId: (id) => {
       this.currentBuildId = id;
     },
   };
@@ -379,11 +378,11 @@ function sideSwitchArrow(arrow, container) {
   container.style.cursor = 'none';
   arrow.style.cursor = 'none';
   arrow.style.zIndex = 200;
-  arrow.__proto__.hide = function() {
+  arrow.__proto__.hide = function () {
     this.style.opacity = '0';
     this.style.pointerEvents = 'none';
   };
-  arrow.__proto__.show = function() {
+  arrow.__proto__.show = function () {
     this.style.opacity = '1';
     // this.style.pointerEvents = 'auto';
   };

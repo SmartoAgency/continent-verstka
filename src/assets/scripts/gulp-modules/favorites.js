@@ -1,4 +1,4 @@
-var swiper2 = new Swiper('.swiper-favorites', {
+const swiper2 = new Swiper('.swiper-favorites', {
   spaceBetween: 0,
   slidesPerView: 2.2,
   watchSlidesProgress: true,

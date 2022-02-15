@@ -10,7 +10,7 @@ class FilterConfig {
       all__room: (item, filterValue) => {
         if (filterValue === '') return 1;
         const [min, max] = filterValue.split('~');
-        return (item[filterValue] >= min && item[filterValue] <= max) ? 1 : 0;
+        return (item.all__room >= min && item.all__room <= max) ? 1 : 0;
       },
       date: (item, filterValue) => {
         if (filterValue === '') return 1;
@@ -33,6 +33,7 @@ class FilterConfig {
         const name = filterPoint[0];
         const value = filterPoint[1];
         const constructor = Object.getPrototypeOf(value).constructor.name;
+
         switch (constructor) {
           case 'Object':
             if (value.min === '' && value.max === '') {
@@ -70,7 +71,6 @@ class FilterConfig {
         }
       });
 
-
       if (validFieldsCount === validationDataLength) {
         this.validItems.push(flat);
       }
@@ -100,16 +100,16 @@ class FilterConfig {
       }
       item.addEventListener('change', (evt) => {
         if (item.dataset.type === 'checkbox') {
-          if (this.filterData[item.dataset.filterItem].has(item.value)) {
-            this.filterData[item.dataset.filterItem].delete(item.value);
+          if (this.filterData[item.dataset.filterItem].has(+item.value)) {
+            this.filterData[item.dataset.filterItem].delete(+item.value);
           } else {
-            this.filterData[item.dataset.filterItem].add(item.value);
+            this.filterData[item.dataset.filterItem].add(+item.value);
           }
         } else {
           this.filterData[item.dataset.filterItem] = item.value;
         }
-        console.log(this.filterData);
         this.filter();
+        window.dispatchEvent(new Event('filtering'));
       });
     });
   }
