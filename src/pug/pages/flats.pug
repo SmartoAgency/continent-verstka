@@ -27,6 +27,9 @@ block scripts
   script(defer src='./assets/scripts/commerce.js')
   script(defer src='./assets/scripts/select.js') 
 
+  script(defer src='./assets/scripts/flats/filter-config.js') 
+  script(defer src='./assets/scripts/flats/flats-filter.js') 
+
 block content
   include ../includes/breadcrumbs.pug   
   .mobile-sort-list2.js-sort-list
@@ -52,8 +55,9 @@ block content
         +svg('close-select').js-close-filter
       .planing-filter__container 
         .planing-filt__complex
-          select(class="select" name="connection")
+          select(class="select" name="connection" data-filter-item="complex")
             option(disabled) Будь-який
+            option(value="") Будь-який
             option(value="Continent-Ray") Continent Ray
             option(value="Continent-Black") Continent Black
             option(value="Continent-Ray-2.1") Continent Ray 2.1
@@ -65,30 +69,31 @@ block content
         .planing-filt__range.number-flats
           .planing-filt__range-container
             .checkboxes__rooms
-              input(class="checkbox__room filter__checkbox" id="checkbox__room1" type="checkbox" value="1")
+              input(data-type="checkbox" data-filter-item="rooms" class="checkbox__room filter__checkbox" id="checkbox__room1" type="checkbox" value="1")
               label(for="checkbox__room1" class="checkbox__text") 1
-              input(class="checkbox__room filter__checkbox" id="checkbox__room2" type="checkbox" value="2")
+              input(data-type="checkbox" data-filter-item="rooms" class="checkbox__room filter__checkbox" id="checkbox__room2" type="checkbox" value="2")
               label(for="checkbox__room2" class="checkbox__text") 2
-              input(class="checkbox__room filter__checkbox" id="checkbox__room3" type="checkbox" value="3")
+              input(data-type="checkbox" data-filter-item="rooms" class="checkbox__room filter__checkbox" id="checkbox__room3" type="checkbox" value="3")
               label(for="checkbox__room3" class="checkbox__text") 3
-              input(class="checkbox__room filter__checkbox" id="checkbox__room4" type="checkbox" value="4")
+              input(data-type="checkbox" data-filter-item="rooms" class="checkbox__room filter__checkbox" id="checkbox__room4" type="checkbox" value="4")
               label(for="checkbox__room4" class="checkbox__text") 4
           .marker-text Кількість кімнат
 
         .planing-filt__deadline
-          select(class="select" name="connection")
+          select(class="select" name="connection" data-filter-item="deadline")
             option(disabled) Будь-який 
+            option(value="") Будь-який
             option(value="2022") ІІІ кв. 2022
             option(value="2023") ІІІ кв. 2023
             option(value="2024") ІІІ кв. 2024
           .marker-text Строк здачі
         .planing-filt__range.checkbox__item
           .checkbox__block-item
-            input(class="checkbox__room filter__checkbox" id="checkbox__two-level" type="checkbox" value="")
+            input(data-filter-item="two-level" data-type="checkbox"  class="checkbox__room filter__checkbox" id="checkbox__two-level" type="checkbox" value="1")
             label(for="checkbox__two-level" class="checkbox__text") 
             .checkbox__block-name Дворівневі квартири
           .checkbox__block-item
-            input(class="checkbox__room filter__checkbox" id="checkbox__terrace" type="checkbox" value="")
+            input(data-filter-item="terrace" data-type="checkbox" class="checkbox__room filter__checkbox" id="checkbox__terrace" type="checkbox" value="1")
             label(for="checkbox__terrace" class="checkbox__text")
             .checkbox__block-name  Квартири з терасою
         .planing-filt__deadline.planing-filter__close
@@ -132,7 +137,7 @@ block content
       p.deadlines Строки здачі
       p.price Вартість
       p.favorites
-    ul.planing__list.grid
+    ul.planing__list.grid(data-cards-container)
       li.planing__item
         a(href="single-flats.html").planing__link
           .price
