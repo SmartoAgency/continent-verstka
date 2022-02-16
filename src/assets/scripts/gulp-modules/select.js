@@ -39,9 +39,13 @@ $('.select').each(function () {
 
       selectItem.on('click', function () {
         const chooseItem = $(this).data('value');
+        // console.log($(this)[0].closest('.select').querySelector('select'));
 
+        $(this)[0]
+          .closest('.select')
+          .querySelector('select').value = chooseItem;
         $('select')
-          .val(chooseItem)
+          // .val(chooseItem)
           .attr('selected', 'selected');
 
         document.querySelectorAll('select').forEach((el) => {

@@ -96,7 +96,7 @@
         "life_room": 70
     },
     {
-        "complex": "Continent-Ray",
+        "complex": "Continent-Ray-2.1",
         "id": 9,
         "all__room": 112.4,
         "deadline": 2023,
@@ -120,7 +120,7 @@
         "life_room": 174
     },
     {
-        "complex": "Continent-Ray",
+        "complex": "Continent-Ray-2.1",
         "id": 11,
         "all__room": 149.0,
         "deadline": 2021,

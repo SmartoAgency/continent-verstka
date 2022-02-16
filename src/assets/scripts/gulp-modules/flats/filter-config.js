@@ -21,7 +21,7 @@ class FilterConfig {
         return (dateOfEl >= from && dateOfEl <= to) ? 1 : 0;
       },
     };
-    this.initFilterDataFromSearchParams();
+    // this.initFilterDataFromSearchParams();
   }
 
   initFilterDataFromSearchParams() {
@@ -104,7 +104,6 @@ class FilterConfig {
     });
     return this.validItems;
   }
-
 
   importContent(data /** array of Objects */) {
     this.contentForFilter = data;

@@ -35,18 +35,10 @@ async function filterInit() {
   const filteredList = new FilteredList({
     data: DATA,
   });
-  console.log(DATA);
-  console.log(filteredList);
-  console.log(filte1r);
-  console.log($('[name="all_room"]').data('ionRangeSlider'));
-
 
   function onLoadActions() {
     const rangeInstance = $('[name="all_room"]').data('ionRangeSlider');
-    console.log(getParameterByName('all__room'));
     const [from, to] = getParameterByName('all__room') ? getParameterByName('all__room').split('~') : [false, false];
-
-
     if (from) {
       rangeInstance.update({
         from,
@@ -65,7 +57,15 @@ async function filterInit() {
 
   filte1r.importContent(DATA);
   onLoadActions();
-
+  document.querySelector('.planing-filter__last-session').addEventListener('click', function (evt) {
+    if (evt.target.closest('.reset-filter') !== null) {
+      this.remove();
+      return;
+    }
+    filte1r.initFilterDataFromSearchParams();
+    this.remove();
+    console.log(parent);
+  });
   function handleRangeResultsAndFilter() {
     const { from } = $('[name="all_room"]').data('ionRangeSlider').result;
     const { to } = $('[name="all_room"]').data('ionRangeSlider').result;
