@@ -21,6 +21,33 @@ class FilterConfig {
         return (dateOfEl >= from && dateOfEl <= to) ? 1 : 0;
       },
     };
+    this.initFilterDataFromSearchParams();
+  }
+
+  initFilterDataFromSearchParams() {
+    const urlData = Object.entries(this.getUrlParams());
+
+    urlData.forEach(([key, value]) => {
+      const clickedElement = document.querySelector(`[data-filter-item="${key}"][value="${value}"]`);
+      switch (key) {
+        case 'deadline':
+          document.querySelector(`[data-value="${value}"]`).closest('.select').querySelector('.new-select').click();
+          document.querySelector(`[data-value="${value}"]`).click();
+          break;
+        case 'complex':
+          document.querySelector(`[data-value="${value}"]`).closest('.select').querySelector('.new-select').click();
+          document.querySelector(`[data-value="${value}"]`).click();
+          break;
+        case 'rooms':
+          value.split('_').forEach((el) => {
+            document.querySelector(`[data-filter-item="rooms"][value="${el}"]`).click();
+          });
+          break;
+        default:
+          if (clickedElement !== null) clickedElement.click();
+          break;
+      }
+    });
   }
 
   filter() {
@@ -81,13 +108,13 @@ class FilterConfig {
 
   importContent(data /** array of Objects */) {
     this.contentForFilter = data;
-    console.log(this.contentForFilter);
+    // console.log(this.contentForFilter);
     this.filter();
   }
 
   importFilterData(propertie, value) {
     this.filterData[propertie] = value;
-    console.log(this.filterData);
+    // console.log(this.filterData);
     this.filter();
   }
 
@@ -119,6 +146,9 @@ class FilterConfig {
   getUrlParams() {
     const array = window.location.search.replace('?', '').split('&').map(el => el.split('='));
     const obj = {};
+
+    // console.log(array);
+    if (array[0][0] === '') return [];
     array.forEach(el => obj[el[0]] = el[1]);
     return obj;
   }
@@ -144,6 +174,5 @@ class FilterConfig {
       }
     }
     window.history.replaceState({}, '', baseUrl + params);
-    console.log(this.getUrlParams());
   }
 }
