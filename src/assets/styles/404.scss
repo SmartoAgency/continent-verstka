@@ -6,6 +6,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @include to(575px) {
+    padding: 0 22px;
+  }
   .title {
     font-weight: 600;
     font-size: 88px;
@@ -21,6 +24,9 @@
     text-align: center;
     color: #000000;
     margin-bottom: 16px;
+    @include to(575px) {
+      font-size: 24px;
+    }
   }
   .advice {
     font-weight: 600;
@@ -32,10 +38,18 @@
   }
   &__btn {
     display: flex;
+    @include to(575px) {
+      flex-direction: column;
+    }
     .btn-404 {
       margin-right: 16px;
       width: 218px;
       height: 64px;
+      @include to(575px) {
+        width: 248px;
+        height: 48px;
+        margin-bottom: 16px;
+      }
       &:last-child {
         margin-right: 0;
       }
@@ -54,6 +68,11 @@
         align-items: center;
         justify-content: center;
         transition: background 0.2s ease;
+        @include to(575px) {
+          width: 248px;
+          height: 48px;
+          font-size: 14px;
+        }
         svg {
           margin-left: 8px;
           width: 24px;

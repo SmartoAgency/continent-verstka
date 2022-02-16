@@ -496,8 +496,11 @@
   top: auto;
   bottom: 0;
   position: absolute;
-  height: 320px;
+
   // transition: height 1.5s ease;
+  @include to(575px) {
+    height: 320px;
+  }
 }
 .map {
   // .closed {

@@ -3,7 +3,7 @@ block variable
   -
     var title_page = 'Реалізований проект'
     var id_page = 'project-realized'
-    var class_page = 'project-realized'
+    var class_page = 'single-continent'
     // var breadcrumbsBtn = 'filter'
     var breadcrumbsSubitem = [
       //- {
@@ -29,7 +29,8 @@ block scripts
   script(defer src='./assets/scripts/contacts.js')
   script(defer src='./assets/scripts/accordeon.js')
   script(defer src='./assets/scripts/select.js')
-  script(defer src='./assets/scripts/project-realized.js')
+  //- script(defer src='./assets/scripts/project-realized.js')
+  script(defer src='./assets/scripts/single-continent.js')
 block arrow 
   .social-select
     .select-container.js-social
@@ -165,7 +166,7 @@ block content
       .big-img 
         img(src="./assets/images/continent6.jpg", alt="")
  
-    .section2 
+    .section2.section4 
       .title 
         h1.our-projects__title Бо все поруч
       .text Враховуючи досвід своїх реалізованих об`єктів, ми знаємо, що важливо для жителів сучасних житлових комплексів. Окрім міської інфраструктури, люди хочуть вирішувати важливі життєві питання у кроковій доступності від свого будинку. Саме таким ми і створили житловий комплекс Continent:
@@ -196,71 +197,8 @@ block content
       .little-img 
         img(src="./assets/images/continent3.jpg", alt="")
  
-    //- .single-section1 
-    //-   .single-section1__big
-    //-     p Це логічне продовження забудови Continent з ще більш вражаючими перевагами. У житловому кварталі Continent Ray втілена унікальна піраміда пріоритетів, де на першому місці комфорт і безпека жителів. 
-    //-     p Будуючи Continent Ray, ми хочемо створити локацію, якою наші мешканці будуть пишатися і запрошувати сюди своїх друзів. Локацію, де буде приємно проводити час просто так, і не важливо - вдома чи на вулиці, наодинці чи з родиною. Тут буде комфортно і гармонійно.
-    //-     .single-section1__img
-    //-       img(src="./assets/images/single1.jpg", alt="")
-    //-   .single-section1__small 
-    //-     .single-section1__img
-    //-       img(src="./assets/images/single2.jpg", alt="")
-    //-     ul 
-    //-       each v, i in block1
-    //-         li 
-    //-           .num= '0' + (i + 1)
-    //-           .text= v
-    //- .single-section2
-    //-     .single-section2__img
-    //-       img(src="./assets/images/single3.jpg", alt="")
-    //-     .single-section2__text
-    //-       h1.our-projects__title Be healthy
-    //-       p У шаленому і швидкому ритмі сучасного міського життя  ми майже не маємо вільного часу для занять спортом та якісної підтримки здоров’я. Ми кожного ранку поспішаємо на роботу і запізнюємося на важливі зустрічі, а кожного вечора кажемо собі, що з понеділка точно йдемо спортзал. Але знову кудись треба йти, щоб пробігтися зручною доріжкою, пройтися затишною алеєю чи проїхати на велосипеді безпечною доріжкою.
-    //-       p Житловий квартал Continent Ray створюється за принципом Be healthy, в основі якого - підтримка здоров`я мешканців  поруч зі своїм житлом:
-      
-    //- .single-section3
-    //-   ul 
-    //-     each v, i in block2
-    //-       li 
-    //-         .num= '0' + (i + 1)
-    //-         .text= v
-    //-   .single-section3__img
-    //-     img(src="./assets/images/single4.jpg", alt="")
-
-    //- .single-section4
-    //-   .single-section4__text
-    //-     h1.our-projects__title Двори для життя
-    //-     p А вулиці для автомобілів. Саме цієї концепції ми притримуємося під час створення житлового кварталу Continent RAY. 
-    //-     p Не думати, як обійти десятки припаркованих автомобілів, не хвилюватися за безпеку дітей, не бачити незнайомих зайвих перехожих, а кожного дня насолоджуватися тишею і спокоєм у внутрішньому дворі свого будинку завдяки:
-    //-   .single-section4__img
-    //-       img(src="./assets/images/single5.jpg", alt="")
-    //-   ul 
-    //-     each v, i in block3
-    //-       li 
-    //-         .num= '0' + (i + 1)
-    //-         .text= v
-
-    //- .single-section2.single-section5
-    //-     .single-section2__img
-    //-       img(src="./assets/images/single2.jpg", alt="")
-    //-     .single-section2__text
-    //-       h1.our-projects__title Вхідні групи
-    //-       p Лобі — це повноцінний напівприватний простір для мешканців будинку. Тут має бути комфортно перебувати, зустрічатися, знайомитися і спілкуватися із сусідами. Для лобі важлива функціональність і тут має бути зручно як вдома, а може навіть трохи зручніше. Під час проектування лобі будинків житлового кварталу Continent RAY ми це врахували, і ось що отримають наші майбутні мешканці:
-    
-    //- .single-section3.single-section6 
-    //-   ul 
-    //-     each v, i in block4
-    //-       li 
-    //-         .num= '0' + (i + 1)
-    //-         .text= v
-    //-   .single-section3__img
-    //-     img(src="./assets/images/single1.jpg", alt="")
-    //-     ul 
-    //-       each v, i in block5
-    //-         li 
-    //-           .num= '0' + (i + (n + 1))
-    //-           .text= v
-    section.layout 
+   
+    section.layout.similar-apartment 
       .layout__title-container
         h1.our-projects__title Приклади планувань
         a(href='#').realty
@@ -271,14 +209,88 @@ block content
             +svg('swiper-prev')
           .swiper-button-next2
             +svg('swiper-next')
-      .swiper-example.layout__list 
-        .swiper-wrapper
-          .swiper-slide.layout__item 
-            img(src="./assets/images/layout1.jpg", alt="")
-          .swiper-slide.layout__item 
-            img(src="./assets/images/layout2.jpg", alt="")
-          .swiper-slide.layout__item 
-            img(src="./assets/images/layout3.jpg", alt="")
+      .swiper-example.layout__list.similar-apartment-swiper 
+        .swiper-wrapper 
+          .swiper-slide
+            a(href="#").planing__link
+              .planing__img 
+                img(src='./assets/images/planing/planing1.jpg')
+              .flat-planing-container
+                .square 
+                  +svg('space')
+                  .square-description 
+                    p.title Площа:
+                    p.value 48 м²
+                .square 
+                  +svg('living_space')
+                  .square-description 
+                    p.title жила Площа:
+                    p.value 36 м² 
+                .square 
+                  +svg('room')
+                  .square-description 
+                    p.title Кімнат:
+                    p.value 1
+          .swiper-slide
+            a(href="#").planing__link
+              .planing__img 
+                img(src='./assets/images/planing/planing1.jpg')
+              .flat-planing-container
+                .square 
+                  +svg('space')
+                  .square-description 
+                    p.title Площа:
+                    p.value 48 м²
+                .square 
+                  +svg('living_space')
+                  .square-description 
+                    p.title жила Площа:
+                    p.value 36 м² 
+                .square 
+                  +svg('room')
+                  .square-description 
+                    p.title Кімнат:
+                    p.value 1
+          .swiper-slide
+            a(href="#").planing__link
+              .planing__img 
+                img(src='./assets/images/planing/planing1.jpg')
+              .flat-planing-container
+                .square 
+                  +svg('space')
+                  .square-description 
+                    p.title Площа:
+                    p.value 48 м²
+                .square 
+                  +svg('living_space')
+                  .square-description 
+                    p.title жила Площа:
+                    p.value 36 м² 
+                .square 
+                  +svg('room')
+                  .square-description 
+                    p.title Кімнат:
+                    p.value 1
+          .swiper-slide 
+            a(href="#").planing__link
+              .planing__img 
+                img(src='./assets/images/planing/planing1.jpg')
+              .flat-planing-container
+                .square 
+                  +svg('space')
+                  .square-description 
+                    p.title Площа:
+                    p.value 48 м²
+                .square 
+                  +svg('living_space')
+                  .square-description 
+                    p.title жила Площа:
+                    p.value 36 м² 
+                .square 
+                  +svg('room')
+                  .square-description 
+                    p.title Кімнат:
+                    p.value 1
     section.layout.layout-inf
       .layout__title-container
         h1.our-projects__title Розташування та інфраструктура

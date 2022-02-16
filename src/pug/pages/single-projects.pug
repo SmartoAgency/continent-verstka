@@ -210,7 +210,7 @@ block content
             li 
               .num= '0' + (i + (n + 1))
               .text= v
-    section.layout 
+    section.layout.similar-apartment 
       .layout__title-container
         h1.our-projects__title Приклади планувань
         a(href='#').realty
@@ -221,14 +221,88 @@ block content
             +svg('swiper-prev')
           .swiper-button-next2
             +svg('swiper-next')
-      .swiper-example.layout__list 
+      .swiper-example.layout__list.similar-apartment-swiper 
         .swiper-wrapper
-          .swiper-slide.layout__item 
-            img(src="./assets/images/layout1.jpg", alt="")
-          .swiper-slide.layout__item 
-            img(src="./assets/images/layout2.jpg", alt="")
-          .swiper-slide.layout__item 
-            img(src="./assets/images/layout3.jpg", alt="")
+          .swiper-slide
+            a(href="#").planing__link
+              .planing__img 
+                img(src='./assets/images/planing/planing1.jpg')
+              .flat-planing-container
+                .square 
+                  +svg('space')
+                  .square-description 
+                    p.title Площа:
+                    p.value 48 м²
+                .square 
+                  +svg('living_space')
+                  .square-description 
+                    p.title жила Площа:
+                    p.value 36 м² 
+                .square 
+                  +svg('room')
+                  .square-description 
+                    p.title Кімнат:
+                    p.value 1
+          .swiper-slide
+            a(href="#").planing__link
+              .planing__img 
+                img(src='./assets/images/planing/planing1.jpg')
+              .flat-planing-container
+                .square 
+                  +svg('space')
+                  .square-description 
+                    p.title Площа:
+                    p.value 48 м²
+                .square 
+                  +svg('living_space')
+                  .square-description 
+                    p.title жила Площа:
+                    p.value 36 м² 
+                .square 
+                  +svg('room')
+                  .square-description 
+                    p.title Кімнат:
+                    p.value 1
+          .swiper-slide
+            a(href="#").planing__link
+              .planing__img 
+                img(src='./assets/images/planing/planing1.jpg')
+              .flat-planing-container
+                .square 
+                  +svg('space')
+                  .square-description 
+                    p.title Площа:
+                    p.value 48 м²
+                .square 
+                  +svg('living_space')
+                  .square-description 
+                    p.title жила Площа:
+                    p.value 36 м² 
+                .square 
+                  +svg('room')
+                  .square-description 
+                    p.title Кімнат:
+                    p.value 1
+          .swiper-slide 
+            a(href="#").planing__link
+              .planing__img 
+                img(src='./assets/images/planing/planing1.jpg')
+              .flat-planing-container
+                .square 
+                  +svg('space')
+                  .square-description 
+                    p.title Площа:
+                    p.value 48 м²
+                .square 
+                  +svg('living_space')
+                  .square-description 
+                    p.title жила Площа:
+                    p.value 36 м² 
+                .square 
+                  +svg('room')
+                  .square-description 
+                    p.title Кімнат:
+                    p.value 1
     section.layout.layout-inf
       .layout__title-container
         h1.our-projects__title Розташування та інфраструктура
