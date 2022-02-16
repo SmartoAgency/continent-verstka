@@ -75,8 +75,6 @@ class FilterConfig {
         this.validItems.push(flat);
       }
     });
-
-    console.log(this.validItems.length);
     return this.validItems;
   }
 
@@ -102,15 +100,50 @@ class FilterConfig {
         if (item.dataset.type === 'checkbox') {
           if (this.filterData[item.dataset.filterItem].has(+item.value)) {
             this.filterData[item.dataset.filterItem].delete(+item.value);
+            this.setQueryStringParameter(item.dataset.filterItem, Array.from(this.filterData[item.dataset.filterItem]).join('_'));
           } else {
             this.filterData[item.dataset.filterItem].add(+item.value);
+            this.setQueryStringParameter(item.dataset.filterItem, Array.from(this.filterData[item.dataset.filterItem]).join('_'));
           }
         } else {
           this.filterData[item.dataset.filterItem] = item.value;
+          this.setQueryStringParameter(item.dataset.filterItem, item.value);
         }
+
         this.filter();
         window.dispatchEvent(new Event('filtering'));
       });
     });
+  }
+
+  getUrlParams() {
+    const array = window.location.search.replace('?', '').split('&').map(el => el.split('='));
+    const obj = {};
+    array.forEach(el => obj[el[0]] = el[1]);
+    return obj;
+  }
+
+  setQueryStringParameter(key, value) {
+    const baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
+    const urlQueryString = document.location.search;
+    const newParam = `${key}=${value}`;
+    let params = `?${newParam}`;
+
+    // If the "search" string exists, then build params from it
+    if (urlQueryString) {
+      const updateRegex = new RegExp(`([\?&])${key}[^&]*`);
+      const removeRegex = new RegExp(`([\?&])${key}=[^&;]+[&;]?`);
+
+      if (typeof value === 'undefined' || value == null || value == '') {
+        params = urlQueryString.replace(removeRegex, '$1');
+        params = params.replace(/[&;]$/, '');
+      } else if (urlQueryString.match(updateRegex) !== null) {
+        params = urlQueryString.replace(updateRegex, `$1${newParam}`);
+      } else { // Otherwise, add it to end of query string
+        params = `${urlQueryString}&${newParam}`;
+      }
+    }
+    window.history.replaceState({}, '', baseUrl + params);
+    console.log(this.getUrlParams());
   }
 }
