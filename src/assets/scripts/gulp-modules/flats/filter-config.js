@@ -8,7 +8,7 @@ class FilterConfig {
     this.handleChange();
     this.contentForFilter = [];
     this.validItems = [];
-    this.sortSchema = '';
+    this.sortSchema = 'big_area';
     this.sortSchemasObject = {
       big_area: (firstEl, secondEl) => secondEl.all__room - firstEl.all__room,
       smaller_area: (firstEl, secondEl) => firstEl.all__room - secondEl.all__room,
@@ -65,6 +65,7 @@ class FilterConfig {
 
   filter() {
     this.validItems = [];
+    this.sort();
     this.contentForFilter.forEach((flat) => {
       let validFieldsCount = 0;
       const validationDataArray = Object.entries(this.filterData);
@@ -152,13 +153,21 @@ class FilterConfig {
       });
     });
     // eslint-disable-next-line no-unused-expressions
+    this.sortHandler();
+  }
+
+  sortHandler() {
     this.sortItem && this.sortItem.addEventListener('change', (evt) => {
-      console.log(this.validItems);
       if (this.sortSchemasObject[evt.target.value]) {
-        this.contentForFilter = this.contentForFilter.sort(this.sortSchemasObject[evt.target.value]);
+        this.sortSchema = evt.target.value;
+        this.sort();
         window.dispatchEvent(new Event('filtering'));
       }
     });
+  }
+
+  sort() {
+    this.contentForFilter = this.contentForFilter.sort(this.sortSchemasObject[this.sortSchema]);
   }
 
   getUrlParams() {
@@ -167,7 +176,9 @@ class FilterConfig {
 
     // console.log(array);
     if (array[0][0] === '') return [];
-    array.forEach(el => obj[el[0]] = el[1]);
+    array.forEach((el) => {
+      obj[el[0]] = el[1];
+    });
     return obj;
   }
 
