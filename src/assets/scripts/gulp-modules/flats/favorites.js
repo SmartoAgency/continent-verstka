@@ -3,6 +3,7 @@ class Favorites {
     this.storageKey = 'favorites';
     this.favorites = JSON.parse(localStorage.getItem(this.storageKey)) || [];
     this.$container = props.$containerOfElements || window;
+    this.onChangeFavoritesData = props.onChangeFavoritesData || function () {};
     this.init();
     this.mutationHandler();
   }
@@ -17,13 +18,20 @@ class Favorites {
       if (isChecked) {
         this.favorites.push(elementId);
         this.moveToFavouriteEffectHandler(evt.target.closest('.add-favourite'), false);
+        this.onChangeFavoritesData(true);
         this.saveToStorage();
         return;
       }
       this.moveToFavouriteEffectHandler(evt.target.closest('.add-favourite'), true);
       this.favorites = this.favorites.filter(el => el !== elementId);
+      this.onChangeFavoritesData(false);
       this.saveToStorage();
     });
+  }
+
+  isInFavorites(id) {
+    if (typeof id === 'undefined') return false;
+    return this.favorites.includes(id.toString());
   }
 
   saveToStorage() {
@@ -78,7 +86,7 @@ class Favorites {
 
   animateFavouriteElement(destination, element, distance, reverse) {
     if (gsap === undefined) return;
-    const curElem = element.closest('.favorite-star').querySelector('.icon--star-circle').cloneNode(true);
+    const curElem = element.querySelector('svg').cloneNode(true);
     curElem.classList.add('favorite-star__pulse');
     const animatingElParams = element.getBoundingClientRect();
     document.body.insertAdjacentElement('beforeend', curElem);
