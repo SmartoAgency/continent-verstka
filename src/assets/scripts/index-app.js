@@ -47,11 +47,11 @@ const forms = [
 
 // const formsTel = ['[data-home-contact]', '[data-form-homepage]'];
 // const formsTel = ['[data-form-homepage]'];
-const formsTel = ['[data-popup-form]'];
+const formsTel = ['[data-popup-form]', '[data-sign-up-form]'];
 
 formsTel.forEach((form) => {
   const $form = document.querySelector(form);
-  // console.log($form);
+  console.log($form);
   if ($form) {
     /* eslint-disable */
     new FormMonster({

@@ -2,22 +2,22 @@ section.sing-up-review
   .sing-up-review__form
     h2.our-projects__title Запишіться на перегляд
     h4 З радістю влаштуємо вам тур по житловому кварталу та пригостимо смачною кавою!
-    form( action="#" class="review-form")
+    form( action="#" class="review-form" data-sign-up-form)
       .form-field
         .form-field-input(data-field-input data-field-name data-status="field--inactive")
-          input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
+          input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="off" value="")
           span.placeholder Ваше ім’я
           .input-message(data-input-message)
         .form-field-input(data-field-input data-field-phone data-status="field--inactive")
-          input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
+          input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="off" name="phone" inputmode="tel")
           span.placeholder Ваш номер телефону
           .input-message(data-input-message)
       .form-field-time
-        .form-field-input(data-field-input data-field-name data-status="field--inactive")
-          input(class="input-date form-name form-field__input contact-form-input" type="date" name="#" id="#" placeholder="Зручний день" autocomplete="on" value="")
+        .form-field-input(data-field-input data-field-day data-status="field--inactive")
+          input(class="input-date form-name form-field__input contact-form-input" type="text" name="day" id="#" placeholder="Зручний день" autocomplete="off" value="")
           span.checkmark Зручний день
-        .form-field-input(data-field-input data-field-name data-status="field--inactive")
-          input(class="input-date form-name form-field__input contact-form-input" type="time" name="#" id="#" placeholder="Зручний час" autocomplete="on" value="")
+        .form-field-input(data-field-input data-field-time data-status="field--inactive")
+          input(class="input-date form-name form-field__input contact-form-input" type="text" name="time" id="#" placeholder="Зручний час" autocomplete="off" value="")
           span.checkmark Зручний час
         select(class="select" name="connection")
           option(disabled) Пріоритетний зв’язок
@@ -27,6 +27,7 @@ section.sing-up-review
       .form-field-confirm
         button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
           span Записатися на перегляд
+          span(data-btn-submit-text style="display:none")
           +svg('arrow')
   .sing-up-review__manager 
     .manager-img 

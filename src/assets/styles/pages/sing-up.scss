@@ -76,6 +76,12 @@
     @include to(575px) {
       flex-direction: column;
     }
+
+    .input-message {
+      font-size: 12px;
+      font-weight: bold;
+      color: $yellow;
+    }
   }
   .form-field-input {
     width: 45%;
@@ -174,6 +180,10 @@
       top: 50%;
       transform: translate(16px, -50%);
       background: #ffffff;
+      pointer-events: none;
+    }
+    input:not(:placeholder-shown)~.checkmark {
+      display: none;
     }
   }
   .select {
