@@ -128,7 +128,7 @@ class FilteredList {
       action_price, all__room, life_room, deadline, id, price, rooms, terrace, two_level,
     } = data;
     return `
-            <li class="planing__item"><a class="planing__link" href="single-flats.html?id=${id}">
+            <li class="planing__item" data-id="${id}"><a class="planing__link" href="single-flats.html?id=${id}">
             <div class="price"><span class="new-price">${this.numberWithCommas(price)} ₴</span></div>
             <div class="favorite-star">
             <div class="add-favourite">

@@ -18,7 +18,6 @@ function getParameterByName(name, url = window.location.href) {
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-
 function debounce(func, timeout = 300) {
   let timer;
   return (...args) => {
@@ -64,7 +63,6 @@ async function filterInit() {
     }
     filte1r.initFilterDataFromSearchParams();
     this.remove();
-    console.log(parent);
   });
   function handleRangeResultsAndFilter() {
     const { from } = $('[name="all_room"]').data('ionRangeSlider').result;
@@ -81,3 +79,9 @@ async function filterInit() {
 }
 
 filterInit();
+
+const favorites = new Favorites({
+  $containerOfElements: document.querySelector('.page__inner'),
+});
+
+console.log(favorites);
