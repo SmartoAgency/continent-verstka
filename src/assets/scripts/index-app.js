@@ -60,8 +60,13 @@ formsTel.forEach((form) => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
-          const backdrop = document.querySelector('.form-gratitude');
-          gsap.to(backdrop, { autoAlpha: 1 });
+          if ($form.classList.contains('review-form')) {
+            const backdrop = document.querySelector('.form-gratitude');
+            gsap.to('.sing-up-review__congrats', { autoAlpha: 1 });
+            setTimeout(() => {
+              gsap.to('.sing-up-review__congrats', { autoAlpha: 0 });
+            }, 5000);
+          }
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
@@ -633,3 +638,18 @@ spanEntries5.forEach((section, index) => {
     },
   );
 });
+
+
+function formInHeaderHandler() {
+  const form = document.querySelector('.js-sideform-call');
+  form.querySelector('.js-close').addEventListener('click', () => {
+    gsap.to(form, { autoAlpha: 0, right: '-100%' });
+  });
+
+  document.querySelectorAll('.js-call').forEach((el) => {
+    el.addEventListener('click', () => {
+      gsap.to(form, { autoAlpha: 1, right: 0 });
+    });
+  });
+}
+formInHeaderHandler();
