@@ -1,11 +1,20 @@
+/* eslint-disable no-unused-expressions */
 class FilterConfig {
   constructor(props) {
     this.items = document.querySelectorAll('[data-filter-item]');
+    this.sortItem = document.querySelector('[data-sort-item]') || null;
     this.filterData = {};
     Array.from(this.items).map(el => this.filterData[el.dataset.filterItem] = '');
     this.handleChange();
     this.contentForFilter = [];
     this.validItems = [];
+    this.sortSchema = '';
+    this.sortSchemasObject = {
+      big_area: (firstEl, secondEl) => secondEl.all__room - firstEl.all__room,
+      smaller_area: (firstEl, secondEl) => firstEl.all__room - secondEl.all__room,
+      price: (firstEl, secondEl) => firstEl.price - secondEl.price,
+      deadline: (firstEl, secondEl) => firstEl.deadline - secondEl.deadline,
+    };
     this.validationSchemas = {
       all__room: (item, filterValue) => {
         if (filterValue === '') return 1;
@@ -48,6 +57,10 @@ class FilterConfig {
           break;
       }
     });
+  }
+
+  sort() {
+
   }
 
   filter() {
@@ -135,10 +148,16 @@ class FilterConfig {
           this.filterData[item.dataset.filterItem] = item.value;
           this.setQueryStringParameter(item.dataset.filterItem, item.value);
         }
-
-        this.filter();
         window.dispatchEvent(new Event('filtering'));
       });
+    });
+    // eslint-disable-next-line no-unused-expressions
+    this.sortItem && this.sortItem.addEventListener('change', (evt) => {
+      console.log(this.validItems);
+      if (this.sortSchemasObject[evt.target.value]) {
+        this.contentForFilter = this.contentForFilter.sort(this.sortSchemasObject[evt.target.value]);
+        window.dispatchEvent(new Event('filtering'));
+      }
     });
   }
 

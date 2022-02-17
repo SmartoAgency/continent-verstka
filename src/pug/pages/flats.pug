@@ -126,11 +126,12 @@ block content
       .tab.buttons
         button.tablinks.tabs__nav-btn.grid.js-btn-grid.active Картками
         button.tablinks.tabs__nav-btn.list.js-btn-list Cписком 
-      select(class="select" name="connection")
+      select(class="select" name="connection" data-sort-item)
         option(disabled) Спочатку з більшою площою
-        option(value="big-area") Спочатку з більшою площою
-        option(value="smaller-area") Спочатку з меншою площою
-        option(value="dedline") За строком сдачі
+        option(value="big_area") Спочатку з більшою площою
+        option(value="price") За ціною
+        option(value="smaller_area") Спочатку з меншою площою
+        option(value="deadline") За строком сдачі
     .list-title.js-sort-title
       p.planing__img План
       p.planing__title Житловий квартал

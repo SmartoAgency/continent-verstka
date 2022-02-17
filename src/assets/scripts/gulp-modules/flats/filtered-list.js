@@ -50,10 +50,10 @@ class FilteredList {
 
   import(data) {
     this.data = data;
-    this.data.sort((a, b) =>
-      // Turn your strings into dates, and then subtract them
-      // to get a value that is either negative, positive, or zero.
-      new Date(b.date) - new Date(a.date)).reverse();
+    // this.data.sort((a, b) =>
+    //   // Turn your strings into dates, and then subtract them
+    //   // to get a value that is either negative, positive, or zero.
+    //   new Date(b.date) - new Date(a.date)).reverse();
     this.prepareData();
     this.render();
   }

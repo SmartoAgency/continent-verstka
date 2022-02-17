@@ -83,5 +83,3 @@ filterInit();
 const favorites = new Favorites({
   $containerOfElements: document.querySelector('.page__inner'),
 });
-
-console.log(favorites);
