@@ -43,7 +43,7 @@ block content
 
   .form-opportunity 
     h2.our-projects__title Відкривайте нові <br> можливості з Continent
-    form( action="#" class="review-form")
+    form( action="#" class="review-form" data-continent-club-form)
       .form-field
         .form-field-input(data-field-input data-field-name data-status="field--inactive")
           input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
@@ -53,13 +53,14 @@ block content
           input(class="input-review form-tel form-field__input contact-form-input js-input-form" type="text" placeholder=" " id="callback-form-phone"  autocomplete="on" name="phone" inputmode="tel")
           span.placeholder Ваш номер телефону
           .input-message(data-input-message)
-        .form-field-input(data-field-input data-field-name data-status="field--inactive")
-          input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="name" id="callback-form-name"  autocomplete="on" value="")
+        .form-field-input(data-field-input data-field-agreement data-status="field--inactive")
+          input(class="input-review form-name form-field__input contact-form-input" type="text" placeholder=" " name="agreement" id="callback-form-name"  autocomplete="on" value="")
           span.placeholder Номер договору
           .input-message(data-input-message)
         
       .form-field-confirm
-        button(class="realty" type="submit" data-btn-submit="data-btn-submit") 
+        button(class="realty" type="submit" data-btn-submit="data-btn-submit")
+          span(data-btn-submit-text style="display:none") 
           span Відправити
           +svg('arrow')
 

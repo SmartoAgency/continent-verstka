@@ -109,20 +109,12 @@ formsTel.forEach((form) => {
         },
       },
     });
-
-    // $form.querySelector('.js-mask-absolute').addEventListener(
-    //   'click',
-    //   () => {
-    //     $form.querySelector('[name="phone"]').focus();
-    //   },
-    //   false,
-    // );
   }
 });
 
-const footerForm = ['[data-footer-form]'];
+const continentClubForm = ['[data-continent-club-form]'];
 // const footerForm = ['[data-form-footer]'];
-footerForm.forEach((form) => {
+continentClubForm.forEach((form) => {
   const $form = document.querySelector(form);
   if ($form) {
     /* eslint-disable */
@@ -137,6 +129,18 @@ footerForm.forEach((form) => {
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
+          agreement: {
+            inputWrapper: new SexyInput({
+              animation: 'none',
+              $field: $form.querySelector('[data-field-agreement]'),
+              typeInput: 'text',
+            }),
+            rule: yup.string().required(i18next.t('required')),
+
+            defaultMessage: 'Номер договору',
+            valid: false,
+            error: [],
+          },
           name: {
             inputWrapper: new SexyInput({
               animation: 'none',
