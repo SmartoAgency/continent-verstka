@@ -43,43 +43,43 @@
             .swiper-slide
               .swiper-slide__title Оберіть тип квартири
               .form-field
-                .form-field-input(data-field-input data-field-name data-status="field--inactive")
-                  input(class="input__checkbox input-sideform form-name form-field__input contact-form-input" type="radio" id="one-room" autocomplete="on" value="" name="#")
+                .form-field-input(data-field-input data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-name form-field__input contact-form-input" type="radio" id="one-room" autocomplete="on" value="1" name="rooms")
                   label(class="label__checkbox" for="one-room") Однокімнатна
-                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
-                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="two-room"  autocomplete="on" name="#" )
+                .form-field-input(data-field-input data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="two-room"  value="2" autocomplete="on" name="rooms" )
                   label(class="label__checkbox" for="two-room") Двокімнатна
-                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
-                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="three-room"  autocomplete="on" name="#" )
+                .form-field-input(data-field-input data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="three-room"  value="3" autocomplete="on" name="rooms" )
                   label(class="label__checkbox" for="three-room") Трикімнатна
-                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
-                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="four-room"  autocomplete="on" name="#" )
+                .form-field-input(data-field-input data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="four-room" value="4" autocomplete="on" name="rooms" )
                   label(class="label__checkbox" for="four-room") Чотирьокімнатна
 
             .swiper-slide
               .swiper-slide__title Оберіть дiапазон бажаної поверховостi
               .form-field
-                .form-field-input(data-field-input data-field-name data-status="field--inactive")
-                  input(class="input__checkbox input-sideform form-name form-field__input contact-form-input" type="radio" id="one-floor" autocomplete="on" value="" name="#")
+                .form-field-input(data-field-input data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-name form-field__input contact-form-input" type="radio" id="one-floor" autocomplete="on" value="1-2" name="floor")
                   label(class="label__checkbox" for="one-floor") 1 - 2 поверх
-                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
-                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="two-floor"  autocomplete="on" name="#" )
+                .form-field-input(data-field-input data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="two-floor" value="3-6" autocomplete="on" name="floor" )
                   label(class="label__checkbox" for="two-floor") 3 - 6 поверх
-                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
-                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="three-floor"  autocomplete="on" name="#" )
+                .form-field-input(data-field-input data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="three-floor" value="6-9"  autocomplete="on" name="floor" )
                   label(class="label__checkbox" for="three-floor") 6 - 9 поверх
-                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
-                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="four-floor"  autocomplete="on" name="#" )
+                .form-field-input(data-field-input data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="four-floor"  value="10+" autocomplete="on" name="floor" )
                   label(class="label__checkbox" for="four-floor") 10+ тераса
 
             .swiper-slide
               .swiper-slide__title Чи цікавить вас розстрочка?
               .form-field
-                .form-field-input(data-field-input data-field-name data-status="field--inactive")
-                  input(class="input__checkbox input-sideform form-name form-field__input contact-form-input" type="radio" id="pay-yes" autocomplete="on" value="" name="#")
+                .form-field-input(data-field-input data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-name form-field__input contact-form-input" type="radio" id="pay-yes" autocomplete="on" value="true" name="installment")
                   label(class="label__checkbox" for="pay-yes") Так
-                .form-field-input(data-field-input data-field-phone data-status="field--inactive")
-                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="pay-no"  autocomplete="on" name="#" )
+                .form-field-input(data-field-input data-status="field--inactive")
+                  input(class="input__checkbox input-sideform form-tel form-field__input contact-form-input js-input-form" type="radio" id="pay-no"  autocomplete="on" value="false" name="installment" )
                   label(class="label__checkbox" for="pay-no") Ні
                 
             .swiper-slide
@@ -114,6 +114,9 @@
             | Попередній крок
           .swiper-button-next13 Oбрати 
             +svg('arrow')
+          button(class="realty" type="submit" data-btn-submit="data-btn-submit" ) 
+            span(data-btn-submit-text style="display: none") 
+            span Отримати розрахунок
 
 
 

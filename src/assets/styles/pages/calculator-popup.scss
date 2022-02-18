@@ -252,6 +252,7 @@
 .swiper-btn-container {
   display: flex;
 }
+
 .swiper-button-prev13,
 .swiper-button-next13 {
   cursor: pointer;
@@ -281,6 +282,11 @@
     height: 17px;
     stroke-width: 2px;
   }
+}
+.realty {
+  border: none;
+  font-family: $default-font;
+  @extend .swiper-button-next13;
 }
 .swiper-button-prev13 {
   margin-right: 16px;

@@ -47,7 +47,7 @@ const forms = [
 
 // const formsTel = ['[data-home-contact]', '[data-form-homepage]'];
 // const formsTel = ['[data-form-homepage]'];
-const formsTel = ['[data-popup-form]', '[data-sign-up-form]'];
+const formsTel = ['[data-popup-form]', '[data-sign-up-form]', '[data-form-quiz]'];
 
 formsTel.forEach((form) => {
   const $form = document.querySelector(form);

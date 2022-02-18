@@ -64,6 +64,7 @@ block scripts
   script(defer src='./assets/scripts/accordeon.js')
   script(defer src='./assets/scripts/select.js')
   script(defer src='./assets/scripts/project-realized.js')
+  script(defer src='./assets/scripts/calculator-popup/calculator-popup.js')
 block arrow 
   .social-select
     .select-container.js-social
@@ -94,7 +95,7 @@ block content
           .realized-project__content
             h1.realized-project__title Житловий Квартал Continent Ray
             p.realized-project__description Новий центр Бучі
-            .realty
+            .realty(data-calculator-popup-call)
               +svg('calculator')
               span Kалькулятор вартості
         .swiper-slide
@@ -103,7 +104,7 @@ block content
           .realized-project__content
             h1.realized-project__title Комфорт Хаус 1
             p.realized-project__description Житловий комплекс, в основу назви якого не дарма взяте поняття комфорту.
-            .realty
+            .realty(data-calculator-popup-call)
               +svg('calculator')
               span Kалькулятор вартості
         .swiper-slide
@@ -112,7 +113,7 @@ block content
           .realized-project__content
             h1.realized-project__title Комфорт Хаус 1
             p.realized-project__description Житловий комплекс, в основу назви якого не дарма взяте поняття комфорту.
-            .realty
+            .realty(data-calculator-popup-call)
               +svg('calculator')
               span Kалькулятор вартості
     
