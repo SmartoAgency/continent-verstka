@@ -4,6 +4,7 @@ class FilteredList {
     this.preparedData = [];
     this.$wrapper = document.querySelector('[data-filtered-list-wrapper]');
     this.$container = document.querySelector('[data-filtered-list]');
+    this.customTemplate = props.customTemplate || null;
     this.initialPortionForRender = 12;
     this.portionForRender = 12;
     this.startIndex = 0;
@@ -33,27 +34,12 @@ class FilteredList {
   }
 
   prepareData() {
-    // const arrayOfDays = {};
-    // this.data.forEach((agreement) => {
-    //   const [month, day, year] = agreement.date.split('/');
-    //   const keyForAccObject = agreement.date.split('/').join('_');
-    //   // console.log(keyForAccObject);
-    //   if (arrayOfDays[keyForAccObject] === undefined) arrayOfDays[keyForAccObject] = [];
-    //   arrayOfDays[keyForAccObject].push(agreement);
-    // });
-
-
-    // // console.log(arrayOfDays);
     this.preparedData = this.data;
     this.render();
   }
 
   import(data) {
     this.data = data;
-    // this.data.sort((a, b) =>
-    //   // Turn your strings into dates, and then subtract them
-    //   // to get a value that is either negative, positive, or zero.
-    //   new Date(b.date) - new Date(a.date)).reverse();
     this.prepareData();
     this.render();
   }
@@ -62,7 +48,7 @@ class FilteredList {
     this.startIndex = 0;
     this.portionForRender = this.initialPortionForRender;
     this.$container.scrollTo(0, 0);
-    this.$wrapper.querySelectorAll('[data-filtered-list-sum]').forEach((el) => {
+    document.querySelectorAll('[data-filtered-list-sum]').forEach((el) => {
       el.textContent = this.data.length;
     });
     this.$container.innerHTML = '';
@@ -124,6 +110,7 @@ class FilteredList {
   }
 
   getTemplate(data) {
+    if (this.customTemplate) return this.customTemplate(data);
     const {
       action_price, all__room, life_room, deadline, id, price, rooms, terrace, two_level,
     } = data;

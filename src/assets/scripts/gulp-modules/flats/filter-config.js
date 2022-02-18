@@ -7,9 +7,12 @@ class FilterConfig {
     Array.from(this.items).map(el => this.filterData[el.dataset.filterItem] = '');
     this.handleChange();
     this.contentForFilter = [];
+    this.letterSortTitle = '';
     this.validItems = [];
     this.sortSchema = 'big_area';
+    const self = this;
     this.sortSchemasObject = {
+      complex: (firstEl, secondEl) => ((secondEl.complex === self.letterSortTitle) ? 1 : -1),
       big_area: (firstEl, secondEl) => secondEl.all__room - firstEl.all__room,
       smaller_area: (firstEl, secondEl) => firstEl.all__room - secondEl.all__room,
       price: (firstEl, secondEl) => firstEl.price - secondEl.price,
@@ -160,6 +163,7 @@ class FilterConfig {
     this.sortItem && this.sortItem.addEventListener('change', (evt) => {
       if (this.sortSchemasObject[evt.target.value]) {
         this.sortSchema = evt.target.value;
+        this.letterSortTitle = evt.target.dataset.value;
         this.sort();
         window.dispatchEvent(new Event('filtering'));
       }

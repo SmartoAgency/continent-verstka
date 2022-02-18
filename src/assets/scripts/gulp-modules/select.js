@@ -44,6 +44,9 @@ $('.select').each(function () {
         $(this)[0]
           .closest('.select')
           .querySelector('select').value = chooseItem;
+        $(this)[0]
+          .closest('.select')
+          .querySelector('select').dataset.value = $(this)[0].textContent;
         $('select')
           // .val(chooseItem)
           .attr('selected', 'selected');
