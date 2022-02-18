@@ -118,6 +118,11 @@ function mobCardsTypeOfViewHandler() {
   mobButton.counterCliker = 1;
   mobButton.addEventListener('click', (evt) => {
     const buttonToClick = document.querySelectorAll('.planing__nav button')[(mobButton.counterCliker % 2)];
+    if (mobButton.counterCliker % 2 === 0) {
+      mobButton.classList.remove('grid');
+    } else {
+      mobButton.classList.add('grid');
+    }
     buttonToClick.click();
     console.log(mobButton.counterCliker);
     mobButton.counterCliker += 1;

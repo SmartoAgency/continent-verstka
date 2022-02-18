@@ -798,29 +798,40 @@
         display: inline-block;
         background-image: url('../images/list.svg');
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         position: absolute;
         width: 16px;
         height: 14px;
         // z-index: 31;
         top: 50%;
+        transition: .3s ease-in-out;
+        transform-origin: center;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+      }
+      &::after {
+        content: '';
+        display: inline-block;
+        background-image: url('../images/grid.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        width: 16px;
+        height: 14px;
+        // z-index: 31;
+        transition: .3s ease-in-out;
+        transform-origin: center;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(1);
       }
-      // &::after {
-      //   content: '';
-      //   display: inline-block;
-      //   background-image: url('../images/grid.svg');
-      //   background-repeat: no-repeat;
-      //   background-size: cover;
-      //   position: absolute;
-      //   width: 16px;
-      //   height: 14px;
-      //   // z-index: 31;
-      //   top: 50%;
-      //   left: 50%;
-      //   transform: translate(-50%, -50%);
-      // }
+      &.grid:after {
+        transform: translate(-50%, -50%) scale(0);
+      }
+      &.grid:before {
+        transform: translate(-50%, -50%) scale(1);
+      }
     }
   }
 }
