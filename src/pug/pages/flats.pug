@@ -40,10 +40,10 @@ block content
       .mobile-filter-close 
           h4 Сортувати
           +svg('close-select').js-close-sort
-      ul.sort-list 
-        li.sort-item.check Спочатку з більшою площою
-        li.sort-item Спочатку з меншою площою
-        li.sort-item За строком сдачі
+      ul.sort-list(data-sort-list-mobile)
+        li.sort-item(data-value-to-click="big_area").check Спочатку з більшою площою
+        li.sort-item(data-value-to-click="smaller_area") Спочатку з меншою площою
+        li.sort-item(data-value-to-click="deadline") За строком сдачі
   .planing-filter(data-filtered-list-wrapper) 
     h2.our-projects__title Квартири
     .mobile-filter-btn

@@ -4,6 +4,11 @@ document.querySelector('.planing-filter__close .nav__call-btn').addEventListener
   const planStyle = getComputedStyle(planContainer).display;
   planContainer.style.display = planStyle === 'flex' ? 'none' : 'flex';
 });
+// document.querySelector('.mobile-btn-nav').addEventListener('click', (evt) => {
+//   const planContainer = document.querySelector('.planing');
+//   const planStyle = getComputedStyle(planContainer).display;
+//   planContainer.style.display = planStyle === 'flex' ? 'none' : 'flex';
+// });
 
 function setQueryStringParameter(name, value) {
   const params = new URLSearchParams(window.location.search);
@@ -72,10 +77,15 @@ async function filterInit() {
     setQueryStringParameter('all__room', `${from}~${to}`);
     filteredList.import(filte1r.filter());
   }
-  const deb_handleRangeResultsAndFilter = debounce(handleRangeResultsAndFilter, 500);
-  $('[name="all_room"]').on('change', deb_handleRangeResultsAndFilter);
+  const debouncedHandleRangeResultsAndFilter = debounce(handleRangeResultsAndFilter, 500);
+  $('[name="all_room"]').on('change', debouncedHandleRangeResultsAndFilter);
 
-  window.addEventListener('filtering', deb_handleRangeResultsAndFilter);
+  window.addEventListener('filtering', debouncedHandleRangeResultsAndFilter);
+
+  if (window.matchMedia('(max-width: 575px)').matches) {
+    handleMobileSortItems();
+    mobCardsTypeOfViewHandler();
+  }
 }
 
 filterInit();
@@ -83,3 +93,33 @@ filterInit();
 const favorites = new Favorites({
   $containerOfElements: document.querySelector('.page__inner'),
 });
+
+/* На мобилке имитирует клик по сортировке с десктопа */
+function handleMobileSortItems() {
+  const $checkitems = document.querySelectorAll('[data-sort-list-mobile] li');
+  $checkitems.forEach((item) => {
+    const datasetToClick = item.dataset.valueToClick;
+    console.log(datasetToClick);
+    item.addEventListener('click', () => {
+      item.parentElement.querySelector('.check') && item.parentElement.querySelector('.check').classList.remove('check');
+      item.classList.add('check');
+
+      document.querySelector('[data-sort-item]').value = datasetToClick;
+      document.querySelector('[data-sort-item]').dispatchEvent(new Event('change'));
+      document.querySelector('.js-close-sort').dispatchEvent(new Event('click'));
+    });
+  });
+}
+
+
+function mobCardsTypeOfViewHandler() {
+  const mobButton = document.querySelector('.mobile-btn-nav');
+  document.querySelector('.planing').style.display = '';
+  mobButton.counterCliker = 1;
+  mobButton.addEventListener('click', (evt) => {
+    const buttonToClick = document.querySelectorAll('.planing__nav button')[(mobButton.counterCliker % 2)];
+    buttonToClick.click();
+    console.log(mobButton.counterCliker);
+    mobButton.counterCliker += 1;
+  });
+}
