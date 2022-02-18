@@ -76,7 +76,7 @@
 
 
 
-//- .sideform.sign-up-email.js-sideform-call
+.sign-up-email.js-sideform-call
   .form-close.js-close
     +svg('close-select')
   .form
@@ -93,10 +93,10 @@
           //- span.placeholder-form.js-placeholder-form Номер
           .input-message(data-input-message)
         
-        .form-field-confirm
-          button(class="btn-submite realty callback__btn" type="submit" data-btn-submit="data-btn-submit") 
-            span(data-btn-submit-text="") Надіслати
-            +svg('arrow')
+      .form-field-confirm
+        button(class="btn-submite realty callback__btn" type="submit" data-btn-submit="data-btn-submit") 
+          span(data-btn-submit-text="") Підписатись
+          +svg('arrow')
   .social-container 
     h4 Наші соцмережі!
     ul.social-list 
@@ -126,16 +126,17 @@
         a(href="#" target="_blank")
           +svg('tiktok-color') 
 
-//- .form-gratitude-sign-up-email.js-form-gratitude
+//- .sign-up-email.js-form-gratitude
   .form-close.js-close
     +svg('close-select')
   .form
     .gratitude-form-content
       h1 Дякуємо!
       h2 Ви успішно підписались на нашу розсилку. Обіцяємо не докучати і надсилати тільки цікаву та важливу інформацію.
-      button(class="btn-submite realty callback__btn") 
-        span На головну
-        +svg('arrow')
+      .form-field-confirm 
+        a(href="#").realty
+          span На головну
+          +svg('arrow')
   .social-container 
     h4 Наші соцмережі!
     ul.social-list 

@@ -219,6 +219,140 @@
   display: flex;
   align-items: center;
 }
+.sign-up-email {
+  width: 100vw;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  position: fixed;
+  top: 0;
+  // right: -100%;
+  right: 0;
+  background: #f3f0ef;
+  // visibility: hidden;
+  // opacity: 0;
+  z-index: 160;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out,
+    right 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .form-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+    svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        @include from(992px) {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  .form {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    @include to(1100px) {
+      width: 100%;
+      padding: 0 32px 0 32px;
+    }
+    h1 {
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 100%;
+      text-align: center;
+      color: #000000;
+      margin-bottom: 32px;
+      @include to(575px) {
+        font-size: 30px;
+      }
+    }
+    h2 {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.2;
+      text-align: center;
+      color: #000000;
+      margin-bottom: 48px;
+      @include to(575px) {
+        font-size: 18px;
+      }
+    }
+    .form-field {
+      display: flex;
+      flex-direction: row;
+      @include to(575px) {
+        flex-direction: column;
+      }
+      .form-field-input {
+        width: calc((100% / 2) - 8px);
+        margin-right: 16px;
+        &:last-child {
+          margin-right: 0;
+        }
+        @include to(575px) {
+          width: 100%;
+        }
+      }
+    }
+    .form-field-confirm {
+      width: 50%;
+      margin: 28px auto 0 auto;
+      .realty {
+        margin-right: 0;
+        width: 100%;
+      }
+      @include to(575px) {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+  }
+  .social-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 128px;
+    background: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include to(575px) {
+      height: 96px;
+    }
+    h4 {
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 1.2;
+      color: #000000;
+      margin-right: 40px;
+      @include to(575px) {
+        display: none;
+      }
+    }
+    .social-list {
+      display: flex;
+    }
+    .social-item {
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+      svg {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+}
 // .form-content {
 //   width: 100%;
 //   height: 100vh;
