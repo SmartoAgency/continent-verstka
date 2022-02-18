@@ -173,6 +173,7 @@ const renderForm = (form, elements, toast) => {
         'send',
       );
       /*  */
+      window.dispatchEvent(new Event('succesFormSend'));
       if (elementsParamFn.successAction === 'toster') {
         toast.addToast({
           type: 'success',

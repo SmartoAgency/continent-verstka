@@ -60,7 +60,7 @@ $('#num-4')
 
 $('.video')
   .parent()
-  .click(function() {
+  .click(function () {
     if (
       $(this)
         .children('.video')
@@ -174,7 +174,7 @@ if (isMobile()) {
   const swiperWrapper = document.createElement('div');
   swiperWrapper.classList.add('swiper-wrapper');
   slideWrapper.append(swiperWrapper);
-  document.querySelectorAll('.active-project__item').forEach(el => {
+  document.querySelectorAll('.active-project__item').forEach((el) => {
     el.classList.add('swiper-slide');
     swiperWrapper.append(el);
   });
@@ -185,7 +185,7 @@ if (isMobile()) {
     // freeMode: true,
     spaceBetween: 20,
     on: {
-      init: swiper => {
+      init: (swiper) => {
         const slidesLength = document.querySelectorAll(
           '.active-project .swiper-slide:not(.swiper-slide-duplicate)',
         ).length;
@@ -214,15 +214,15 @@ if (isMobile()) {
   ).length;
 
   const scrollbar = document.querySelector('.swiper-scrollbar1');
-  scrollbar.style.setProperty('--width', 100 / slidesLength + '%');
-  swiper.on('activeIndexChange', swiper => {
+  scrollbar.style.setProperty('--width', `${100 / slidesLength}%`);
+  swiper.on('activeIndexChange', (swiper) => {
     document.querySelector('.swiper-pagination1').innerHTML = `
      ${addZero(swiper.realIndex + 1)} / ${addZero(slidesLength)}
     `;
     const singleSlideInPercent = 100 / slidesLength;
     scrollbar.style.setProperty(
       '--width',
-      (swiper.realIndex * 100) / slidesLength + singleSlideInPercent + '%',
+      `${(swiper.realIndex * 100) / slidesLength + singleSlideInPercent}%`,
     );
     console.log(swiper);
   });
@@ -236,9 +236,9 @@ function handleHeader(scroller) {
     const tempState = prevScrollPosition > scroll.y ? 'open' : 'close';
     prevScrollPosition = scroll.y;
     if (scroll.y > 150) {
-      changeState['untransparent']();
+      changeState.untransparent();
     } else {
-      changeState['transparent']();
+      changeState.transparent();
     }
     if (tempState === header.state || scroll.y < 150) return;
     header.state = tempState;

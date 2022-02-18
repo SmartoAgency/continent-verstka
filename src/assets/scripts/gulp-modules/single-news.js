@@ -1,4 +1,4 @@
-var swiper = new Swiper('.single-news-swiper', {
+const swiper = new Swiper('.single-news-swiper', {
   navigation: {
     nextEl: '.swiper-button-next2',
     prevEl: '.swiper-button-prev2',

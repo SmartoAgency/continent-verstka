@@ -365,6 +365,10 @@
       justify-content: center;
       background: none;
       border-radius: none;
+      input,
+      svg {
+        pointer-events: none;
+      }
     }
   }
   .chekbox__container {

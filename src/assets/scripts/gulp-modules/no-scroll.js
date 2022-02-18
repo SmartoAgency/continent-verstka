@@ -14,7 +14,7 @@ const onscrollHeaderActions = [
     document.getElementById('header').classList.add('not-on-top');
   },
 ];
-window.onscroll = function(e) {
+window.onscroll = function (e) {
   const currentY = window.pageYOffset;
 
   const direction = prevScrollPosition < currentY ? 1 : 0;

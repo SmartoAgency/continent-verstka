@@ -116,6 +116,7 @@ function initSlider(container) {
     // loopedSlides: e,
     // loop: true,
     // speed: 750,
+    simulateTouch: swipEl.closest('.calculator-popup') === null,
     spaceBetween: 0,
     pagination: {
       el: pagination,
@@ -157,6 +158,11 @@ function initSlider(container) {
     );
     // console.log(swiper);
   });
+
+  console.log(swipEl.closest('.calculator-popup'));
+  if (swipEl.closest('.calculator-popup') !== null) {
+    swipEl.closest('.calculator-popup').slider = swiper;
+  }
 }
 
 function addZero(num) {

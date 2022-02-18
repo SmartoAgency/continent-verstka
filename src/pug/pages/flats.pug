@@ -26,6 +26,12 @@ block scripts
   script(defer src='./assets/scripts/header-menu.js')
   script(defer src='./assets/scripts/commerce.js')
   script(defer src='./assets/scripts/select.js') 
+  script(defer src='./assets/scripts/no-scroll.js') 
+
+  script(defer src='./assets/scripts/flats/favorites.js') 
+  script(defer src='./assets/scripts/flats/filter-config.js') 
+  script(defer src='./assets/scripts/flats/filtered-list.js') 
+  script(defer src='./assets/scripts/flats/flats-filter.js') 
 
 block content
   include ../includes/breadcrumbs.pug   
@@ -34,11 +40,11 @@ block content
       .mobile-filter-close 
           h4 Сортувати
           +svg('close-select').js-close-sort
-      ul.sort-list 
-        li.sort-item.check Спочатку з більшою площою
-        li.sort-item Спочатку з меншою площою
-        li.sort-item За строком сдачі
-  .planing-filter 
+      ul.sort-list(data-sort-list-mobile)
+        li.sort-item(data-value-to-click="big_area").check Спочатку з більшою площою
+        li.sort-item(data-value-to-click="smaller_area") Спочатку з меншою площою
+        li.sort-item(data-value-to-click="deadline") За строком сдачі
+  .planing-filter(data-filtered-list-wrapper) 
     h2.our-projects__title Квартири
     .mobile-filter-btn
       .mobile-btn-nav 
@@ -52,43 +58,45 @@ block content
         +svg('close-select').js-close-filter
       .planing-filter__container 
         .planing-filt__complex
-          select(class="select" name="connection")
+          select(class="select" name="connection" data-filter-item="complex")
             option(disabled) Будь-який
+            option(value="") Будь-який
             option(value="Continent-Ray") Continent Ray
             option(value="Continent-Black") Continent Black
             option(value="Continent-Ray-2.1") Continent Ray 2.1
           .marker-text Житловий комплекс
         .planing-filt__range
           .planing-filt__range-container
-            input(type="text" class="js-range-slider" name="my_range" value="")
+            input(type="text" class="js-range-slider" name="all_room" value="")
           .marker-text Площа м²
         .planing-filt__range.number-flats
           .planing-filt__range-container
             .checkboxes__rooms
-              input(class="checkbox__room filter__checkbox" id="checkbox__room1" type="checkbox" value="1")
+              input(data-type="checkbox" data-filter-item="rooms" class="checkbox__room filter__checkbox" id="checkbox__room1" type="checkbox" value="1")
               label(for="checkbox__room1" class="checkbox__text") 1
-              input(class="checkbox__room filter__checkbox" id="checkbox__room2" type="checkbox" value="2")
+              input(data-type="checkbox" data-filter-item="rooms" class="checkbox__room filter__checkbox" id="checkbox__room2" type="checkbox" value="2")
               label(for="checkbox__room2" class="checkbox__text") 2
-              input(class="checkbox__room filter__checkbox" id="checkbox__room3" type="checkbox" value="3")
+              input(data-type="checkbox" data-filter-item="rooms" class="checkbox__room filter__checkbox" id="checkbox__room3" type="checkbox" value="3")
               label(for="checkbox__room3" class="checkbox__text") 3
-              input(class="checkbox__room filter__checkbox" id="checkbox__room4" type="checkbox" value="4")
+              input(data-type="checkbox" data-filter-item="rooms" class="checkbox__room filter__checkbox" id="checkbox__room4" type="checkbox" value="4")
               label(for="checkbox__room4" class="checkbox__text") 4
           .marker-text Кількість кімнат
 
         .planing-filt__deadline
-          select(class="select" name="connection")
+          select(class="select" name="connection" data-filter-item="deadline")
             option(disabled) Будь-який 
+            option(value="") Будь-який
             option(value="2022") ІІІ кв. 2022
             option(value="2023") ІІІ кв. 2023
             option(value="2024") ІІІ кв. 2024
           .marker-text Строк здачі
         .planing-filt__range.checkbox__item
           .checkbox__block-item
-            input(class="checkbox__room filter__checkbox" id="checkbox__two-level" type="checkbox" value="")
+            input(data-filter-item="two_level" data-type="checkbox"  class="checkbox__room filter__checkbox" id="checkbox__two-level" type="checkbox" value="1")
             label(for="checkbox__two-level" class="checkbox__text") 
             .checkbox__block-name Дворівневі квартири
           .checkbox__block-item
-            input(class="checkbox__room filter__checkbox" id="checkbox__terrace" type="checkbox" value="")
+            input(data-filter-item="terrace" data-type="checkbox" class="checkbox__room filter__checkbox" id="checkbox__terrace" type="checkbox" value="1")
             label(for="checkbox__terrace" class="checkbox__text")
             .checkbox__block-name  Квартири з терасою
         .planing-filt__deadline.planing-filter__close
@@ -98,12 +106,12 @@ block content
 
       .planing-filter__close 
         .result-filter Знайдено 
-          .number 153 
+          .number(data-filtered-list-sum) 153 
           | планування
           +svg('arrow')
       .planing-filter__close
         button.realty.nav__call-btn Переглянути 
-          span.number 15 
+          span.number(data-filtered-list-sum) 15 
           | квартир
 
     .planing-filter__last-session 
@@ -118,11 +126,12 @@ block content
       .tab.buttons
         button.tablinks.tabs__nav-btn.grid.js-btn-grid.active Картками
         button.tablinks.tabs__nav-btn.list.js-btn-list Cписком 
-      select(class="select" name="connection")
+      select(class="select" name="connection" data-sort-item)
         option(disabled) Спочатку з більшою площою
-        option(value="big-area") Спочатку з більшою площою
-        option(value="smaller-area") Спочатку з меншою площою
-        option(value="dedline") За строком сдачі
+        option(value="big_area") Спочатку з більшою площою
+        option(value="price") За ціною
+        option(value="smaller_area") Спочатку з меншою площою
+        option(value="deadline") За строком сдачі
     .list-title.js-sort-title
       p.planing__img План
       p.planing__title Житловий квартал
@@ -132,7 +141,7 @@ block content
       p.deadlines Строки здачі
       p.price Вартість
       p.favorites
-    ul.planing__list.grid
+    ul.planing__list.grid(data-filtered-list)
       li.planing__item
         a(href="single-flats.html").planing__link
           .price

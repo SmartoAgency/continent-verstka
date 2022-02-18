@@ -1,7 +1,7 @@
 $btnGrid = $('.js-btn-grid');
 $btnList = $('.js-btn-list');
 $sortTitle = $('.js-sort-title');
-$('button').on('click', function(e) {
+$('button').on('click', function (e) {
   if ($(this).hasClass('grid')) {
     $('#container ul')
       .removeClass('list')

@@ -1,5 +1,8 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation":false
 }

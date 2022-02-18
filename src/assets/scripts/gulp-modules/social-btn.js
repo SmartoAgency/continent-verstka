@@ -1,13 +1,13 @@
 // btn social start
 const socialBtn = document.querySelectorAll('.js-social');
-socialBtn.forEach(el => {
+socialBtn.forEach((el) => {
   el.addEventListener('click', () => {
     el.classList.toggle('social-link__grow');
   });
 });
 
 function handleVisibilityOnScroll(elems = [], direction = 'up') {
-  elems.forEach(elem => {
+  elems.forEach((elem) => {
     switch (direction) {
       case 'down':
         elem[0].classList.add(elem[1]);
@@ -19,7 +19,7 @@ function handleVisibilityOnScroll(elems = [], direction = 'up') {
   });
 }
 const socialSelect = document.querySelectorAll('.social-select');
-locoScroll.on('scroll', position => {
+locoScroll.on('scroll', (position) => {
   if (position.scroll.y > 100) {
     handleVisibilityOnScroll([[socialSelect[0], 'visible']], 'down');
     handleVisibilityOnScroll([[socialSelect[1], 'visible']], 'down');

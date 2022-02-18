@@ -1,10 +1,10 @@
 // // select start
-$('.select').each(function() {
-  const _this = $(this),
-    selectOption = _this.find('option'),
-    selectOptionLength = selectOption.length,
-    selectedOption = selectOption.filter(':selected'),
-    duration = 450; // длительность анимации
+$('.select').each(function () {
+  const _this = $(this);
+  const selectOption = _this.find('option');
+  const selectOptionLength = selectOption.length;
+  const selectedOption = selectOption.filter(':selected');
+  const duration = 450; // длительность анимации
 
   _this.hide();
   _this.wrap('<div class="select"></div>');
@@ -32,17 +32,28 @@ $('.select').each(function() {
 
   const selectItem = selectList.find('.new-select__item');
   selectList.slideUp(0);
-  selectHead.on('click', function() {
+  selectHead.on('click', function () {
     if (!$(this).hasClass('on')) {
       $(this).addClass('on');
       selectList.slideDown(duration);
 
-      selectItem.on('click', function() {
-        let chooseItem = $(this).data('value');
+      selectItem.on('click', function () {
+        const chooseItem = $(this).data('value');
+        // console.log($(this)[0].closest('.select').querySelector('select'));
 
+        $(this)[0]
+          .closest('.select')
+          .querySelector('select').value = chooseItem;
+        $(this)[0]
+          .closest('.select')
+          .querySelector('select').dataset.value = $(this)[0].textContent;
         $('select')
-          .val(chooseItem)
+          // .val(chooseItem)
           .attr('selected', 'selected');
+
+        document.querySelectorAll('select').forEach((el) => {
+          el.dispatchEvent(new Event('change'));
+        });
         selectHead.text(
           $(this)
             .find('span')

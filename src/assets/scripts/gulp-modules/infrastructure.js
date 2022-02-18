@@ -2,7 +2,7 @@ function addZero(num) {
   return num > 9 ? num : `0${num}`;
 }
 
-var swiper2 = new Swiper('.infrastructure-swiper', {
+const swiper2 = new Swiper('.infrastructure-swiper', {
   spaceBetween: 30,
   slidesPerView: 1.25,
   // freeMode: true,

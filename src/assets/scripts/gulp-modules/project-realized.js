@@ -1,4 +1,4 @@
-var swiper = new Swiper('.realized-project', {
+const swiper = new Swiper('.realized-project', {
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -16,7 +16,7 @@ function addZero(num) {
   return num > 9 ? num : `0${num}`;
 }
 
-var swiper2 = new Swiper('.description-swiper', {
+const swiper2 = new Swiper('.description-swiper', {
   spaceBetween: 30,
   slidesPerView: 1.25,
   // freeMode: true,
@@ -41,7 +41,7 @@ var swiper2 = new Swiper('.description-swiper', {
   },
 });
 
-var swiper3 = new Swiper('.swiper-example', {
+const swiper3 = new Swiper('.swiper-example', {
   spaceBetween: 20,
   slidesPerView: 1.25,
   // freeMode: true,

@@ -10,11 +10,11 @@ function onTabClick(item, tabsBtn, tabsItems) {
     const currentTab = document.querySelector(tabId);
 
     if (!currentBtn.classList.contains('active')) {
-      tabsBtn.forEach(item => {
+      tabsBtn.forEach((item) => {
         item.classList.remove('active');
       });
 
-      tabsItems.forEach(item => {
+      tabsItems.forEach((item) => {
         item.classList.remove('active');
       });
 
@@ -26,12 +26,12 @@ function onTabClick(item, tabsBtn, tabsItems) {
 }
 // document.querySelector('.tabs__nav-btn').click();
 
-window.matchMedia('(min-width: 576px)').matches &&
-  document.querySelectorAll('.accordion-item').forEach(el => {
+window.matchMedia('(min-width: 576px)').matches
+  && document.querySelectorAll('.accordion-item').forEach((el) => {
     const tabsBtn = el.querySelectorAll('.tabs__nav-btn');
     if (tabsBtn.length === 0) return;
     const tabsItems = el.querySelectorAll('.tabs__item');
-    tabsBtn.forEach(item => {
+    tabsBtn.forEach((item) => {
       onTabClick(item, tabsBtn, tabsItems);
     });
   });

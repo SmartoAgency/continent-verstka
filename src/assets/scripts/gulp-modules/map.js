@@ -24,7 +24,7 @@ const options = {
 maps.forEach((image, index) => {
   const callback = (entries, observer) => {
     /* Content excerpted, show below */
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const lazyImage = entry.target;
         lazyImage.src = lazyImage.dataset.src;
@@ -65,8 +65,8 @@ function initMap(mapIndex) {
     language: 'en',
     styles: getMapTheme(),
   });
-  const filterMarkers = function(category, categoriesArray) {
-    gmarkers1.forEach(el => {
+  const filterMarkers = function (category, categoriesArray) {
+    gmarkers1.forEach((el) => {
       if (categoriesArray.has(el.category) || categoriesArray.size === 1) {
         el.setMap(map);
         el.setAnimation(google.maps.Animation.DROP);
@@ -75,8 +75,8 @@ function initMap(mapIndex) {
       }
     });
   };
-  filterItems.forEach(item => {
-    item.addEventListener('click', evt => {
+  filterItems.forEach((item) => {
+    item.addEventListener('click', (evt) => {
       evt.stopImmediatePropagation();
       item.classList.toggle('active');
       if (item.classList.contains('active')) {
@@ -141,7 +141,7 @@ function initMap(mapIndex) {
     content: '',
     maxWidth: 200,
   });
-  markersData.forEach(marker => {
+  markersData.forEach((marker) => {
     const category = marker.type;
     const mapMarker = new google.maps.Marker({
       map,
@@ -151,7 +151,7 @@ function initMap(mapIndex) {
       position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
     });
 
-    google.maps.event.addListener(mapMarker, 'click', function() {
+    google.maps.event.addListener(mapMarker, 'click', function () {
       infowindow.setContent(marker.content);
       infowindow.open(map, mapMarker);
       map.panTo(this.getPosition());
@@ -414,7 +414,7 @@ function getMapTheme() {
 //   });
 // });
 
-document.querySelectorAll('[data-nav-item-group]').forEach(el => {
+document.querySelectorAll('[data-nav-item-group]').forEach((el) => {
   if (el.querySelector('.map-nav-subitems') === null) return;
   const openElement = el.querySelector('.map-nav-item');
   openElement.addEventListener('click', () => {
@@ -422,7 +422,7 @@ document.querySelectorAll('[data-nav-item-group]').forEach(el => {
   });
 });
 
-document.querySelector('[data-mob-wrapper-mobile-opener]').addEventListener('click', function(evt) {
+document.querySelector('[data-mob-wrapper-mobile-opener]').addEventListener('click', function (evt) {
   const openbutton = document.querySelector('[data-mob-wrapper-mobile-opener]');
   const navContainer = document.querySelector('.map-wrapper__nav');
   navContainer.classList.toggle('closed');

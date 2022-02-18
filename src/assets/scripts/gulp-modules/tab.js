@@ -11,11 +11,11 @@ function onTabClick(item) {
     const currentTab = document.querySelector(tabId);
 
     if (!currentBtn.classList.contains('active')) {
-      tabsBtn.forEach(item => {
+      tabsBtn.forEach((item) => {
         item.classList.remove('active');
       });
 
-      tabsItems.forEach(item => {
+      tabsItems.forEach((item) => {
         item.classList.remove('active');
       });
 
