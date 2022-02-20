@@ -8,7 +8,7 @@
   @include to(1280px) {
     padding: 40px vw(32, 1280) 80px;
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 16px 22px 32px;
   }
 }
@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   padding-bottom: 40px;
-  @include to(575px) {
+  @include to(992px) {
     flex-direction: row-reverse;
     justify-content: space-between;
     padding-bottom: 24px;
@@ -32,7 +32,7 @@
   height: 96px;
   transform: rotate(15deg);
   margin-right: 12px;
-  @include to(575px) {
+  @include to(992px) {
     flex-shrink: 0;
     width: 76px;
     height: 76px;
@@ -71,7 +71,7 @@
     background: #f3f0ef;
     width: max-content;
     margin-top: 24px;
-    @include to(575px) {
+    @include to(992px) {
       margin-top: 16px;
     }
   }
@@ -79,7 +79,7 @@
 .single-news__content {
   display: flex;
   justify-content: space-between;
-  @include to(575px) {
+  @include to(992px) {
     position: relative;
   }
 }
@@ -87,12 +87,12 @@
   width: 63%;
   display: flex;
   flex-direction: column;
-  @include to(575px) {
+  @include to(992px) {
     width: 100%;
   }
   .single-news__img {
     margin-bottom: 32px;
-    @include to(575px) {
+    @include to(992px) {
       height: 240px;
       margin-bottom: 157px;
     }
@@ -102,7 +102,7 @@
     font-size: 22px;
     line-height: 1.23;
     color: #000000;
-    @include to(575px) {
+    @include to(992px) {
       font-size: 18px;
     }
   }
@@ -114,7 +114,7 @@
     align-items: center;
     background: #fec62e;
     border-radius: 8px;
-    @include to(575px) {
+    @include to(992px) {
       margin: 24px 0 40px 0;
       padding: 24px 0;
     }
@@ -123,7 +123,7 @@
       font-size: 32px;
       line-height: 1.22;
       color: #000000;
-      @include to(575px) {
+      @include to(992px) {
         font-size: 20px;
       }
     }
@@ -152,7 +152,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
-    @include to(575px) {
+    @include to(992px) {
       margin-bottom: 24px;
     }
     &:last-child {
@@ -164,7 +164,7 @@
       line-height: 1.25;
       color: #000000;
       margin-bottom: 8px;
-      @include to(575px) {
+      @include to(992px) {
         font-size: 14px;
       }
     }
@@ -173,7 +173,7 @@
       font-size: 22px;
       line-height: 1.25;
       color: #000000;
-      @include to(575px) {
+      @include to(992px) {
         font-size: 18px;
       }
     }
@@ -187,7 +187,7 @@
   border: 2px solid #fec62e;
   border-radius: 4px;
   margin-top: 80px;
-  @include to(575px) {
+  @include to(992px) {
     margin-top: 48px;
     flex-direction: column;
     padding: 24px 19px;
@@ -197,7 +197,7 @@
     font-size: 26px;
     line-height: 1.23;
     color: #000000;
-    @include to(575px) {
+    @include to(992px) {
       font-size: 20px;
       text-align: center;
       margin-bottom: 16px;
@@ -222,7 +222,7 @@
   @include to(1440px) {
     width: 35%;
   }
-  @include to(575px) {
+  @include to(992px) {
     width: 100%;
     position: absolute;
     left: 0;
@@ -236,14 +236,14 @@
     align-items: center;
     border: 2px solid #fec62e;
     border-radius: 4px;
-    @include to(575px) {
+    @include to(992px) {
       padding: 16px 18px;
     }
   }
   .timer {
     width: 44px;
     height: auto;
-    @include to(575px) {
+    @include to(992px) {
       width: 28px;
     }
   }
@@ -255,7 +255,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #000000;
-    @include to(575px) {
+    @include to(992px) {
       font-size: 10px;
       margin-top: 8px;
     }
@@ -265,7 +265,7 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
-    @include to(575px) {
+    @include to(992px) {
       margin-top: 8px;
     }
     .countdown-number {
@@ -275,7 +275,7 @@
       line-height: 1.22;
       color: #ff7a00;
       margin-right: 8px;
-      @include to(575px) {
+      @include to(992px) {
         font-size: min(vw(20, 375), 18px);
       }
       span {

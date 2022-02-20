@@ -18,7 +18,7 @@
   @include to(1280px) {
     margin: calc(var(--header-h) + 40px) vw(32, 1280) 0px vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     margin: calc(var(--header-h) + 20px) 22px 0px 22px;
   }
   // @include to(576px) {

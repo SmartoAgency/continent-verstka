@@ -9,14 +9,14 @@
   @include to(1280px) {
     padding: 42px vw(32, 1440) 52px;
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 16px 22px 32px;
     flex-direction: column;
     align-items: flex-start;
   }
   &__btn {
     display: flex;
-    @include to(575px) {
+    @include to(992px) {
       margin-top: 32px;
     }
   }
@@ -34,20 +34,20 @@
     border-radius: 44px;
     margin-right: 16px;
     white-space: nowrap;
-    @include to(575px) {
+    @include to(992px) {
       margin-right: 8px;
     }
     &:last-child {
       margin-right: 0;
     }
     .desctop {
-      @include to(575px) {
+      @include to(992px) {
         display: none;
       }
     }
     .mobile {
       display: none;
-      @include to(575px) {
+      @include to(992px) {
         display: block;
       }
     }
@@ -148,7 +148,7 @@
   @include to(1280px) {
     padding: 0 vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 0 22px;
     font-size: 24px;
     margin: 24px 0 40px;
@@ -162,7 +162,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @include to(575px) {
+  @include to(992px) {
     --offset: calc(var(--header-h) + 32px);
   }
   svg {
@@ -174,7 +174,7 @@
     margin: 32px 0 40px;
   }
   .realty {
-    @include to(575px) {
+    @include to(992px) {
       width: calc(100% - 44px);
     }
   }
@@ -191,7 +191,7 @@
   @include to(1280px) {
     padding: 0 vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 0 22px;
   }
   .swiper-button-prev,
@@ -205,7 +205,7 @@
       height: 24px;
       stroke-width: 4px;
     }
-    @include to(575px) {
+    @include to(992px) {
       display: none;
     }
   }
@@ -217,7 +217,7 @@
     @include to(1280px) {
       left: vw(32, 1280);
     }
-    @include to(575px) {
+    @include to(992px) {
       left: 22px;
     }
   }
@@ -229,7 +229,7 @@
     @include to(1280px) {
       right: vw(32, 1280);
     }
-    @include to(575px) {
+    @include to(992px) {
       right: 22px;
     }
   }
@@ -237,7 +237,7 @@
 .parametrs-list.fixed-parametrs-list {
   width: 20%;
   padding-top: 320px;
-  @include to(575px) {
+  @include to(992px) {
     display: none;
   }
   .parametrs-item {
@@ -256,7 +256,7 @@
   flex-direction: column;
   .title-list {
     height: 128px;
-    // @include to(575px) {
+    // @include to(992px) {
     //   height: 86px;
     //   justify-content: flex-start;
     // }
@@ -272,7 +272,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include to(575px) {
+    @include to(992px) {
       height: 52px;
       font-size: 16px;
     }
@@ -282,14 +282,14 @@
       line-height: 1.2;
       color: #000000;
       text-transform: none;
-      @include to(575px) {
+      @include to(992px) {
         font-size: 22px;
       }
     }
 
     .title-mobile {
       display: none;
-      @include to(575px) {
+      @include to(992px) {
         display: flex;
         text-align: left;
       }
@@ -297,7 +297,7 @@
   }
 }
 .parametrs-list .parametrs-item.title-list {
-  @include to(575px) {
+  @include to(992px) {
     height: 86px;
     justify-content: flex-start;
   }
@@ -309,7 +309,7 @@
   // justify-content: center;
   align-items: center;
   position: relative;
-  @include to(575px) {
+  @include to(992px) {
     height: 264px;
   }
   .views {
@@ -327,24 +327,24 @@
     transform: translate(-50%, 10px);
     display: flex;
     white-space: nowrap;
-    @include to(575px) {
+    @include to(992px) {
       margin: 0 0.5ch 0 0;
       padding: 6px 11px;
     }
     .number {
       margin: 0 0.5ch;
-      @include to(575px) {
+      @include to(992px) {
         margin: 0 0.5ch 0 0;
       }
     }
     .desctop {
-      @include to(575px) {
+      @include to(992px) {
         display: none;
       }
     }
     .mobile {
       display: none;
-      @include to(575px) {
+      @include to(992px) {
         display: flex;
       }
     }
@@ -354,7 +354,7 @@
     width: 160px;
     height: 160px;
     transition: transform 0.2s ease;
-    @include to(575px) {
+    @include to(992px) {
       width: 115px;
       height: 115px;
     }
@@ -395,11 +395,11 @@
 .swiper-favorites {
   width: 80%;
   overflow: hidden;
-  @include to(575px) {
+  @include to(992px) {
     width: 100%;
   }
   .swiper-slide {
-    @include to(575px) {
+    @include to(992px) {
       border-right: 2px solid #f3f0ef;
       border-top: 2px solid #f3f0ef;
     }
@@ -409,7 +409,7 @@
         height: 48px;
         width: 200px;
       }
-      @include to(575px) {
+      @include to(992px) {
         height: 48px;
         width: 136px;
         margin: 24px auto 56px;
@@ -420,7 +420,7 @@
 
 .parametrs-item-mobile {
   display: none;
-  @include to(575px) {
+  @include to(992px) {
     display: flex;
     justify-content: center;
     align-items: center;

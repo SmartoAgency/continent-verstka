@@ -1,7 +1,7 @@
 .realized-project.single-realized-project {
   .realized-project__content {
     width: 55%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
       padding-top: 100px;
     }
@@ -9,7 +9,7 @@
   .realty {
     margin-top: 60px;
     width: auto;
-    @include to(575px) {
+    @include to(992px) {
       margin-top: 30px;
     }
     svg {
@@ -32,7 +32,7 @@
   @include to(1280px) {
     padding: 24px vw(32, 1280) 32px vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     flex-direction: column;
     padding: 16px 22px 10px 22px;
     order: 2;
@@ -49,14 +49,14 @@
   }
   &__description-list {
     display: flex;
-    @include to(575px) {
+    @include to(992px) {
       margin-top: 30px;
       column-count: 2;
       display: initial;
     }
     .single-specification__item {
       margin-right: 40px;
-      @include to(575px) {
+      @include to(992px) {
         margin-bottom: 30px;
       }
       svg {
@@ -64,7 +64,7 @@
         height: 24px;
         margin-bottom: 20px;
         fill: none;
-        @include to(575px) {
+        @include to(992px) {
           margin-bottom: 10px;
         }
       }
@@ -87,7 +87,7 @@
   @include to(1280px) {
     padding: 80px 128px 0 vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 22px;
     flex-direction: column;
     order: 4;
@@ -97,7 +97,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
     p {
@@ -107,7 +107,7 @@
       line-height: 1.25;
       color: #000000;
       margin-bottom: 16px;
-      @include to(575px) {
+      @include to(992px) {
         width: 100%;
         &:first-child {
           margin-top: 32px;
@@ -117,7 +117,7 @@
     p + .single-section1__img {
       margin-top: 68px;
       width: 100%;
-      @include to(575px) {
+      @include to(992px) {
         order: -1;
         margin-top: 20px;
       }
@@ -128,13 +128,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
     .single-section1__img {
       margin-bottom: 68px;
       width: 87.5%;
-      @include to(575px) {
+      @include to(992px) {
         width: 100%;
         margin-top: 16px;
         margin-bottom: 24px;
@@ -175,26 +175,26 @@
   @include to(1280px) {
     padding: 80px vw(140, 1920) 0 vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 0 22px 22px 22px;
     flex-direction: column;
     order: 5;
   }
   .single-section2__img {
     width: 28%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
   }
   .single-section2__text {
     width: 40%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
       padding-top: 40px;
     }
     .our-projects__title {
       margin-bottom: 40px;
-      @include to(575px) {
+      @include to(992px) {
         margin-bottom: 24px;
       }
     }
@@ -219,21 +219,21 @@
   @include to(1280px) {
     padding: 40px vw(32, 1280) 0 vw(150, 1920);
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 0 22px 22px 22px;
     flex-direction: column-reverse;
     order: 5;
   }
   ul {
     width: 35%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
   }
   li {
     display: flex;
     margin-bottom: 24px;
-    @include to(575px) {
+    @include to(992px) {
       margin-bottom: 16px;
     }
     &:last-child {
@@ -260,7 +260,7 @@
   }
   .single-section3__img {
     width: 60%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
       margin-bottom: 24px;
     }
@@ -277,13 +277,13 @@
   @include to(1280px) {
     padding: 80px vw(32, 1280) 0 vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 40px 22px 22px 22px;
     flex-direction: column;
   }
   &__text {
     width: 23%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
     .our-projects__title {
@@ -303,14 +303,14 @@
   &__img {
     width: 33%;
     height: 550px;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
       margin: 42px 0 24px 0;
     }
   }
   ul {
     width: 23%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
   }
@@ -348,7 +348,7 @@
   align-items: flex-start;
   padding-top: 80px;
   padding-bottom: 100px;
-  @include to(575px) {
+  @include to(992px) {
     padding-top: 28px;
     padding-bottom: 235px;
     position: relative;
@@ -364,7 +364,7 @@
   }
   .single-section3__img {
     margin-top: -170px;
-    @include to(575px) {
+    @include to(992px) {
       margin-top: 0;
     }
     ul {
@@ -372,7 +372,7 @@
       width: 100%;
       column-count: 2;
       column-gap: 60px;
-      @include to(575px) {
+      @include to(992px) {
         column-count: 1;
         column-gap: 0px;
         position: absolute;
@@ -393,7 +393,7 @@
   @include to(1280px) {
     padding: 60px vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 35px 22px 145px 22px;
     position: relative;
     order: 3;
@@ -411,13 +411,13 @@
   // padding-top: 70px;
   .our-projects__title {
     width: 50%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
   }
   .swiper-btn {
     display: none;
-    @include to(575px) {
+    @include to(992px) {
       display: flex;
       .swiper-button-prev2 {
         margin-right: 8px;
@@ -442,14 +442,14 @@
     border-right: 1px solid #f3f0ef;
     border-left: 1px solid #f3f0ef;
   }
-  @include to(575px) {
+  @include to(992px) {
     height: 360px;
   }
 }
 .layout__container-text {
   width: 50%;
   padding-top: 45px;
-  @include to(575px) {
+  @include to(992px) {
     width: 100%;
     padding-top: 24px;
   }
@@ -476,7 +476,7 @@
   // @include to(992px) {
   //   height: 476px;
   // }
-  // @include to(575px) {
+  // @include to(992px) {
   //   height: 100%;
   //   // margin-bottom: 30px;
   // }
@@ -498,7 +498,7 @@
   position: absolute;
 
   // transition: height 1.5s ease;
-  @include to(575px) {
+  @include to(992px) {
     height: 320px;
   }
 }
@@ -519,7 +519,7 @@
   top: 0;
   left: 0;
   z-index: 2;
-  @include to(575px) {
+  @include to(992px) {
     width: 100%;
     height: auto;
     top: auto;
@@ -542,7 +542,7 @@
     border-radius: 50%;
     margin: auto 16px 4px 0;
   }
-  @include to(575px) {
+  @include to(992px) {
     font-size: 14px;
     padding: 10px 20px;
   }
@@ -555,7 +555,7 @@
   color: #000000;
   border-bottom: 2px solid #f3f0ef;
   position: relative;
-  @include to(575px) {
+  @include to(992px) {
     font-size: 14px;
     padding: 10px 20px;
   }
@@ -578,7 +578,7 @@
     position: absolute;
     top: 38px;
     right: 32px;
-    @include to(575px) {
+    @include to(992px) {
       width: 16px;
       height: 16px;
       top: 10px;
@@ -677,13 +677,13 @@
   @include to(1280px) {
     padding: 115px 136px 136px 136px;
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 22px;
   }
   .group-logo {
     margin-bottom: 80px;
     width: 384px;
-    @include to(575px) {
+    @include to(992px) {
       margin-bottom: 30px;
     }
   }
@@ -691,27 +691,27 @@
     width: 384px;
     height: 113px;
     fill: $white;
-    @include to(575px) {
+    @include to(992px) {
       width: 248px;
       height: 74px;
     }
   }
   .about__container {
     width: 66%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
     .our-projects__title {
       color: $yellow;
       margin-bottom: 70px;
-      @include to(575px) {
+      @include to(992px) {
         margin-bottom: 40px;
       }
     }
     .about__list {
       column-count: 2;
       column-gap: 65px;
-      @include to(575px) {
+      @include to(992px) {
         column-count: 1;
         column-gap: 0;
       }
@@ -722,11 +722,11 @@
       break-inside: avoid;
       &:nth-child(odd) {
         margin-bottom: 48px;
-        @include to(575px) {
+        @include to(992px) {
           margin-bottom: 32px;
         }
       }
-      @include to(575px) {
+      @include to(992px) {
         flex-direction: row;
         margin-bottom: 32px;
       }
@@ -738,7 +738,7 @@
         text-transform: uppercase;
         color: #ffffff;
         margin-bottom: 16px;
-        @include to(575px) {
+        @include to(992px) {
           margin-right: 20px;
         }
       }
@@ -766,7 +766,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @include to(575px) {
+  @include to(992px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url('../images/single2.jpg');
   }
@@ -775,7 +775,7 @@
     font-size: 18px;
     line-height: 100%;
     color: #ffffff;
-    @include to(575px) {
+    @include to(992px) {
       font-size: 14px;
     }
   }
@@ -785,7 +785,7 @@
     line-height: 1.22;
     color: #ffffff;
     white-space: nowrap;
-    @include to(575px) {
+    @include to(992px) {
       font-size: 48px;
     }
   }
@@ -800,7 +800,7 @@
 }
 .layout-inf {
   padding-top: 0;
-  @include to(575px) {
+  @include to(992px) {
     flex-direction: column;
     padding-top: 35px;
     .layout__title-container {
@@ -814,7 +814,7 @@
   flex-direction: column;
 }
 #project-realized {
-  @include to(575px) {
+  @include to(992px) {
     .single-section5 {
       order: 8;
     }

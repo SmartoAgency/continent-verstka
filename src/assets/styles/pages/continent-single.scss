@@ -2,7 +2,7 @@
   .section1 {
     width: 62%;
     margin: 84px auto 80px auto;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
       margin: 0;
       padding: 48px 22px;
@@ -12,7 +12,7 @@
       margin: 32px 0 64px 0;
       column-count: 2;
       column-gap: 32px;
-      @include to(575px) {
+      @include to(992px) {
         column-count: 1;
         column-gap: 0;
         margin: 24px 0 56px 0;
@@ -48,7 +48,7 @@
       // grid-template-rows: auto 160px 270px 160px auto;
       padding: 0 vw(136, 1280) 0 vw(32, 1280);
     }
-    @include to(575px) {
+    @include to(992px) {
       // grid-template-columns: 200px 500px 136px 280px;
       // grid-template-rows: auto 160px 270px 160px auto;
       padding: 0 22px;
@@ -56,7 +56,7 @@
     }
     .big-img {
       grid-area: big-img;
-      @include to(575px) {
+      @include to(992px) {
         grid-column: -1/ 1;
         grid-row: 4;
         margin-top: 32px;
@@ -64,7 +64,7 @@
     }
     .list-text {
       grid-area: list-text;
-      @include to(575px) {
+      @include to(992px) {
         grid-column: -1/ 1;
         grid-row: 5;
       }
@@ -72,7 +72,7 @@
         padding-top: 56px;
         column-count: 2;
         column-gap: 30px;
-        @include to(575px) {
+        @include to(992px) {
           padding-top: 24px;
           column-count: 1;
           column-gap: 0;
@@ -103,7 +103,7 @@
     }
     .little-img {
       grid-area: little-img;
-      @include to(575px) {
+      @include to(992px) {
         grid-column: -1/ 1;
         grid-row: 3;
       }
@@ -111,7 +111,7 @@
     .title {
       grid-area: title;
       margin-bottom: 32px;
-      @include to(575px) {
+      @include to(992px) {
         grid-column: -1/ 1;
         grid-row: 1;
       }
@@ -123,7 +123,7 @@
       font-size: 16px;
       line-height: 1.2;
       color: #000000;
-      @include to(575px) {
+      @include to(992px) {
         grid-column: -1/ 1;
         grid-row: 2;
         margin-bottom: 40px;
@@ -131,7 +131,7 @@
     }
     .padding {
       padding-bottom: 80px;
-      @include to(575px) {
+      @include to(992px) {
         padding-bottom: 56px;
       }
     }
@@ -156,13 +156,13 @@
     @include to(1280px) {
       padding: 80px vw(32, 1280) 0 vw(32, 1280);
     }
-    @include to(575px) {
+    @include to(992px) {
       padding: 32px 22px 0 22px;
       order: 5;
     }
     .little-img {
       grid-area: little-img;
-      @include to(575px) {
+      @include to(992px) {
         grid-column: -1/ 1;
         grid-row: 2;
       }
@@ -171,7 +171,7 @@
       grid-area: list-text;
       padding-top: 82px;
       margin-bottom: 76px;
-      @include to(575px) {
+      @include to(992px) {
         grid-column: -1/ 1;
         grid-row: 4;
         margin-top: 24px;
@@ -202,13 +202,13 @@
     }
     .text {
       grid-area: text;
-      @include to(575px) {
+      @include to(992px) {
         grid-column: -1/ 1;
         grid-row: 1;
       }
       .text-container {
         padding: 32px 0 32px 0;
-        @include to(575px) {
+        @include to(992px) {
           padding: 24px 0 24px 0;
         }
         p {
@@ -217,7 +217,7 @@
           line-height: 1.2;
           color: #000000;
           margin-bottom: 32px;
-          @include to(575px) {
+          @include to(992px) {
             margin-bottom: 16px;
           }
         }
@@ -225,7 +225,7 @@
     }
     .big-img {
       grid-area: big-img;
-      @include to(575px) {
+      @include to(992px) {
         grid-column: -1/ 1;
         grid-row: 3;
         margin-top: 32px;
@@ -242,7 +242,7 @@
 }
 
 .section4 {
-  @include to(575px) {
+  @include to(992px) {
     order: 7;
   }
 }

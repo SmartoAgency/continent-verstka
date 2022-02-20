@@ -6,7 +6,7 @@
   @include to(1280px) {
     padding: 40px vw(32, 1440) 50px;
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 40px vw(32, 1440) 50px;
   }
   .our-projects__title {
@@ -109,7 +109,7 @@
   border: 1px solid #f3f0ef;
   display: flex;
   flex-direction: column;
-  @include to(575px) {
+  @include to(992px) {
     width: 100%;
   }
   .news-link {
@@ -120,7 +120,7 @@
     }
     .news-text {
       padding: 24px 24px 56px 24px;
-      @include to(575px) {
+      @include to(992px) {
         padding: 24px 24px 32px 24px;
       }
       .date {
@@ -129,7 +129,7 @@
         line-height: 1.25;
         color: #000000;
         margin-bottom: 16px;
-        @include to(575px) {
+        @include to(992px) {
           font-size: 10px;
           margin-bottom: 8px;
         }
@@ -139,7 +139,7 @@
         font-size: 22px;
         line-height: 1.23;
         color: #000000;
-        @include to(575px) {
+        @include to(992px) {
           font-size: 20px;
         }
       }
@@ -181,7 +181,7 @@
     align-items: center;
     justify-content: center;
     padding: 0 140px;
-    @include to(575px) {
+    @include to(992px) {
       padding: 0 38px;
     }
   }
@@ -200,7 +200,7 @@
     &:last-child {
       margin-right: 0;
     }
-    @include to(575px) {
+    @include to(992px) {
       width: 38px;
       height: 38px;
       font-size: 20px;
@@ -213,7 +213,7 @@
 }
 
 #news-page {
-  @include to(575px) {
+  @include to(992px) {
     .tab {
       display: none;
     }

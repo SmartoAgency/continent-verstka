@@ -27,10 +27,11 @@ function debounce(func, timeout = 300) {
   let timer;
   return (...args) => {
     clearTimeout(timer);
-    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
   };
 }
-
 
 async function filterInit() {
   let DATA = await fetch('./static/test-flat-data.json');
@@ -42,7 +43,9 @@ async function filterInit() {
 
   function onLoadActions() {
     const rangeInstance = $('[name="all_room"]').data('ionRangeSlider');
-    const [from, to] = getParameterByName('all__room') ? getParameterByName('all__room').split('~') : [false, false];
+    const [from, to] = getParameterByName('all__room')
+      ? getParameterByName('all__room').split('~')
+      : [false, false];
     if (from) {
       rangeInstance.update({
         from,
@@ -82,7 +85,7 @@ async function filterInit() {
 
   window.addEventListener('filtering', debouncedHandleRangeResultsAndFilter);
 
-  if (window.matchMedia('(max-width: 575px)').matches) {
+  if (window.matchMedia('(max-width: 992px)').matches) {
     handleMobileSortItems();
     mobCardsTypeOfViewHandler();
   }
@@ -101,7 +104,8 @@ function handleMobileSortItems() {
     const datasetToClick = item.dataset.valueToClick;
     console.log(datasetToClick);
     item.addEventListener('click', () => {
-      item.parentElement.querySelector('.check') && item.parentElement.querySelector('.check').classList.remove('check');
+      item.parentElement.querySelector('.check')
+        && item.parentElement.querySelector('.check').classList.remove('check');
       item.classList.add('check');
 
       document.querySelector('[data-sort-item]').value = datasetToClick;
@@ -111,13 +115,14 @@ function handleMobileSortItems() {
   });
 }
 
-
 function mobCardsTypeOfViewHandler() {
   const mobButton = document.querySelector('.mobile-btn-nav');
   document.querySelector('.planing').style.display = '';
   mobButton.counterCliker = 1;
   mobButton.addEventListener('click', (evt) => {
-    const buttonToClick = document.querySelectorAll('.planing__nav button')[(mobButton.counterCliker % 2)];
+    const buttonToClick = document.querySelectorAll('.planing__nav button')[
+      mobButton.counterCliker % 2
+    ];
     buttonToClick.click();
     console.log(mobButton.counterCliker);
     mobButton.counterCliker += 1;

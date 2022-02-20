@@ -5,13 +5,13 @@
     line-height: 1.23;
     color: #000000;
     margin-top: 56px;
-    @include to(575px) {
+    @include to(992px) {
       margin-top: 40px;
     }
   }
   .filling-title {
     margin-top: 80px;
-    @include to(575px) {
+    @include to(992px) {
       margin-top: 48px;
     }
   }
@@ -22,7 +22,7 @@
   border-bottom: 2px solid #000000;
   column-count: 3;
   column-gap: 130px;
-  @include to(575px) {
+  @include to(992px) {
     margin-top: 40px;
     column-count: 2;
     column-gap: 25px;
@@ -32,7 +32,7 @@
     break-inside: avoid;
     display: flex;
     margin-bottom: 45px;
-    @include to(575px) {
+    @include to(992px) {
       flex-direction: column;
       margin-bottom: 24px;
       min-height: 108px;
@@ -42,7 +42,7 @@
       height: 24px;
       margin-right: 16px;
       fill: none;
-      @include to(575px) {
+      @include to(992px) {
         margin-bottom: 8px;
       }
     }
@@ -65,7 +65,7 @@
       line-height: 1.2;
       color: #000000;
       max-width: 220px;
-      @include to(575px) {
+      @include to(992px) {
         font-size: 16px;
       }
     }
