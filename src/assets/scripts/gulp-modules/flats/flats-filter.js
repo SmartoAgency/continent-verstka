@@ -124,7 +124,6 @@ function mobCardsTypeOfViewHandler() {
       mobButton.classList.add('grid');
     }
     buttonToClick.click();
-    console.log(mobButton.counterCliker);
     mobButton.counterCliker += 1;
   });
 }

@@ -1,4 +1,12 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-unused-vars */
+/** Класс отрисовывает данные с массива */
 class FilteredList {
+  /**
+  * @param props  - Параметры.
+  * @param {Array} props.data массив с обьектами данных.
+  * @param {Function} props.customTemplate  - шаблон для отрисовки
+  */
   constructor(props) {
     this.data = props.data || [];
     this.preparedData = [];
@@ -17,10 +25,7 @@ class FilteredList {
       'Пятница',
       'Суббота',
     ];
-    this.data.sort((a, b) =>
-      // Turn your strings into dates, and then subtract them
-      // to get a value that is either negative, positive, or zero.
-      new Date(b.date) - new Date(a.date)).reverse();
+    this.data.sort((a, b) => new Date(b.date) - new Date(a.date)).reverse();
 
     this.prepareData();
   }
@@ -37,6 +42,9 @@ class FilteredList {
     this.preparedData = this.data;
     this.render();
   }
+  /**
+     * импорт данных для отрисовки.
+  */
 
   import(data) {
     this.data = data;

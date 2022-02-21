@@ -26,6 +26,10 @@ block scripts
   script(defer src='./assets/scripts/header-single.js')
   script(defer src='./assets/scripts/select.js')
   script(defer src='./assets/scripts/news.js')
+  script(defer src='./assets/scripts/no-scroll.js')
+  script(defer src='./assets/scripts/flats/filter-config.js')
+  script(defer src='./assets/scripts/flats/filtered-list.js')
+  script(defer src='./assets/scripts/news/news-filter.js')
 
 block content
   include ../includes/breadcrumbs.pug
@@ -57,18 +61,22 @@ block content
       button.btn-mobile-filter.js-sort-btn
         span Всі ЖК 
         +svg('arrow-select')
-      .tab
-        button.tablinks.tabs__nav-btn.active Всі акції та новини
-        button.tablinks.tabs__nav-btn Акції
-        button.tablinks.tabs__nav-btn Новини
+      .tab.news-tab
+        input(type="radio" data-filter-item="type" checked name="type" value="" id="type-all")
+        label.tablinks.tabs__nav-btn(for="type-all") Всі акції та новини
+        input(type="radio" data-filter-item="type" name="type" value="promotion" id="type-promotion")
+        label.tablinks.tabs__nav-btn(for="type-promotion") Акції
+        input(type="radio" data-filter-item="type" name="type" value="news" id="type-news")
+        label.tablinks.tabs__nav-btn(for="type-news") Новини
     
-      select(class="select" name="connection")
+      select(class="select" name="connection" data-filter-item="complex")
         option(disabled) Всі ЖК
-        option(value="Continent-Ray") Continent Ray
+        option(value="") Будь який
+        option(value="Continent Ray") Continent Ray
         option(value="Continent-Black") Continent Black
         option(value="Continent-Ray-2.1") Continent Ray 2.1
 
-  ul.news-list 
+  ul.news-list(data-filtered-list-wrapper data-filtered-list)
     li.news-item 
       a(href="single-news-promotion.html").news-link
         .news-img 

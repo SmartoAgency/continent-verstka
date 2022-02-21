@@ -1,0 +1,65 @@
+[
+  {
+    "date": "24.04.2021",
+    "title": "Купуй більше – плати менше!",
+    "img": "./assets/images/news/news1.jpg",
+    "type": "promotion",
+    "complex": "continent black"
+  },
+  {
+    "date": "12.04.2021",
+    "title": "Вхопіть великодню знижку за вуха! -4% на всі квартири від Континенту",
+    "img": "./assets/images/news/news2.jpg",
+    "type": "news",
+    "complex": "Continent Black"
+  },
+  {
+    "date": "19.03.2021",
+    "title": "Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!",
+    "img": "./assets/images/news/news3.jpg",
+    "type": "news",
+    "complex": "Continent Ray"
+  },
+  {
+    "date": "24.04.2021",
+    "title": "Отримуйте безвідсоткову розстрочку або знижку до 140 000 грн на дворівневі квартири",
+    "img": "./assets/images/news/news4.jpg",
+    "type": "news",
+    "complex": "Continent Ray"
+  },
+  {
+    "date": "12.04.2021",
+    "title": "Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!",
+    "img": "./assets/images/news/news5.jpg",
+    "type": "promotion",
+    "complex": "Continent Ray"
+  },
+  {
+    "date": "19.03.2021",
+    "title": "В ЖК «Континент» відкрився дитячий садочок «Зірочки»",
+    "img": "./assets/images/news/news6.jpg",
+    "type": "promotion",
+    "complex": "Continent Ray"
+  },
+  {
+    "date": "24.04.2021",
+    "title": "Отримуйте безвідсоткову розстрочку або знижку до 140 000 грн на дворівневі квартири",
+    "img": "./assets/images/news/news7.jpg",
+    "type": "новини",
+    "complex": "Continent Ray"
+  },
+  {
+    "date": "12.04.2021",
+    "title": "Чорна п’ятниця в Континенті! Реальні знижки до 60 000 грн НА ВСІ квартири!",
+    "img": "./assets/images/news/news8.jpg",
+    "type": "promotion",
+    "complex": "Continent Black"
+  },
+  {
+    "date": "19.03.2021",
+    "title": "В ЖК «Континент» відкрився дитячий садочок «Зірочки»",
+    "img": "./assets/images/news/news9.jpg",
+    "type": "новини",
+    "complex": "Continent Ray"
+  }
+]
