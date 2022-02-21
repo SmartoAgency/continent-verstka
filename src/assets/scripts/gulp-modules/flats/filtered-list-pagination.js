@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 /** Класс отрисовывает данные с массива */
@@ -57,8 +58,6 @@ class FilteredList {
   }
 
   render() {
-    // this.startIndex = 0;
-    // this.portionForRender = this.initialPortionForRender;
     this.$container.scrollTo(0, 0);
     document.querySelectorAll('[data-filtered-list-sum]').forEach((el) => {
       el.textContent = this.data.length;
@@ -78,9 +77,11 @@ class FilteredList {
   }
 
   handlePagination() {
+    const nextArrow = document.querySelector('[data-pagination-next]');
+    const prevArrow = document.querySelector('[data-pagination-prev]');
+
     this.paginationContainer.addEventListener('click', (evt) => {
       const { target } = evt;
-
       if (target.closest('.pagination-item') === null) return;
 
       const prevActivepage = document.querySelector(`.pagination-item.${this.paginationActiveClassName}`);
@@ -91,7 +92,21 @@ class FilteredList {
         behavior: 'smooth',
       });
       const { startIndex, endIndex } = target.dataset;
+      prevArrow && (prevArrow.style.display = (+startIndex === 0) ? 'none' : '');
+      nextArrow && (nextArrow.style.display = (+startIndex === (this.preparedData.length - 1)) ? 'none' : '');
       this.additionalRender(startIndex, endIndex);
+    });
+    prevArrow && prevArrow.addEventListener('click', (evt) => {
+      evt.stopImmediatePropagation();
+      const activeTarget = document.querySelector(`.${this.paginationActiveClassName}`);
+      if (activeTarget === null) return;
+      activeTarget.previousElementSibling && activeTarget.previousElementSibling.click();
+    });
+    nextArrow && nextArrow.addEventListener('click', (evt) => {
+      evt.stopImmediatePropagation();
+      const activeTarget = document.querySelector(`.${this.paginationActiveClassName}`);
+      if (activeTarget === null) return;
+      activeTarget.nextElementSibling && activeTarget.nextElementSibling.click();
     });
   }
 

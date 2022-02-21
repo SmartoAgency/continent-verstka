@@ -268,8 +268,8 @@ forms.forEach((form) => {
   const $form = document.querySelector(form);
   if ($form) {
     /* eslint-disable */
-    console.log($form);
-    console.log($form.querySelector('[data-btn-submit]'));
+    // console.log($form);
+    // console.log($form.querySelector('[data-btn-submit]'));
     new FormMonster({
       /* eslint-enable */
       elements: {
