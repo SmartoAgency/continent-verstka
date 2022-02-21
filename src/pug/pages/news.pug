@@ -28,7 +28,7 @@ block scripts
   script(defer src='./assets/scripts/news.js')
   script(defer src='./assets/scripts/no-scroll.js')
   script(defer src='./assets/scripts/flats/filter-config.js')
-  script(defer src='./assets/scripts/flats/filtered-list.js')
+  script(defer src='./assets/scripts/flats/filtered-list-pagination.js')
   script(defer src='./assets/scripts/news/news-filter.js')
 
 block content
@@ -165,9 +165,9 @@ block content
         ul.markers 
           li.markers-item новини
           li.markers-item continent ray
-  .pagination
+  .pagination()
     +svg('arrow-back')
-    ul.pagination-list 
+    ul.pagination-list(data-pagination)
       li.pagination-item.active-item 1 
       li.pagination-item 2
       li.pagination-item 3

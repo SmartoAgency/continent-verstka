@@ -152,7 +152,6 @@ class FilterConfig {
           this.filterData[item.dataset.filterItem] = item.value;
           this.setQueryStringParameter(item.dataset.filterItem, item.value);
         }
-        console.log(this);
         window.dispatchEvent(new Event('filtering'));
       });
     });
