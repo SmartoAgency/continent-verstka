@@ -1,0 +1,28 @@
+.parametrs-item-mobile:nth-child(1) {
+  position: absolute;
+  left: 0;
+  top: 264px;
+  width: 100vw;
+  z-index: 20;
+  transition: opacity .3s ease-out
+
+}
+.parametrs-item-mobile:nth-child(1) {
+  opacity: 0;
+}
+.swiper-slide-active .parametrs-item-mobile:nth-child(1) {
+  opacity: 1;
+
+}
+@include to(575px){
+ .favorites-container {
+   width: 100vw;
+   padding-left: 0;
+  }
+  .swiper-favorites {
+   overflow: initial;
+ }
+ .parametrs-item:nth-child(2) {
+  margin-top: 40px;
+ }
+}

@@ -22,16 +22,21 @@ class Favorites {
         this.saveToStorage();
         return;
       }
-      this.moveToFavouriteEffectHandler(evt.target.closest('.add-favourite'), true);
-      this.favorites = this.favorites.filter(el => el !== elementId);
-      this.onChangeFavoritesData(false);
-      this.saveToStorage();
+      this.removeFromFavorites(evt);
     });
   }
 
   isInFavorites(id) {
     if (typeof id === 'undefined') return false;
     return this.favorites.includes(id.toString());
+  }
+
+  removeFromFavorites(evt) {
+    this.moveToFavouriteEffectHandler(evt.target.closest('.add-favourite'), true);
+    const elementId = evt.target.closest('[data-id]').dataset.id;
+    this.favorites = this.favorites.filter(el => el !== elementId);
+    this.onChangeFavoritesData(false);
+    this.saveToStorage();
   }
 
   saveToStorage() {

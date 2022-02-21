@@ -51,7 +51,7 @@ const formsTel = ['[data-popup-form]', '[data-sign-up-form]', '[data-form-quiz]'
 
 formsTel.forEach((form) => {
   const $form = document.querySelector(form);
-  console.log($form);
+  // console.log($form);
   if ($form) {
     /* eslint-disable */
     new FormMonster({
@@ -359,7 +359,7 @@ function disableScroll() {
 }
 
 window.addEventListener('load', () => {
-  console.log('load');
+  // console.log('load');
   window.locoScroll.update();
 });
 
@@ -436,7 +436,7 @@ paralaxImages.forEach((image) => {
         trigger: wrap,
         scrub: 0.5,
         onLeave: () => {
-          console.log('leave');
+          // console.log('leave');
         },
         // markers: true,
       },
@@ -648,6 +648,11 @@ function formInHeaderHandler() {
   const form = document.querySelector('.js-sideform-call');
   form.querySelector('.js-close').addEventListener('click', () => {
     gsap.to(form, { autoAlpha: 0, right: '-100%' });
+  });
+  window.addEventListener('click', (evt) => {
+    const target = evt.target.closest('.js-call');
+    if (target === null) return;
+    gsap.to(form, { autoAlpha: 1, right: 0 });
   });
 
   document.querySelectorAll('.js-call').forEach((el) => {
