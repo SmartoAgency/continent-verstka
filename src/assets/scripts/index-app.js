@@ -1,7 +1,7 @@
+import { gsap, ScrollTrigger } from 'gsap/all';
 import LocomotiveScroll from 'locomotive-scroll';
 import i18next from 'i18next';
 // import gsap from 'gsap';
-import { gsap, ScrollTrigger } from 'gsap/all';
 import axios from 'axios';
 import * as yup from 'yup';
 import FormMonster from '../../pug/components/form/form';
