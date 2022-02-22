@@ -1,6 +1,6 @@
 .lang-block {
   display: flex;
-  @include to(575px) {
+  @include to(992px) {
     position: absolute;
     left: 0;
     bottom: 90px;

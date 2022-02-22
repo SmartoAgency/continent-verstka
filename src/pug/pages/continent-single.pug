@@ -3,7 +3,7 @@ block variable
   -
     var title_page = 'Реалізований проект'
     var id_page = 'project-realized'
-    var class_page = 'project-realized'
+    var class_page = 'single-continent'
     // var breadcrumbsBtn = 'filter'
     var breadcrumbsSubitem = [
       //- {
@@ -11,41 +11,7 @@ block variable
       //-   link: pagesLink[0].documents
       //- }
     ]
-    var block1 = [
-      'Найбільша прибудинкова територія у регіоні',
-      'Рекреаційні зони для відпочинку, зустрічей та роботи на відкритому повітрі',
-      'Зручна мережа велодоріжок навколо кварталу'
-    ]
-    var block2 = [
-      'Зони для воркауту зі спеціальним резиновим покриттям',
-      'Ефективна і зручна мережа велодоріжок, яка відділятиметься бордюрами від тротуарів і робитиме безпечним пересування на велосипеді',
-      'Мережа широких прогулянкових алей навколо кварталу',
-      'Мультиспортивний майданчик для різних ігор',
-      'Великі цілорічні розвиваючі та ігрові простори для дітей різного віку',
-      'Рекреаційні зони для занять спортом, йога-простір'
-    ]
-    var block3 = [
-      'Повністю закрита територія з картковою системою доступу',
-      'Цілодобова охорона та відеоспостереження',
-      'Інноваційній системи пожежної безпеки',
-      'Спеціально прорахованій відстані між будинками, які дають відчуття відкритого та вільного простору',
-      'Сучасні вуличні меблі для відпочинку та роботи',
-      'Спеціальним місцям для вигулу та дресирувань собак, які не будуть заважати мешканцям кварталу',
-      'Дитячі та спортивні простори відкритого типу',
-    ]
-    var block4 = [
-      'Дизайнерський інтер`єр та освітлення;',
-      'Сучасна кімната матері та дитини;',
-      'Зона догляду за домашніми тваринами з лапкомийками;',
-      'Зручні меблі для відпочинку або очікування гостей;'
-    ]
-    var block5 = [
-      'Цілодобовий консьєрж-сервіс;',
-      'Вхід без сходів та пандусів, що дасть можливість легкого пересування мам з дитячими візками, літніх людей, та людей з обмеженими можливостями;',
-      'Wi-fi та місця для заряду мобільних телефонів;',
-      'Дизайнерські поштові скриньки.'
-    ]
-    var n = 4;
+  
 block meta
   //- title= 'Documents'
   title= title_page
@@ -64,9 +30,8 @@ block scripts
   script(defer src='./assets/scripts/contacts.js')
   script(defer src='./assets/scripts/accordeon.js')
   script(defer src='./assets/scripts/select.js')
-  script(defer src='./assets/scripts/project-realized.js')
-  script(defer src='./assets/scripts/calculator-popup/calculator-popup.js')
-  script(defer src='./assets/scripts/single-projects/single-projects.js')
+  //- script(defer src='./assets/scripts/project-realized.js')
+  script(defer src='./assets/scripts/single-continent.js')
 block arrow 
   .social-select
     .select-container.js-social
@@ -93,29 +58,29 @@ block content
       .swiper-wrapper
         .swiper-slide
           .realized-project__img 
-            img(src="./assets/images/project1.jpg", alt="")
+            img(src="./assets/images/slide1.jpg", alt="")
           .realized-project__content
-            h1.realized-project__title Житловий Квартал Continent Ray
-            p.realized-project__description Новий центр Бучі
-            .realty(data-calculator-popup-call)
+            h1.realized-project__title ЖК Continent
+            p.realized-project__description Цивілізація – це Continent
+            .realty
               +svg('calculator')
               span Kалькулятор вартості
         .swiper-slide
           .realized-project__img 
             img(src="./assets/images/project3.jpg", alt="")
           .realized-project__content
-            h1.realized-project__title Комфорт Хаус 1
-            p.realized-project__description Житловий комплекс, в основу назви якого не дарма взяте поняття комфорту.
-            .realty(data-calculator-popup-call)
+            h1.realized-project__title ЖК Continent
+            p.realized-project__description Цивілізація – це Continent
+            .realty
               +svg('calculator')
               span Kалькулятор вартості
         .swiper-slide
           .realized-project__img 
             img(src="./assets/images/project1.jpg", alt="")
           .realized-project__content
-            h1.realized-project__title Комфорт Хаус 1
-            p.realized-project__description Житловий комплекс, в основу назви якого не дарма взяте поняття комфорту.
-            .realty(data-calculator-popup-call)
+            h1.realized-project__title ЖК Continent
+            p.realized-project__description Цивілізація – це Continent
+            .realty
               +svg('calculator')
               span Kалькулятор вартості
     
@@ -149,74 +114,95 @@ block content
           p Строк здачі:
           p III кв. 2021
 
-    .single-section1 
-      .single-section1__big
-        p Це логічне продовження забудови Continent з ще більш вражаючими перевагами. У житловому кварталі Continent Ray втілена унікальна піраміда пріоритетів, де на першому місці комфорт і безпека жителів. 
-        p Будуючи Continent Ray, ми хочемо створити локацію, якою наші мешканці будуть пишатися і запрошувати сюди своїх друзів. Локацію, де буде приємно проводити час просто так, і не важливо - вдома чи на вулиці, наодинці чи з родиною. Тут буде комфортно і гармонійно.
-        .single-section1__img
-          img(src="./assets/images/single1.jpg", alt="")
-      .single-section1__small 
-        .single-section1__img
-          img(src="./assets/images/single2.jpg", alt="")
-        ul 
-          each v, i in block1
-            li 
-              .num= '0' + (i + 1)
-              .text= v
-    .single-section2
-        .single-section2__img
-          img(src="./assets/images/single3.jpg", alt="")
-        .single-section2__text
-          h1.our-projects__title Be healthy
-          p У шаленому і швидкому ритмі сучасного міського життя  ми майже не маємо вільного часу для занять спортом та якісної підтримки здоров’я. Ми кожного ранку поспішаємо на роботу і запізнюємося на важливі зустрічі, а кожного вечора кажемо собі, що з понеділка точно йдемо спортзал. Але знову кудись треба йти, щоб пробігтися зручною доріжкою, пройтися затишною алеєю чи проїхати на велосипеді безпечною доріжкою.
-          p Житловий квартал Continent Ray створюється за принципом Be healthy, в основі якого - підтримка здоров`я мешканців  поруч зі своїм житлом:
-      
-    .single-section3
-      ul 
-        each v, i in block2
-          li 
-            .num= '0' + (i + 1)
-            .text= v
-      .single-section3__img
-        img(src="./assets/images/single4.jpg", alt="")
-
-    .single-section4
-      .single-section4__text
-        h1.our-projects__title Двори для життя
-        p А вулиці для автомобілів. Саме цієї концепції ми притримуємося під час створення житлового кварталу Continent RAY. 
-        p Не думати, як обійти десятки припаркованих автомобілів, не хвилюватися за безпеку дітей, не бачити незнайомих зайвих перехожих, а кожного дня насолоджуватися тишею і спокоєм у внутрішньому дворі свого будинку завдяки:
-      .single-section4__img
-          img(src="./assets/images/single5.jpg", alt="")
-      ul 
-        each v, i in block3
-          li 
-            .num= '0' + (i + 1)
-            .text= v
-
-    .single-section2.single-section5
-        .single-section2__img
-          img(src="./assets/images/single2.jpg", alt="")
-        .single-section2__text
-          h1.our-projects__title Вхідні групи
-          p Лобі — це повноцінний напівприватний простір для мешканців будинку. Тут має бути комфортно перебувати, зустрічатися, знайомитися і спілкуватися із сусідами. Для лобі важлива функціональність і тут має бути зручно як вдома, а може навіть трохи зручніше. Під час проектування лобі будинків житлового кварталу Continent RAY ми це врахували, і ось що отримають наші майбутні мешканці:
+    .section1 
+      h1.our-projects__title «Цивілізація – це Continent» — реальність, а не просто слоган. 
+      .text-container
+        p Ми створюємо для своїх мешканців максимум можливостей для життя, відпочинку та навіть створення власної справи. Це цінність, яку створили у Strakhovskyi Group, у яку вірять, і яку будуть завжди відстоювати.
+        p Це — унікальний спосіб життя, який подобається мешканцям, і яким пишаємося ми.
+      .section1__img
+        img(src="./assets/images/continent1.jpg", alt="") 
     
-    .single-section3.single-section6 
-      ul 
-        each v, i in block4
-          li 
-            .num= '0' + (i + 1)
-            .text= v
-      .single-section3__img
-        img(src="./assets/images/single1.jpg", alt="")
+    .section2 
+      .title 
+        h1.our-projects__title Бо зручно
+      .text Одним із найважливіших факторів комфортного і насиченого життя є розташування житла. Мешканцям має бути зручно дістатися від будинку до будь-якої точки пішки, на велосипеді, на автобусі, на електричці, чи на власному на автомобілі. 
+      .big-img 
+        img(src="./assets/images/continent2.jpg", alt="")
+      .list-text 
         ul 
-          each v, i in block5
-            li 
-              .num= '0' + (i + (n + 1))
-              .text= v
+          li 
+            .num 01
+            .text зупинка електрички та маршрутних таксі по місту і до Києва - в 3 хв від комплексу;
+          li 
+            .num 02
+            .text виїзд до Києва за 15 хвилин трьома зручними для кожного шляхами: Варшавської трасою, Новою трасою через Ірпінь, чи Житомирською трасою через Забуччя;
+          li 
+            .num 03
+            .text окрім цього, ЖК Continent розташований на перетині міст Буча та Ірпінь, тож у мешканців є чудова можливість користуватися перевагами обох міст одночасно - відпочивати у парках, відвідувати ТРЦ та супермаркети, кафе та ресторани, медичні установи, спортивні заклади та ін.
+      .little-img 
+        img(src="./assets/images/continent3.jpg", alt="")
+
+    .section3 
+      .little-img 
+        img(src="./assets/images/continent5.jpg", alt="")
+      .list-text 
+        ul 
+          li 
+            .num 01
+            .text територія комплексу повністю закрита від сторонніх, з картковою системою доступу BAS-IP, що дозволяє мешканцям почувати себе комфортно і захищено;
+          li 
+            .num 02
+            .text відеоспостереження по периметру ЖК та у внутрішньому дворі;
+          li 
+            .num 03
+            .text найбільший паркінг у регіоні - безкоштовний або під охороною - жодного авто на території ЖК, лише безпечний простір для життя мешканців;
+          li 
+            .num 04
+            .text створена керуюча компанія, яка слідкує за порядком у ЖК та вирішує всі житлово-комунальні питання мешканців.
+      .text 
+        h1.our-projects__title Бо головні — люди
+        .text-container
+          p Концепція житлового комплексу “Continent” розроблена з урахуванням найважливіших потреб мешканців. На території ЖК передбачені цілорічні дитячі та спортивні комплекси для мешканців будь-якого віку, є багато зручних вуличних меблів для відпочинку на свіжому повітрі. 
+          p Під`їзди оформлені за унікальним дизайн-проектом та декоровані стабілізованим мохом Ягелю, встановлені швидкісні безшумні ліфти, а ще:
+      .big-img 
+        img(src="./assets/images/continent6.jpg", alt="")
+ 
+    .section2.section4 
+      .title 
+        h1.our-projects__title Бо все поруч
+      .text Враховуючи досвід своїх реалізованих об`єктів, ми знаємо, що важливо для жителів сучасних житлових комплексів. Окрім міської інфраструктури, люди хочуть вирішувати важливі життєві питання у кроковій доступності від свого будинку. Саме таким ми і створили житловий комплекс Continent:
+      .big-img 
+        img(src="./assets/images/continent2.jpg", alt="")
+      .list-text.padding
+        ul 
+          li 
+            .num 01
+            .text поруч із ЖК розташований новий торговий простір BAZAR&VOKZAL;
+          li 
+            .num 02
+            .text навпроти комплексу супермаркет АТБ, ЛОТОК;
+          li 
+            .num 03
+            .text у будинку розташовані супермаркет “Пчелка Маркет”, магазин мережі домашніх заморожених страв “Галя балувана”, ресторан японської кухні Сушия, банкомат та термінал ПриватБанку; поштомати Нової пошти та Міст Експрес;
+          li 
+            .num 04
+            .text у 2 хвилинах від будинку є аптека, стоматологічна клініка, ремонт одягу, пункт видачі товарів ROZETKA, магазин одягу, ветеринарна клініка;”
+          li 
+            .num 05
+            .text у 5 хвилинах від комплексу - супермаркет NOVUS;
+          li 
+            .num 06
+            .text навпроти будинків - школа з новим сучасним корпусом для початкої школи, у 5 хвилинах  - дитячий садок.
+   
+   
+      .little-img 
+        img(src="./assets/images/continent3.jpg", alt="")
+ 
+   
     section.layout.similar-apartment 
       .layout__title-container
         h1.our-projects__title Приклади планувань
-        a(href='flats.html?complex=Continent-Ray').realty
+        a(href='#').realty
           span Всі планування
           +svg('arrow')
         .swiper-btn
@@ -225,7 +211,7 @@ block content
           .swiper-button-next2
             +svg('swiper-next')
       .swiper-example.layout__list.similar-apartment-swiper 
-        .swiper-wrapper
+        .swiper-wrapper 
           .swiper-slide
             a(href="#").planing__link
               .planing__img 
@@ -390,7 +376,7 @@ block content
 
     section.our-philosophy 
       h5 Наша філософія
-      h2 Творити культуру свідомого життя.
+      h2 Будуємо, як для себе
 
     section.contacts 
       .contacts__information
@@ -468,3 +454,4 @@ block footer
 
 
 
+               

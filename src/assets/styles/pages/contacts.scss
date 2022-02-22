@@ -9,7 +9,7 @@
     @include to(1440px) {
       height: 829px;
     }
-    @include to(575px) {
+    @include to(992px) {
       height: 300px;
     }
     #map {
@@ -17,7 +17,7 @@
       @include to(1440px) {
         height: 829px;
       }
-      @include to(575px) {
+      @include to(992px) {
         height: 300px;
       }
     }
@@ -36,7 +36,7 @@
     @include to(1280px) {
       left: vw(32, 1280);
     }
-    @include to(575px) {
+    @include to(992px) {
       left: 22px;
       top: 10px;
     }
@@ -62,13 +62,13 @@
     &:last-child {
       margin-right: 0;
     }
-    @include to(575px) {
+    @include to(992px) {
       margin-right: 24px;
     }
   }
   .tabs__item {
     margin-top: 50px;
-    @include to(575px) {
+    @include to(992px) {
       margin-top: 0;
     }
   }
@@ -88,14 +88,14 @@
       height: 2px;
       width: 100%;
       background: #fec62e;
-      @include to(575px) {
+      @include to(992px) {
         bottom: 10px;
       }
     }
   }
   .menu-social {
     margin-top: 50px;
-    @include to(575px) {
+    @include to(992px) {
       order: 3;
       margin-top: 12px;
     }
@@ -113,7 +113,7 @@
     right: 30px;
     bottom: 60px;
     transition: all 0.2s ease;
-    @include to(575px) {
+    @include to(992px) {
       display: flex;
       left: 22px;
       bottom: 22px;
@@ -133,7 +133,7 @@
   .contacts__information {
     position: relative;
     padding-top: 95px;
-    @include to(575px) {
+    @include to(992px) {
       padding-top: 38px;
     }
   }
@@ -145,7 +145,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
-  @include to(575px) {
+  @include to(992px) {
     bottom: 0;
     right: 0;
     width: 100%;
@@ -155,7 +155,7 @@
     background: #ffffff;
     border-radius: 4px;
     padding: 32px;
-    @include to(575px) {
+    @include to(992px) {
       padding: 22px;
     }
     .close-map {
@@ -164,7 +164,7 @@
       position: absolute;
       top: 32px;
       right: 32px;
-      @include to(575px) {
+      @include to(992px) {
         width: 16px;
         height: 16px;
         top: 28px;
@@ -205,6 +205,10 @@
         font-size: 14px;
         line-height: 1.21;
         color: #000000;
+        white-space: nowrap;
+        @include to(992px) {
+          width: 215px;
+        }
         @include to(575px) {
           width: 156px;
         }
@@ -257,6 +261,9 @@
       }
       .trains-btn {
         margin-top: 16px;
+        .navigation-servise__link {
+          width: auto;
+        }
       }
     }
   }
@@ -265,3 +272,21 @@
   opacity: 1;
   pointer-events: painted;
 }
+// .map-con {
+//   @include to(992px) {
+//     width: 100%;
+//     height: 100%;
+//     position: relative;
+//     &:after {
+//       content: '';
+//       position: absolute;
+//       right: 0;
+//       top: 0;
+//       width: 101%;
+//       height: 101%;
+//       z-index: -1;
+//       background: rgba(0, 0, 0, 0.5);
+//       backdrop-filter: blur(8px);
+//     }
+//   }
+// }

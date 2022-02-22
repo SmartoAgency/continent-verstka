@@ -21,6 +21,7 @@ block scripts
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header-menu.js')
+  script(defer src='./assets/scripts/footer.js')
   script(defer src='./assets/scripts/social-btn.js')
   script(defer src='./assets/scripts/home.js')
   script(defer src='./assets/scripts/map.js')
@@ -432,11 +433,11 @@ block content
           p Житомирською трасою через Забуччя
           ul.navigation-servise
             li.navigation-servise__item 
-              a(href="#").navigation-servise__link 
+              a(href="https://goo.gl/maps/wJbbCZJf9hwX7ayr8" target="_blank").navigation-servise__link 
                 +svg('map')
                 span Google maps
             li.navigation-servise__item 
-              a(href="#").navigation-servise__link 
+              a(href="https://ul.waze.com/ul?preview_venue_id=19792377.198120383.14801572&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank").navigation-servise__link 
                 +svg('waze')
                 span Waze
           p Громадським транспортом

@@ -69,19 +69,19 @@
       @include to(1280px) {
         padding-left: vw(32, 1280);
       }
-      @include to(575px) {
+      @include to(992px) {
         padding-left: 22px;
         width: 85%;
       }
       .realized-project__title {
         margin-bottom: 28px;
-        @include to(575px) {
+        @include to(992px) {
           margin-bottom: 24px;
         }
       }
       .realized-project__description {
         margin-bottom: 40px;
-        @include to(575px) {
+        @include to(992px) {
           margin-bottom: 32px;
         }
       }
@@ -149,7 +149,7 @@
   font-size: 64px;
   line-height: 100%;
   color: #ffffff;
-  @include to(575px) {
+  @include to(992px) {
     font-size: 32px;
   }
 }
@@ -158,7 +158,7 @@
   font-size: 24px;
   line-height: 100%;
   color: #ffffff;
-  @include to(575px) {
+  @include to(992px) {
     font-size: 20px;
   }
 }
@@ -177,7 +177,7 @@
   @include to(1280px) {
     padding: 64px vw(32, 1280) 0 vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 40px 22px 0 22px;
   }
 }
@@ -185,7 +185,7 @@
   column-count: 3;
   padding: 40px 0 80px 0;
   border-bottom: 2px solid #000000;
-  @include to(575px) {
+  @include to(992px) {
     padding: 30px 0 20px 0;
     column-count: 2;
   }
@@ -195,7 +195,7 @@
   align-items: flex-start;
   margin-bottom: 44px;
   break-inside: avoid;
-  @include to(575px) {
+  @include to(992px) {
     flex-direction: column;
     margin-bottom: 24px;
     min-height: 90px;
@@ -205,7 +205,7 @@
     width: 24px;
     max-height: 27px;
     margin-right: 20px;
-    @include to(575px) {
+    @include to(992px) {
       margin-bottom: 8px;
     }
   }
@@ -228,7 +228,7 @@
     color: #000000;
     padding-top: 5px;
     max-width: 235px;
-    @include to(575px) {
+    @include to(992px) {
       font-size: 16px;
     }
   }
@@ -246,7 +246,7 @@
   @include to(1280px) {
     padding: 80px 0 80px vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     flex-direction: column;
     padding: 40px 22px 48px 22px;
   }
@@ -256,7 +256,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  @include to(575px) {
+  @include to(992px) {
     width: 100%;
     padding-right: 22px;
     // padding-top: 48px;
@@ -272,7 +272,7 @@
     margin-bottom: 15px;
     &:last-child {
       margin-bottom: 95px;
-      @include to(575px) {
+      @include to(992px) {
         margin-bottom: 32px;
       }
     }
@@ -282,11 +282,14 @@
   width: 43%;
   overflow: hidden;
   // margin-left: auto;
-  @include to(575px) {
+  @include to(992px) {
     width: 100%;
   }
   .swiper-slide {
     height: 416px;
+    @include to(992px) {
+      height: 350px;
+    }
     @include to(575px) {
       height: 250px;
     }
@@ -309,7 +312,7 @@
     @include to(1280px) {
       left: vw(32, 1280);
     }
-    @include to(575px) {
+    @include to(992px) {
       position: initial;
       width: 100%;
       margin-top: 32px;
@@ -327,7 +330,7 @@
       display: flex;
       .swiper-button-prev1 {
         margin-right: 16px;
-        @include to(575px) {
+        @include to(992px) {
           margin-right: 8px;
         }
       }
@@ -339,7 +342,7 @@
         fill: $black;
         stroke: $white;
         transition: fill 0.4s ease;
-        @include to(575px) {
+        @include to(992px) {
           width: 32px;
           height: 32px;
         }

@@ -23,7 +23,7 @@
     min-width: 300px;
     // animation: heartbeat 1.5s ease-in-out infinite both;
     animation: pulse 2s ease-in-out both;
-    @media screen and (max-width: 575px) {
+    @media screen and (max-width: 992px) {
       width: 250px;
       min-width: 220px;
     }

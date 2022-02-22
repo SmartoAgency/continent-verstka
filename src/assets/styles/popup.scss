@@ -20,7 +20,7 @@
 //     grid-template-rows: 20px auto 20px;
 //     grid-template-columns: 20px auto 20px;
 //   }
-//   @include to(575px) {
+//   @include to(992px) {
 //     --vh: 7.87px;
 //     margin-top: 50px;
 //     height: calc(100% - 50px);
@@ -87,7 +87,7 @@
 //       width: 60vw;
 //       height: 60vh;
 //       align-items: center !important;
-//       @include to(575px) {
+//       @include to(992px) {
 //         width: 80vw;
 //         height: 40vh;
 //       }
@@ -109,7 +109,7 @@
 //         top: 40px;
 //         right: 40px;
 //       }
-//       @include to(575px) {
+//       @include to(992px) {
 //         width: 35px;
 //         height: 35px;
 //         top: 35px;
@@ -157,7 +157,7 @@
 //         width: 40px;
 //         height: 40px;
 //       }
-//       @include to(575px) {
+//       @include to(992px) {
 //         width: 35px;
 //         height: 35px;
 //       }
@@ -191,7 +191,7 @@
 //     top: 50%;
 //     right: 8%;
 //     transform: translate(-8%, -50%);
-//     @include to(575px) {
+//     @include to(992px) {
 //       top: 50%;
 //       right: 7%;
 //       transform: translate(-7%, -50%);
@@ -217,7 +217,7 @@
 //       @include to(992px) {
 //         font-size: 16px;
 //       }
-//       @include to(575px) {
+//       @include to(992px) {
 //         font-size: 12px;
 //       }
 //     }
@@ -246,7 +246,7 @@
 //     grid-template-rows: 20px auto 20px;
 //     grid-template-columns: 20px auto 20px;
 //   }
-//   @include to(575px) {
+//   @include to(992px) {
 //     --vh: 7.87px;
 //     margin-top: 50px;
 //     height: calc(100% - 50px);
@@ -313,7 +313,7 @@
 //       width: 60vw;
 //       height: 60vh;
 //       align-items: center !important;
-//       @include to(575px) {
+//       @include to(992px) {
 //         width: 80vw;
 //         height: 40vh;
 //       }
@@ -335,7 +335,7 @@
 //         top: 40px;
 //         right: 40px;
 //       }
-//       @include to(575px) {
+//       @include to(992px) {
 //         width: 35px;
 //         height: 35px;
 //         top: 35px;
@@ -386,7 +386,7 @@
 //         width: 40px;
 //         height: 40px;
 //       }
-//       @include to(575px) {
+//       @include to(992px) {
 //         width: 35px;
 //         height: 35px;
 //       }
@@ -420,7 +420,7 @@
 //     top: 50%;
 //     right: 8%;
 //     transform: translate(-8%, -50%);
-//     @include to(575px) {
+//     @include to(992px) {
 //       top: 50%;
 //       right: 7%;
 //       transform: translate(-7%, -50%);

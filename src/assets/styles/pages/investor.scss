@@ -19,11 +19,14 @@
   @include to(1280px) {
     padding: 108px vw(32, 1280) vw(32, 1280);
   }
-  @include to(575px) {
-    height: auto;
+  @include to(992px) {
+    height: 500px;
     padding: 130px 22px 56px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url('../images/investor-bg-mob.jpg');
+  }
+  @include to(575px) {
+    height: auto;
   }
   .our-projects__title {
     color: $white;
@@ -33,7 +36,7 @@
     &:last-child {
       margin-bottom: 0;
     }
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
       font-size: 24px;
       margin-bottom: 30px;
@@ -48,13 +51,13 @@
   @include to(1280px) {
     padding: 60px vw(32, 1920) 120px vw(32, 1920);
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 32px 22px 75px 22px;
   }
   .our-projects__title {
     width: 80%;
     margin-bottom: 40px;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
       margin-bottom: 32px;
     }
@@ -65,7 +68,7 @@
     line-height: 1.25;
     color: #000000;
     width: 65%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
   }
@@ -73,7 +76,7 @@
     padding-top: 60px;
     column-count: 3;
     column-gap: 100px;
-    @include to(575px) {
+    @include to(992px) {
       padding-top: 40px;
       column-count: 1;
       column-gap: 0;
@@ -90,7 +93,7 @@
       line-height: 1.7;
       color: #000000;
       margin-bottom: 16px;
-      @include to(575px) {
+      @include to(992px) {
         font-size: 12px;
       }
     }
@@ -100,7 +103,7 @@
       line-height: 1.23;
       color: #000000;
       margin-bottom: 16px;
-      @include to(575px) {
+      @include to(992px) {
         font-size: 20px;
       }
     }
@@ -115,18 +118,22 @@
 
 .in-numbers {
   display: flex;
-  @include to(575px) {
+  @include to(992px) {
     flex-direction: column;
   }
   &__img {
     width: 57%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
+      height: 500px;
+    }
+    @include to(575px) {
+      height: 300px;
     }
   }
   &__list {
     width: 43%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
   }
@@ -135,7 +142,7 @@
     border: 1px solid #f3f0ef;
     display: flex;
     align-items: center;
-    @include to(575px) {
+    @include to(992px) {
       padding: 26px 22px;
     }
     .num {
@@ -144,7 +151,7 @@
       line-height: 1.25;
       color: #000000;
       margin-right: 8px;
-      @include to(575px) {
+      @include to(992px) {
         font-size: 54px;
         margin-right: 18px;
       }
@@ -154,7 +161,7 @@
       font-size: 22px;
       line-height: 1.23;
       color: #000000;
-      @include to(575px) {
+      @include to(992px) {
         font-size: 18px;
       }
     }
@@ -172,13 +179,13 @@
   @include to(1280px) {
     padding: 80px vw(32, 1280);
   }
-  @include to(575px) {
+  @include to(992px) {
     padding: 32px 22px;
     flex-direction: column;
   }
   &__text {
     width: 22%;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
   }
@@ -187,7 +194,7 @@
     font-size: 32px;
     line-height: 1.22;
     color: #fec62e;
-    @include to(575px) {
+    @include to(992px) {
       font-size: 22px;
       margin-bottom: 40px;
     }
@@ -197,7 +204,7 @@
     width: 66%;
     height: auto;
     background: #141414;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
     &-item {
@@ -205,7 +212,7 @@
       &:last-child {
         margin-bottom: 0;
       }
-      @include to(575px) {
+      @include to(992px) {
         margin-bottom: 8px;
       }
     }
@@ -218,7 +225,7 @@
       color: #ffffff;
       position: relative;
       padding: 32px 104px;
-      @include to(575px) {
+      @include to(992px) {
         padding: 24px 50px;
         font-size: 22px;
       }
@@ -228,9 +235,10 @@
       &::after {
         background-image: url(../images/plus-white.svg);
         right: 40px;
-        @include to(575px) {
+        @include to(992px) {
           right: 16px;
           width: 24px;
+          height: 24px;
         }
       }
       .num {
@@ -241,7 +249,7 @@
         position: absolute;
         left: 48px;
         top: 38px;
-        @include to(575px) {
+        @include to(992px) {
           left: 16px;
           top: 28px;
         }
@@ -261,7 +269,7 @@
     }
     &-panel {
       padding: 0 104px 52px 104px;
-      @include to(575px) {
+      @include to(992px) {
         padding: 0 8px 24px 50px;
       }
       p {
@@ -280,13 +288,13 @@
 
 .guarantees {
   display: flex;
-  @include to(575px) {
+  @include to(630px) {
     flex-direction: column-reverse;
   }
   &__img {
     width: 43%;
     position: relative;
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
     }
     &-description {
@@ -295,7 +303,7 @@
       bottom: 0;
       padding: 32px;
       background: #ffffff;
-      @include to(575px) {
+      @include to(992px) {
         width: 80%;
         padding: 16px 22px;
       }
@@ -306,7 +314,7 @@
         color: #000000;
         width: 80%;
         margin-bottom: 16px;
-        @include to(575px) {
+        @include to(992px) {
           width: 100%;
           font-size: 22px;
         }
@@ -327,13 +335,13 @@
     @include to(1280px) {
       padding: 108px vw(32, 1280) 85px 104px;
     }
-    @include to(575px) {
+    @include to(992px) {
       width: 100%;
       padding: 40px 22px 20px 22px;
     }
     .our-projects__title {
       margin-bottom: 48px;
-      @include to(575px) {
+      @include to(992px) {
         margin-bottom: 24px;
       }
     }
@@ -341,7 +349,7 @@
       column-count: 2;
       column-gap: 64px;
       padding-left: 15px;
-      @include to(575px) {
+      @include to(992px) {
         column-count: 1;
         column-gap: 0;
         padding-left: 16px;
@@ -354,7 +362,7 @@
       line-height: 1.5;
       color: #000000;
       list-style: disc;
-      @include to(575px) {
+      @include to(992px) {
         margin-bottom: 20px;
       }
     }
@@ -364,7 +372,7 @@
       font-size: 22px;
       line-height: 1.23;
       color: #000000;
-      @include to(575px) {
+      @include to(992px) {
         padding: 20px 0 24px 0;
         font-size: 20px;
       }
@@ -377,7 +385,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include to(575px) {
+  @include to(992px) {
     padding: 32px 26px;
   }
   p {
@@ -386,7 +394,7 @@
     line-height: 1.22;
     text-align: center;
     color: #000000;
-    @include to(575px) {
+    @include to(992px) {
       font-size: 22px;
       text-align: left;
     }
@@ -407,7 +415,7 @@
       @include to(1440px) {
         height: 640px;
       }
-      @include to(575px) {
+      @include to(992px) {
         height: auto;
       }
       .contacts-mail {
