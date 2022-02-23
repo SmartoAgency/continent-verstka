@@ -662,3 +662,21 @@ function formInHeaderHandler() {
   });
 }
 formInHeaderHandler();
+function formSubscribeHandler() {
+  const form = document.querySelector('.sign-up-email');
+  form.querySelector('.js-close').addEventListener('click', () => {
+    gsap.to(form, { autoAlpha: 0, right: '-100%' });
+  });
+  window.addEventListener('click', (evt) => {
+    const target = evt.target.closest('.btn-subscribe');
+    if (target === null) return;
+    gsap.to(form, { autoAlpha: 1, right: 0 });
+  });
+
+  document.querySelectorAll('.btn-subscribe').forEach((el) => {
+    el.addEventListener('click', () => {
+      gsap.to(form, { autoAlpha: 1, right: 0 });
+    });
+  });
+}
+formSubscribeHandler();
