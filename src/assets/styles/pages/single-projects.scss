@@ -486,6 +486,10 @@
     // @include to(1440px) {
     //   height: 640px;
     // }
+    @include from(1025px){
+      width: 65%;
+      margin-left: auto;
+    }
   }
 }
 .infrastructure-map {
@@ -496,7 +500,10 @@
   top: auto;
   bottom: 0;
   position: absolute;
-
+  pointer-events: none;
+  &>* {
+    pointer-events: all;
+  }
   // transition: height 1.5s ease;
   @include to(992px) {
     height: 320px;
