@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.locoScroll.destroy();
 });
 let prevScrollPosition = 0;
+const headerBottom = document.querySelector('.js-header-bottom');
 /**
  * 1 - down
  * 0 - up
@@ -9,9 +10,11 @@ let prevScrollPosition = 0;
 const onscrollHeaderActions = [
   () => {
     document.getElementById('header').classList.remove('not-on-top');
+    headerBottom.classList.add('on-top');
   },
   () => {
     document.getElementById('header').classList.add('not-on-top');
+    headerBottom.classList.remove('on-top');
   },
 ];
 window.onscroll = function (e) {

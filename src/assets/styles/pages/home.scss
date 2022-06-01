@@ -259,6 +259,7 @@
 .active-project {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   @include to(992px) {
     width: 100%;
   }

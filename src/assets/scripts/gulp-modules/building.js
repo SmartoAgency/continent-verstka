@@ -61,9 +61,7 @@ function createBuildCard(build) {
   <li class="building__item js-build-card" data-build-id="${build.id}">
     <div class="building__img"><img src="${build.slider[0]}"></div>
     <div class="building__description">
-    <h4>Хід будівництва <span data-build-date="">${build.date.d} </span>
-      <span  data-build-month=""> ${build.month}</span>
-      <span data-build-year=""> ${build.date.y}</span>
+    <h4>${build.name}
     </h4>
     <div class="text-container">
       <div class="number">${build.slider.length}</div>
@@ -76,13 +74,11 @@ function createBuildCardWithVideo(build) {
   return `
   <li class="building__item js-build-card" data-build-id="${build.id}">
     <div class="building__img">
-      <video ( class="video" autoplay loop muted width="100%" height="100%")> 
+      <video class="video" loop muted width="100%" height="100%"> 
         <source src="${build.slider[build.slider.length - 1]}"></video>
     </div>
     <div class="building__description">
-    <h4>Хід будівництва <span data-build-date="">${build.date.d} </span>
-      <span  data-build-month=""> ${build.month}</span>
-      <span data-build-year=""> ${build.date.y}</span>
+    <h4>${build.name}
     </h4>
     <div class="text-container">
       <div class="number">${build.slider.length}</div>
@@ -95,7 +91,8 @@ function createBuildCardWithVideo(build) {
 function createBuilds(currentCount, builds, count = 6) {
   const renderingBuilds = [];
   for (let i = currentCount; i < currentCount + count; i += 1) {
-    if (builds[i].isIncludeVideo) {
+    if (builds[i].slider.find(el => el.match(/mp4/)).length > 0) {
+      // if (builds[i].isIncludeVideo) {
       renderingBuilds.push(createBuildCardWithVideo(builds[i]));
     } else {
       renderingBuilds.push(createBuildCard(builds[i]));
@@ -160,113 +157,123 @@ function prevBuildHandler(state, containers) {
 }
 
 async function getBuilds() {
-  const data = [
-    {
-      date: {
-        d: '18',
-        m: '06',
-        y: '2021',
-      },
-      id: '723',
-      month: 'червеня',
-      // count: '5',
-      slider: [
-        './assets/images/building/building1.jpg',
-        './assets/images/building/building2.jpg',
-        './assets/images/building/building3.jpg',
-        './assets/images/building/building4.jpg',
-        './assets/images/building/video1.mp4',
-      ],
-      isIncludeVideo: true,
-    },
-    {
-      date: {
-        d: '01',
-        m: '03',
-        y: '2021',
-      },
-      id: '533',
-      month: 'березня',
-      slider: [
-        './assets/images/building/building2.jpg',
-        './assets/images/building/building3.jpg',
-        './assets/images/building/building5.jpg',
-        './assets/images/building/building4.jpg',
-        // 'www.youtube.com/embed/Jk5kS0Qc69w',
-      ],
-      isIncludeVideo: false,
-    },
-    {
-      date: {
-        d: '01',
-        m: '01',
-        y: '2021',
-      },
-      id: '724',
-      month: 'cічня',
-      slider: ['./assets/images/building/building5.jpg', './assets/images/building/building4.jpg'],
-      isIncludeVideo: false,
-    },
-    {
-      date: {
-        d: '01',
-        m: '12',
-        y: '2020',
-      },
-      id: '725',
-      month: 'грудня',
-      slider: [
-        './assets/images/building/building6.jpg',
-        './assets/images/building/building3.jpg',
-        './assets/images/building/building5.jpg',
-      ],
-      isIncludeVideo: false,
-    },
-    {
-      date: {
-        d: '29',
-        m: '05',
-        y: '2020',
-      },
-      id: '726',
-      month: 'травня',
-      slider: [
-        './assets/images/building/building1.jpg',
-        './assets/images/building/building2.jpg',
-        './assets/images/building/building3.jpg',
-        './assets/images/building/building4.jpg',
-        './assets/images/building/video1.mp4',
-      ],
-      isIncludeVideo: true,
-    },
-    {
-      date: {
-        d: '05',
-        m: '05',
-        y: '2019',
-      },
-      id: '727',
-      month: 'травня',
-      slider: [
-        './assets/images/building/building1.jpg',
-        './assets/images/building/building2.jpg',
-        './assets/images/building/building3.jpg',
-        './assets/images/building/building4.jpg',
-      ],
-      isIncludeVideo: false,
-    },
-  ];
-  return JSON.stringify(data);
-  // const data = new FormData();
-  // data.append("action", "buildProgressList");
-  // return fetch("/wp-admin/admin-ajax.php", {
-  //   method: "POST",
-  //   body: data,
-  // });
+  // const data = [
+  //   {
+  //     date: {
+  //       d: '18',
+  //       m: '06',
+  //       y: '2021',
+  //     },
+  //     id: '723',
+  //     month: 'червеня',
+  //     // count: '5',
+  //     slider: [
+  //       './assets/images/building/building1.jpg',
+  //       './assets/images/building/building2.jpg',
+  //       './assets/images/building/building3.jpg',
+  //       './assets/images/building/building4.jpg',
+  //       './assets/images/building/video1.mp4',
+  //     ],
+  //     isIncludeVideo: true,
+  //   },
+  //   {
+  //     date: {
+  //       d: '01',
+  //       m: '03',
+  //       y: '2021',
+  //     },
+  //     id: '533',
+  //     month: 'березня',
+  //     slider: [
+  //       './assets/images/building/building2.jpg',
+  //       './assets/images/building/building3.jpg',
+  //       './assets/images/building/building5.jpg',
+  //       './assets/images/building/building4.jpg',
+  //       // 'www.youtube.com/embed/Jk5kS0Qc69w',
+  //     ],
+  //     isIncludeVideo: false,
+  //   },
+  //   {
+  //     date: {
+  //       d: '01',
+  //       m: '01',
+  //       y: '2021',
+  //     },
+  //     id: '724',
+  //     month: 'cічня',
+  //     slider: ['./assets/images/building/building5.jpg', './assets/images/building/building4.jpg'],
+  //     isIncludeVideo: false,
+  //   },
+  //   {
+  //     date: {
+  //       d: '01',
+  //       m: '12',
+  //       y: '2020',
+  //     },
+  //     id: '725',
+  //     month: 'грудня',
+  //     slider: [
+  //       './assets/images/building/building6.jpg',
+  //       './assets/images/building/building3.jpg',
+  //       './assets/images/building/building5.jpg',
+  //     ],
+  //     isIncludeVideo: false,
+  //   },
+  //   {
+  //     date: {
+  //       d: '29',
+  //       m: '05',
+  //       y: '2020',
+  //     },
+  //     id: '726',
+  //     month: 'травня',
+  //     slider: [
+  //       './assets/images/building/building1.jpg',
+  //       './assets/images/building/building2.jpg',
+  //       './assets/images/building/building3.jpg',
+  //       './assets/images/building/building4.jpg',
+  //       './assets/images/building/video1.mp4',
+  //     ],
+  //     isIncludeVideo: true,
+  //   },
+  //   {
+  //     date: {
+  //       d: '05',
+  //       m: '05',
+  //       y: '2019',
+  //     },
+  //     id: '727',
+  //     month: 'травня',
+  //     slider: [
+  //       './assets/images/building/building1.jpg',
+  //       './assets/images/building/building2.jpg',
+  //       './assets/images/building/building3.jpg',
+  //       './assets/images/building/building4.jpg',
+  //     ],
+  //     isIncludeVideo: false,
+  //   },
+  // ];
+  // return JSON.stringify(data);
+  const projectId = document.querySelector('.page__content').dataset.id || 497;
+  const url = window.location.href.match(/localhost/) ? 'https://continent-wp.smarto.com.ua/wp-admin/admin-ajax.php' : '/wp-admin/admin-ajax.php';
+  const data = new FormData();
+  data.append('action', 'Constructions');
+  data.append('id', projectId);
+  return fetch(url, {
+    method: 'POST',
+    body: data,
+  });
 }
 
 async function initBuild() {
-  const builds = await getBuilds().then(res => JSON.parse(res));
+  let builds = await getBuilds().then(res => res.json());
+  builds = await builds;
+  // builds = [...builds, ...builds, ...builds, ...builds, ...builds, ...builds, ...builds, ...builds, ...builds,];
+  console.log(builds);
+  builds = builds.map((el, index) => ({
+    id: index + 1,
+    ...el,
+  }));
   const buildsId = builds.map(build => +build.id);
   const state = {
     builds,
@@ -311,7 +318,10 @@ async function initBuild() {
   // containers.prevBuildCard.addEventListener('click', () => prevBuildHandler(state, containers));
 
   // containers.loadMore.addEventListener('click', () => loadMoreHandler(state, containers));
-  loadMoreHandler(state, containers);
+  // loadMoreHandler(state, containers);
+  const buildsHtml = createBuilds(0, state.builds, state.builds.length);
+  containers.buildContainer.insertAdjacentHTML('beforeend', buildsHtml);
+  videoPlayHandlerInCard();
   // init filter location in filter.js
   // initFilter();
 
@@ -319,6 +329,18 @@ async function initBuild() {
   //   document.querySelector('.btn-gallery'),
   //   document.querySelector('.gallery-swiper'),
   // );
+}
+function videoPlayHandlerInCard() {
+  document.querySelectorAll('.js-build-card').forEach((el) => {
+    const video = el.querySelector('video');
+    if (video === null) return;
+    el.addEventListener('mouseenter', (evt) => {
+      video.play();
+    });
+    el.addEventListener('mouseleave', (evt) => {
+      video.pause();
+    });
+  });
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -328,6 +350,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // ---------------------
 
 function createSliderPopup(slides) {
+  console.log(slides);
   const slidesHtml = slides.map(createSlide).join('');
   const bigSliderContainer = document.querySelector('.buildingSwiper .swiper-wrapper');
 
@@ -369,7 +392,13 @@ function createSlide(src) {
   const isImage = regExp.test(src);
   return isImage
     ? `<div class="swiper-slide"><img src="${src}" alt=""></div>`
-    : `<div class="swiper-slide"><iframe class="building-swiper-video" width="560" height="315" src="${src}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+    : (`
+      <div class="swiper-slide">
+        <video class="video" controls loop width="100%" height="100%"> 
+            <source src="${src}"></video>
+        </div>
+      </div>`
+    );
 }
 
 function sideSwitchArrow(arrow, container) {
@@ -412,7 +441,7 @@ function sideSwitchArrow(arrow, container) {
     handleArrowVisibility(evt);
   }
 
-  function handleArrowVisibility() {}
+  function handleArrowVisibility() { }
 
   function getCursorSide(x) {
     if (x < mediumCordValue) {
@@ -455,6 +484,7 @@ function sideSwitchArrow(arrow, container) {
 function handleSlider() {
   slider.slideTo(currentCountSlides);
 }
+
 
 function updateContentPopup(build, containers) {
   const videoBtnContainer = document.querySelector('.js-show-video-btn');

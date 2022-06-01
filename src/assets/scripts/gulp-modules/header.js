@@ -18,11 +18,13 @@ function handleHeader(scroller) {
 
   const changeState = {
     open: () => {
-      gsap.to(header, { yPercent: 0 });
+      // gsap.to(header, { yPercent: 0 });
+      header.classList.remove('not-on-top');
       headerBottom.classList.remove('active-header-menu');
     },
     close: () => {
-      gsap.to(header, { yPercent: -100 });
+      // gsap.to(header, { yPercent: -100 });
+      header.classList.add('not-on-top');
       headerBottom.classList.add('active-header-menu');
     },
     transparent: () => {

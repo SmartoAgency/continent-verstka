@@ -17,10 +17,10 @@ function handleHeader(scroller) {
 
   const changeState = {
     open: () => {
-      gsap.to(header, { yPercent: 0 });
+      document.getElementById('header').classList.add('not-on-top');
     },
     close: () => {
-      gsap.to(header, { yPercent: -100 });
+      document.getElementById('header').classList.remove('not-on-top');
     },
     transparent: () => {
       header.classList.add('transparent');
