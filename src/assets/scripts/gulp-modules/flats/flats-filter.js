@@ -34,54 +34,68 @@ function debounce(func, timeout = 300) {
 }
 
 async function filterInit() {
-  let DATA = await fetch('./static/test-flat-data.json');
+  const url = document.documentElement.dataset.mode === 'production' ? '/wp-admin/admin-ajax.php' : './static/test-flat-data.json';
+  const sendData = new FormData();
+  sendData.append('action', 'getFlats');
+  let DATA = await fetch(url, {
+    method: 'POST',
+    body: sendData,
+  });
   DATA = await DATA.json();
+  DATA = DATA.map((el) => {
+    el.rooms = +el.rooms;
+    return el;
+  });
   const filte1r = new FilterConfig();
   const filteredList = new FilteredList({
     data: DATA,
   });
 
   function onLoadActions() {
-    const rangeInstance = $('[name="all_room"]').data('ionRangeSlider');
-    const [from, to] = getParameterByName('all__room')
-      ? getParameterByName('all__room').split('~')
+    const rangeInstance = $('[name="area"]').data('ionRangeSlider');
+    const [from, to] = getParameterByName('area')
+      ? getParameterByName('area').split('~')
       : [false, false];
     if (from) {
       rangeInstance.update({
         from,
       });
-      filte1r.importFilterData('all__room', `${from}~${to}`);
+      filte1r.importFilterData('area', `${from}~${to}`);
     }
     if (to) {
       rangeInstance.update({
         to,
       });
-      filte1r.importFilterData('all__room', `${from}~${to}`);
+      filte1r.importFilterData('area', `${from}~${to}`);
     }
 
     filteredList.import(filte1r.filter());
   }
 
   filte1r.importContent(DATA);
-  onLoadActions();
   document.querySelector('.planing-filter__last-session').addEventListener('click', function (evt) {
     if (evt.target.closest('.reset-filter') !== null) {
       this.remove();
       return;
     }
+    onLoadActions();
     filte1r.initFilterDataFromSearchParams();
     this.remove();
   });
+  // onLoadActions();
+  if (Object.keys(filte1r.getUrlParams()).length === 0) {
+    document.querySelector('.planing-filter__last-session').remove();
+  }
   function handleRangeResultsAndFilter() {
-    const { from } = $('[name="all_room"]').data('ionRangeSlider').result;
-    const { to } = $('[name="all_room"]').data('ionRangeSlider').result;
-    filte1r.importFilterData('all__room', `${from}~${to}`);
+    const { from } = $('[name="area"]').data('ionRangeSlider').result;
+    const { to } = $('[name="area"]').data('ionRangeSlider').result;
+    filte1r.importFilterData('area', `${from}~${to}`);
 
-    setQueryStringParameter('all__room', `${from}~${to}`);
+    setQueryStringParameter('area', `${from}~${to}`);
     filteredList.import(filte1r.filter());
   }
   const debouncedHandleRangeResultsAndFilter = debounce(handleRangeResultsAndFilter, 500);
-  $('[name="all_room"]').on('change', debouncedHandleRangeResultsAndFilter);
+  $('[name="area"]').on('change', debouncedHandleRangeResultsAndFilter);
 
   window.addEventListener('filtering', debouncedHandleRangeResultsAndFilter);
 

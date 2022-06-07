@@ -21,29 +21,35 @@ function debounce(func, timeout = 300) {
 
 
 async function commerceFilterInit() {
-  let DATA = await fetch('./static/test-flat-data.json');
+  const url = document.documentElement.dataset.mode === 'production' ? '/wp-admin/admin-ajax.php' : './static/test-flat-data.json';
+  const sendData = new FormData();
+  sendData.append('action', 'getFlats');
+  let DATA = await fetch(url, {
+    method: 'POST',
+    body: sendData,
+  });
   DATA = await DATA.json();
   const filte1r = new FilterConfig();
   const filteredList = new FilteredList({
     data: DATA,
     customTemplate: (data) => {
       const {
-        complex, action_price, all__room, life_room, deadline, id, price, rooms, terrace, two_level,
+        project_name, action_price, area, img_small, life_room, deadline, id, price, rooms, terrace, two_level,
       } = data;
       return `
         <li class="planing__item" data-id="${id}">
-          <a class="planing__link" href="single-commerce.html">
+          <a class="planing__link" href="?id=${id}">
             <div class="planing__img"> 
-              <img src="./assets/images/planing/planing3.jpg">
+              <img src="${img_small}">
             </div>
-            <h4 class="planing__title"><span>ЖК: </span>${complex}</h4>
+            <h4 class="planing__title"><span>ЖК: </span>${project_name}</h4>
             <div class="square"> 
               <svg class="icon--space" role="presentation">
                 <use xlink:href="#icon-space"></use>
               </svg>
               <div class="square-description"> 
                 <p class="title">Площа:</p>
-                <p class="value">${all__room} м²</p>
+                <p class="value">${area} м²</p>
               </div>
             </div>
             <div class="deadlines"> 
@@ -60,18 +66,18 @@ async function commerceFilterInit() {
 
   function onLoadActions() {
     const rangeInstance = $('[name="all_room"]').data('ionRangeSlider');
-    const [from, to] = getParameterByName('all__room') ? getParameterByName('all__room').split('~') : [false, false];
+    const [from, to] = getParameterByName('area') ? getParameterByName('area').split('~') : [false, false];
     if (from) {
       rangeInstance.update({
         from,
       });
-      filte1r.importFilterData('all__room', `${from}~${to}`);
+      filte1r.importFilterData('area', `${from}~${to}`);
     }
     if (to) {
       rangeInstance.update({
         to,
       });
-      filte1r.importFilterData('all__room', `${from}~${to}`);
+      filte1r.importFilterData('area', `${from}~${to}`);
     }
 
     filteredList.import(filte1r.filter());
@@ -83,9 +89,9 @@ async function commerceFilterInit() {
   function handleRangeResultsAndFilter() {
     const { from } = $('[name="all_room"]').data('ionRangeSlider').result;
     const { to } = $('[name="all_room"]').data('ionRangeSlider').result;
-    filte1r.importFilterData('all__room', `${from}~${to}`);
+    filte1r.importFilterData('area', `${from}~${to}`);
 
-    setQueryStringParameter('all__room', `${from}~${to}`);
+    setQueryStringParameter('area', `${from}~${to}`);
     filteredList.import(filte1r.filter());
   }
   const deb_handleRangeResultsAndFilter = debounce(handleRangeResultsAndFilter, 500);

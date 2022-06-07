@@ -79,7 +79,7 @@ class FilteredList {
     });
   }
 
-  addIntersectionOnceWithCallback(el, cb = () => {}) {
+  addIntersectionOnceWithCallback(el, cb = () => { }) {
     const image = el;
     const target = image;
     const observer = new IntersectionObserver((entries) => {
@@ -120,10 +120,10 @@ class FilteredList {
   getTemplate(data) {
     if (this.customTemplate) return this.customTemplate(data);
     const {
-      action_price, all__room, life_room, deadline, id, price, rooms, terrace, two_level,
+      action_price, area, project_name, img_small, life_room, deadline, id, price, rooms, terrace, two_level,
     } = data;
     return `
-            <li class="planing__item" data-id="${id}"><a class="planing__link" href="single-flats.html?id=${id}">
+            <li class="planing__item" data-id="${id}"><a class="planing__link" href="?id=${id}">
             <div class="price"><span class="new-price">${this.numberWithCommas(price)} ₴</span></div>
             <div class="favorite-star">
             <div class="add-favourite">
@@ -135,8 +135,8 @@ class FilteredList {
                 </label>
             </div>
             </div>
-            <div class="planing__img"> <img src="./assets/images/planing/planing1.jpg"></div>
-            <h4 class="planing__title"><span>ЖК: </span>Сontinent Black</h4>
+            <div class="planing__img"> <img src="${img_small}"></div>
+            <h4 class="planing__title"><span>ЖК: </span>${project_name}</h4>
             <div class="flat-planing-container">
             <div class="square"> 
                 <svg class="icon--space" role="presentation">
@@ -144,7 +144,7 @@ class FilteredList {
                 </svg>
                 <div class="square-description"> 
                 <p class="title">Площа:</p>
-                <p class="value">${all__room} м²</p>
+                <p class="value">${area} м²</p>
                 </div>
             </div>
             <div class="square"> 

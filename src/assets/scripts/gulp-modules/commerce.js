@@ -21,8 +21,8 @@ $('button').on('click', function (e) {
 
 $('.js-range-slider').ionRangeSlider({
   type: 'double',
-  min: 38,
-  max: 200,
+  min: 0,
+  max: 120,
 });
 
 const openFilter = document.querySelector('.js-open-filter');

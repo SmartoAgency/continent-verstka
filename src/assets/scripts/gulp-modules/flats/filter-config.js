@@ -13,16 +13,16 @@ class FilterConfig {
     const self = this;
     this.sortSchemasObject = {
       complex: (firstEl, secondEl) => ((secondEl.complex === self.letterSortTitle) ? 1 : -1),
-      big_area: (firstEl, secondEl) => secondEl.all__room - firstEl.all__room,
-      smaller_area: (firstEl, secondEl) => firstEl.all__room - secondEl.all__room,
+      big_area: (firstEl, secondEl) => +secondEl.area - +firstEl.area,
+      smaller_area: (firstEl, secondEl) => +firstEl.area - +secondEl.area,
       price: (firstEl, secondEl) => firstEl.price - secondEl.price,
       deadline: (firstEl, secondEl) => firstEl.deadline - secondEl.deadline,
     };
     this.validationSchemas = {
-      all__room: (item, filterValue) => {
+      area: (item, filterValue) => {
         if (filterValue === '') return 1;
         const [min, max] = filterValue.split('~');
-        return (item.all__room >= min && item.all__room <= max) ? 1 : 0;
+        return (+item.area >= min && +item.area <= max) ? 1 : 0;
       },
       date: (item, filterValue) => {
         if (filterValue === '') return 1;
@@ -69,6 +69,7 @@ class FilterConfig {
   filter() {
     this.validItems = [];
     this.sort();
+    console.log(this.filterData);
     this.contentForFilter.forEach((flat) => {
       let validFieldsCount = 0;
       const validationDataArray = Object.entries(this.filterData);
@@ -86,7 +87,7 @@ class FilterConfig {
             }
             if (
               value.min <= +flat[name]
-                            && value.max >= +flat[name]
+              && value.max >= +flat[name]
             ) { validFieldsCount += 1; }
             break;
           case 'Set':
@@ -179,7 +180,7 @@ class FilterConfig {
     const obj = {};
 
     // console.log(array);
-    if (array[0][0] === '') return [];
+    if (array[0][0] === '') return {};
     array.forEach((el) => {
       obj[el[0]] = el[1];
     });

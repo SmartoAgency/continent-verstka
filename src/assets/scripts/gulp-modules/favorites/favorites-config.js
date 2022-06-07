@@ -1,8 +1,15 @@
 
 
 async function favoritesPageHandler() {
-  let DATA = await fetch('./static/test-flat-data.json');
+  const url = document.documentElement.dataset.mode === 'production' ? '/wp-admin/admin-ajax.php' : './static/test-flat-data.json';
+  const sendData = new FormData();
+  sendData.append('action', 'getFlats');
+  let DATA = await fetch(url, {
+    method: 'POST',
+    body: sendData,
+  });
   DATA = await DATA.json();
+  console.log(DATA);
   const favorites = new FavoritesRenderer({
     onAfterRender: () => {
       window.favoritesSwiper && window.favoritesSwiper.update();
