@@ -39,6 +39,7 @@ setTimeout(() => {
  * form handlers start
  */
 const forms = [
+  // '[data-sign-up-email-form]',
   // '[data-home-contact]',
   // '[data-form-popup]',
   // '[data-form-footer]',
@@ -47,7 +48,7 @@ const forms = [
 
 // const formsTel = ['[data-home-contact]', '[data-form-homepage]'];
 // const formsTel = ['[data-form-homepage]'];
-const formsTel = ['[data-popup-form]', '[data-sign-up-form]', '[data-form-quiz]'];
+const formsTel = ['[data-popup-form]', '[data-sign-up-form]', '[data-form-quiz]', '[data-sign-up-email-form]'];
 
 formsTel.forEach((form) => {
   const $form = document.querySelector(form);
@@ -667,9 +668,6 @@ function formInHeaderHandler() {
 formInHeaderHandler();
 function formSubscribeHandler() {
   const form = document.querySelector('.sign-up-email');
-  form.querySelector('.js-close').addEventListener('click', () => {
-    gsap.to(form, { autoAlpha: 0, right: '-100%' });
-  });
   window.addEventListener('click', (evt) => {
     const target = evt.target.closest('.btn-subscribe');
     if (target === null) return;
@@ -680,6 +678,9 @@ function formSubscribeHandler() {
     el.addEventListener('click', () => {
       gsap.to(form, { autoAlpha: 1, right: 0 });
     });
+  });
+  form.querySelector('.js-close').addEventListener('click', () => {
+    gsap.to(form, { autoAlpha: 0, right: '-100%' });
   });
 }
 formSubscribeHandler();
