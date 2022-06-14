@@ -9,6 +9,8 @@
   @include to(992px) {
     padding: 40px vw(32, 1440) 50px;
   }
+
+  
   .our-projects__title {
     margin-bottom: 40px;
   }
@@ -97,6 +99,13 @@
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
+  }
+  @include to(992px){
+    .select,
+    .new-select,
+    .news-tab {
+      display: none;
+    }
   }
 }
 
@@ -197,6 +206,7 @@
     line-height: 1.23;
     color: #000000;
     margin-right: 20px;
+    cursor: pointer;
     &:last-child {
       margin-right: 0;
     }

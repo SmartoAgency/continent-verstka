@@ -125,7 +125,10 @@ continentClubForm.forEach((form) => {
         showSuccessMessage: false,
         successAction: () => {
           const backdrop = document.querySelector('.form-gratitude');
-          gsap.to(backdrop, { autoAlpha: 1 });
+          gsap.to(backdrop, { autoAlpha: 1, right: 0 });
+          document.querySelector('.form-gratitude .js-close').addEventListener('click', () => {
+            gsap.to(backdrop, { autoAlpha: 0, right: '-100%' });
+          }, { once: true });
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {

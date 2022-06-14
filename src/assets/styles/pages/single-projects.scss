@@ -529,6 +529,8 @@
   @include to(992px) {
     width: 100%;
     height: auto;
+    // height: 320px;
+    height: 270px;
     top: auto;
     bottom: 0;
     position: initial;

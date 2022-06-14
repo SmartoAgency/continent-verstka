@@ -131,6 +131,7 @@
       left: 0;
       top: 50%;
       transform: translate(16px, -50%);
+      pointer-events: none;
       @include to(992px) {
         font-size: 14px;
       }
@@ -181,6 +182,9 @@
       transform: translate(16px, -50%);
       background: #ffffff;
       pointer-events: none;
+    }
+    &:focus-within .checkmark {
+      display: none;
     }
     input:not(:placeholder-shown) ~ .checkmark {
       display: none;

@@ -40,7 +40,7 @@ $('.select').each(function () {
       selectItem.on('click', function () {
         const chooseItem = $(this).data('value');
         // console.log($(this)[0].closest('.select').querySelector('select'));
-
+        console.log('fefefe');
         $(this)[0]
           .closest('.select')
           .querySelector('select').value = chooseItem;

@@ -62,3 +62,24 @@ async function newsFilter() {
 }
 
 newsFilter();
+
+document.querySelectorAll('[data-mobile-filter]').forEach((el) => {
+  const elementForClick = document.querySelector(`[for="${el.dataset.mobileFilter}"]`);
+  el.addEventListener('click', (evt) => {
+    document.querySelectorAll('[data-mobile-filter]').forEach($el => $el.classList.remove('check'));
+    // document.querySelector('.check[data-mobile-filter]').classList.remove('check');
+    el.classList.add('check');
+    elementForClick.click();
+  });
+});
+document.querySelectorAll('[data-mobile-select]').forEach((el) => {
+  el.addEventListener('click', (evt) => {
+    document.querySelectorAll('[data-mobile-select]').forEach($el => $el.classList.remove('check'));
+    el.classList.add('check');
+    $(`[data-value="${el.dataset.mobileSelect}"]`).closest('.select').find('.new-select').trigger('click');
+    $(`[data-value="${el.dataset.mobileSelect}"]`).trigger('click');
+    console.log($(`[data-value="${el.dataset.mobileSelect}"]`));
+    console.log($(`[data-value="${el.dataset.mobileSelect}"]`).closest('.select').find('.new-select'));
+    // elementForClick.dispatchEvent(new Event('click'));
+  });
+});

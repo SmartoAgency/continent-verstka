@@ -21,13 +21,16 @@ function handleCalculatorQuiz() {
   const submitButton = popup.querySelector('[type="submit"]');
   submitButton.style.display = 'none';
   popup.slider.navigation.nextEl.style.display = 'none';
+  popup.slider.navigation.prevEl.style.display = 'none';
   popup.slider.slides[0].onclick = () => {
     if (popup.slider.slides[0].querySelector('input:checked') !== null) popup.slider.navigation.nextEl.style.display = '';
   };
+
   popup.slider.on('activeIndexChange', ({
     slides, activeIndex, previousIndex, navigation, ...config
   }) => {
     const currentSlide = slides[activeIndex];
+    popup.slider.navigation.prevEl.style.display = activeIndex === 0 ? 'none' : '';
     if (currentSlide.querySelector('input:checked') === null) {
       navigation.nextEl.style.display = 'none';
     } else {

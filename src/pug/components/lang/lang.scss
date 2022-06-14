@@ -5,6 +5,12 @@
     left: 0;
     bottom: 90px;
   }
+  @include to(575px){
+    position: fixed;
+    right: 40px;
+    bottom: 184px;
+    left: auto;
+  }
 }
 .lang-block__item {
   margin-right: 24px;

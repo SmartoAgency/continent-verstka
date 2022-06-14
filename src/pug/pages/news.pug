@@ -40,9 +40,9 @@ block content
           h4 Фільтр
           +svg('close-select').js-close-filter
       ul.sort-list 
-        li.sort-item.check Всі акції та новини
-        li.sort-item Акції
-        li.sort-item Новини        
+        li(data-filter-item="type" data-mobile-filter="type-all").sort-item.check Всі акції та новини
+        li(data-filter-item="type" data-mobile-filter="type-action").sort-item Акції
+        li(data-filter-item="type" data-mobile-filter="type-news").sort-item Новини        
   .mobile-sort-list2.js-sort-list
     .contant 
       .mobile-filter-close 
