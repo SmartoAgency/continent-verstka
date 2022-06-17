@@ -56,7 +56,7 @@ class FavoritesRenderer {
             <div class="number">${views} </div>
             <div class="desctop">разів</div>
             <div class="mobile">переглядів</div>
-          </div><a class="swiper-img" href="flats.html"><img src="${img_small}" alt=""></a>
+          </div><a class="swiper-img" href="/flats/?id=${id}"><img src="${img_small}" alt=""></a>
           <div class="delete-slide"> 
             <svg class="icon--close-select" role="presentation">
               <use xlink:href="#icon-close-select"></use>

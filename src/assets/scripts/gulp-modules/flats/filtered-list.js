@@ -152,7 +152,7 @@ class FilteredList {
                 <use xlink:href="#icon-living_space"></use>
                 </svg>
                 <div class="square-description"> 
-                <p class="title">жила Площа:</p>
+                <p class="title">Житлова Площа:</p>
                 <p class="value">${life_room} м² </p>
                 </div>
             </div>

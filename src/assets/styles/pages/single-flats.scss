@@ -183,6 +183,9 @@
   .favourite-label {
     width: 16px;
     height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @include to(992px) {
       margin-top: -7px;
     }

@@ -77,7 +77,7 @@ formsTel.forEach((form) => {
               $field: $form.querySelector('[data-field-name]'),
               typeInput: 'text',
             }),
-            rule: yup.string().required(i18next.t('required')),
+            rule: yup.string().matches(/[^ ]/, i18next.t('required')).required(i18next.t('required')),
 
             defaultMessage: i18next.t('phone'),
             valid: false,
@@ -291,6 +291,7 @@ forms.forEach((form) => {
             }),
             rule: yup
               .string()
+              .matches(/^[a-z]+$/, i18next.t('required'))
               .required(i18next.t('required'))
               .trim(),
             defaultMessage: i18next.t('name'),
@@ -656,6 +657,7 @@ function formInHeaderHandler() {
   window.addEventListener('click', (evt) => {
     const target = evt.target.closest('.js-call');
     if (target === null) return;
+    document.querySelector('.js-mobile-close').click();
     gsap.to(form, { autoAlpha: 1, right: 0 });
   });
 
@@ -684,3 +686,16 @@ function formSubscribeHandler() {
   });
 }
 formSubscribeHandler();
+
+
+window.addEventListener('click', (evt) => {
+  const target = evt.target.closest('[data-sign-up-call]');
+  const signupForm = document.querySelector('.sing-up-review');
+  const closeMenu = document.querySelector('.js-menu-close');
+  if (target === null || signupForm === null || closeMenu === null) return;
+  gsap.to('.form-sing-up', { autoAlpha: 1, right: 0 });
+  document.querySelector('.form-sing-up .js-close').addEventListener('click', (evt) => {
+    gsap.to('.form-sing-up', { autoAlpha: 0, right: '-100%' });
+  }, { once: true });
+  closeMenu.click();
+});

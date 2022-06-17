@@ -267,8 +267,8 @@
         }
       }
       .price {
-        right: 12%;
-        left: auto;
+        right: auto;
+        left: 81%;
         @include to(992px) {
           display: none;
         }
