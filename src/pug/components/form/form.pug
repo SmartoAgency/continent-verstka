@@ -28,6 +28,14 @@
     +svg('close-select')
   .form
     .gratitude-form-content
+      .gratitude-timer(data-gratitude-timer)
+        <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="65" cy="65" r="60" stroke="#FEC62E" stroke-width="4"/>
+          </svg>
+        .gratitude-timer__time
+          span(data-gratitude-timer-minutes) 00
+          span :
+          span(data-gratitude-timer-seconds) 45
       h1 Вже не дочекаємось, коли вас почуємо!
       h2 Протягом однієї хвилини на Ваш мобільний прийде повідомлення. Щоб ми Вас зайвий раз не турбували, — оберіть в цьому повідомленні зручний для себе день та час, коли Вам буде зручно розмовляти з нашим менеджером.
 

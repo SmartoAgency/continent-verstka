@@ -48,6 +48,36 @@ const forms = [
 
 // const formsTel = ['[data-home-contact]', '[data-form-homepage]'];
 // const formsTel = ['[data-form-homepage]'];
+
+
+const gratitudeTimer = (value) => {
+  const secondsForTimer = value ? +value : 60;
+  const circle = document.querySelector('[data-gratitude-timer] circle');
+  const circleLength = circle.getTotalLength();
+  circle.style.strokeDasharray = `${circleLength} ${circleLength}`;
+  circle.style.strokeDashoffset = circleLength;
+  console.log(circleLength);
+  const minutes = document.querySelector('[data-gratitude-timer] [data-gratitude-timer-minutes]');
+  const second = document.querySelector('[data-gratitude-timer] [data-gratitude-timer-seconds]');
+  const finishTime = new Date().getTime() + secondsForTimer * 1000;
+
+  const timer = (value) => {
+    const now = new Date().getTime();
+    const difference = Math.floor((finishTime - now) / 1000);
+    const differenceMinutes = Math.floor((finishTime - now) / 1000 / 60);
+    const secondsLeft = difference % 60;
+    const minuterLeft = differenceMinutes % 60;
+    const secondsLeftToFormatted = secondsLeft < 10 ? `0${secondsLeft}` : secondsLeft;
+    const minuterLeftToFormatted = minuterLeft < 10 ? `0${minuterLeft}` : minuterLeft;
+    if (secondsLeftToFormatted != second.textContent) second.textContent = secondsLeftToFormatted;
+    if (minuterLeftToFormatted != minutes.textContent) minutes.textContent = minuterLeftToFormatted;
+    circle.style.strokeDashoffset = circleLength - (circleLength * difference / secondsForTimer);
+
+    if (difference <= 0) return;
+    setTimeout(timer, 1000);
+  };
+  timer();
+};
 const formsTel = ['[data-popup-form]', '[data-sign-up-form]', '[data-form-quiz]', '[data-sign-up-email-form]'];
 
 formsTel.forEach((form) => {
@@ -61,6 +91,15 @@ formsTel.forEach((form) => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
+          if ($form.classList.contains('feedback-form')) {
+            const backdrop = document.querySelector('.form-gratitude');
+            gsap.to(backdrop, { autoAlpha: 1, right: 0 });
+            backdrop.querySelector('.js-close').addEventListener('click', (evt) => {
+              gsap.to(backdrop, { autoAlpha: 0, right: '-100%' });
+            }, { once: true });
+            gratitudeTimer($form.dataset.timer);
+            return;
+          }
           if ($form.classList.contains('review-form')) {
             const backdrop = document.querySelector('.form-gratitude');
             gsap.to('.sing-up-review__congrats', { autoAlpha: 1 });

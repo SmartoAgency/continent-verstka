@@ -152,6 +152,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 151;
   @include to(992px) {
     width: 100vw;
   }
@@ -183,6 +184,10 @@
     }
   }
 }
+
+
+
+
 .gratitude-form-content {
   h1 {
     font-weight: 600;
@@ -204,6 +209,40 @@
     @include to(992px) {
       font-size: 18px;
     }
+  }
+  .gratitude-timer {
+    margin-bottom: 35px;
+    
+  }
+}
+
+.gratitude-timer {
+  width: 125px;
+  height: 125px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  &__time {
+    width: 75px;
+    text-align: center;
+  }
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  circle {
+    transition: 1s ease-out;
   }
 }
 // .form-sing-up
