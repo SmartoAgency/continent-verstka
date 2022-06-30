@@ -216,6 +216,10 @@
     line-height: 1.25;
     color: #000000;
     transition: border 0.4s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 98%;
   }
 
   .new-select.on {

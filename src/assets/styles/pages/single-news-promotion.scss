@@ -32,6 +32,7 @@
   height: 96px;
   transform: rotate(15deg);
   margin-right: 12px;
+  flex-shrink: 0;
   @include to(992px) {
     flex-shrink: 0;
     width: 76px;

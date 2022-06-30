@@ -46,7 +46,10 @@ class FilterConfig {
           document.querySelector(`[data-value="${value}"]`).closest('.select').querySelector('.new-select').click();
           document.querySelector(`[data-value="${value}"]`).click();
           break;
-        case 'complex':
+        case 'project_name':
+          console.log('-----------');
+          console.log(document.querySelector(`[data-value="${value}"]`).closest('.select').querySelector('.new-select'));
+          console.log('-----------');
           document.querySelector(`[data-value="${value}"]`).closest('.select').querySelector('.new-select').click();
           document.querySelector(`[data-value="${value}"]`).click();
           break;

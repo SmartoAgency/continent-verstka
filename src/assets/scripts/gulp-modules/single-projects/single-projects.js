@@ -26,12 +26,14 @@ gsap.timeline({
   scrollTrigger: {
     trigger: '.our-philosophy',
     scrub: true,
+    start: '50% bottom',
+    end: '50% top',
     scroller: pageContainer,
   },
 })
   .fromTo('.our-philosophy h2', {
-    xPercent: -120,
+    xPercent: 20,
   }, {
 
-    xPercent: 30,
+    xPercent: -20,
   });
