@@ -283,6 +283,9 @@
   align-items: center;
   opacity: 0;
   visibility: hidden;
+  &[data-sign-up-mail-succes] {
+    z-index: 161;
+  }
   .form-close {
     position: absolute;
     top: 40px;

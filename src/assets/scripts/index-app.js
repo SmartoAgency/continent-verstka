@@ -91,6 +91,14 @@ formsTel.forEach((form) => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
+          if ($form.matches('[data-sign-up-email-form]')) {
+            const backdrop = document.querySelector('[data-sign-up-mail-succes]');
+            gsap.to(backdrop, { autoAlpha: 1, right: 0 });
+            backdrop.querySelector('.js-close').addEventListener('click', (evt) => {
+              gsap.to(backdrop, { autoAlpha: 0, right: '-100%' });
+            }, { once: true });
+            return;
+          }
           if ($form.classList.contains('feedback-form')) {
             const backdrop = document.querySelector('.form-gratitude');
             gsap.to(backdrop, { autoAlpha: 1, right: 0 });
@@ -708,7 +716,7 @@ function formInHeaderHandler() {
 }
 formInHeaderHandler();
 function formSubscribeHandler() {
-  const form = document.querySelector('.sign-up-email');
+  const form = document.querySelector('[data-sign-up-mail]');
   window.addEventListener('click', (evt) => {
     const target = evt.target.closest('.btn-subscribe');
     if (target === null) return;
