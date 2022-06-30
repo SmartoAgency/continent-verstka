@@ -1,3 +1,31 @@
+{
+  const favorites = new Favorites({
+    $containerOfElements: document.querySelector('.page__inner'),
+  });
+  const addFavouriteButton = document.querySelector('.add-favourite');
+  const { id } = addFavouriteButton.dataset;
+  const checkboxLabel = addFavouriteButton.querySelector('.checkbox-name');
+  const checkbox = addFavouriteButton.querySelector('input');
+  checkbox.addEventListener('change', () => {
+    if (!checkbox.checked) {
+      // favorites.removeFromFavorites()
+      checkboxLabel.textContent = checkboxLabel.dataset.off;
+      return;
+    }
+    checkboxLabel.textContent = checkboxLabel.dataset.in;
+  });
+
+  setTimeout(() => {
+    if (!checkbox.checked) {
+      // favorites.removeFromFavorites()
+      checkboxLabel.textContent = checkboxLabel.dataset.off;
+      return;
+    }
+    checkboxLabel.textContent = checkboxLabel.dataset.in;
+  }, 2100);
+}
+
+
 const menu = ['Планування', 'Детальне', 'На поверсі', '3д тур'];
 const swiper = new Swiper('.commerce-swiper', {
   // slidesPerView: 3.5,

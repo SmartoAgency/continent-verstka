@@ -1,4 +1,5 @@
-document.querySelector('.planing').style.display = 'none';
+// document.querySelector('.planing').style.display = 'none';
+document.querySelector('.planing-filter__close .nav__call-btn').style.display = 'none';
 document.querySelector('.planing-filter__close .nav__call-btn').addEventListener('click', (evt) => {
   const planContainer = document.querySelector('.planing');
   const planStyle = getComputedStyle(planContainer).display;

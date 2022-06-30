@@ -167,6 +167,7 @@ const renderForm = (form, elements, toast) => {
         field.inputWrapper.showDefaultStyle();
         field.inputWrapper.removeSelectedStyle();
       });
+      const dataOfForm = new FormData(elementsParamFn.$form);
       elementsParamFn.$form.reset();
       elementsParamFn.$btnSubmit.setAttribute('disabled', false);
       elementsParamFn.$btnSubmit.querySelector('[data-btn-submit-text]').innerHTML = i18next.t(
@@ -182,7 +183,7 @@ const renderForm = (form, elements, toast) => {
         });
       }
       if (typeof elementsParamFn.successAction === 'function') {
-        elementsParamFn.successAction();
+        elementsParamFn.successAction(dataOfForm);
       }
       break;
 

@@ -271,6 +271,7 @@ const lang = langDetect();
           invalid_upload_file: 'Ошибка загрузки файла. Код: [invalid_upload_file]',
           invalid_recaptcha: 'Заполните капчу и попробуйте еще раз снова. Код: [invalid_recaptcha]',
           connectionFailed: 'Ошибка соединения с CRM',
+          youRegistered: 'Вы записаны - ',
           fillCheboxMessage: 'Необходимо отметить соглашение',
         },
       },
@@ -302,6 +303,7 @@ const lang = langDetect();
           invalid_recaptcha: 'Заповніть капчу і спробуйте ще раз знову. Код: [invalid_recaptcha]',
           connectionFailed: "Помилка з'єднання с CRM",
           fillCheboxMessage: 'Необхідно відмітити згоду',
+          youRegistered: 'Вы записані на - ',
         },
       },
       en: {
@@ -329,6 +331,7 @@ const lang = langDetect();
           invalid_recaptcha: 'Please fill in the captcha and try again. Code: [invalid_recaptcha] ',
           connectionFailed: 'Server connection error',
           fillCheboxMessage: 'fill agreement',
+          youRegistered: 'You are registered on - ',
         },
       },
     },

@@ -90,7 +90,7 @@ formsTel.forEach((form) => {
       elements: {
         $form,
         showSuccessMessage: false,
-        successAction: () => {
+        successAction: (data) => {
           if ($form.matches('[data-sign-up-email-form]')) {
             const backdrop = document.querySelector('[data-sign-up-mail-succes]');
             gsap.to(backdrop, { autoAlpha: 1, right: 0 });
@@ -109,10 +109,12 @@ formsTel.forEach((form) => {
             return;
           }
           if ($form.classList.contains('review-form')) {
-            const backdrop = document.querySelector('.form-gratitude');
+            const text = document.querySelector('.sing-up-review__congrats h3');
+            text.innerHTML = `${i18next.t('youRegistered')} ${data.get('day')}, ${data.get('time')}`;
             gsap.to('.sing-up-review__congrats', { autoAlpha: 1 });
             setTimeout(() => {
               gsap.to('.sing-up-review__congrats', { autoAlpha: 0 });
+              text.innerHTML = '';
             }, 5000);
           }
         },

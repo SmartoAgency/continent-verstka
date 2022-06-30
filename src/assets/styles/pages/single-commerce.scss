@@ -106,12 +106,16 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 32px;
+      gap: 9px;
+      &>* {
+        width: 33%;
+      }
       @include to(992px) {
         margin-bottom: 0;
       }
       a {
-        width: 48%;
-        margin-right: 16px;
+        // width: 48%;
+        // margin-right: 16px;
         height: 48px;
         text-decoration: none;
         display: flex;
