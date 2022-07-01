@@ -183,11 +183,21 @@
       background: #ffffff;
       pointer-events: none;
     }
+    @include to(576px){
+      input[type="time"] {
+        width: calc(50vw - (var(--offset) * 2));
+      }
+    }
     &:focus-within .checkmark {
       display: none;
     }
-    input:not(:placeholder-shown) ~ .checkmark {
+    input:focus~.checkmark {
       display: none;
+    }
+    @include from(1025px){
+      input:not(:placeholder-shown) ~ .checkmark {
+        display: none;
+      }
     }
   }
   .select {

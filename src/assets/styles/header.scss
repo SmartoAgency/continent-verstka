@@ -15,7 +15,7 @@
   height: var(--header-h);
   padding: 0 vw(160, 1920);
   // transition: all 0.3s ease;
-  
+  transition: transform 0.5s ease-out;
   @include to(1440px) {
     padding: 0 vw(100, 1440);
   }
@@ -586,5 +586,5 @@
 
 .not-on-top {
   transform: translate(0%, -100%);
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-out;
 }

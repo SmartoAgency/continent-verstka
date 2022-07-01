@@ -78,6 +78,19 @@ const gratitudeTimer = (value) => {
   };
   timer();
 };
+
+
+function dayTimeInputsHandler() {
+  document.querySelectorAll('[type="date"], [type="time"]').forEach((input) => {
+    const checkmark = input.parentElement.querySelector('.checkmark');
+    input.addEventListener('blur', () => {
+      checkmark.style.display = input.value.length > 0 ? 'none' : '';
+    });
+  });
+}
+dayTimeInputsHandler();
+
+
 const formsTel = ['[data-popup-form]', '[data-sign-up-form]', '[data-form-quiz]', '[data-sign-up-email-form]'];
 
 formsTel.forEach((form) => {
@@ -233,89 +246,9 @@ continentClubForm.forEach((form) => {
         },
       },
     });
-
-    // $form.querySelector('.js-mask-absolute').addEventListener(
-    //   'click',
-    //   () => {
-    //     $form.querySelector('[name="phone"]').focus();
-    //   },
-    //   false,
-    // );
   }
 });
 
-// /**footer form fake placeholder */
-// const footerPlaceholder = document.querySelector('.footer-placeholder');
-// const footerPlaceholderInput = footerPlaceholder.previousElementSibling;
-// console.log(footerPlaceholderInput);
-
-// footerPlaceholderInput.addEventListener('input', () => {
-//   console.log('LENGTH', footerPlaceholderInput.value.length);
-//   const lengthMinusMask = footerPlaceholderInput.value.length - 5;
-//   footerPlaceholder.style.clipPath = `polygon(${lengthMinusMask *
-//     10}% 0, 100% 0, 100% 100%, ${lengthMinusMask * 10}% 100%)`;
-// });
-// /**footer form fake placeholder END */
-
-// const formsWithRedirect = ['[data-popup-form]'];
-const formsWithRedirect = [];
-
-formsWithRedirect.forEach((form) => {
-  const $form = document.querySelector(form);
-  if ($form) {
-    /* eslint-disable */
-    new FormMonster({
-      /* eslint-enable */
-      elements: {
-        $form,
-        showSuccessMessage: false,
-        successAction: () => {
-          window.location.href = 'message';
-        },
-        $btnSubmit: $form.querySelector('[data-btn-submit]'),
-        fields: {
-          name: {
-            inputWrapper: new SexyInput({
-              animation: 'none',
-              $field: $form.querySelector('[data-field-name]'),
-            }),
-            rule: yup
-              .string()
-              .required(i18next.t('required'))
-              .trim(),
-            defaultMessage: i18next.t('name'),
-            valid: false,
-            error: [],
-          },
-
-          phone: {
-            inputWrapper: new SexyInput({
-              animation: 'none',
-              $field: $form.querySelector('[data-field-phone]'),
-              typeInput: 'phone',
-            }),
-            rule: yup
-              .string()
-              .required(i18next.t('required'))
-              .min(16, i18next.t('field_too_short', { cnt: 19 - 7 })),
-
-            defaultMessage: i18next.t('phone'),
-            valid: false,
-            error: [],
-          },
-        },
-      },
-    });
-
-    $form.querySelector('.js-mask-absolute').addEventListener(
-      'click',
-      () => {
-        $form.querySelector('[name="phone"]').focus();
-      },
-      false,
-    );
-  }
-});
 
 forms.forEach((form) => {
   const $form = document.querySelector(form);
