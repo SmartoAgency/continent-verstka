@@ -91,7 +91,7 @@ function dayTimeInputsHandler() {
 dayTimeInputsHandler();
 
 
-const formsTel = ['[data-popup-form]', '[data-sign-up-form]', '[data-form-quiz]', '[data-sign-up-email-form]'];
+const formsTel = ['[data-popup-form]', '[data-sign-up-form]', '[data-form-quiz]', '[data-sign-up-email-form]', '.review-form'];
 
 formsTel.forEach((form) => {
   const $form = document.querySelector(form);
@@ -104,6 +104,15 @@ formsTel.forEach((form) => {
         $form,
         showSuccessMessage: false,
         successAction: (data) => {
+          // if ($form.matches('.review-form')) {
+          //   const prevText = $form.querySelector('[data-btn-submit] span').textContent;
+          //   $form.querySelector('[data-btn-submit] span').textContent = 'Відправлено';
+          //   setTimeout(() => {
+          //     $form.querySelector('[data-btn-submit] span').textContent = prevText;
+          //   }, 5000);
+          //   return;
+          // }
+
           if ($form.matches('[data-sign-up-email-form]')) {
             const backdrop = document.querySelector('[data-sign-up-mail-succes]');
             gsap.to(backdrop, { autoAlpha: 1, right: 0 });

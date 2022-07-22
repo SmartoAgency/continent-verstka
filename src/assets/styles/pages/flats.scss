@@ -375,6 +375,11 @@
       justify-content: center;
       background: none;
       border-radius: none;
+      cursor: pointer;
+      label {
+      
+        cursor: pointer;
+      }
       @include to(992px) {
         top: 30px;
         right: 0;
